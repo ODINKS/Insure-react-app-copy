@@ -1,20 +1,19 @@
 import './App.css';
-// import Home from './pages/Home';
+import Home from './pages/Home';
+import Navbar from './components/molecules/global/Navbar';
 // import Contact from './pages/Contact';
-import Button from './components/molecules/global/Button';
+// import Button from './components/molecules/global/Button';
+// import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
-  const buttonDesc = `Get started`
-  const buttonWidth = `500`
   return (
-    <div >
-      {/* <Home/> */}
-      {/* <Contact /> */}
-      {/* <HeroSection title={title} img={img} description={description} /> */}
-      <Button description={buttonDesc} width={buttonWidth} />
-
+    <div>
+      <Navbar />
     </div>
+    // <Routes>
+    //   <Route path="/" element={<Home />} />
+    // </Routes>
   );
 }
 

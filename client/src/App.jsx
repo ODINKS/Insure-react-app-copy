@@ -1,8 +1,11 @@
+
 import './App.css';
 // import Home from './pages/Home';
 // import Contact from './pages/Contact';
 // import HeroSection from './components/molecules/global/HeroSection'
-import Button from './components/molecules/global/Button';
+import Button from './components/molecules/global/Butt
+
+import Home from "./pages/Home";
 
 function App() {
   const buttonDesc = `Get started`
@@ -13,7 +16,8 @@ function App() {
       {/* <Contact /> */}
       {/* <HeroSection title={title} img={img} description={description} /> */}
       <Button description={buttonDesc} width={buttonWidth} />
-    </div>
+
+    <div>
   );
 }
 

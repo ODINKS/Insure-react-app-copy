@@ -1,20 +1,23 @@
 
-import "./App.css";
+import './App.css';
+// import Home from './pages/Home';
+// import Contact from './pages/Contact';
+// import HeroSection from './components/molecules/global/HeroSection'
+import Button from './components/molecules/global/Butt
+
 import Home from "./pages/Home";
 
-
 function App() {
-  // const title = `<span>Pick <span className=text-orange-600>a</span> Plan<span>`;
-  // const img = `https://ik.imagekit.io/7ziooaysi/svgtopng/dashboard.png?updatedAt=1700115699168`;
-  // const description = `Welcome to INsure, your partner in revolutionizing the insurance
-  // industry! – a powerful tool designed to empower insurance agents
-  // like you to excel in your profession.`;
+  const buttonDesc = `Get started`
+  const buttonWidth = `500`
   return (
+    <div >
+      {/* <Home/> */}
+      {/* <Contact /> */}
+      {/* <HeroSection title={title} img={img} description={description} /> */}
+      <Button description={buttonDesc} width={buttonWidth} />
 
     <div>
-      <Home />
-
-    </div>
   );
 }
 

@@ -29,6 +29,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+      {/* {get-in-touch section} */}
       <section className="bg-white-200 py-16 text-left ml-60">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold mb-8">

@@ -1,7 +1,7 @@
-import './App.css';
-import Home from './pages/Home';
-// import Contact from './pages/Contact';
-// import HeroSection from './components/molecules/global/HeroSection'
+
+import "./App.css";
+import Home from "./pages/Home";
+
 
 function App() {
   // const title = `<span>Pick <span className=text-orange-600>a</span> Plan<span>`;
@@ -10,10 +10,10 @@ function App() {
   // industry! – a powerful tool designed to empower insurance agents
   // like you to excel in your profession.`;
   return (
-    <div >
-      <Home/>
-      {/* <Contact /> */}
-      {/* <HeroSection title={title} img={img} description={description} /> */}
+
+    <div>
+      <Home />
+
     </div>
   );
 }

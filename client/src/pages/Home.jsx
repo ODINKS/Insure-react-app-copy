@@ -46,7 +46,7 @@ const Home = () => {
                 Welcome <span className="text-orange-600">to</span> INsure
               </h1>
               <p
-                className="lg:text-[1.4rem] text-[1rem] mb-4 lg:w-[50%] w-[100%]"
+                className="lg:text-[1.4rem] text-[1rem] my-4 lg:w-[50%] w-[100%]"
                 id="description"
               >
                 ...your Key to Insurance Sales Excellence. Elevate your agency's

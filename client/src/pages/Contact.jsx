@@ -1,13 +1,13 @@
 import React from "react";
 
-const ContactPage = () => {
+const Contact = () => {
   return (
     <div>
       <div
         className="h-screen bg-cover"
         style={{
           backgroundImage:
-            'url("https://cdn.hashnode.com/res/hashnode/image/upload/v1700074960666/3d62dc14-f88a-4fbd-8d8c-ced0ada7dfa0.png")',
+            'url("https://tinyurl.com/48ffmsy8")',
         }}
       >
         <div className="flex justify-between items-center h-full">
@@ -203,4 +203,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Contact;

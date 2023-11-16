@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Hero = () => {
+const Home = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
 
   const backgroundData = [
-    "https://ik.imagekit.io/7ziooaysi/bg-one.svg?updatedAt=1700075583556",
-    "https://ik.imagekit.io/7ziooaysi/bg-two.svg?updatedAt=1700075654400",
-    "https://ik.imagekit.io/7ziooaysi/bg-three.svg?updatedAt=1700075704357",
+    "https://ik.imagekit.io/7ziooaysi/svgtopng/bg-one.png?updatedAt=1700115701231",
+    "https://ik.imagekit.io/7ziooaysi/svgtopng/bg-two.png?updatedAt=1700115700691",
+    "https://ik.imagekit.io/7ziooaysi/svgtopng/bg-three.png?updatedAt=1700115701235",
   ];
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const Hero = () => {
           data-aos-duration="2000"
         >
           <img
-            src="https://ik.imagekit.io/7ziooaysi/dashboard.svg?updatedAt=1700075747231"
+            src="https://ik.imagekit.io/7ziooaysi/svgtopng/dashboard.png?updatedAt=1700115699168"
             alt="dashboard"
           />
         </div>
@@ -98,7 +98,7 @@ const Hero = () => {
                 data-aos-duration="2000"
               >
                 <img
-                  src="https://ik.imagekit.io/7ziooaysi/agent-report.svg?updatedAt=1700075836247"
+                  src="https://ik.imagekit.io/7ziooaysi/svgtopng/agent-report.png?updatedAt=1700115699165"
                   alt=""
                 />
               </div>
@@ -144,7 +144,7 @@ const Hero = () => {
               data-aos-duration="2000"
             >
               <img
-                src="https://ik.imagekit.io/7ziooaysi/image.svg?updatedAt=1700075914571"
+                src="https://ik.imagekit.io/7ziooaysi/svgtopng/image.png?updatedAt=1700115698523"
                 alt=""
               />
             </div>
@@ -159,7 +159,7 @@ const Hero = () => {
               data-aos-duration="2000"
             >
               <img
-                src="https://ik.imagekit.io/7ziooaysi/admin-d-team.svg?updatedAt=1700075878590"
+                src="https://ik.imagekit.io/7ziooaysi/svgtopng/admin-d-team.png?updatedAt=1700115699659"
                 alt=""
               />
             </div>
@@ -183,4 +183,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;

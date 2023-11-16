@@ -105,8 +105,7 @@ const Home = () => {
               {/* first  */}
               <div className="lg:w-[60%] w-[100%] mb-2">
                 <h2 className="lg:text-[2.5rem] text-[2rem] font-[700]">
-                  The
-                  <span className="text-orange-600">Future-Proof</span> Solution
+                  The <span className="text-orange-600">Future-Proof</span> Solution
                   for Insurance Pros
                 </h2>
                 <p className="my-4">
@@ -165,7 +164,7 @@ const Home = () => {
             </div>
             <div className="lg:w-[60%] w-[100%] mb-2">
               <h2 className="lg:text-[2.5rem] text-[2rem] font-[700]">
-                Seize <span className="text-orange-600">the</span> Future of
+                Seize <span className="text-orange-600">the </span> Future of
                 Insurance Sales
               </h2>
               <p className="my-4">

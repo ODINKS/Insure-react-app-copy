@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../components/molecules/global/Navbar";
 
 const Contact = () => {
   return (
     <div>
+      <Navbar />
       <div
         className="h-screen bg-cover"
         style={{

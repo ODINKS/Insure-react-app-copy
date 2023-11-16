@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // --Orange1: #e76927;
 // --Orange2: #ffa074;
@@ -69,26 +70,21 @@ const Navbar = () => {
                                 class="flex flex-col lg:items-center font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:mr-0 lg:mr-22"
                             >
                                 <li>
-                                    <a
-                                        href="./index.html"
+                                    <Link to='/'
                                         class="link block py-2 pl-3 pr-4 rounded hover:bg-[ --Blue2] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--Orange4] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                         aria-current="page"
-                                    >Home</a
-                                    >
+                                    >Home</Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="./about.html"
+                                    <Link to='/about'
                                         class="link block py-2 pl-3 pr-4 rounded hover:bg-[ --Blue2] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--Orange4] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                    >About</a
-                                    >
+                                    >About</Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/contact"
                                         class="link block py-2 pl-3 pr-4 rounded hover:bg-[ --Blue2] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--Orange4] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                    >Contact</a
-                                    >
+                                    >Contact</Link>
                                 </li>
                                 <li>
                                     <a

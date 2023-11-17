@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Button from '../components/molecules/global/Button'
+import Navbar from "../components/molecules/global/Navbar";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -9,6 +10,8 @@ const About = () => {
   }, [])
 
   return (
+    <div>
+      <Navbar />
     <div>
       <body className="font-Lato text-white">
 
@@ -336,7 +339,7 @@ const About = () => {
               <ul className="flex">
                 <li>
                   <a
-                    href=""
+                    href="#"
                     target="_blank"
                     className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
                   >
@@ -346,7 +349,7 @@ const About = () => {
 
                 <li>
                   <a
-                    href=""
+                    href="#"
                     target="_blank"
                     className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
                   >
@@ -356,7 +359,7 @@ const About = () => {
 
                 <li>
                   <a
-                    href=""
+                    href="#"
                     target="_blank"
                     className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
                   >
@@ -370,7 +373,7 @@ const About = () => {
 
                 <li>
                   <a
-                    href=""
+                    href="#"
                     target="_blank"
                     className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
                   >
@@ -433,6 +436,7 @@ const About = () => {
     <script src="../script.js"></script>
   </body>
 
+    </div>
     </div>
   )
 }

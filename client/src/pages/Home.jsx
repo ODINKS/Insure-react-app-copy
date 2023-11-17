@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Navbar from "../components/molecules/global/Navbar";
 
 const Home = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
@@ -34,6 +35,7 @@ const Home = () => {
 
   return (
     <>
+    <Navbar />
       {/* section 1 */}
       <section className="flex h-[90vh] justify-center items-center flex-col">
         <div

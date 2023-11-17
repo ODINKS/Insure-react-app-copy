@@ -31,7 +31,7 @@ const Navbar = () => {
                 >
                     <img
                         id="myImage"
-                        src=""
+                        src="https://res.cloudinary.com/blackadam/image/upload/v1700189072/Insure/Insure-logo_lydorc.png"
                         alt="Logo"
                         class="w-24 h-16"
                     />

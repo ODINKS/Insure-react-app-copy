@@ -6,3 +6,7 @@ const dashboard =`https://ik.imagekit.io/7ziooaysi/svgtopng/dashboard.png?update
 const dashboard1 =`https://ik.imagekit.io/7ziooaysi/svgtopng/agent-report.png?updatedAt=1700115699165`
 const dashboard2 = `https://ik.imagekit.io/7ziooaysi/svgtopng/image.png?updatedAt=1700115698523`
 const dashboard3 = `https://ik.imagekit.io/7ziooaysi/svgtopng/admin-d-team.png?updatedAt=1700115699659`
+const divineImage= `https://tinyurl.com/bdz6xzt6`
+const vickyImage= `https://tinyurl.com/yc4jv96h`
+const iyanuImage= `https://tinyurl.com/yharcumx`
+const maryImage= `https://tinyurl.com/yckeudjw`

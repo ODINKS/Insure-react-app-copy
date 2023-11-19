@@ -1,23 +1,20 @@
-
+import {React  } from "react";
 import './App.css';
+// import { RegAccount } from "./pages/auth/admin/RegAccount";
 // import Home from './pages/Home';
 // import Contact from './pages/Contact';
 // import HeroSection from './components/molecules/global/HeroSection'
-import Button from './components/molecules/global/Butt
+// import Button from './components/molecules/global/Butto
+// import { Registration } from './pages/auth/admin/Registration';
 
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 
 function App() {
-  const buttonDesc = `Get started`
-  const buttonWidth = `500`
+  
   return (
-    <div >
-      {/* <Home/> */}
-      {/* <Contact /> */}
-      {/* <HeroSection title={title} img={img} description={description} /> */}
-      <Button description={buttonDesc} width={buttonWidth} />
-
-    <div>
+<>
+</>
+    
   );
 }
 

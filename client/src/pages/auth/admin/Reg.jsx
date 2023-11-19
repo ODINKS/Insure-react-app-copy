@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Registration = () => {
+export const Reg = () => {
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
       {/* Left Column */}
@@ -12,7 +12,7 @@ export const Registration = () => {
         {/* Header Section */}
         <div className="text-center">
           <h1 className="font-bold mb-4 text-2xl lg:text-4xl">
-            Register <span className="text-red-500">with</span> INsure
+            Contact <span className="text-red-500">details</span>
           </h1>
           <p className="pb-4 text-xs lg:text-base">
             Get started - <span className="text-red-500">7</span> days free trial
@@ -20,35 +20,36 @@ export const Registration = () => {
         </div>
         {/* Form Area */}
         <form name="signUpData" onSubmit={(event) => signUP(event)} className="flex flex-col w-full">
-          {/* Company name */}
+          
           <input
-            type="text"
+            type="number"
             id="name"
-            name="name"
-            placeholder="Company's name"
+            name="phonenumber"
+            placeholder="Company's phone number"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
           />
           <input
-            type="text"
-            name="Btype"
-            placeholder="Business type (e.g., proprietorship)"
+            type="email"
+            name="email"
+            placeholder="Company's email address"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
           />
+        
+            <input
+                type="text"
+                name="address"
+                placeholder="Company's address"
+                className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            />
+
           <select className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400">
-            <option>Team capacity</option>
-            <option>1 - 10</option>
-            <option>11 - 20</option>
-            <option>21 - 50</option>
-            <option>51 - 200</option>
+            <option>Pick a plan</option>
+            <option>Standard</option>
+            <option>Premium</option>
+            <option>Gold</option>
+           
           </select>
-          {/* Company license */}
-          <input
-            type="text"
-            name="license"
-            placeholder="Company license"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
-          />
-          {/* Register button */}
+        
           <button
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
@@ -56,24 +57,6 @@ export const Registration = () => {
           >
             Continue
           </button>
-          <div className="text-left text-xs">
-            <p className="mt-2 text-xs">
-              By proceeding, you agree to the
-              <a href="#">
-                <span className="text-blue-500 hover:underline">Terms of services</span>
-              </a>{' '}
-              and
-              <a href="#">
-                <span className="text-blue-500 hover:underline">privacy policy</span>
-              </a>
-            </p>
-            <p className="mt-[1rem] text-xs lg:text-sm flex items-center justify-center gap-3">
-              Already have an account?
-              <span className="text-red-500 cursor-pointer hover:underline">
-                <a href="./login.html">Log in</a>
-              </span>
-            </p>
-          </div>
         </form>
       </div>
       {/* Right Column (image) */}

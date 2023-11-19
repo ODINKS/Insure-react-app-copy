@@ -19,7 +19,9 @@ export const Registration = () => {
           </p>
         </div>
         {/* Form Area */}
-        <form name="signUpData" onSubmit={(event) => signUP(event)} className="flex flex-col w-full">
+        <form name="signUpData" 
+        // onSubmit={(event) => signUP(event)}
+         className="flex flex-col w-full">
           {/* Company name */}
           <input
             type="text"

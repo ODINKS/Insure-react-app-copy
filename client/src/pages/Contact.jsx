@@ -4,9 +4,10 @@ import Navbar from "../components/molecules/global/Navbar";
 const Contact = () => {
   return (
     <div>
+      {/* HERO SECTION */}
       <Navbar />
       <div
-        className="h-screen bg-cover"
+        className="h-screen bg-cover "
         style={{
           backgroundImage:
             'url("https://tinyurl.com/48ffmsy8")',
@@ -106,6 +107,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
       <section className="bg-[#DFE7FA] py-16 text-left ">
         <div className="container mx-auto ml-60">
           <h2 className="text-5xl font-bold mb-8 ">

@@ -20,7 +20,7 @@ export const Reg = () => {
         </div>
         {/* Form Area */}
         <form name="signUpData" onSubmit={(event) => signUP(event)} className="flex flex-col w-full">
-          {/* Company name */}
+          
           <input
             type="number"
             id="name"
@@ -34,7 +34,7 @@ export const Reg = () => {
             placeholder="Company's email address"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
           />
-        {/* Company license */}
+        
             <input
                 type="text"
                 name="address"
@@ -49,8 +49,7 @@ export const Reg = () => {
             <option>Gold</option>
            
           </select>
-         
-          {/* Register button */}
+        
           <button
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"

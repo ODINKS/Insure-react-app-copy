@@ -17,7 +17,9 @@ export const RegAccount = () => {
           
         </div>
         {/* Form Area */}
-        <form name="signUpData" onSubmit={(event) => signUP(event)} className="flex flex-col w-full">
+        <form name="signUpData" 
+        // onSubmit={(event) => signUP(event)} 
+        className="flex flex-col w-full">
          
           <input
             type="email"

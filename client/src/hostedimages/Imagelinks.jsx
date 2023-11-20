@@ -36,3 +36,6 @@ const customerData=`https://tinyurl.com/3jsnv8hb`
 const gettingStarted=`https://tinyurl.com/4svdfh94`
 const analytics=`https://tinyurl.com/4sw3ywj2`
 
+//ADMIN AND AGENT DASHBOARD
+const barChart=`https://tinyurl.com/kbsrzz3z`
+const pieChart=`https://tinyurl.com/32u7kbvm`

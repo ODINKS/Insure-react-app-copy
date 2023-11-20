@@ -3,7 +3,7 @@ import Navbar from "../components/molecules/global/Navbar";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="font-Lato" style={{ fontFamily: 'Lato' }}>
       {/* HERO SECTION */}
       <Navbar />
       <div
@@ -14,11 +14,11 @@ const Contact = () => {
         }}
       >
         <div className="flex justify-between items-center h-full">
-          <div className="text-white ml-12 ">
-            <h1 className="text-5xl font-bold mb-12">
+          <div className="text-white ml-12 font-lato">
+            <h1 className="text-7xl font-bold mb-12">
               Stay <span className="text-orange-500">in</span> Touch
             </h1>
-            <p className="text-lg mb-9 font-medium">
+            <p className="text-[1.4rem] mb-9 font-medium">
               At INsure, we're here to provide you with peace of mind and
               unparalleled service.
               <br />
@@ -35,15 +35,15 @@ const Contact = () => {
       {/* {get-in-touch section} */}
       <section className="bg-white-200 py-16 text-left ml-60">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold mb-8">
+          <h3 className="text-3xl font-bold mb-8">
             Get <span className="text-orange-500">in</span> Touch
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 mb-10 font-medium">
             It is very important for us to keep in touch with you so we <br />{" "}
             are always ready to answer any questions that interest you.
           </p>
           <div className="w-[100%] lg:w-[80%]">
-            <div className="flex flex-col lg:flex-row justify-between mb-4">
+            <div className="flex flex-col lg:flex-row justify-between mb-4 text-sm">
               <label htmlFor className="w-[45%]">
                 First Name
                 <input
@@ -111,14 +111,14 @@ const Contact = () => {
       {/* FREQUENTLY ASKED QUESTIONS SECTION */}
       <section className="bg-[#DFE7FA] py-16 text-left ">
         <div className="container mx-auto ml-60">
-          <h2 className="text-5xl font-bold mb-8 ">
+          <h3 className="text-3xl font-bold mb-8 ">
             Frequently <span className="text-orange-500">asked</span> questions
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 mb-10 font-medium">
             It is very important for us to keep in touch with you so we <br />{" "}
             are always ready to answer any questions that interest you.
           </p>
-          <div className="flex space-x-12 mb-8">
+          <div className="flex space-x-12 mb-8 text-sm">
             <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-12 rounded">
               Features
             </button>
@@ -133,7 +133,7 @@ const Contact = () => {
             </button>
           </div>
         </div>
-        <div className="w-[100%] lg:w-[57%] ml-60 bg-white">
+        <div className="w-[100%] lg:w-[57%] ml-60 bg-white text-sm">
           <details>
             <summary className="font-semibold text-[1.2rem] p-4 cursor-pointer border-b border-t">
               Does the app provide real-time policy updates and alerts?
@@ -202,9 +202,15 @@ const Contact = () => {
               </p>
             </div>
           </details>
+        
+        
         </div>
+        
       </section>
+
     </div>
+    
+
   );
 };
 

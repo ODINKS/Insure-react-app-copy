@@ -9,7 +9,7 @@ import TEAMINVITE from './pages/auth/admin/teamInvite'
 // import Contact from './pages/Contact';
 // import Button from './components/molecules/global/Button';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { Registration } from './pages/auth/admin/Registration';
+import { Registration } from './pages/auth/admin/Registration';
 // import { Reg } from './pages/auth/admin/Reg';
 // import { RegAccount } from './pages/auth/admin/RegAccount';
 
@@ -28,9 +28,10 @@ function App() {
     
           <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route path="/about" element={<About />} /> */}
-              {/* <Route path="/about" element={<About />} /> */}
-              {/* <Route path="/contact" element={<Contact />} /> */}
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/admin-signup-one" element={<Registration />} />
+              <Route path="/admin-login" element={<Login />} />
           </Routes>
   );
 }

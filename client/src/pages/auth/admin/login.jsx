@@ -10,6 +10,9 @@ const login = () => {
         <div className="logo flex justify-center items-center">
           <img src="https://tinyurl.com/3wuh45ve" alt="INSURE LOGO" />
         </div>
+        <h1 className="font-bold mb-4 text-2xl lg:text-4xl">
+            Welcome <span className="text-[--orange-bg]">Back</span> Admin
+          </h1>
         <div className="flex flex-col w-full my-2">
           <input
             type="email"

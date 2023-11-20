@@ -58,7 +58,7 @@ const Navbar = () => {
                                 <div className="flex flex-row space-x-6 align-self-center">
                                     {/* Login */}
                                     <button className="bg-[--black-bg] border border-[--white-bg] text-[--white-text] py-3 lg:px-10 rounded-[8px] m-2 hover:bg-transparent hover:text-[--orange-hover] md:text-[1.5rem] align-self-center">
-                                        <Link to="/login">
+                                        <Link to="/admin-login">
                                             Log-In
                                         </Link>
                                     </button>

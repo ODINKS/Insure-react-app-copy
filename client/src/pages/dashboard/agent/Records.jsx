@@ -9,9 +9,9 @@ function AgentRecord() {
   const buttonStyle = 'bg-orange-500 text-white py-2 px-9 rounded mr-4 relative';
   const tableStyle = 'bg-white text-black border-collapse w-[100%] lg:w-[60%] mt-9 rounded-lg overflow-hidden relative';
   const tableHeadingStyle = 'border-b-2 p-2 font-bold border-b-2 border-gray-500 ';
-  const tableRowStyle = 'border-b-2 p-2 border-t-2 border-b-2 border-gray-500';
+  const tableRowStyle = 'p-2 border-t-2 border-gray-500';
 
-  const paginationContainerStyle = 'absolute bottom-0 right-0';
+  const paginationContainerStyle = 'absolute bottom-0 right-0 mb-[-5px]';
   const paginationStyle = 'cursor-pointer text-black px-2 py-1 hover:bg-orange-500 hover:text-white';
 
 

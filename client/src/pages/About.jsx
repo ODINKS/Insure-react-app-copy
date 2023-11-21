@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Button from '../components/molecules/global/Button'
 import Navbar from "../components/molecules/global/Navbar";
+import HeroSection from '../components/molecules/global/HeroSection';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -8,6 +9,14 @@ const About = () => {
   useEffect(() => {
     AOS.init();
   }, [])
+
+  let prop ={
+    title : "About <span className='text-orange-500'>INsure</span>",
+    description: "Welcome to INsure, your partner in revolutionizing the insurance industry! A powerful tool designed to empower insurance agents like you to excel in your profession.",
+    img : "https://res.cloudinary.com/blackadam/image/upload/q_30/Insure/about-bg_estegz.png",
+    buttonDesc : "Get Started",
+    buttonWidth : "20",
+  }
 
   return (
     <div>
@@ -17,7 +26,7 @@ const About = () => {
 
     {/* <!-- Main --> */}
     <main className="text-gray-900">
-      <section
+      {/* <section
         className="lg:object-cover lg:object-center bg-cover bg-center lg:h-[80vh] h-[70vh] w-[100%] bg-[#433A3A] flex flex-col bg-blend-overlay p-6"
         style={{backgroundImage:`url("https://res.cloudinary.com/blackadam/image/upload/q_30/Insure/about-bg_estegz.png")`}}
       >
@@ -29,13 +38,14 @@ const About = () => {
             <br />
             like you to excel in your profession.
           </p> 
-          {/* <button className="bg-orange-500 text-white p-2 rounded font-semibold text-center w-[10%]">
+          <button className="bg-orange-500 text-white p-2 rounded font-semibold text-center w-[10%]">
             Get Started
-          </button> */}
+          </button>
           <Button  description={"Get Started"} w={"20"}/>
         </div>
-      </section>
+      </section> */}
       {/* why insure */}
+      < HeroSection {...prop}/>
       <section className="py-4 bg-white">
         <div
           className="flex lg:flex-row flex-col w-[90%] mx-auto justify-between items-center p-4 my-6"

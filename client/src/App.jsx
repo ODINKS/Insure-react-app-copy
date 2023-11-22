@@ -30,16 +30,6 @@ function App() {
           {/* <AgentRecord /> */}
       </div>
     
-<<<<<<< HEAD
-          <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/admin-signup-one" element={<Registration />} />
-              <Route path="/admin-login" element={<Login />} />
-              <Route path="/dashboard/admin/Home" element={<AdminHome />} />
-          </Routes>
-=======
           // <Routes>
           //     <Route path="/" element={<Home />} />
           //     <Route path="/about" element={<About />} />
@@ -47,7 +37,6 @@ function App() {
           //     <Route path="/admin-signup-one" element={<Registration />} />
           //     <Route path="/admin-login" element={<Login />} />
           // </Routes>
->>>>>>> 64fdd337df48df1b2e6b0d3a543e3da2852355f2
   );
 }
 

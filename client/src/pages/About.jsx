@@ -4,6 +4,7 @@ import Navbar from "../components/molecules/global/Navbar";
 import HeroSection from '../components/molecules/global/HeroSection';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Footer from '../components/molecules/global/Footer';
 
 const About = () => {
   useEffect(() => {
@@ -284,140 +285,7 @@ const About = () => {
 
       
     </main>
-    <footer>
-      <div
-        className="bg-[--White0] w-full font-Lato m-auto flex flex-wrap justify-center items-center"
-      >
-        {/* <!-- upper footer --> */}
-        <div
-          className="bg-[#ff7f50] w-full rounded-b-[50px] flex flex-wrap flex-col justify-center items-center text-center py-16"
-        >
-          {/* <!-- text div --> */}
-          <div className="pb-3">
-            <h2 className="text-[30px] font-semibold">
-              Welcome to your new digital HQ
-            </h2>
-          </div>
-          {/* <!-- button div --> */}
-          <div>
-            {/* <!-- first button --> */}
-            <button
-              className="bg-[#ffffff] text-slate-800 hover:text-white hover:bg-slate-800 font-bold py-3 px-6 rounded-[8px] text-bold text-sm m-2"
-            >
-              7-DAY FREE TRIAL
-            </button>
-            {/* <!-- second button -->
-            <!-- first button --> */}
-            <button
-              className="bg-slate-800 text-white hover:bg-[--White0] hover:text-gray-900 font-bold py-3 px-8 rounded-[10px] text-bold text-sm m-2"
-            >
-              TALK TO SALES
-            </button>
-          </div>
-        </div>
-
-        {/* <!-- lower footer --> */}
-
-        <div
-          className="max-w-[90%] text-gray-900 m-auto grid lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 lg:gap-36 mt-10 md:gap-x-20 md:gap-y-4 sm:gap-12 sm:items-center sm:justify-center"
-        >
-          {/* <!-- logo grid --> */}
-          <div className="max-w-[230px] pb-10">
-            <img src="./Linkssets/Insure/1.png" alt="logo" />
-
-            {/* <!-- icons socials --> */}
-            <div
-              className="flex py-4 justify-center lg:justify-start text-[ #e76927]"
-            >
-              <ul className="flex">
-                <li>
-                  <Link to="https://www.google.com"
-                    target="_blank"
-                    className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
-                  >
-                    <i className="fa fa-twitter" style={{color: "#e76927"}}></i>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="https://www.google.com"
-                    target="_blank"
-                    className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
-                  >
-                    <i className="fa fa-instagram" style={{color: "#e76927"}}></i>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="https://www.google.com"
-                    target="_blank"
-                    className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
-                  >
-                    <i
-                      className="fa fa-facebook-square"
-                      style={{color: "#e76927"}}
-                      aria-hidden="true"
-                    ></i>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="https://www.google.com"
-                    target="_blank"
-                    className="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
-                  >
-                    <i
-                      className="fa fa-youtube-play"
-                      style={{color: "#e76927"}}
-                      aria-hidden="true"
-                    ></i>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          {/* <!-- why insure grid --> */}
-
-          <ul className="pb-10">
-            <h3 className="py-3 text-[#E76927] font-semibold text-sm">
-              WHY INSURE?
-            </h3>
-            <li className="py-[10px] px-0 text-xs">Technology</li>
-            <li className="py-[10px] px-0 text-xs">Productivity</li>
-            <li className="py-[10px] px-0 text-xs">Onboarding</li>
-          </ul>
-{/* 
-          <!-- product grid --> */}
-
-          <ul className="pb-10 lg:-mt-8 md:mt-0 text-sm">
-            <h3 className="py-3 text-[#E76927] font-semibold">PRODUCT</h3>
-            <li className="py-[10px] px-0 text-xs">Dashboard</li>
-            <li className="py-[10px] px-0 text-xs">On the go Mobility</li>
-          </ul>
-{/* 
-          <!-- price grid --> */}
-
-          <ul className="pb-10 lg:-mt-8 md:mt-0 text-sm">
-            <h3 className="py-3 text-[#E76927] font-semibold">PRICING</h3>
-            <li className="py-[10px] px-0 text-xs">Paid</li>
-            <li className="py-[10px] px-0 text-xs">7-Day Free Trial</li>
-          </ul>
-{/* 
-          <!-- company grid --> */}
-
-          <ul className="pb-10">
-            <h3 className="py-3 text-[#E76927] font-semibold text-sm">COMPANY</h3>
-            <li className="py-[10px] px-0 text-xs">About Us</li>
-            <li className="py-[10px] px-0 text-xs">Notification</li>
-            <li className="py-[10px] px-0 text-xs">Customer Support</li>
-          </ul>
-        </div>
-
-        <p className=" text-gray-900 text-sm mx-8 pb-10 text-center">
-          © 2022. All Right Reserved, INsure Technologies. A Salesforce Company.
-        </p>
-      </div>
-    </footer>
+    <Footer />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();

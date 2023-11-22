@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "../components/molecules/global/Navbar";
+import Footer from "../components/molecules/global/Footer";
 
 const Home = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
@@ -180,6 +181,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

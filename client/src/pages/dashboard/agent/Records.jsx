@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AdminSidebar from '../../../components/molecules/dashboard/AdminSidebar';
+import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar';
 
 function AgentRecord() {
   const bodyStyle = {
@@ -41,7 +41,7 @@ function AgentRecord() {
 
   return (
 <>
-    <AdminSidebar />
+    <AgentSidebar />
     <div style={bodyStyle} className=" h-screen">
     <div className={`mx-auto ml-11`} style={{ marginLeft: '20rem' }}>
       

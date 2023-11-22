@@ -174,10 +174,9 @@ const AdminHome = () => {
   </div>  
 </header>
 
-    <section className="container mx-auto mt-8">
+    <section className="container flex flex-col justify-center items-center m-8">
 
-  
-          <div className="grid grid-cols-4 gap-6 m-6">
+          <div className="grid grid-cols-4 gap-6 mb-6">
             <SalesBox title="Sales" price="456700"growth="+2.5%" />
             <SalesBox title="Clients" price="450"growth="-2.5%" />
             <SalesBox title="Conversion" price="456700"growth="+2.5%" />
@@ -186,7 +185,7 @@ const AdminHome = () => {
   
 
      
-        <div className='flex justify-evenly'>
+        <div className='flex justify-evenly w-full'>
             <div className="w-[40%] h-50 bg-white items-center">
             <BarChart chartData={chartData} />
             </div>
@@ -197,9 +196,9 @@ const AdminHome = () => {
         </div>
 
 
-      <div className="flex w-[80%] justify-center items-center align-center ">
-        {/* <h2 className='items-left'>Recent Sales</h2> */}
-        <table className="border bg-white  border-gray-300 w-full my-8">
+      <div className="flex flex-col w-[90%]">
+        <h2 className='items-left'>Recent Sales</h2>
+        <table className="border bg-white align-middle border-gray-300 w-full my-8">
           <thead>
             <tr className="rounded-lg text-grey-900 pt-6">
               <th className='pl-10'>S/N</th>
@@ -212,18 +211,24 @@ const AdminHome = () => {
           <tbody>
             <tr className='border-b pl-10'>
               <td className='pl-10'>1</td>
-              <td className='pl-10'>2</td>
-              <td className='pl-10'>3</td>
-            </tr>
-            <tr className='border-b pl-10'>
               <td className='pl-10'>MT/223/1092</td>
-              <td className='pl-10'>MT/223/1093</td>
-              <td className='pl-10'>MT/223/1094</td>
+              <td className='pl-10'>Ese Vic</td>
+              <td className='pl-10'>27/05/2023</td>
+              <td className='pl-10'>Active</td>
             </tr>
             <tr className='border-b pl-10'>
-              <td className='pl-10'> Ese Vic</td>
+              <td className='pl-10'>2</td>
+              <td className='pl-10'>MT/223/1093</td>
               <td className='pl-10'>Adewale Oluwakemi</td>
+              <td className='pl-10'>27/05/2023</td>
+              <td className='pl-10'>Active</td>
+            </tr>
+            <tr className='border-b pl-10'>
+              <td className='pl-10'>3</td>
+              <td className='pl-10'>MT/223/1094</td>
               <td className='pl-10'>Effiong Leo</td>
+              <td className='pl-10'>28/05/2023</td>
+              <td className='pl-10'>Active</td>
             </tr>
           </tbody>
         </table>

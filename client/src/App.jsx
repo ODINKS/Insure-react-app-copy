@@ -29,13 +29,13 @@ function App() {
           {/* <AgentRecord /> */}
       </div>
     
-          // <Routes>
-          //     <Route path="/" element={<Home />} />
-          //     <Route path="/about" element={<About />} />
-          //     <Route path="/contact" element={<Contact />} />
-          //     <Route path="/admin-signup-one" element={<Registration />} />
-          //     <Route path="/admin-login" element={<Login />} />
-          // </Routes>
+        //   <Routes>
+        //     //   <Route path="/" element={<Home />} />
+        //   //     <Route path="/about" element={<About />} />
+        //   //     <Route path="/contact" element={<Contact />} />
+        //   //     <Route path="/admin-signup-one" element={<Registration />} />
+        //   //     <Route path="/admin-login" element={<Login />} />
+        //   // </Routes>
   );
 }
 

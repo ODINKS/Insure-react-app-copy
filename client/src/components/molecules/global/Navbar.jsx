@@ -12,10 +12,11 @@ const Navbar = () => {
     const description = "Get Started"
     const fontSize = "text-[1.5rem]"
     const width = "0"
+    const route = "/admin-signup-one"
 
     return (
         <div>
-            <nav className="fixed w-full z-10 transition duration-500 ease-in-out py-1.5 bg-[--black-bg]">
+            <nav className="fixed w-full z-20 transition duration-500 ease-in-out py-1.5 bg-[--black-bg]">
                 <div className="flex flex-wrap items-center justify-between mx-auto p-0 w-[90%]">
                     {/* Logo */}
 
@@ -57,7 +58,7 @@ const Navbar = () => {
                                 {/* Buttons */}
                                 <div className="flex flex-row space-x-6 align-self-center">
                                     {/* Login */}
-                                    <button className="bg-[--black-bg] border border-[--white-bg] text-[--white-text] py-3 lg:px-10 rounded-[8px] m-2 hover:bg-transparent hover:text-[--orange-hover] md:text-[1.5rem] align-self-center">
+                                    <button className="bg-[--black-bg] border border-[--white-bg] text-[--white-text] py-3 lg:px-10 rounded-[8px] m-2 hover:bg-[--white-bg] hover:text-[--orange-hover] md:text-[1.5rem] align-self-center">
                                         <Link to="/admin-login">
                                             Log-In
                                         </Link>
@@ -69,7 +70,7 @@ const Navbar = () => {
                                             Get Started
                                         </Link>
                                     </button> */}
-                                    <Button description={description} width={width} fontSize={fontSize} />
+                                    <Button description={description} width={width} fontSize={fontSize} route={route} />
                                 </div>
                             </ul>
                         </div>

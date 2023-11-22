@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/molecules/global/Navbar";
+import Footer from "../components/molecules/global/Footer";
 
 const Contact = () => {
   return (
@@ -207,6 +208,7 @@ const Contact = () => {
         </div>
         
       </section>
+      <Footer />
 
     </div>
     

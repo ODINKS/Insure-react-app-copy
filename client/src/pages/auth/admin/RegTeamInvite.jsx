@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-export const RegAccount = () => {
+export const RegTeamInvite = () => {
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
       {/* Left Column */}
@@ -11,10 +11,18 @@ export const RegAccount = () => {
         </a>
         {/* Header Section */}
         <div className="mb-14 text-left">
-          <h1 className="font-bold mb-6 text-2xl lg:text-4xl">
-            Account <span className="text-red-500">setup</span> 
+            <div className='flex justify-between items-center'>
+          <h1 className="font-bold mb-4 text-xl lg:text-4xl">
+            Invite <span className="text-red-500">agents</span> 
           </h1>
-          
+          <a href='/'>Skip for later</a>
+    </div>
+          <button
+          type="submit"
+          className="sm:w-full lg:w-[30%] h-[40px] bg-orange-600 text-white py-2 px-1 rounded-md hover:bg-orange-400 mb-2"
+        >
+          + Add another
+        </button>
         </div>
         {/* Form Area */}
         <form name="signUpData" 
@@ -23,25 +31,24 @@ export const RegAccount = () => {
          
           <input
             type="email"
-            id="email"
-            name="naemailme"
-            placeholder="Company's email"
+            name="email"
+            placeholder="Add email address"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
           />
 
           <input
-            type="password"
-            name="password"
-            placeholder="Password"
+            type="email"
+            name="email2"
+            placeholder="Add email address"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
           />
           
           
           <input
-            type="password"
-            name="password"
-            placeholder="Confirm password"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            type="email"
+            name="email3"
+            placeholder="Add email address"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-16"
           />
           {/* back and continue  button */}
           <div className="flex justify-between flex-col lg:flex-row w-full mt-6">
@@ -55,7 +62,7 @@ export const RegAccount = () => {
           type="submit"
           className="sm:w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
         >
-          Continue
+          Proceed
         </button>
       </div>
          
@@ -67,5 +74,5 @@ export const RegAccount = () => {
         style={{ backgroundImage: 'url("https://euvola.sirv.com/Images/Multiethnic%20leaders%20greeting%20each%20other%20in%20city.png")' }}
       ></div>
     </main>
-  );
-};
+  )
+}

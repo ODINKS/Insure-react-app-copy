@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Login from './pages/auth/admin/login'
+import AdminHome from './pages/dashboard/admin/Home';
 import Reset from './pages/auth/admin/reset'
 import TEAMINVITE from './pages/auth/admin/teamInvite'
 // import Navbar from './components/molecules/global/Navbar';
@@ -32,6 +33,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin-signup-one" element={<Registration />} />
               <Route path="/admin-login" element={<Login />} />
+              <Route path="/dashboard/admin/Home" element={<AdminHome />} />
           </Routes>
   );
 }

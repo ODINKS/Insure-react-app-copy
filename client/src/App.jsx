@@ -11,6 +11,8 @@ import TEAMINVITE from './pages/auth/admin/teamInvite'
 // import Button from './components/molecules/global/Button';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Registration } from './pages/auth/admin/Registration';
+import AdminSidebar from './components/molecules/dashboard/AdminSidebar';
+import AgentSidebar from './components/molecules/dashboard/AgentSidebar';
 // import { Reg } from './pages/auth/admin/Reg';
 // import { RegAccount } from './pages/auth/admin/RegAccount';
 
@@ -21,10 +23,12 @@ function App() {
   return (
       // <div>
       //     {/* <Navbar /> */}
-      // <Home />
+      // {/* <Home /> */}
       //     {/* <div className='w-full h-[90vh] flex justify-center items-center'>
       //         <h1 className='text-4xl text-[--black-text]'>Welcome</h1>
       //     </div> */}
+      //     {/* <AdminSidebar /> */}
+      //     {/* <AgentSidebar /> */}
       // </div>
     
           <Routes>

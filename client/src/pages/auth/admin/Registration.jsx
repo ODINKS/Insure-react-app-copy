@@ -4,13 +4,13 @@ export const Registration = () => {
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
       {/* Left Column */}
-      <div className="mx-auto lg:w-[50%] h-screen flex flex-col justify-center items-center p-6">
+      <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
         {/* Logo */}
         <a href="index.html">
-          <img src="https://tinyurl.com/3wuh45ve" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
+          <img src="./assets/Insure/INsure.png" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
         </a>
         {/* Header Section */}
-        <div className="text-center">
+        <div className="">
           <h1 className="font-bold mb-4 text-2xl lg:text-4xl">
             Register <span className="text-red-500">with</span> INsure
           </h1>
@@ -20,8 +20,8 @@ export const Registration = () => {
         </div>
         {/* Form Area */}
         <form name="signUpData" 
-        // onSubmit={(event) => signUP(event)}
-         className="flex flex-col w-full">
+        // onSubmit={(event) => signUP(event)} 
+        className="flex flex-col w-full">
           {/* Company name */}
           <input
             type="text"

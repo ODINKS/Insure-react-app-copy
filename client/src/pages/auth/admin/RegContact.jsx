@@ -1,16 +1,16 @@
 import React from 'react';
 
-export const Reg = () => {
+export const RegContact = () => {
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
       {/* Left Column */}
-      <div className="mx-auto lg:w-[50%] h-screen flex flex-col justify-center items-center p-6">
+      <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
         {/* Logo */}
         <a href="index.html">
           <img src="./assets/Insure/INsure.png" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
         </a>
         {/* Header Section */}
-        <div className="text-center">
+        <div className="">
           <h1 className="font-bold mb-4 text-2xl lg:text-4xl">
             Contact <span className="text-red-500">details</span>
           </h1>
@@ -54,7 +54,7 @@ export const Reg = () => {
         
           <button
             type="submit"
-            className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
+            className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mt-8"
             id="register-button"
           >
             Continue

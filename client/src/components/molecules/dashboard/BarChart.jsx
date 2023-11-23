@@ -1,9 +1,11 @@
 // components/BarChart.js
 import { Bar } from "react-chartjs-2";
-export const BarChart = ({ chartData }) => {
+export const BarChart = (props) => {
+  const {chartData, topic} = props
+
   return (
     <div className="chart-container">
-      <h2 style={{ textAlign: "center" }}>Bar Chart</h2>
+      <h2 className="text-left font-bold">{topic}</h2>
       <Bar
         data={chartData}
         options={{

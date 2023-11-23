@@ -9,12 +9,12 @@ import { BarChart } from '../../../components/molecules/dashboard/BarChart';
 import { Link } from 'react-router-dom';
 import AdminSidebar from '../../../components/molecules/dashboard/AdminSidebar';
 import Track from '../../../components/molecules/dashboard/Track';
-
-
-
+import NotificationBar from '../../../components/molecules/dashboard/NotificationBar';
 
 
 Chart.register(CategoryScale);
+
+
 
 const AdminHome = () => {
 
@@ -145,42 +145,12 @@ const AdminHome = () => {
       {/* <!-- hamburger menu --> */}
 
       {/* <!-- dashboard header --> */}
-    <div class="flex flex-col md:flex-row md:justify-between items-center md:items-end md:gap-8 lg:gap-96">
-      <div id="greetings" class="flex flex-shrink-0 md:text-3xl font-semibold mb-2">Welcome Back Mike</div>
-            
-      <div class="flex space-x-3 md:ml-60">
-            
-        {/* <!-- Notification icons --> */}
-        {/* <!-- <div class="border-l pl-3 ml-3 space-x-1"> --> */}
-          <button class="relative p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 rounded-full">
-              <span class="sr-only">Message Notifications</span>
-              <span class="absolute top-0 right-0 h-2 w-2 mt-1 mr-2 bg-red-500 rounded-full"></span>
-              <span class="absolute top-0 right-0 h-2 w-2 mt-1 mr-2 bg-red-500 rounded-full animate-ping"></span>
-              <svg width="29" height="24" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.83333 2.83333H25.5V19.8333H4.49083L2.83333 21.4908V2.83333ZM2.83333 0C1.275 0 0.0141667 1.275 0.0141667 2.83333L0 28.3333L5.66667 22.6667H25.5C27.0583 22.6667 28.3333 21.3917 28.3333 19.8333V2.83333C28.3333 1.275 27.0583 0 25.5 0H2.83333ZM5.66667 14.1667H22.6667V17H5.66667V14.1667ZM5.66667 9.91667H22.6667V12.75H5.66667V9.91667ZM5.66667 5.66667H22.6667V8.5H5.66667V5.66667Z" fill="#111111"/>
-              </svg>
-          </button>
-          
-          <button class="relative p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 rounded-full">
-              <span class="sr-only">Bell Notifications</span>
-              <span class="absolute top-1 right-0 h-2 w-2 mt-1 mr-3 bg-red-500 rounded-full"></span>
-              <span class="absolute top-1 right-0 h-2 w-2 mt-1 mr-3 bg-red-500 rounded-full animate-ping"></span>
-              <svg width="29" height="24" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M31 27.1003L30.6463 26.7918C29.6429 25.9081 28.7646 24.8947 28.0352 23.7789C27.2386 22.2391 26.7612 20.5576 26.6309 18.8329V13.7532C26.6266 13.1362 26.571 12.5206 26.4644 11.9126C24.7023 11.5546 23.1195 10.6057 21.984 9.22651C20.8485 7.84734 20.23 6.12267 20.2332 4.34447C20.2332 4.12853 20.2332 3.9126 20.2332 3.69666C19.1471 3.16832 17.9802 2.82088 16.7795 2.66838V1.37275C16.7795 1.00867 16.6332 0.65951 16.3728 0.402069C16.1123 0.144629 15.7591 0 15.3908 0C15.0225 0 14.6692 0.144629 14.4088 0.402069C14.1483 0.65951 14.002 1.00867 14.002 1.37275V2.71979C11.3137 3.09466 8.85328 4.41825 7.0751 6.4462C5.29691 8.47416 4.32099 11.0696 4.32752 13.7532V18.8329C4.19723 20.5576 3.71977 22.2391 2.92315 23.7789C2.20629 24.8919 1.34215 25.9051 0.353691 26.7918L0 27.1003V30H31V27.1003Z" fill="#111111"/>
-              </svg>
-          </button>
-          
-          <button class="relative p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 rounded-full">
-              <span class="sr-only">Profile Picture</span>
-              <img src="https://tinyurl.com/48ffmsy8" alt="User" class="h-7 w-7" />
-          </button>
-      </div>
-  </div>  
+      <NotificationBar topic={"Welcome back Mike"}/>
 </header>
 
-    <section className="container max-w-5xl mx-auto flex flex-col justify-center items-center m-8">
+    <section className="container max-w-5xl mx-auto flex flex-col justify-center items-center">
 
-          <div className="grid grid-cols-4 gap-8 mb-6">
+          <div className="grid grid-cols-4 gap-8 mb-6 ">
             <SalesBox title="Sales" price="456700"growth="+2.5%" />
             <SalesBox title="Clients" price="450"growth="-2.5%" />
             <SalesBox title="Conversion" price="456700"growth="+2.5%" />
@@ -190,11 +160,11 @@ const AdminHome = () => {
 
      
         <div className='flex justify-evenly mx-auto w-full'>
-            <div className="w-[48%] px-5 bg-white py-20 items-center">
+            <div className="w-[48%] px-5 bg-white py-20 items-center rounded-md">
             <BarChart chartData={chartData} topic={"Monthly Revenue"}/>
             </div>
 
-            <div className="w-[48%] bg-white">
+            <div className="w-[48%] bg-white rounded-md">
             <PieChart chartData={chartData}/>
             </div>
         </div>

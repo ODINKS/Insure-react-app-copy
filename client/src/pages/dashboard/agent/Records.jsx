@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar';
+import NotificationBar from '../../../components/molecules/dashboard/NotificationBar';
 
 function AgentRecord() {
   const bodyStyle = {
@@ -8,7 +9,7 @@ function AgentRecord() {
   };
 
   const buttonStyle = 'bg-orange-500 text-white py-2 px-9 rounded mr-4 relative';
-  const tableStyle = 'bg-white text-black text-sm border-collapse w-[100%] lg:w-[80%] lg:h-[80%] mt-16 rounded-lg overflow-hidden relative';
+  const tableStyle = 'bg-white text-black text-sm border-collapse w-[100%] lg:w-[95%] lg:h-[80%] mt-16 rounded-lg overflow-hidden relative';
   const tableHeadingStyle = 'border-b-2 p-2 font-semi-bold text-lg border-b-2 border-gray-500 ';
   const tableRowStyle = ' p-2 border-t-2 border-gray-500';
 
@@ -43,6 +44,7 @@ function AgentRecord() {
 <>
     <AgentSidebar />
     <div style={bodyStyle} className=" h-screen">
+    <NotificationBar />
     <div className={`mx-auto ml-11`} style={{ marginLeft: '20rem' }}>
       
         <button className={buttonStyle}>PDF</button>

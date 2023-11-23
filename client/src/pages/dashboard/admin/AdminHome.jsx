@@ -13,9 +13,11 @@ import Track from '../../../components/molecules/dashboard/Track';
 
 
 
+
 Chart.register(CategoryScale);
 
 const AdminHome = () => {
+
   const [chartData, setChartData] = useState({
     labels: Data.map((data) => data.year), 
     datasets: [

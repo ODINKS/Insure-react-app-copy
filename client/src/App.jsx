@@ -15,30 +15,34 @@ import AdminSidebar from './components/molecules/dashboard/AdminSidebar';
 import AgentSidebar from './components/molecules/dashboard/AgentSidebar';
 // import { Reg } from './pages/auth/admin/Reg';
 // import { RegAccount } from './pages/auth/admin/RegAccount';
+import AdminRecord from './pages/dashboard/admin/Records';
+import AgentRecord from './pages/dashboard/agent/Records';
 
 
 
 
 function App() {
   return (
-      // <div>
-      //     {/* <Navbar /> */}
-      // {/* <Home /> */}
-      //     {/* <div className='w-full h-[90vh] flex justify-center items-center'>
-      //         <h1 className='text-4xl text-[--black-text]'>Welcome</h1>
-      //     </div> */}
-      //     {/* <AdminSidebar /> */}
-      //     {/* <AgentSidebar /> */}
-      // </div>
+      <div>
+          {/* <Navbar /> */}
+      {/* <Home /> */}
+          {/* <div className='w-full h-[90vh] flex justify-center items-center'>
+              <h1 className='text-4xl text-[--black-text]'>Welcome</h1>
+          </div> */}
+          {/* <AdminSidebar /> */}
+          {/* <AgentSidebar /> */}
+          <AgentRecord />
+          <AdminRecord />
+      </div>
     
-          <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/admin-signup-one" element={<Registration />} />
-              <Route path="/admin-login" element={<Login />} />
-              <Route path="/dashboard/admin/Home" element={<AdminHome />} />
-          </Routes>
+          // <Routes>
+          //     <Route path="/" element={<Home />} />
+          //     <Route path="/about" element={<About />} />
+          //     <Route path="/contact" element={<Contact />} />
+          //     <Route path="/admin-signup-one" element={<Registration />} />
+          //     <Route path="/admin-login" element={<Login />} />
+          //     <Route path="/dashboard/admin/Home" element={<AdminHome />} />
+          // </Routes>
   );
 }
 

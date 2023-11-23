@@ -6,7 +6,9 @@ import { Data } from '../../../utils/Data';
 import { useState } from 'react'
 import PieChart from '../../../components/molecules/dashboard/PieChart';
 import { BarChart } from '../../../components/molecules/dashboard/BarChart';
-
+import { Link } from 'react-router-dom';
+import AdminSidebar from '../../../components/molecules/dashboard/AdminSidebar';
+import Track from '../../../components/molecules/dashboard/Track';
 
 
 
@@ -39,9 +41,9 @@ const AdminHome = () => {
         <body className="flex bg-gray-100 min-h-screen">
   {/* <!-- sidebar navigation --> */}
   <aside className="hidden sm:flex sm:flex-col bg-white shadow md:h-screen sticky top-0">
-    <a href="#" class="inline-flex items-center justify-center h-20 w-30">
-      <img src="https://tinyurl.com/3wuh45ve" alt="Insure" class="h-10 w-15" />
-    </a>
+    <Link to="/" className="inline-flex items-center justify-center h-20 w-30 cursor-pointer">
+      <img src="https://tinyurl.com/3wuh45ve" alt="Insure" class="h-10 w-15 cursor-pointer"  />
+    </Link>
     <div className="flex-grow flex flex-col justify-between text-gray-500 bg-white shadow">
       <nav className="flex flex-col mx-9 my-6 space-y-4">
         <a href="./homeAdminDashboard.html" className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-100 focus:bg-gray-200  rounded-lg">
@@ -117,14 +119,14 @@ const AdminHome = () => {
             </svg>         
             <div class="text-blue-600 text-lg ml-2">Settings</div>  
         </a>
-        <a href="#" id="logoutAdmin" class="inline-flex items-center justify-center hover:text-gray-400 hover:bg-gray-100 focus:bg-gray-200  rounded-lg">
+        <Link to="/" class="inline-flex items-center justify-center hover:text-gray-400 hover:bg-gray-100 focus:bg-gray-200  rounded-lg">
             <span class="sr-only">Log out</span>
             <svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17.9171 21.9835C17.9076 22.4648 17.8304 22.9385 17.69 23.3765C17.5496 23.8144 17.349 24.2077 17.0999 24.5329C16.8509 24.8581 16.5585 25.1087 16.2402 25.2696C15.922 25.4306 15.5842 25.4987 15.2472 25.4699C13.1415 25.4867 11.0358 25.4699 8.93017 25.4699C8.80048 25.4699 8.67609 25.3965 8.58439 25.2657C8.49268 25.1349 8.44116 24.9576 8.44116 24.7726C8.44116 24.5877 8.49268 24.4103 8.58439 24.2796C8.67609 24.1488 8.80048 24.0753 8.93017 24.0753C11.0818 24.0753 13.2334 24.12 15.3851 24.0753C16.4677 24.053 16.9391 22.8927 16.9391 21.5121V4.13142C16.9467 3.69249 16.8601 3.26074 16.6909 2.8939C16.5217 2.52706 16.278 2.24261 15.9924 2.07859C15.6547 1.94719 15.3034 1.90234 14.9547 1.94611H8.93017C8.80048 1.94611 8.67609 1.87264 8.58439 1.74187C8.49268 1.61111 8.44116 1.43375 8.44116 1.24882C8.44116 1.06388 8.49268 0.886524 8.58439 0.755756C8.67609 0.624989 8.80048 0.551525 8.93017 0.551525C11.1053 0.551525 13.297 0.432985 15.4701 0.551525C15.8029 0.563526 16.1307 0.669782 16.4344 0.864111C16.7382 1.05844 17.0118 1.33696 17.2393 1.68347C17.4668 2.02997 17.6437 2.43754 17.7598 2.88246C17.8758 3.32738 17.9286 3.80076 17.9152 4.27506L17.9171 21.9835Z" fill="#6495ED"/>
               <path d="M0.516311 12.5211C0.433681 12.6353 0.385307 12.7908 0.381346 12.9548C0.381346 12.9757 0.381346 12.9938 0.375478 13.0148C0.369609 13.0357 0.375478 13.0524 0.381346 13.0719C0.385259 13.2364 0.433621 13.3923 0.516311 13.507L4.10464 18.6238C4.19687 18.7508 4.32039 18.8211 4.44861 18.8195C4.57682 18.8179 4.69947 18.7446 4.79014 18.6153C4.8808 18.486 4.93223 18.3111 4.93335 18.1283C4.93446 17.9455 4.88517 17.7693 4.79609 17.6378L2.04299 13.7107H12.5488C12.6785 13.7107 12.8029 13.6372 12.8946 13.5064C12.9863 13.3757 13.0378 13.1983 13.0378 13.0134C13.0378 12.8284 12.9863 12.6511 12.8946 12.5203C12.8029 12.3895 12.6785 12.3161 12.5488 12.3161H2.04299L4.79609 8.38892C4.88517 8.25741 4.93446 8.08127 4.93335 7.89845C4.93223 7.71562 4.8808 7.54073 4.79014 7.41145C4.69947 7.28216 4.57682 7.20883 4.44861 7.20724C4.32039 7.20565 4.19687 7.27594 4.10464 7.40295L0.516311 12.5211Z" fill="#6495ED"/>
             </svg>       
           <div class=" text-blue-600 text-lg ml-2" >Log Out</div>           
-      </a>      
+      </Link>      
     </div>
   </aside>
   {/* <!-- end of sidebar navigation --> */}
@@ -174,9 +176,9 @@ const AdminHome = () => {
   </div>  
 </header>
 
-    <section className="container flex flex-col justify-center items-center m-8">
+    <section className="container max-w-5xl mx-auto flex flex-col justify-center items-center m-8">
 
-          <div className="grid grid-cols-4 gap-6 mb-6">
+          <div className="grid grid-cols-4 gap-8 mb-6">
             <SalesBox title="Sales" price="456700"growth="+2.5%" />
             <SalesBox title="Clients" price="450"growth="-2.5%" />
             <SalesBox title="Conversion" price="456700"growth="+2.5%" />
@@ -185,55 +187,18 @@ const AdminHome = () => {
   
 
      
-        <div className='flex justify-evenly w-full'>
-            <div className="w-[40%] h-50 bg-white items-center">
-            <BarChart chartData={chartData} />
+        <div className='flex justify-evenly mx-auto w-full'>
+            <div className="w-[48%] px-5 bg-white py-20 items-center">
+            <BarChart chartData={chartData} topic={"Monthly Revenue"}/>
             </div>
 
-            <div className="w-[40%] h-50 bg-white">
+            <div className="w-[48%] bg-white">
             <PieChart chartData={chartData}/>
             </div>
         </div>
 
 
-      <div className="flex flex-col w-[90%]">
-        <h2 className='items-left'>Recent Sales</h2>
-        <table className="border bg-white align-middle border-gray-300 w-full my-8">
-          <thead>
-            <tr className="rounded-lg text-grey-900 pt-6">
-              <th className='pl-10'>S/N</th>
-              <th className='pl-10'>Policy No.</th>
-              <th className='pl-10'>Name</th>
-              <th className='pl-10'>Date</th>
-              <th className='pl-10'>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className='border-b pl-10'>
-              <td className='pl-10'>1</td>
-              <td className='pl-10'>MT/223/1092</td>
-              <td className='pl-10'>Ese Vic</td>
-              <td className='pl-10'>27/05/2023</td>
-              <td className='pl-10'>Active</td>
-            </tr>
-            <tr className='border-b pl-10'>
-              <td className='pl-10'>2</td>
-              <td className='pl-10'>MT/223/1093</td>
-              <td className='pl-10'>Adewale Oluwakemi</td>
-              <td className='pl-10'>27/05/2023</td>
-              <td className='pl-10'>Active</td>
-            </tr>
-            <tr className='border-b pl-10'>
-              <td className='pl-10'>3</td>
-              <td className='pl-10'>MT/223/1094</td>
-              <td className='pl-10'>Effiong Leo</td>
-              <td className='pl-10'>28/05/2023</td>
-              <td className='pl-10'>Active</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+        <Track topic={"Recent Sales"} />
     </section>
 </div>
 

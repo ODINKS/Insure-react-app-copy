@@ -1,10 +1,11 @@
 import React from 'react'
 
 const NotificationBar = (props) => {
+    const {topic} = props
     return (
         <>
-            <nav className='w-full flex justify-between px-12 py-5 gap-7 md:gap-10 lg:gap-18 bg-transparent'>
-            <div id="greetings" class=" md:text-3xl font-semibold mb-2">{props.topic}</div>
+            <nav className='w-full flex justify-between pr-12 pl-0 py-5 gap-7 md:gap-10 lg:gap-18 bg-transparent'>
+            <div id="greetings" class=" md:text-3xl font-semibold mb-2">{topic || ""}</div>
                 <div className='flex justify-between gap-7 md:gap-10 lg:gap-18'>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">

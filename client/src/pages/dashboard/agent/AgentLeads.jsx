@@ -6,13 +6,13 @@ const AgentLeads = () => {
     <>
       {/* agent sidebar component */}
 
-      <AgentSidebar />
+      {/* <AgentSidebar /> */}
 
       {/* leads section */}
-      <section className="bg-blue-100 h-screen w-screen flex flex-wrap">
+      <section className="bg-blue-100 h-screen w-full flex flex-wrap">
         {/* new leads */}
-        <div className="flex flex-wrap justify-start ml-[20rem] bg-purple-400">
-          <div className="bg-[--white-bg] m-2  mt-4 w-[18rem] h-auto rounded-md shadow-md absolute">
+        <div className="flex flex-wrap justify-start w-full">
+          <div className="bg-[--white-bg] m-2  mt-4 w-[18rem] h-auto rounded-md shadow-md">
             <h4 className="text-[#111111] bg-yellow-200 w-full uppercase text-center p-2">
               New Leads
             </h4>

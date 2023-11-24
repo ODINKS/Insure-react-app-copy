@@ -14,6 +14,7 @@ import { Registration } from './pages/auth/admin/Registration';
 import AdminSidebar from './components/molecules/dashboard/AdminSidebar';
 import AgentSidebar from './components/molecules/dashboard/AgentSidebar';
 import Pricing from './pages/Pricing';
+import Features from './pages/Features';
 // import login from './pages/auth/admin/login';
 // import { Reg } from './pages/auth/admin/Reg';
 // import { RegAccount } from './pages/auth/admin/RegAccount';
@@ -26,7 +27,8 @@ function App() {
     return (
     //   <div>
     //       {/* <Navbar /> */}
-    //   {/* <Home /> */}
+    //      {/* <Home /> */}
+    //      {/* <Features /> */}
     //       {/* <div className='w-full h-[90vh] flex justify-center items-center'>
     //           <h1 className='text-4xl text-[--black-text]'>Welcome</h1>
     //       </div> */}
@@ -38,15 +40,16 @@ function App() {
 
     
           <Routes>
-              {/* <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin-signup-one" element={<Registration />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/features" element={<Features />} />
               <Route path="/admin-login" element={<Login />} />
               <Route path="/dashboard/admin/Home" element={<AdminHome />} />
               <Route path="/dashboard/agent/Home" element={<AgentHome />} />
-               <Route path="/" element={<Button />} /> */}
+               {/* <Route path="/" element={<Button />} /> */}
           </Routes>
     );
 }

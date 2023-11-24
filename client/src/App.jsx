@@ -61,22 +61,23 @@ function App() {
           {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<SettingsNav />} dashboardBody={<AgentSettings />} /> */}
 
           {/* Agent Leads */}
-          {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} /> */}
-        </div>
+          
+          <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} />
+        </div> 
 
 
-        //   <Routes>
-        //       <Route path="/" element={<Home />} />
-        //       <Route path="/about" element={<About />} />
-        //       <Route path="/contact" element={<Contact />} />
-        //       <Route path="/admin-signup-one" element={<Registration />} />
-        //       <Route path="/pricing" element={<Pricing />} />
-        //       <Route path="/features" element={<Features />} />
-        //       <Route path="/admin-login" element={<Login />} />
-        //       <Route path="/dashboard/admin/Home" element={<AdminHome />} />
-        //       <Route path="/dashboard/agent/Home" element={<AgentHome />} />
-        //        {/* <Route path="/" element={<Button />} /> */}
-        //   </Routes>
+          // <Routes>
+          //     <Route path="/" element={<Home />} />
+          //     <Route path="/about" element={<About />} />
+          //     <Route path="/contact" element={<Contact />} />
+          //     <Route path="/admin-signup-one" element={<Registration />} />
+          //     <Route path="/pricing" element={<Pricing />} />
+          //     <Route path="/features" element={<Features />} />
+          //     <Route path="/admin-login" element={<Login />} />
+          //     <Route path="/dashboard/admin/Home" element={<AdminHome />} />
+          //     <Route path="/dashboard/agent/Home" element={<AgentHome />} />
+          //      {/* <Route path="/" element={<Button />} /> */}
+          // </Routes>
     );
 }
 

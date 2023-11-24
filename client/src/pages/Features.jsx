@@ -8,10 +8,10 @@ const Features = () => {
         <div>
             <Navbar />
             <div>
-                // features hero sections
+                {/* // features hero sections */}
                 
                 <div className="lg:object-cover lg:object-center bg-cover bg-center lg:h-[100vh] h-[100vh] w-[100%] bg-[#433A3A] flex flex-col bg-blend-overlay p-6"
-                    style="background-image: url('./images/image\ 13.png')">
+                    style={{backgroundImage: `url("https://tinyurl.com/2e3e32fw")`}}>
                     <div className="flex justify-between items-center h-full">
                         <div className="text-white ml-12 font-lato">
                             <h1 className="text-7xl font-bold mb-12">
@@ -22,11 +22,11 @@ const Features = () => {
                                 Dive into our diverse range of offerings, uncover tailored solutions,
                                 and navigate through innovative features designed for your peace of mind
                             </p>
-                            <Button  description={"Get Started"} w={"20"}/>
+                            <Button  description="Get Started" width="20"/>
                         </div>
                     </div>
                 </div>
-                // second section
+                {/* // second section */}
         
                 <div className="flex h-screen justify-between">
                     <div className="my-auto ">
@@ -35,7 +35,7 @@ const Features = () => {
                             <p className="w-[80%] font-semibold">Insure has a wide range of tools to help you manage your organization team</p>
                             <div className="flex space-x-9">
                                 <div className="my-6 flex space-x-3">
-                                    <img src="/images/features page img/Learn More icon.png" alt="learn more icon" />
+                                    <img src="https://tinyurl.com/yc3r8es9" alt="learn more icon" />
                                     <div className="font-bold text-sky-800">See INsure in Action</div>
                                 </div>
                             </div>
@@ -46,10 +46,10 @@ const Features = () => {
                         <img src="/images/features page img/feature 1.jpg" alt="insure features" />
                     </div>
                 </div>
-                // third section
+                {/* Third section */}
         
                 <div className="flex">
-                    <img src="/images/features page img/features 3.png" alt="" />
+                    <img src="https://tinyurl.com/3jsnv8hb" alt="" />
                     <div className="my-auto mx-auto text-xl">
                         <p className="text-5xl mb-6 font-bold">Customer <span class="text-orange-500">Data</span> Security</p>
                         <ul className="list-disc ml-8">
@@ -62,7 +62,7 @@ const Features = () => {
                         </ul>
                     </div>
                 </div>
-                //fourth section
+                {/* //fourth section */}
                 
                 <div className="flex justify-between">
                     <div className="mx-auto my-auto w-[549px] text-xl">
@@ -77,14 +77,14 @@ const Features = () => {
                         </ul>
                     </div>
                     <div>
-                        <img src="/images/features page img/features 4.png" alt="" />
+                        <img src="https://tinyurl.com/4svdfh94" alt="" />
                     </div>
                 </div>
-                //fifth section
+                {/* //fifth section */}
                 
                 <div className="flex justify-between bg-indigo-100">
                     <div className="ml-12 my-auto">
-                        <img className="w-[800px] h-[500px]" src="/images/features page img/features 5.png" alt="" />
+                        <img className="w-[800px] h-[500px]" src="https://tinyurl.com/4sw3ywj2" alt="" />
                     </div>
                     <div className="my-auto mx-auto text-xl">
                         <p className="text-5xl mb-6 font-bold">Analytics <span class="text-orange-500">and</span> Reporting</p>

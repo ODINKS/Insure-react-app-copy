@@ -1,13 +1,20 @@
 import React from "react";
 import Navbar from "../components/molecules/global/Navbar";
 import Footer from "../components/molecules/global/Footer";
+import HeroSection from "../components/molecules/global/HeroSection";
 
 const Contact = () => {
+  const title = "Stay <span className='text-orange-500'>in</span> Touch"
+  const description = "At INsure, we're here to provide you with peace of mind and unparalleled service. Whether you have questions, need assistance, or want to discuss your insurance-related needs, our dedicated team is ready to assist you."
+  const img = "https://tinyurl.com/48ffmsy8"
+  const buttonDesc = "Get Started"
+  // const buttonWidth = "20"
+
   return (
     <div className="font-Lato" style={{ fontFamily: 'Lato' }}>
-      {/* HERO SECTION */}
       <Navbar />
-      <div
+      {/* HERO SECTION */}
+      {/* <div
         className="h-screen bg-cover "
         style={{
           backgroundImage:
@@ -32,7 +39,8 @@ const Contact = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
+      < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} />
       {/* {get-in-touch section} */}
       <section className="bg-white-200 py-16 text-left ml-60">
         <div className="container mx-auto">
@@ -203,15 +211,15 @@ const Contact = () => {
               </p>
             </div>
           </details>
-        
-        
+
+
         </div>
-        
+
       </section>
       <Footer />
 
     </div>
-    
+
 
   );
 };

@@ -2,15 +2,21 @@ import React from 'react'
 import Button from '../components/molecules/global/Button'
 import Navbar from "../components/molecules/global/Navbar";
 import Footer from "../components/molecules/global/Footer"
+import HeroSection from '../components/molecules/global/HeroSection';
 
 const Features = () => {
+    const title = "Explore <span class='text-orange-500>our</span> Features"
+    const description = "Explore INsure's Dynamic Features, Elevating Your Insurance Experience. Dive into our diverse range of offerings, uncover tailored solutions, and navigate through innovative features designed for your peace of mind"
+    const img = "https://tinyurl.com/2e3e32fw"
+    const buttonDesc = "Get Started"
+
     return (
         <div>
             <Navbar />
             <div>
                 {/* // features hero sections */}
-                
-                <div className="lg:object-cover lg:object-center bg-cover bg-center lg:h-[100vh] h-[100vh] w-[100%] bg-[#433A3A] flex flex-col bg-blend-overlay p-6"
+
+                {/* <div className="lg:object-cover lg:object-center bg-cover bg-center lg:h-[100vh] h-[100vh] w-[100%] bg-[#433A3A] flex flex-col bg-blend-overlay p-6"
                     style={{backgroundImage: `url("https://tinyurl.com/2e3e32fw")`}}>
                     <div className="flex justify-between items-center h-full">
                         <div className="text-white ml-12 font-lato">
@@ -25,9 +31,10 @@ const Features = () => {
                             <Button  description="Get Started" width="20"/>
                         </div>
                     </div>
-                </div>
+                </div> */}
+                < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} />
                 {/* // second section */}
-        
+
                 <div className="flex h-screen justify-between">
                     <div className="my-auto ">
                         <p className=" w-[533.99px] h-[200.41px] text-sky-800 text-[42px] ml-20 leading-tight font-bold">Collaborate with team, manage your agent and track your leads</p>
@@ -47,7 +54,7 @@ const Features = () => {
                     </div>
                 </div>
                 {/* Third section */}
-        
+
                 <div className="flex">
                     <img src="https://tinyurl.com/3jsnv8hb" alt="" />
                     <div className="my-auto mx-auto text-xl">
@@ -63,7 +70,7 @@ const Features = () => {
                     </div>
                 </div>
                 {/* //fourth section */}
-                
+
                 <div className="flex justify-between">
                     <div className="mx-auto my-auto w-[549px] text-xl">
                         <p className="text-5xl mb-6 font-bold">Getting <span class="text-orange-500">Started</span> Videos</p>
@@ -81,7 +88,7 @@ const Features = () => {
                     </div>
                 </div>
                 {/* //fifth section */}
-                
+
                 <div className="flex justify-between bg-indigo-100">
                     <div className="ml-12 my-auto">
                         <img className="w-[800px] h-[500px]" src="https://tinyurl.com/4sw3ywj2" alt="" />

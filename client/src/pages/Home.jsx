@@ -35,8 +35,8 @@ const Home = () => {
   };
 
   let buttonDesc = "Contact Us";
-  let buttonWidth = "10";
-  let size = "10"
+  // let buttonWidth = "10";
+  // let size = "10"
 
   return (
     <>
@@ -61,7 +61,7 @@ const Home = () => {
                 cutting-edge sales management tool.
               </p>
 
-              <Button description={buttonDesc} width={buttonWidth} fontSize={size} />
+              <Button description={buttonDesc} />
             </div>
           </div>
         </div>

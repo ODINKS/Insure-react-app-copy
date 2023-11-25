@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
     const description = "Get Started"
-    const fontSize = "text-[1.5rem]"
+    const fontSize = "md:text-[1.125rem]"
     const width = "0"
     const route = "/admin-signup-one"
 
@@ -37,28 +37,28 @@ const Navbar = () => {
                             <ul className="flex flex-col lg:items-center font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-12 md:mt-0 md:mr-0 lg:mr-22 ">
                                 {/* Home */}
                                 <li>
-                                    <Link to="/" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.5rem]" aria-current="page">Home</Link>
+                                    <Link to="/" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem]" aria-current="page">Home</Link>
                                 </li>
                                 {/* About */}
                                 <li>
-                                    <Link to="/about" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] hover:bg-[ --Blue2] text-base md:hover:bg-transparent md:border-0 hover:bg-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.5rem]">About</Link>
+                                    <Link to="/about" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] hover:bg-[ --Blue2] text-base md:hover:bg-transparent md:border-0 hover:bg-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.125rem]">About</Link>
                                 </li>
                                 {/* Contact */}
                                 <li>
-                                    <Link to="/contact" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] dark:hover:bg-gray-700 dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.5rem]">Contact</Link>
+                                    <Link to="/contact" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] dark:hover:bg-gray-700 dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.125rem]">Contact</Link>
                                 </li>
                                 {/* Pricing */}
                                 <li>
-                                    <Link to="/pricing" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.5rem]" >Pricing</Link>
+                                    <Link to="/pricing" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.125rem]" >Pricing</Link>
                                 </li>
                                 {/* Features */}
                                 <li>
-                                    <Link to="/features" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] dark:hover:text-white md:dark:hover:bg-transparent md:text-[1.5rem]">Features</Link>
+                                    <Link to="/features" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] dark:hover:text-white md:dark:hover:bg-transparent md:text-[1.125rem]">Features</Link>
                                 </li>
                                 {/* Buttons */}
                                 <div className="flex flex-row space-x-6 align-self-center">
                                     {/* Login */}
-                                    <button className="bg-[--black-bg] border border-[--white-bg] text-[--white-text] py-3 lg:px-10 rounded-[8px] m-2 hover:bg-[--white-bg] hover:text-[--orange-hover] md:text-[1.5rem] align-self-center">
+                                    <button className="bg-[--black-bg] border border-[--white-bg] text-[--white-text] py-3 lg:px-10 rounded-[8px] m-2 hover:bg-[--white-bg] hover:text-[--orange-hover] align-self-center md:text-[1.125rem]">
                                         <Link to="/admin-login">
                                             Log-In
                                         </Link>

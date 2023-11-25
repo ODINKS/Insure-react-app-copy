@@ -86,7 +86,7 @@ const AdminTeams = () => {
                     <button className="bg-orange-500 text-white px-4 py-1 rounded">
                       {row.status}
                     </button>
-                    {/* <Button description={row.status} /> */}
+                    {/* <Button description={row.status} fontSize={size} /> */}
                   </td>
                 </tr>
               ))}

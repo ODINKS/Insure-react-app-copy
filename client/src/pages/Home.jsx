@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "../components/molecules/global/Navbar";
 import Footer from "../components/molecules/global/Footer";
+import Button from "../components/molecules/global/Button";
 const Home = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
 
@@ -33,9 +34,13 @@ const Home = () => {
     backgroundImage: `url(${backgroundData[backgroundIndex]})`,
   };
 
+  let buttonDesc = "Contact Us";
+  let buttonWidth = "10";
+  let size = "10"
+
   return (
     <>
-    <Navbar />
+      <Navbar />
       {/* section 1 */}
       <section className="flex h-[100vh] justify-center items-center flex-col">
         <div
@@ -55,6 +60,8 @@ const Home = () => {
                 performance, close more deals, and boost profits with our
                 cutting-edge sales management tool.
               </p>
+
+              <Button description={buttonDesc} width={buttonWidth} fontSize={size} />
             </div>
           </div>
         </div>
@@ -107,8 +114,8 @@ const Home = () => {
               {/* first  */}
               <div className="lg:w-[60%] w-[100%] mb-2">
                 <h2 className="lg:text-[2.5rem] text-[2rem] font-[700]">
-                  The <span className="text-orange-600">Future-Proof</span> Solution
-                  for Insurance Pros
+                  The <span className="text-orange-600">Future-Proof</span>{" "}
+                  Solution for Insurance Pros
                 </h2>
                 <p className="my-4">
                   INsure redefines the insurance industry by providing a
@@ -181,7 +188,6 @@ const Home = () => {
         </div>
       </section>
       <Footer />
-    
     </>
   );
 };

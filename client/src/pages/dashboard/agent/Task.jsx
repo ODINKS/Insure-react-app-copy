@@ -1,29 +1,14 @@
-import React, { useState } from "react";
-import Calendar from 'react-calendar';
-import AdminSidebar from "../../../components/molecules/dashboard/AdminSidebar";
+import React from 'react'
+import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar'
+import { VscTriangleDown } from "react-icons/vsc";
 import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
 import Button from '../../../components/molecules/global/Button'
-import 'react-calendar/dist/Calendar.css';
-// import './Calendar.css'; 
-import { VscTriangleDown } from "react-icons/vsc";
 
-
-
-const Tasks = () => {
-
-  //  const [dateState, setDateSate] = useState(new Date());
-  //  const handleDateChange = (e) => {
-  //  setDateSate(e);
-  
-  // }
-
-
-
-
+const Task = () => {
   return (
-    <main className="bg-[#f4f4f4] w-full h-screen">
+   <main className="bg-[#f4f4f4] w-full h-screen">
       <DashboardHeader />
-      <AdminSidebar />
+      <AgentSidebar />
 
 
       <div className="grid grid-cols-5 grid-rows-5 gap-4 w-[80%] h-[90vh] p-5 absolute top-[60px] right-0">
@@ -47,9 +32,9 @@ const Tasks = () => {
 
           <h1> Calendar App</h1>
           <div className='Sample__container'>
-            {/* <div className="Sample__container__content">
-              <Calendar onChange={handleDateChange} value={dateState} />
-            </div> */}
+            <div className="Sample__container__content">
+              {/* <Calendar onChange={handleDateChange} value={dateState} /> */}
+            </div>
 
           </div>
 
@@ -112,7 +97,10 @@ const Tasks = () => {
       </div>
 
    </main>
-  );
-};
+  )
+}
 
-export default Tasks;
+export default Task
+
+
+

@@ -54,3 +54,7 @@ Background colors
   *{
     font-family: 'Lato', sans-serif;
   }
+
+  input:focus{
+    outline: none;
+  }

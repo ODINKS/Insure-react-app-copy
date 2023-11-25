@@ -14,6 +14,7 @@ import { Registration } from './pages/auth/admin/Registration';
 import AdminSidebar from './components/molecules/dashboard/AdminSidebar';
 import AgentSidebar from './components/molecules/dashboard/AgentSidebar';
 import Pricing from './pages/Pricing';
+import AdminTasks from './pages/dashboard/admin/Tasks'
 // import { Reg } from './pages/auth/admin/Reg';
 // import { RegAccount } from './pages/auth/admin/RegAccount';
 // import AdminRecord from './pages/dashboard/admin/Records';
@@ -43,7 +44,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin-signup-one" element={<Registration />} />
               <Route path="/pricing" element={<Pricing />} />
-              {/* //<Route path="/dashboard/admin/Home" element={<AdminHome />} /> */}
+              {/* This below is for testing, please help me delete if I forget */}
+              <Route path="/AdminTasks" element={<AdminTasks />} />
           </Routes>
         </div>
   );

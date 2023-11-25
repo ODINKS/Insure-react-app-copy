@@ -9,7 +9,7 @@ const HeroSection = (props) => {
     
   return (
     <>
-      <section className="flex h-[90vh] justify-center items-center flex-col">
+      <section className="flex h-[100vh] justify-center items-center flex-col">
         <div
           className="w-full h-screen bg-[#433A3A] bg-cover bg-center "
           style={{ backgroundImage: `url(${img})` }}

@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar'
 import { VscTriangleDown } from "react-icons/vsc";
 import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
 import Button from '../../../components/molecules/global/Button'
 
 const Task = () => {
+  const [dateState, setDateSate] = useState(new Date());
+  const handleDateChange = (e) => {
+    setDateSate(e);
+
+  }
+
   return (
    <main className="bg-[#f4f4f4] w-full h-screen">
       <DashboardHeader />
@@ -23,17 +31,16 @@ const Task = () => {
         <div className="col-span-2 row-span-2 col-start-2 row-start-1 bg-white rounded-md p-4">
           <p className="font-bold">Assigned tasks</p>
           <div className='w-full flex flex-col gap-4 justify-between mt-5 '>
-            <p>CAD/005....................... 3 Tasks</p>
-            <p>CAD/005....................... 3 Tasks</p>
-            <p>CAD/005....................... 3 Tasks</p>
+            <p>CAD/005.................. 3 Tasks</p>
+            <p>CAD/005.................. 3 Tasks</p>
+            <p>CAD/005.................. 3 Tasks</p>
           </div>
         </div>
-        <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md p-4">
+        <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md overflow-auto p-4">
 
-          <h1> Calendar App</h1>
           <div className='Sample__container'>
             <div className="Sample__container__content">
-              {/* <Calendar onChange={handleDateChange} value={dateState} /> */}
+              <Calendar onChange={handleDateChange} value={dateState} />
             </div>
 
           </div>

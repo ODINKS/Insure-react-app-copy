@@ -50,7 +50,7 @@ const Footer = () => {
               <h1 className="text-[1.5rem] font-bold">Quick Links</h1>
               <ul className="flex flex-col gap-4 text-[1.1rem]">
                 <li>Features</li>
-                <Link to="/AdminTasks">Dashboard</Link>
+                <Link to="/AgentTasks">Dashboard</Link>
               </ul>
             </div>
 

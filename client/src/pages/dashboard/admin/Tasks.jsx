@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import AdminSidebar from "../../../components/molecules/dashboard/AdminSidebar";
 import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
 import Button from '../../../components/molecules/global/Button'
-import 'react-calendar/dist/Calendar.css';
-// import './Calendar.css'; 
 import { VscTriangleDown } from "react-icons/vsc";
 
 
 
 const Tasks = () => {
 
-  //  const [dateState, setDateSate] = useState(new Date());
-  //  const handleDateChange = (e) => {
-  //  setDateSate(e);
+   const [dateState, setDateSate] = useState(new Date());
+   const handleDateChange = (e) => {
+   setDateSate(e);
   
-  // }
+  }
 
 
 
@@ -38,24 +37,23 @@ const Tasks = () => {
         <div className="col-span-2 row-span-2 col-start-2 row-start-1 bg-white rounded-md p-4">
           <p className="font-bold">Assigned tasks</p>
           <div className='w-full flex flex-col gap-4 justify-between mt-5 '>
-            <p>CAD/005....................... 3 Tasks</p>
-            <p>CAD/005....................... 3 Tasks</p>
-            <p>CAD/005....................... 3 Tasks</p>
+            <p>CAD/005.................. 3 Tasks</p>
+            <p>CAD/005.................. 3 Tasks</p>
+            <p>CAD/005.................. 3 Tasks</p>
           </div>
         </div>
-        <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md p-4">
+        <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md p-4 mb-4 overflow-auto">
 
-          <h1> Calendar App</h1>
           <div className='Sample__container'>
-            {/* <div className="Sample__container__content">
+            <div className="Sample__container__content">
               <Calendar onChange={handleDateChange} value={dateState} />
-            </div> */}
+            </div>
 
           </div>
 
 
         </div>
-        <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md p-4">
+        <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md mt-5 p-4">
           <div className="flex items-center justify-between w-full border-b-4 border-bg-[#000] pb-3">
             <h1 className='font-bold uppercase'>Todo List</h1>
             <div className="flex items-center bg-[#e76927] w-max text-white rounded-md ">

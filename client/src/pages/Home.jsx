@@ -61,7 +61,7 @@ const Home = () => {
                 cutting-edge sales management tool.
               </p>
 
-              <Button description={buttonDesc} />
+              <Button description={buttonDesc} fontSize={"text-[1.5rem]"} />
             </div>
           </div>
         </div>

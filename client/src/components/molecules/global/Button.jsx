@@ -10,7 +10,7 @@ const Button = (props) => {
       <button
         className={`bg-[#e76927] text-white px-6 py-3 rounded-[8px] text-bold m-2 hover:bg-[#ffa074] hover:text-[#ffffff] align-self-center ${
           width || "0"
-        } ${fontSize || "text-[1.5rem]"}`}
+        } ${fontSize || "text-[1.125rem]"}`}
       >
         <Link to={route || ""}>{description || "Add Description"}</Link>
       </button>

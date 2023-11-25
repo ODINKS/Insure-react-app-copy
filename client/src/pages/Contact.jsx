@@ -8,6 +8,7 @@ const Contact = () => {
   const description = "At INsure, we're here to provide you with peace of mind and unparalleled service. Whether you have questions, need assistance, or want to discuss your insurance-related needs, our dedicated team is ready to assist you."
   const img = "https://tinyurl.com/48ffmsy8"
   const buttonDesc = "Get Started"
+  const BtnFontSize = "text-[1.5rem]"
   // const buttonWidth = "20"
 
   return (
@@ -40,7 +41,7 @@ const Contact = () => {
           </div>
         </div>
       </div> */}
-      < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} />
+      < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
       {/* {get-in-touch section} */}
       <section className="bg-white-200 py-16 text-left ml-60">
         <div className="container mx-auto">

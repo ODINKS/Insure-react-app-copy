@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import BUTTON from "../../../components/molecules/global/Button";
 
-const reset = () => {
+const Reset = () => {
   return (
     <main className="w-full h-screen flex justify-center items-center">
       <form className="rounded-md w-[500px] p-5">
@@ -33,4 +33,4 @@ const reset = () => {
   );
 }
 
-export default reset
+export default Reset

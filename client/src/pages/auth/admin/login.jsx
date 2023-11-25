@@ -2,7 +2,7 @@ import React from "react";
 import BUTTON from "../../../components/molecules/global/Button";
 import { Link } from "react-router-dom";
 
-const login = () => {
+const Login = () => {
 
   return (
     <main className="w-full h-screen flex justify-center items-center">
@@ -37,4 +37,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

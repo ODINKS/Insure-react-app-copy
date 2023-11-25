@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import BUTTON from "../../../components/molecules/global/Button";
 
-const teamInvite = () => {
+const TeamInvite = () => {
   return (
     <main className="flex justify-between p-3 gap-5">
       <div className="flex-1 pl-10">
@@ -101,4 +101,4 @@ const teamInvite = () => {
   );
 };
 
-export default teamInvite;
+export default TeamInvite;

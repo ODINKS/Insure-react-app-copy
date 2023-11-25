@@ -11,13 +11,11 @@ const About = () => {
     AOS.init();
   }, [])
 
-  let prop ={
-    title : "About <span className='text-orange-500'>INsure</span>",
-    description: "Welcome to INsure, your partner in revolutionizing the insurance industry! A powerful tool designed to empower insurance agents like you to excel in your profession.",
-    img : "https://res.cloudinary.com/blackadam/image/upload/q_30/Insure/about-bg_estegz.png",
-    buttonDesc : "Get Started",
-    buttonWidth : "20",
-  }
+    const title = "About <span className='text-orange-500'>INsure</span>"
+    const description = "Welcome to INsure, your partner in revolutionizing the insurance industry! A powerful tool designed to empower insurance agents like you to excel in your profession."
+    const img = "https://res.cloudinary.com/blackadam/image/upload/q_30/Insure/about-bg_estegz.png"
+    const buttonDesc = "Get Started"
+    const buttonWidth = "20"
 
   return (
     <div>
@@ -27,7 +25,7 @@ const About = () => {
     {/* <!-- Main --> */}
     <main className="text-gray-900">
       {/* <!-- Hero --> */}
-    < HeroSection {...prop}/>
+    < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} />
 
       {/* why insure */}
       <section className="py-4 bg-white">
@@ -72,7 +70,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className='bg-[#F0F4FF]'>
+      <section className='bg-[--lavender-bg]'>
 
       {/* our mission and vision */}
       <div className="flex lg:flex-row flex-col w-[100%] mx-auto justify-around items-center p-10 mt-8 mb-4">
@@ -152,7 +150,7 @@ const About = () => {
         </div>
 
         {/* our team */}
-        <section class="bg-[#F0F4FF] text-gray-900">
+        <section class="bg-[--lavender-bg] text-gray-900">
      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
       <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Our <span className='text-orange-500'>Team</span></h2>

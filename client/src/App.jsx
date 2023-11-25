@@ -71,7 +71,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/admin-signup-one" element={<Registration />} />
-      <Route path="/pricing" element={<Pricing />} />
+      {/* <Route path="/pricing" element={<Pricing />} /> */}
       <Route path="/features" element={<Features />} />
       <Route path="/admin-login" element={<Login />} />
       <Route path="/dashboard/admin/Home" element={<AdminHome />} />

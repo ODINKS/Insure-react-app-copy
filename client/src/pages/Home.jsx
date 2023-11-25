@@ -96,7 +96,7 @@ const Home = () => {
         </div>
       </section>
       {/* section 3 */}
-      <section className="bg-[#F0F4FF] py-6">
+      <section className="bg-[--lavender-bg] py-6">
         <div className="w-[90%] mx-auto">
           <div>
             <div className="flex lg:flex-row flex-col justify-between items-center my-10 p-4">

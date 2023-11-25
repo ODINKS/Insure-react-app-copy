@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className='w-full bg-[--white-bg] lg:relative h-[100vh]'>
+      <footer className='w-full bg-[--lavender-bg] lg:relative h-[100vh]'>
 
         <div className='bg-[--white-bg] lg:left-[12%] lg:right-[12%] lg:px-[10rem] lg:absolute lg:z-10 flex flex-col justify-center items-center py-12 m-auto'>
           <h1 className='text-center mb-5 text-[2rem] font-bold'>Welcome to your new digital HQ</h1>

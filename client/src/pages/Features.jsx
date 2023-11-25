@@ -9,6 +9,7 @@ const Features = () => {
     const description = "Explore INsure's Dynamic Features, Elevating Your Insurance Experience. Dive into our diverse range of offerings, uncover tailored solutions, and navigate through innovative features designed for your peace of mind"
     const img = "https://tinyurl.com/2e3e32fw"
     const buttonDesc = "Get Started"
+    const BtnFontSize = "text-[1.5rem]"
 
     return (
         <div>
@@ -32,7 +33,7 @@ const Features = () => {
                         </div>
                     </div>
                 </div> */}
-                < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} />
+                < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
                 {/* // second section */}
 
                 <div className="flex h-screen justify-between">

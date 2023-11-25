@@ -15,7 +15,8 @@ const About = () => {
     const description = "Welcome to INsure, your partner in revolutionizing the insurance industry! A powerful tool designed to empower insurance agents like you to excel in your profession."
     const img = "https://res.cloudinary.com/blackadam/image/upload/q_30/Insure/about-bg_estegz.png"
     const buttonDesc = "Get Started"
-    const buttonWidth = "20"
+    const BtnFontSize = "text-[1.5rem]"
+    // const buttonWidth = "20"
 
   return (
     <div>
@@ -25,7 +26,7 @@ const About = () => {
     {/* <!-- Main --> */}
     <main className="text-gray-900">
       {/* <!-- Hero --> */}
-    < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} />
+    < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
 
       {/* why insure */}
       <section className="py-4 bg-white">

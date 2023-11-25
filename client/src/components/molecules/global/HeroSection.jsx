@@ -5,7 +5,7 @@ import Button from "./Button";
 
 
 const HeroSection = (props) => {
-    const {title, description, img, buttonDesc, buttonWidth} = props
+    const {title, description, img, buttonDesc, buttonWidth, btnFontSize} = props
     
   return (
     <>
@@ -23,7 +23,7 @@ const HeroSection = (props) => {
                 {parse(description) || "Provide your description..."}
               </p>
 
-              <Button description={buttonDesc} width={buttonWidth}/>
+              <Button description={buttonDesc} width={buttonWidth} fontSize={btnFontSize} />
             </div>
           </div>
         </div>

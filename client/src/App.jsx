@@ -27,6 +27,7 @@ import NotificationBar from './components/molecules/dashboard/NotificationBar';
 import SettingsNav from './components/molecules/dashboard/SettingsNav';
 import AgentSettings from './pages/dashboard/agent/AgentSettings';
 import AgentLeads from './pages/dashboard/agent/AgentLeads';
+import AdminTeams from './pages/dashboard/admin/AdminTeams';
 
 
 
@@ -62,7 +63,10 @@ function App() {
 
           {/* Agent Leads */}
           
-          <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} />
+          {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} /> */}
+        
+          {/* admin teams */}
+          <DashboardTemplate sidebar={<AdminSidebar/>} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminTeams />} />
         </div> 
 
 

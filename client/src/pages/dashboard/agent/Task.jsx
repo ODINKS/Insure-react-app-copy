@@ -1,30 +1,22 @@
-import React, { useState } from "react";
+import React, {useState} from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import AdminSidebar from "../../../components/molecules/dashboard/AdminSidebar";
+import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar'
+import { VscTriangleDown } from "react-icons/vsc";
 import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
 import Button from '../../../components/molecules/global/Button'
-import { VscTriangleDown } from "react-icons/vsc";
 
+const Task = () => {
+  const [dateState, setDateSate] = useState(new Date());
+  const handleDateChange = (e) => {
+    setDateSate(e);
 
-
-const Tasks = () => {
-
-   const [dateState, setDateSate] = useState(new Date());
-   const handleDateChange = (e) => {
-
-   setDateSate(e);
-
-  
   }
 
-
-
-
   return (
-    <main className="bg-[#f4f4f4] w-full h-screen">
+   <main className="bg-[#f4f4f4] w-full h-screen">
       <DashboardHeader />
-      <AdminSidebar />
+      <AgentSidebar />
 
 
       <div className="grid grid-cols-5 grid-rows-5 gap-4 w-[80%] h-[90vh] p-5 absolute top-[60px] right-0">
@@ -44,7 +36,7 @@ const Tasks = () => {
             <p>CAD/005.................. 3 Tasks</p>
           </div>
         </div>
-        <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md p-4 mb-4 overflow-auto">
+        <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md overflow-auto p-4">
 
           <div className='Sample__container'>
             <div className="Sample__container__content">
@@ -55,7 +47,7 @@ const Tasks = () => {
 
 
         </div>
-        <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md mt-5 p-4">
+        <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md p-4">
           <div className="flex items-center justify-between w-full border-b-4 border-bg-[#000] pb-3">
             <h1 className='font-bold uppercase'>Todo List</h1>
             <div className="flex items-center bg-[#e76927] w-max text-white rounded-md ">
@@ -71,11 +63,11 @@ const Tasks = () => {
           {/* Tasks */}
         <div className="w-[600px] pt-4 flex gap-4 items-center justify-between font-bold">
           <div className='flex items-center gap-4'>
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox"  />
             <p>Policy documents for new clients</p>
           </div>
           <div>
-            <span>Agent CAD/005</span>
+            <span>Agent CAD/007</span>
             </div>
         </div>
 
@@ -90,7 +82,7 @@ const Tasks = () => {
         </div>
         <div className="w-[600px] pt-4 flex gap-4 items-center justify-between font-bold">
           <div className='flex items-center gap-4'>
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" />
             <p>Verify Daily leads</p>
           </div>
           <div>
@@ -112,7 +104,10 @@ const Tasks = () => {
       </div>
 
    </main>
-  );
-};
+  )
+}
 
-export default Tasks;
+export default Task
+
+
+

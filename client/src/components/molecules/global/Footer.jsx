@@ -12,18 +12,26 @@ const Footer = () => {
 
   return (
     <>
+
       <footer className='w-full bg-[--lavender-bg] lg:relative h-[100vh]'>
 
         <div className='bg-[--white-bg] lg:left-[12%] lg:right-[12%] lg:px-[10rem] lg:absolute lg:z-10 flex flex-col justify-center items-center py-12 m-auto'>
           <h1 className='text-center mb-5 text-[2rem] font-bold'>Welcome to your new digital HQ</h1>
+
           {/* <button className='bg-[--orange-bg] text-[--white-bg] px-16 py-3 rounded-lg text-[1.5rem]'>Talk to Sales</button> */}
-          <Button description={description} width={width} fontSize={fontSize} route={route} />
+          <Button
+            description={description}
+            width={width}
+            fontSize={fontSize}
+            route={route}
+          />
         </div>
-        <div className='bg-[--black-bg]'>
+        <div className="bg-[--black-bg]">
           {/* Dark section */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between gap-10 pt-10 text-[--white-text] bg-[--black-bg] lg:px-12 px-12 pb-14 lg:absolute lg:top-[6rem] lg:pt-[9rem] lg:left-0 lg:right-0'>
-            <div className='flex flex-col justify-center items-center lg:items-start gap-5 lg:mt-10'>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between gap-10 pt-10 text-[--white-text] bg-[--black-bg] lg:px-12 px-12 pb-14 lg:absolute lg:top-[6rem] lg:pt-[9rem] lg:left-0 lg:right-0">
+            <div className="flex flex-col justify-center items-center lg:items-start gap-5 lg:mt-10">
               <img src="https://tinyurl.com/3wuh45ve" alt="INsure Logo" />
+
               <p className='w-[20rem] text-left text-[1.1rem]'>With INsure - Elevate your insurance sales with our streamlined management tool. Boost productivity, enhance customer interactions, and insure success effortlessly.</p>
             </div>
 
@@ -38,10 +46,12 @@ const Footer = () => {
             <div className='flex flex-col gap-4 items-center lg:items-start justify-start lg:mt-14'>
               <h1 className='text-[1.5rem] font-bold border border-0 hover:border-b-4 hover:border-[--orange-bg] pb-2'>Quick Links</h1>
               <ul className='flex flex-col gap-4 text-[1.1rem]'>
+
                 <li>Features</li>
-                <li>Dashboard</li>
+                <a to="/AgentTasks">Dashboard</a>
               </ul>
             </div>
+
 
             <div className='flex flex-col gap-5 items-center lg:items-start justify-start lg:mt-14'>
               <h1 className='text-[1.5rem] font-bold border border-0 hover:border-b-4 hover:border-[--orange-bg] pb-2'>Download our App</h1>
@@ -79,7 +89,7 @@ const Footer = () => {
         </div>
       </footer>
     </>
-  )
+  );
 }
 
 export default Footer

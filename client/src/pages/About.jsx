@@ -22,7 +22,7 @@ const About = () => {
     <div>
       <Navbar />
     <div>
-    <body className="font-Lato text-white">
+    <body className="font-Lato">
     {/* <!-- Main --> */}
     <main className="text-gray-900">
       {/* <!-- Hero --> */}

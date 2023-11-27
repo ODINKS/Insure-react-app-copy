@@ -50,6 +50,8 @@ Background colors
     --black-bg: #111111;
     --black-text: #111111;
     --lavender-bg: #DFE7FA;
+    --blue-bg: #1E90FF;
+    --form-border-bg: #64748B;
   }
 
   *{

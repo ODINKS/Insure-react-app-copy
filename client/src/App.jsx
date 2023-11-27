@@ -43,6 +43,7 @@ function App() {
         //     {/* <AdminHome /> */}
         //     {/* <AgentHome /> */}
         //     {/* <AgentLeads /> */}
+        //     {/* <AgentSettings /> */}
         //     {/* <Login /> */}
         //     {/* <RegAccount /> */}
         //     {/* <RegContact /> */}

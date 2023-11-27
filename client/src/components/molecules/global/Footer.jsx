@@ -48,7 +48,7 @@ const Footer = () => {
               <ul className='flex flex-col gap-4 text-[1.1rem]'>
 
                 <li>Features</li>
-                <Link to="/AgentTasks">Dashboard</Link>
+                <a to="/AgentTasks">Dashboard</a>
               </ul>
             </div>
 

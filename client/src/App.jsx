@@ -25,10 +25,12 @@ import AgentRecord from "./pages/dashboard/agent/Records";
 import DashboardTemplate from "./components/molecules/dashboard/DashboardTemplate";
 import SalesBoxGroup from "./components/molecules/dashboard/SalesBoxGroup";
 import NotificationBar from "./components/molecules/dashboard/NotificationBar";
-import SettingsNav from "./components/molecules/dashboard/SettingsNav";
+import SettingsNav from "./components/molecules/dashboard/AgentSettingsNav";
 import AgentSettings from "./pages/dashboard/agent/AgentSettings";
 import AgentLeads from "./pages/dashboard/agent/AgentLeads";
 import AdminTeams from "./pages/dashboard/admin/AdminTeams";
+import AdminSettings from "./pages/dashboard/admin/AdminSettings";
+import AdminSettingsNav from "./components/molecules/dashboard/AdminSettingsNav";
 
 function App() {
     return (
@@ -44,6 +46,7 @@ function App() {
         //     {/* <AgentHome /> */}
         //     {/* <AgentLeads /> */}
         //     {/* <AgentSettings /> */}
+        //     {/* <AdminSettings /> */}
         //     {/* <Login /> */}
         //     {/* <RegAccount /> */}
         //     {/* <RegContact /> */}
@@ -51,6 +54,7 @@ function App() {
         //     {/* <RegTeamInvite /> */}
         //     {/* <Reset /> */}
         //     {/* <TeamInvite /> */}
+            
 
 
         //     {/* Admin Home */}
@@ -65,8 +69,11 @@ function App() {
         //     {/* Admin Home */}
         //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminRecord />} /> */}
 
+        //     {/* Admin Home */}
+        //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} /> */}
+
         //     {/* Agent Settings */}
-        //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<SettingsNav />} dashboardBody={<AgentSettings />} /> */}
+        //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AgentSettingsNav />} dashboardBody={<AgentSettings />} /> */}
 
 
         //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} /> */}

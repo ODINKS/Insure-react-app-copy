@@ -6,6 +6,11 @@ import '../../../styles/style.css'
 
 
 const Navbar = () => {
+    const [activeLink, setActiveLink] = useState('');
+    const handleLinkClick = (link) => {
+        setActiveLink(link);
+      };
+
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
 
@@ -16,7 +21,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="fixed w-full z-20 transition duration-500 ease-in-out py-1.5 bg-[--black-bg]">
+            <nav className="fixed w-full z-20 transition duration-500 ease-in-out py-[15px] bg-[--black-bg] h-auto]">
                 <div className="flex flex-wrap items-center justify-between mx-auto p-0 w-[90%]">
                     {/* Logo */}
 
@@ -37,7 +42,9 @@ const Navbar = () => {
                             <ul className="flex flex-col lg:items-center font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-12 md:mt-0 md:mr-0 lg:mr-22 ">
                                 {/* Home */}
                                 <li>
-                                    <Link to="/" className="link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem]" aria-current="page">Home</Link>
+                                    <Link to="/" 
+                                    onClick={() => handleLinkClick('home')}
+                                    className={`link border block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'home'? 'md:border-0 md:border-b-white-900 md:text-xl md:transition-all md:duration-75 md:pb-2 md:no-underline': ''}`} aria-current="page">Home</Link>
                                 </li>
                                 {/* About */}
                                 <li>

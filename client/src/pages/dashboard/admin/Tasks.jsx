@@ -12,7 +12,9 @@ const Tasks = () => {
 
    const [dateState, setDateSate] = useState(new Date());
    const handleDateChange = (e) => {
+
    setDateSate(e);
+
   
   }
 

@@ -63,11 +63,11 @@ const Task = () => {
           {/* Tasks */}
         <div className="w-[600px] pt-4 flex gap-4 items-center justify-between font-bold">
           <div className='flex items-center gap-4'>
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox"  />
             <p>Policy documents for new clients</p>
           </div>
           <div>
-            <span>Agent CAD/005</span>
+            <span>Agent CAD/007</span>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ const Task = () => {
         </div>
         <div className="w-[600px] pt-4 flex gap-4 items-center justify-between font-bold">
           <div className='flex items-center gap-4'>
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" />
             <p>Verify Daily leads</p>
           </div>
           <div>

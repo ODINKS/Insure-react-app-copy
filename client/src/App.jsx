@@ -22,6 +22,8 @@ import Reset from "./pages/auth/admin/Reset";
 import TeamInvite from "./pages/auth/admin/TeamInvite";
 import AdminRecord from "./pages/dashboard/admin/Records";
 import AgentRecord from "./pages/dashboard/agent/Records";
+import AgentClient from "./pages/dashboard/agent/Clients";
+import AdminClient from "./pages/dashboard/admin/Clients";
 import DashboardTemplate from "./components/molecules/dashboard/DashboardTemplate";
 import SalesBoxGroup from "./components/molecules/dashboard/SalesBoxGroup";
 import NotificationBar from "./components/molecules/dashboard/NotificationBar";
@@ -41,7 +43,9 @@ function App() {
         //     {/* <AdminSidebar /> */}
         //     {/* <AgentSidebar /> */}
         //     {/* <AgentRecord /> */}
+        //     {/* <AgentClients /> */}
         //     {/* <AdminRecord /> */}
+        //     {/* <AdminClients /> */}
         //     {/* <AdminHome /> */}
         //     {/* <AgentHome /> */}
         //     {/* <AgentLeads /> */}
@@ -65,6 +69,9 @@ function App() {
 
         //     {/* Agent Records */}
         //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentRecord />} /> */}
+                  
+        //         {/* Agent Clients */}
+        //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentClient />} /> */}
 
         //     {/* Agent Leads */}
         //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} /> */}
@@ -123,7 +130,6 @@ function App() {
             {/* <Route path="/dashboard/agent/task" element={} /> */}
 
             {/* <Route path="/dashboard/agent/settings" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AgentSettingsNav />} dashboardBody={<AgentSettings />} />} /> */}
-
         </Routes>
     );
 }

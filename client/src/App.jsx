@@ -64,6 +64,7 @@ function App() {
         //     {/* Admin Home */}
         //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AdminHome />} /> */}
 
+
         //     {/* Agent Home */}
         //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AgentHome />} /> */}
 
@@ -102,6 +103,7 @@ function App() {
             {/* <Route path="/pricing" element={<Pricing />} /> */}
             <Route path="/features" element={<Features />} />
             <Route path="/admin-login" element={<Login />} />
+
 
             {/* ADMIN ROUTES */}
             {/* <Route path="/dashboard/admin/home" element={<DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AdminHome />} />} /> */}

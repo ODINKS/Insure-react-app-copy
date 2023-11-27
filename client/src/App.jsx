@@ -33,6 +33,7 @@ import AgentLeads from "./pages/dashboard/agent/AgentLeads";
 import AdminTeams from "./pages/dashboard/admin/AdminTeams";
 import AdminSettings from "./pages/dashboard/admin/AdminSettings";
 import AdminSettingsNav from "./components/molecules/dashboard/AdminSettingsNav";
+import Tasks from "./pages/dashboard/admin/Tasks";
 
 function App() {
     return (
@@ -59,6 +60,8 @@ function App() {
         //     {/* <Reset /> */}
         //     {/* <TeamInvite /> */}
 
+        //     {/* <Tasks /> */}
+
 
 
         //     {/* Admin Home */}
@@ -83,6 +86,9 @@ function App() {
         //     {/* Admin Settings */}
         //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} /> */}
 
+        //     {/* Admin Tasks */}
+        //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={""} dashboardBody={<Tasks />} /> */}
+
         //     {/* Admin Settings */}
         //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} /> */}
 
@@ -100,7 +106,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin-signup-one" element={<Registration />} />
-            {/* <Route path="/pricing" element={<Pricing />} /> */}
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<Features />} />
             <Route path="/admin-login" element={<Login />} />
 

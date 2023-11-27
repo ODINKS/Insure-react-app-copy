@@ -2,10 +2,10 @@ import React from 'react'
 import { Pie } from "react-chartjs-2";
 
 
-const PieChart = ({ chartData }) => {
+const PieChart = ({ chartData , topic}) => {
   return (
     <div className="chart-container">
-      <h2 style={{ textAlign: "center" }}>Pie Chart</h2>
+      <h2 className="text-left font-bold pt-4 pl-4">{topic}</h2>
       <Pie
         data={chartData}
         options={{

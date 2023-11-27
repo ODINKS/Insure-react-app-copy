@@ -1,18 +1,13 @@
 import React from "react";
-import AgentSidebar from "../../../components/molecules/dashboard/AgentSidebar";
 
 const AgentLeads = () => {
   return (
     <>
-      {/* agent sidebar component */}
-
-      <AgentSidebar />
-
       {/* leads section */}
-      <section className="bg-blue-100 h-screen w-screen flex flex-wrap">
+      <section className="bg-blue-100 h-screen w-full flex flex-wrap">
         {/* new leads */}
-        <div className="flex flex-wrap justify-start ml-[20rem] bg-purple-400">
-          <div className="bg-[--white-bg] m-2  mt-4 w-[18rem] h-auto rounded-md shadow-md absolute">
+        <div className="flex flex-wrap justify-between w-full">
+          <div className="bg-[--white-bg] mt-4 w-[19rem] rounded-md shadow-md h-fit">
             <h4 className="text-[#111111] bg-yellow-200 w-full uppercase text-center p-2">
               New Leads
             </h4>
@@ -30,11 +25,13 @@ const AgentLeads = () => {
               <p className="text-gray-600">Dev Reels </p>
               <p className="text-gray-400 text-right">See More</p>
             </div>
+
+            
           </div>
 
           {/* leads inprogress */}
 
-          <div className="bg-[--white-bg] m-2 ml-[20rem] mt-4 w-[18rem] h-auto rounded-md shadow-md absolute">
+          <div className="bg-[--white-bg] mt-4 w-[19rem] h-fit rounded-md shadow-md">
             <h4 className="text-[#111111] bg-blue-200 w-full uppercase text-center p-2">
               In Progress
             </h4>
@@ -49,7 +46,7 @@ const AgentLeads = () => {
 
           {/* won/closed leads */}
 
-          <div className="bg-[--white-bg] m-2 ml-[40rem] mt-4 w-[18rem] h-auto rounded-md shadow-md absolute">
+          <div className="bg-[--white-bg] mt-4 w-[19rem] h-fit rounded-md shadow-md">
             <h4 className="text-[#111111] bg-green-200 w-full uppercase text-center p-2">
               Closed Leads
             </h4>

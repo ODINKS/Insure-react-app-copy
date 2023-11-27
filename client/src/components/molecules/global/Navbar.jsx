@@ -44,7 +44,7 @@ const Navbar = () => {
                                 <li>
                                     <Link to="/" 
                                     onClick={() => handleLinkClick('home')}
-                                    className={`link border block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'home'? 'md:border-0 md:border-b-white-900 md:text-xl md:transition-all md:duration-75 md:pb-2 md:no-underline': ''}`} aria-current="page">Home</Link>
+                                    className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'home'? 'md:border-0 md:border-b-white-900 md:text-xl md:transition-all md:duration-75 md:pb-2 md:no-underline': ''}`} aria-current="page">Home</Link>
                                 </li>
                                 {/* About */}
                                 <li>

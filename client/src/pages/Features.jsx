@@ -12,7 +12,7 @@ const Features = () => {
     AOS.refresh();
   });
 
-  const title = "Explore <span class='text-orange-500>our</span> Features";
+  const title = "Explore <span className='text-orange-500'>our</span> Features";
   const description =
     "Explore INsure's Dynamic Features, Elevating Your Insurance Experience. Dive into our diverse range of offerings, uncover tailored solutions, and navigate through innovative features designed for your peace of mind";
   const img = "https://tinyurl.com/2e3e32fw";
@@ -77,6 +77,9 @@ const Features = () => {
               src="https://tinyurl.com/3jsnv8hb"
               alt=""
               className="w-[30rem] h-[30rem]"
+              data-aos="flip-left"
+              data-aos-delay="50"
+              data-aos-duration="2000"
             />
           </div>
           <div className="mx-auto text-xl lg:order-2 order-1 self-center">
@@ -133,6 +136,9 @@ const Features = () => {
               src="https://tinyurl.com/4svdfh94"
               alt=""
               className="w-[30rem] h-[30rem]"
+              data-aos="zoom-in-up"
+              data-aos-delay="50"
+              data-aos-duration="2000"
             />
           </div>
         </div>
@@ -145,6 +151,9 @@ const Features = () => {
                 className="w-[32rem] h-[32rem]"
                 src="https://tinyurl.com/4sw3ywj2"
                 alt=""
+                data-aos="zoom-in-down"
+                data-aos-delay="50"
+                data-aos-duration="2000"
               />
             </div>
             <div className="mx-auto text-xl self-center ">

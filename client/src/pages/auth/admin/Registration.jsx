@@ -28,15 +28,15 @@ export const Registration = () => {
             id="name"
             name="name"
             placeholder="Company's name"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
           <input
             type="text"
             name="Btype"
             placeholder="Business type (e.g., proprietorship)"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
-          <select className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400">
+          <select className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400 focus:border-blue-500">
             <option>Team capacity</option>
             <option>1 - 10</option>
             <option>11 - 20</option>

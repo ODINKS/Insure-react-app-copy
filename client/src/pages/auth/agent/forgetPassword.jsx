@@ -32,7 +32,7 @@ export const ForgetPassword = () => {
             id="email"
             name="email"
             placeholder="Enter email address"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
           
           {/* Proceed button */}

@@ -26,14 +26,14 @@ export const RegAccount = () => {
             id="email"
             name="naemailme"
             placeholder="Company's email"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
 
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
           
           
@@ -41,7 +41,7 @@ export const RegAccount = () => {
             type="password"
             name="password"
             placeholder="Confirm password"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
           {/* back and continue  button */}
           <div className="flex justify-between flex-col lg:flex-row w-full mt-6">

@@ -33,14 +33,14 @@ export const RegTeamInvite = () => {
             type="email"
             name="email"
             placeholder="Add email address"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
 
           <input
             type="email"
             name="email2"
             placeholder="Add email address"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
           
           
@@ -48,7 +48,7 @@ export const RegTeamInvite = () => {
             type="email"
             name="email3"
             placeholder="Add email address"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-16"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-16 focus:border-blue-500"
           />
           {/* back and continue  button */}
           <div className="flex justify-between flex-col lg:flex-row w-full mt-6">

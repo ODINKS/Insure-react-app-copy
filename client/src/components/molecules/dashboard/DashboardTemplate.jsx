@@ -1,6 +1,4 @@
 import React from 'react'
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import AdminHome from '../../../pages/dashboard/admin/AdminHome'
 
 const DashboardTemplate = (props) => {
     const { sidebar, dashboardNav, dashboardBody, notificationSection } = props

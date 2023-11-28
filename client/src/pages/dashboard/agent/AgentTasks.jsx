@@ -6,7 +6,7 @@ import { VscTriangleDown } from "react-icons/vsc";
 import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
 import Button from '../../../components/molecules/global/Button'
 
-const Task = () => {
+const AgentTasks = () => {
   const [dateState, setDateSate] = useState(new Date());
   const handleDateChange = (e) => {
     setDateSate(e);
@@ -107,7 +107,7 @@ const Task = () => {
   )
 }
 
-export default Task
+export default AgentTasks
 
 
 

@@ -35,86 +35,18 @@ import AdminSettings from "./pages/dashboard/admin/AdminSettings";
 import AdminSettingsNav from "./components/molecules/dashboard/AdminSettingsNav";
 import Tasks from "./pages/dashboard/admin/AdminTasks";
 import NoPage from "./pages/NoPage";
-import AgentClaims from "./pages/dashboard/agent/AgentClaims";
-
+import AdminDashboard from "./components/molecules/dashboard/AdminDashboard";
+import AgentDashboard from "./components/molecules/dashboard/AgentDashboard";
+import AdminLeads from "./pages/dashboard/admin/AdminLeads";
+import AdminClaims from "./pages/dashboard/admin/AdminClaims";
+import AdminTasks from "./pages/dashboard/admin/AdminTasks";
+import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 
 function App() {
- 
+
     return (
         // <div>
-        //     {/* <Navbar /> */}
-        //     {/* <Home /> */}
-        //     {/* <Features /> */}
-        //     {/* <AdminSidebar /> */}
-        //     {/* <AgentSidebar /> */}
-        //     {/* <AgentRecord /> */}
-        //     {/* <AgentClients /> */}
-        //     {/* <AdminRecord /> */}
-        //     {/* <AdminClients /> */}
-        //     {/* <AdminHome /> */}
-        //     {/* <AgentHome /> */}
-        //     {/* <AgentLeads /> */}
-        //     {/* <AgentSettings /> */}
-        //     {/* <AdminSettings /> */}
-        //     {/* <Login /> */}
-        //     {/* <RegAccount /> */}
-        //     {/* <RegContact /> */}
-        //     {/* <Registration /> */}
-        //     {/* <RegTeamInvite /> */}
-        //     {/* <Reset /> */}
-        //     {/* <TeamInvite /> */}
 
-        //     {/* <Tasks /> */}
-
-
-
-    //   {/* Admin Home */}
-    //   {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AdminHome />} /> */}
-
-    //   {/* Agent Home */}
-    //   {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AgentHome />} /> */}
-
-
-    //   {/* Agent Records */}
-    //   {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentRecord />} /> */}
-
-
-        //     {/* Agent Home */}
-        //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AgentHome />} /> */}>>>>>>> staging
-
-    //   {/* Agent Clients */}
-    //   {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentClient />} /> */}
-
-
-    //   {/* Admin Home */}
-    //   {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminRecord />} /> */}
-
-    //   {/* Admin Home */}
-    //   {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} /> */}
-
-        //     {/* Agent Leads */}
-        //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} /> */}
-
-        //     {/* Admin Record */}
-        //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminRecord />} /> */}
-
-        //     {/* Admin Settings */}
-        //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} /> */}
-
-        //     {/* Admin Tasks */}
-        //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={""} dashboardBody={<Tasks />} /> */}
-
-        //     {/* Admin Settings */}
-        //     {/* <DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} /> */}
-
-
-    //   {/* Agent Settings */}
-    //   {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AgentSettingsNav />} dashboardBody={<AgentSettings />} /> */}
-
-        //     {/* <DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} /> */}
-
-        //     {/* admin teams */}
-        //     {/* <DashboardTemplate sidebar={<AdminSidebar/>} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminTeams />} /> */}
         // </div>
 
         <Routes>
@@ -124,39 +56,32 @@ function App() {
             <Route path="/admin-signup-one" element={<Registration />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<Features />} />
-            {/* <Route path="/admin-login" element={<Login />} /> */}
+            <Route path="/admin-login" element={<Login />} />
+            {/* Admin Dashboard routes */}
+            <Route path="/dashboard/admin/*" element={<AdminDashboard />}>
+                <Route path="home" element={<AdminHome />} />
+                <Route path="records" element={<AdminRecord />} />
+                <Route path="clients" element={<AdminClient />} />
+                <Route path="leads" element={<AdminLeads />} />
+                <Route path="claims" element={<AdminClaims />} />
+                <Route path="task" element={<AdminTasks />} />
+                <Route path="teams" element={<AdminTeams />} />
+                <Route path="settings" element={<AdminSettings />} />
+            </Route>
+
+            {/* Agent Dashboard Routes */}
+            <Route path="/dashboard/agent/*" element={<AgentDashboard />}>
+                <Route path="home" element={<AgentHome />} />
+                <Route path="records" element={<AgentRecord />} />
+                <Route path="clients" element={<AgentClient />} />
+                <Route path="leads" element={<AgentLeads />} />
+                {/* <Route path="claims" element={<AgentClaims />} /> */}
+                <Route path="task" element={<AgentTasks />} />
+                <Route path="settings" element={<AgentSettings />} />
+            </Route>
+
             <Route path="*" element={<NoPage />} />
 
-
-            {/* ADMIN ROUTES */}
-            {/* <Route path="/dashboard/admin/home" element={<DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AdminHome />} />} /> */}
-
-            {/* <Route path="/dashboard/admin/records" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminRecord />} />} /> */}
-            {/* <Route path="/dashboard/admin/clients" element={"Your clients will appear here"} /> */}
-            {/* <Route path="/dashboard/admin/leads" element={"Your leads will appear here"} /> */}
-            {/* <Route path="/dashboard/admin/claims" element={"Your claims will appear here"} /> */}
-            {/* <Route path="/dashboard/admin/task" element={} /> */}
-            {/* <Route path="/dashboard/admin/teams" element={<DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AdminTeams />} />} /> */}
-
-            {/* <Route path="/dashboard/admin/settings" element={<DashboardTemplate sidebar={<AdminSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AdminSettingsNav />} dashboardBody={<AdminSettings />} />} /> */}
-
-            {/* AGENT ROUTE */}
-
-            {/* <Route path="/dashboard/agent/home" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AgentHome />} />} />
-
-            <Route path="/dashboard/agent/records" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentRecord />} />} />
-
-            // <Route path="/dashboard/agent/claims" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentClaims />} />} /> */}
-
-            {/* <Route path="/dashboard/agent/clients" element={} /> */}
-
-            {/* <Route path="/dashboard/agent/leads" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentLeads />} />} /> */}
-
-            {/* <Route path="/dashboard/agent/claims" element={} /> */}
-
-            {/* <Route path="/dashboard/agent/task" element={} /> */}
-
-            {/* <Route path="/dashboard/agent/settings" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<AgentSettingsNav />} dashboardBody={<AgentSettings />} />} /> */}
         </Routes>
     );
 

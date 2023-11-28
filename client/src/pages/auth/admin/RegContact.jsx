@@ -28,20 +28,20 @@ export const RegContact = () => {
             id="name"
             name="phonenumber"
             placeholder="Company's phone number"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
           <input
             type="email"
             name="email"
             placeholder="Company's email address"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
         
             <input
                 type="text"
                 name="address"
                 placeholder="Company's address"
-                className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4"
+                className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
             />
 
           <select className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400">

@@ -13,6 +13,7 @@ import AgentSidebar from "./components/molecules/dashboard/AgentSidebar";
 import Pricing from "./pages/Pricing";
 import Features from "./pages/Features";
 import Searchbar from "./components/molecules/dashboard/Searchbar";
+import Login from "./pages/auth/admin/Login";
 import { RegAccount } from "./pages/auth/admin/RegAccount";
 import { RegContact } from "./pages/auth/admin/RegContact";
 import { Registration } from "./pages/auth/admin/Registration";

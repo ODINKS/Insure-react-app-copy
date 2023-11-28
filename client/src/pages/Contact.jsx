@@ -119,7 +119,7 @@ const Contact = () => {
       </section>
 
       {/* FREQUENTLY ASKED QUESTIONS SECTION */}
-      <section className="bg-[#DFE7FA] py-16 text-left ">
+      <section className="bg-[#DFE7FA] py-16 text-left">
         <div className="container mx-auto ml-60">
           <h3 className="text-3xl font-bold mb-8 ">
             Frequently <span className="text-orange-500">asked</span> questions

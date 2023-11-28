@@ -13,17 +13,17 @@ import AgentSidebar from "./components/molecules/dashboard/AgentSidebar";
 import Pricing from "./pages/Pricing";
 import Features from "./pages/Features";
 import Searchbar from "./components/molecules/dashboard/Searchbar";
-import Login from "./pages/auth/admin/login";
+import Login from "./pages/auth/admin/Login";
 import { RegAccount } from "./pages/auth/admin/RegAccount";
 import { RegContact } from "./pages/auth/admin/RegContact";
 import { Registration } from "./pages/auth/admin/Registration";
 import { RegTeamInvite } from "./pages/auth/admin/RegTeamInvite";
 // import Reset from "./pages/auth/admin/Reset";
 // import TeamInvite from "./pages/auth/admin/TeamInvite";
-import AdminRecord from "./pages/dashboard/admin/Records";
-import AgentRecord from "./pages/dashboard/agent/Records";
-import AgentClient from "./pages/dashboard/agent/Clients";
-import AdminClient from "./pages/dashboard/admin/Clients";
+import AdminRecord from "./pages/dashboard/admin/AdminRecord";
+import AgentRecord from "./pages/dashboard/agent/AgentRecord";
+import AgentClient from "./pages/dashboard/agent/AgentClients";
+import AdminClient from "./pages/dashboard/admin/AdminClients";
 import DashboardTemplate from "./components/molecules/dashboard/DashboardTemplate";
 import SalesBoxGroup from "./components/molecules/dashboard/SalesBoxGroup";
 import NotificationBar from "./components/molecules/dashboard/NotificationBar";
@@ -33,7 +33,8 @@ import AgentLeads from "./pages/dashboard/agent/AgentLeads";
 import AdminTeams from "./pages/dashboard/admin/AdminTeams";
 import AdminSettings from "./pages/dashboard/admin/AdminSettings";
 import AdminSettingsNav from "./components/molecules/dashboard/AdminSettingsNav";
-import Tasks from "./pages/dashboard/admin/Tasks";
+import Tasks from "./pages/dashboard/admin/AdminTasks";
+import NoPage from "./pages/NoPage";
 
 function App() {
 
@@ -123,6 +124,7 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<Features />} />
             <Route path="/admin-login" element={<Login />} />
+            <Route path="*" element={<NoPage />} />
 
 
             {/* ADMIN ROUTES */}

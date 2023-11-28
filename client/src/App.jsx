@@ -13,7 +13,7 @@ import AgentSidebar from "./components/molecules/dashboard/AgentSidebar";
 import Pricing from "./pages/Pricing";
 import Features from "./pages/Features";
 import Searchbar from "./components/molecules/dashboard/Searchbar";
-import Login from "./pages/auth/admin/Login";
+// import Login from "./pages/auth/admin/Login";
 import { RegAccount } from "./pages/auth/admin/RegAccount";
 import { RegContact } from "./pages/auth/admin/RegContact";
 import { Registration } from "./pages/auth/admin/Registration";
@@ -35,9 +35,10 @@ import AdminSettings from "./pages/dashboard/admin/AdminSettings";
 import AdminSettingsNav from "./components/molecules/dashboard/AdminSettingsNav";
 import Tasks from "./pages/dashboard/admin/AdminTasks";
 import NoPage from "./pages/NoPage";
+import AgentClaims from "./pages/dashboard/agent/AgentClaims";
+
 
 function App() {
-
  
     return (
         // <div>
@@ -123,7 +124,7 @@ function App() {
             <Route path="/admin-signup-one" element={<Registration />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<Features />} />
-            <Route path="/admin-login" element={<Login />} />
+            {/* <Route path="/admin-login" element={<Login />} /> */}
             <Route path="*" element={<NoPage />} />
 
 
@@ -141,9 +142,11 @@ function App() {
 
             {/* AGENT ROUTE */}
 
-            {/* <Route path="/dashboard/agent/home" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AgentHome />} />} /> */}
+            {/* <Route path="/dashboard/agent/home" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="Welcome back, Adewale!" />} dashboardNav={<SalesBoxGroup />} dashboardBody={<AgentHome />} />} />
 
-            {/* <Route path="/dashboard/agent/records" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentRecord />} />} /> */}
+            <Route path="/dashboard/agent/records" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentRecord />} />} />
+
+            // <Route path="/dashboard/agent/claims" element={<DashboardTemplate sidebar={<AgentSidebar />} notificationSection={<NotificationBar topic="" />} dashboardNav={<Searchbar />} dashboardBody={<AgentClaims />} />} /> */}
 
             {/* <Route path="/dashboard/agent/clients" element={} /> */}
 

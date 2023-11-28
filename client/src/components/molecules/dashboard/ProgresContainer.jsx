@@ -2,9 +2,6 @@ import React from 'react'
 
 const ProgresContainer = ({data}) => {
   const {title, color, box} = data;
-  
-  
-
 
   return (
     <div className=' w-80 bg-white rounded-md shadow-md'>

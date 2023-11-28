@@ -13,7 +13,6 @@ import AgentSidebar from "./components/molecules/dashboard/AgentSidebar";
 import Pricing from "./pages/Pricing";
 import Features from "./pages/Features";
 import Searchbar from "./components/molecules/dashboard/Searchbar";
-// import Login from "./pages/auth/admin/Login";
 import { RegAccount } from "./pages/auth/admin/RegAccount";
 import { RegContact } from "./pages/auth/admin/RegContact";
 import { Registration } from "./pages/auth/admin/Registration";
@@ -42,8 +41,10 @@ import AdminClaims from "./pages/dashboard/admin/AdminClaims";
 import AdminTasks from "./pages/dashboard/admin/AdminTasks";
 import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
+import Login from "./pages/auth/admin/Login";
 
 function App() {
+
 
     return (
         // <div>

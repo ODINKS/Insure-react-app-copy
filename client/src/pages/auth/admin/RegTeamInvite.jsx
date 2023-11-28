@@ -7,7 +7,7 @@ export const RegTeamInvite = () => {
       <div className="lg:w-[50%] h-screen flex flex-col px-20 pt-3">
         {/* Logo */}
         <a href="index.html">
-          <img src="./assets/Insure/INsure.png" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
+          <img src="https://tinyurl.com/3wuh45ve" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
         </a>
         {/* Header Section */}
         <div className="mb-14 text-left">

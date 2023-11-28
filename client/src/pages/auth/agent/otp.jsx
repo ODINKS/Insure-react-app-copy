@@ -32,31 +32,31 @@ export const Otp = () => {
           type="text"
           name="otp"
           maxLength={1}
-          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 placeholder:text-3xl"
+          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
         />
          <input
           type="text"
           name="otp"
           maxLength={1}
-          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4"
+          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
         />
          <input
           type="text"
           name="otp"
           maxLength={1}
-          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4"
+          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
         />
          <input
           type="text"
           name="otp"
           maxLength={1}
-          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4"
+          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
         />
         <input
           type="text"
           name="otp"
           maxLength={1}
-          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4"
+          className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
         />
 
 

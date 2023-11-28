@@ -15,7 +15,7 @@ const PasswordInput = ({ placeholder, name, value, onChange, error, errorMessage
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 pr-10 ${
+        className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 pr-10 focus:border-blue-500 ${
           error ? 'border-red-500' : ''
         }`}
       />

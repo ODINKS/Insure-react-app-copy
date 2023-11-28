@@ -41,6 +41,7 @@ import AdminLeads from "./pages/dashboard/admin/AdminLeads";
 import AdminClaims from "./pages/dashboard/admin/AdminClaims";
 import AdminTasks from "./pages/dashboard/admin/AdminTasks";
 import AgentTasks from "./pages/dashboard/agent/AgentTasks";
+import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 
 function App() {
 
@@ -75,12 +76,13 @@ function App() {
                 <Route path="records" element={<AgentRecord />} />
                 <Route path="clients" element={<AgentClient />} />
                 <Route path="leads" element={<AgentLeads />} />
-                {/* <Route path="claims" element={<AgentClaims />} /> */}
+                <Route path="claims" element={<AgentClaims />} />
                 <Route path="task" element={<AgentTasks />} />
                 <Route path="settings" element={<AgentSettings />} />
             </Route>
 
             <Route path="*" element={<NoPage />} />
+    
 
         </Routes>
     );

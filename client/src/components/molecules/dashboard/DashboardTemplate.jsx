@@ -1,8 +1,9 @@
 import React from 'react'
-import { Route, Switch, Link, useRoute} from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import AdminHome from '../../../pages/dashboard/admin/AdminHome'
 
 const DashboardTemplate = (props) => {
-    const {sidebar, dashboardNav, dashboardBody, notificationSection} = props
+    const { sidebar, dashboardNav, dashboardBody, notificationSection } = props
     return (
         <>
             <div className='lg:flex lg:justify-between w-[98.5vw] bg-[#DFE7FA] h-full'>

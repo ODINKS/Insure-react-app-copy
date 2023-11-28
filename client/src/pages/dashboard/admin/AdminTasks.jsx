@@ -8,7 +8,7 @@ import { VscTriangleDown } from "react-icons/vsc";
 
 
 
-const Tasks = () => {
+const AdminTasks = () => {
 
    const [dateState, setDateSate] = useState(new Date());
    const handleDateChange = (e) => {
@@ -115,4 +115,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default AdminTasks;

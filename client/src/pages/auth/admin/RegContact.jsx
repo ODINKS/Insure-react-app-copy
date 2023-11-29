@@ -7,7 +7,7 @@ export const RegContact = () => {
       <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
         {/* Logo */}
         <a href="index.html">
-          <img src="./assets/Insure/INsure.png" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
+          <img src="https://tinyurl.com/3wuh45ve" alt="logo" className="mb-2 w-16 h-12 lg:w-24 lg:h-14" />
         </a>
         {/* Header Section */}
         <div className="">
@@ -44,7 +44,7 @@ export const RegContact = () => {
                 className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
             />
 
-          <select className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400">
+          <select className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400 focus:border-blue-500">
             <option>Pick a plan</option>
             <option>Standard</option>
             <option>Premium</option>

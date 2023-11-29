@@ -15,8 +15,8 @@ const AgentTasks = () => {
 
   return (
    <main className="bg-[#f4f4f4] w-full h-screen">
-      <DashboardHeader />
-      <AgentSidebar />
+      {/* <DashboardHeader /> */}
+      {/* <AgentSidebar /> */}
 
 
       <div className="grid grid-cols-5 grid-rows-5 gap-4 w-[80%] h-[90vh] p-5 absolute top-[60px] right-0">

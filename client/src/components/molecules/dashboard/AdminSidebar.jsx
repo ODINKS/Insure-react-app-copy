@@ -23,7 +23,7 @@ const AdminSidebar = () => {
                         <path fillRule="evenodd" d="M3 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 5.25zm0 4.5A.75.75 0 013.75 9h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.75zm0 4.5a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75zm0 4.5a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
                     </svg>
                 </div>
-                <nav className={`${isMenuOpen ? 'block' : 'hidden'} w-[38vw] md:w-[25vw] lg:w-[20vw] xl:w-[17vw] flex flex-col space-y-3 lg:gap-y-[4rem] justify-center items-center h-[100vh] fixed left-0 top-0 bottom-0 pt-4 bg-[--white-bg] shadow-md border z-20 lg:z-0`}>
+                <nav className={`${isMenuOpen ? 'flex flex-col' : 'hidden'} w-[38vw] md:w-[25vw] lg:w-[20vw] xl:w-[17vw] lg:flex flex-col space-y-3 lg:gap-y-[4rem] justify-center items-center h-[100vh] fixed left-0 top-0 bottom-0 pt-4 bg-[--white-bg] shadow-md border z-20 lg:z-0`}>
 
                     {/* Cancel button */}
                     <div

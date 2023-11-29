@@ -8,7 +8,7 @@ const Track = (props) => {
     <h2 className='items-left m-4 text-2xl text-black'>{topic}</h2>
     <table className="bg-white rounded-md align-middle">
       <thead className="rounded-md">
-        <tr className="text-grey-900 pt-6">
+        <tr className="text-grey-900 pt-6 font-black">
           <th className=''>S/N</th>
           <th className=''>Policy No.</th>
           <th className=''>Name</th>

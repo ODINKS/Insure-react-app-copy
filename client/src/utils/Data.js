@@ -36,7 +36,7 @@ export const Data = [
 export const LeadsData= [
   {
     id: 1,
-    occupation: "Dveloper",
+    occupation: "Developer",
     email: "hizick27@gmail.com",
     phone: "+234908u798",
     clientName: "Adewale Iyanu",
@@ -89,7 +89,7 @@ export const ClaimsData= [
     Duration: "2 years",
     ClaimAmt: 100000,    
     clientName: "Adewale Iyanu",
-    Product: "Dveloper",
+    Product: "Developer",
     status:1,
   },
   {
@@ -125,7 +125,7 @@ export const ClaimsData= [
     Duration: "2 years",
     ClaimAmt: 100000,    
     clientName: "Atoyebi Alice",
-    Product: "Dveloper",
+    Product: "Developer",
     status:1,
   },
   {
@@ -134,7 +134,7 @@ export const ClaimsData= [
     Duration: "2 years",
     ClaimAmt: 100000,    
     clientName: "Adewale Isaac",
-    Product: "Dveloper",
+    Product: "Developer",
     status:1,
   },
   {
@@ -161,16 +161,16 @@ export const TeamData= [
 },
 {
   id: 2,
-  Name: "leo mary",
+  Name: "Leo Mary",
   StaffID: "CAD/2",
   Role: "Agent",
-  Email: "matyleo#mail.com",
+  Email: "matyleo@mail.com",
   Portfolio: " .6 million",
   Status:1,
 },
 {
   id: 3,
-  Name: "mary nick",
+  Name: "Mary Nick",
   StaffID: "CAD/3",
   Role: "Agent",
   Email: "mary@mail.com",
@@ -179,7 +179,7 @@ export const TeamData= [
 },
 {
   id: 4,
-  Name: "mary samuel",
+  Name: "Mary Samuel",
   StaffID: "CAD/4",
   Role: "Agent",
   Email: "samuel@mail.com",
@@ -197,7 +197,7 @@ export const TeamData= [
 },
 {
   id: 6,
-  Name: "prince effiong",
+  Name: "Prince Effiong",
   StaffID: "CAD/6",
   Role: "Agent",
   Email: "effiong@mail.com",
@@ -215,7 +215,7 @@ export const TeamData= [
 },
 {
   id: 8,
-  Name: "ayo kemi",
+  Name: "Ayo Kemi",
   StaffID: "CAD/8",
   Role: "Agent",
   Email: "ayo@mail.com ",
@@ -224,7 +224,7 @@ export const TeamData= [
 },
 {
   id: 9,
-  Name: "issurance kemi",
+  Name: "Insurance Kemi",
   StaffID: "CAD/9",
   Role: "Agent",
   Email: " kemi@mail.com",
@@ -233,7 +233,7 @@ export const TeamData= [
 },
 {
   id: 10,
-  Name: "Atoyebi Nickolas",
+  Name: "Atoyebi Nicholas",
   StaffID: "CAD/10",
   Role: "Agent",
   Email: "Isaac@mail.com ",

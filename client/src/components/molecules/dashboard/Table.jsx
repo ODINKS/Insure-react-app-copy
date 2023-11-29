@@ -54,7 +54,7 @@ const Table = ({data}) => {
             {leads.data6}
             </td>
             <td class="px-6 py-4">
-            <DropDownMenu data={{ actionState : ["approve", "Rejct", "Transfer"], defaultdata: leads.data7}}/> 
+            <DropDownMenu data={{ actionState : ["Approve", "Reject", "Transfer"], defaultdata: leads.data7}}/> 
             </td>
         </tr>
             

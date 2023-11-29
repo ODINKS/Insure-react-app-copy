@@ -84,7 +84,7 @@ const Features = () => {
           </div>
           <div className="mx-auto text-xl lg:order-2 order-1 self-center">
             <p className="text-5xl mb-6 font-bold text-center lg:text-left mx-auto">
-              Customer <span class="text-orange-500">Data</span> Security
+              Customer <span className="text-orange-500">Data</span> Security
             </p>
             <ul className="list-disc ml-8">
               <li className="mb-2">Secured Data Transmission</li>
@@ -102,7 +102,7 @@ const Features = () => {
         <div className="flex flex-wrap justify-between mx-auto w-[90%] mt-20">
           <div className="self-center lg:w-[50%] w-full text-xl">
             <p className="text-5xl mb-6 font-bold text-center lg:text-left">
-              Getting <span class="text-orange-500">Started</span> Videos
+              Getting <span className="text-orange-500">Started</span> Videos
             </p>
             <ul className="list-disc ml-8">
               <li className="mb-2">
@@ -158,7 +158,7 @@ const Features = () => {
             </div>
             <div className="mx-auto text-xl self-center ">
               <p className="text-5xl mb-6 font-bold lg:text-left text-center mx-auto">
-                Analytics <span class="text-orange-500">and</span> Reporting
+                Analytics <span className="text-orange-500">and</span> Reporting
               </p>
               <ul className="w-[440px] list-disc ml-8">
                 <li className="mb-2">

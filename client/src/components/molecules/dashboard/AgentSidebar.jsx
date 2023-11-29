@@ -25,7 +25,7 @@ const AgentSidebar = () => {
                     </svg>
 
                 </div>
-                <nav className={`${isMenuOpen ? 'block' : 'hidden'} w-[38vw] md:w-[25vw] lg:w-[20vw] xl:w-[17vw] flex flex-col space-y-3 lg:gap-y-[4rem] justify-center items-center h-[100vh] fixed left-0 top-0 bottom-0 pt-[3rem] bg-[--white-bg] shadow-md border z-20 lg:z-0`}>
+                <nav className={`${isMenuOpen ? 'flex flex-col' : 'hidden'} w-[38vw] md:w-[25vw] lg:w-[20vw] xl:w-[17vw] lg:flex flex-col space-y-3 lg:gap-y-[4rem] justify-center items-center h-[100vh] fixed left-0 top-0 bottom-0 pt-[3rem] bg-[--white-bg] shadow-md border z-20 lg:z-0`}>
                     {/* Cancel button */}
                     <div 
                     onClick={() => toggleMenu(false)}

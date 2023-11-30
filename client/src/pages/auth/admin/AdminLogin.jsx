@@ -2,7 +2,7 @@ import React from "react";
 import BUTTON from "../../../components/molecules/global/Button";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const AdminLogin = () => {
 
   return (
     <main className="w-full h-screen flex justify-center items-center">
@@ -27,7 +27,7 @@ const Login = () => {
         </div>
         <BUTTON
           description="Login"
-          width = 'full'
+          width = 'w-full'
         //   className="w-full text-[#000]"
         />
         <Link to="/reset" className='text-[12px] mt-5 pl-2'>Forgot password?</Link>
@@ -37,4 +37,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

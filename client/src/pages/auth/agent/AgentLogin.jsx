@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const AgentLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const validateEmail = () => {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setEmailError('Invalid email address');
+      setEmailError("Invalid email address");
     } else {
-      setEmailError('');
+      setEmailError("");
     }
   };
 
   const validatePassword = () => {
     if (password.length < 6) {
-      setPasswordError('Password must be at least 6 characters long');
+      setPasswordError("Password must be at least 6 characters long");
     } else {
-      setPasswordError('');
+      setPasswordError("");
     }
   };
 
@@ -31,7 +31,6 @@ export const AgentLogin = () => {
     validatePassword();
 
     // Proceed with authentication logic if validations pass
-   
   };
 
   return (
@@ -59,7 +58,11 @@ export const AgentLogin = () => {
           </h1>
         </div>
         {/* Form Area */}
-        <form name="Login" onSubmit={handleSubmit} className="flex flex-col w-full">
+        <form
+          name="Login"
+          onSubmit={handleSubmit}
+          className="flex flex-col w-full"
+        >
           {/* agent email */}
           <input
             type="email"
@@ -70,7 +73,7 @@ export const AgentLogin = () => {
             onBlur={validateEmail}
             placeholder="Enter email address"
             className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              emailError ? 'border-red-500' : ''
+              emailError ? "border-red-500" : ""
             }`}
           />
           {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
@@ -83,10 +86,12 @@ export const AgentLogin = () => {
             onBlur={validatePassword}
             placeholder="Enter password"
             className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              passwordError ? 'border-red-500' : ''
+              passwordError ? "border-red-500" : ""
             }`}
           />
-          {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
+          {passwordError && (
+            <p className="text-red-500 text-sm">{passwordError}</p>
+          )}
 
           {/* Proceed button */}
           <button
@@ -97,7 +102,9 @@ export const AgentLogin = () => {
             Confirm
           </button>
           <div>
-            <a href="/"><b>Forget Password?</b></a>
+            <a href="/">
+              <b>Forget Password?</b>
+            </a>
           </div>
         </form>
       </div>

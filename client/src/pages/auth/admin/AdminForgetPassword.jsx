@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BUTTON from "../../../components/molecules/global/Button";
 
-const Reset = () => {
+const AdminForgetPassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -51,7 +51,7 @@ const Reset = () => {
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
         {/* fixed this button with */}
-        <BUTTON description="Get new password" width="full" />
+        <BUTTON description="Get new password" width="w-full" />
         <Link to="/login" className="text-[12px] mt-5 pl-2">
           Login
         </Link>
@@ -60,4 +60,4 @@ const Reset = () => {
   );
 };
 
-export default Reset;
+export default AdminForgetPassword;

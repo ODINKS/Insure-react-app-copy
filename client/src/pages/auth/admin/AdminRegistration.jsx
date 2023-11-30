@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Registration = () => {
+export const AdminRegistration = () => {
   const [companyName, setCompanyName] = useState('');
   const [businessType, setBusinessType] = useState('');
   const [teamCapacity, setTeamCapacity] = useState('');

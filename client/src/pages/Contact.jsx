@@ -12,35 +12,9 @@ const Contact = () => {
   // const buttonWidth = "20"
 
   return (
-    <div className="font-Lato" style={{ fontFamily: 'Lato' }}>
+    <div className="overflow-hidden">
       <Navbar />
       {/* HERO SECTION */}
-      {/* <div
-        className="h-screen bg-cover "
-        style={{
-          backgroundImage:
-            'url("https://tinyurl.com/48ffmsy8")',
-        }}
-      >
-        <div className="flex justify-between items-center h-full">
-          <div className="text-white ml-12 font-lato">
-            <h1 className="text-7xl font-bold mb-12">
-              Stay <span className="text-orange-500">in</span> Touch
-            </h1>
-            <p className="text-[1.4rem] mb-9 font-medium">
-              At INsure, we're here to provide you with peace of mind and
-              unparalleled service.
-              <br />
-              Whether you have questions, need assistance, or want to discuss
-              your <br /> insurance-related needs, our dedicated team is ready
-              to assist you.
-            </p>
-            <button className="bg-orange-500 text-white px-9 py-2 rounded font-semibold">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </div> */}
       < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
       {/* {get-in-touch section} */}
       <section className="bg-white-200 py-16 text-left ml-60">
@@ -220,8 +194,6 @@ const Contact = () => {
       <Footer />
 
     </div>
-
-
   );
 };
 

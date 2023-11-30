@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Button from './Button'
 import '../../../styles/style.css'
 
 
 
 const Navbar = () => {
-    const [activeLink, setActiveLink] = useState('home');
+    const [activeLink, setActiveLink] = useState('');
     const [isMenuOpen, setMenuOpen] = useState(false)
 
-    const handleLinkClick = (link) => {
-        setActiveLink(link);
-    };
+    // const handleLinkClick = (link) => {
+    //     setActiveLink(link);
+    // };
 
     const toggleMenu = (bool) => {
         setMenuOpen(bool)
@@ -65,32 +65,35 @@ const Navbar = () => {
                         <div>
                             <ul className="flex flex-col lg:items-center font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-[3.5rem] md:mt-0 md:mr-0 lg:space-x-[4rem] lg:mr-22 ">
                                 {/* Home */}
-                                <li className='md:self-center' onClick={() => handleLinkClick('home')}>
+                                <li className='md:self-center'>
                                     <Link to="/"
+
+                                        // onClick={() => handleLinkClick('home')}
                                         className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'home' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-75 md:pb-1 md:no-underline' : ''}`} aria-current="page">Home</Link>
                                 </li>
                                 {/* About */}
-                                <li className='md:self-center'  onClick={() => handleLinkClick('about')}>
-                                    <Link to="/about" 
+                                <li className='md:self-center'  >
+                                    <Link to="/about"
+                                    // onClick={() => handleLinkClick('about')} 
                                     className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] hover:bg-[ --Blue2] text-base md:hover:bg-transparent md:border-0 hover:bg-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'about' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-75 md:pb-1 md:no-underline' : ''}`}>About</Link>
                                 </li>
                                 {/* Contact */}
                                 <li className='md:self-center'>
                                     <Link to="/contact" 
-                                    onClick={() => handleLinkClick('contact')}
+                                    // onClick={() => handleLinkClick('contact')}
                                     className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] dark:hover:bg-gray-700 dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'contact' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-75 md:pb-1 md:no-underline' : ''}`}>Contact</Link>
                                 </li>
                                 {/* Pricing */}
                                 <li className='md:self-center'>
                                     <Link to="/pricing" 
-                                    onClick={() => handleLinkClick('pricing')}
+                                    // onClick={() => handleLinkClick('pricing')}
                                     className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] md:dark:hover:bg-transparent md:text-[1.125rem]
                                     ${activeLink === 'pricing' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-75 md:pb-1 md:no-underline' : ''}`} >Pricing</Link>
                                 </li>
                                 {/* Features */}
                                 <li className='md:self-center'>
                                     <Link to="/features" 
-                                    onClick={() => handleLinkClick('features')}
+                                    // onClick={() => handleLinkClick('features')}
                                     className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent md:border-0 md:hover:text-[--orange-hover] md:p-0 dark:text-white md:dark:hover:text-[--orange-hover] dark:hover:text-white md:dark:hover:bg-transparent md:text-[1.125rem] 
                                     ${activeLink === 'features' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-{10ms} md:pb-1 md:no-underline' : ''}`}>Features</Link>
                                 </li>

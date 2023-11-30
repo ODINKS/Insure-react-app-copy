@@ -21,7 +21,7 @@ const Navbar = () => {
     const description = "Get Started"
     const fontSize = "md:text-[1.125rem]"
     const width = "0"
-    const route = "/admin-signup-one"
+    const route = "/auth/admin/registration"
 
     return (
         <div>

@@ -22,8 +22,8 @@ const Pricing = () => {
         </div>
         <main className="m-0 p-0 font-lato font-[400]">
           {/* Section 2: Pricing Boxes */}
-          <section className="bg-blue-200 text-black md:flex flex-row  py-6 font-lato ">
-            <div className="container mx-auto  space-y-4 sm:flex-row  md:space-x-8" style= {{display: 'flex'}}>
+          <section className="bg-blue-200 text-black md:flex flex-row  py-6 font-lato">
+            <div className="container mx-auto  space-y-4 sm:flex-col  md:space-x-8" style= {{display: 'flex'}}>
               {/* Box 1 */}
               <div className="mt-4 md:w-1/3 sm:w-1/3 bg-white pt-8  ">
                 <div className="h-1/5 bg-blue-200 rounded-tr-full rounded-br-full w-64 text- pt-2 px-2 ">

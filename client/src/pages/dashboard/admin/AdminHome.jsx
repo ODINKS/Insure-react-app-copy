@@ -152,7 +152,7 @@ const AdminHome = () => {
 
           <section className="container max-w-5xl mx-auto flex flex-col justify-center items-center">
 
-            {/* <SalesBoxGroup /> */}
+            <SalesBoxGroup />
 
 
             <div className='flex justify-evenly mx-auto  space-x-6 w-full'>

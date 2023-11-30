@@ -4,35 +4,17 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import AdminHome from "./pages/dashboard/admin/AdminHome";
 import AgentHome from "./pages/dashboard/agent/AgentHome";
-// import TEAMINVITE from "./pages/auth/admin/TeamInvite";
-import Navbar from "./components/molecules/global/Navbar";
-import Button from "./components/molecules/global/Button";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminSidebar from "./components/molecules/dashboard/AdminSidebar";
-import AgentSidebar from "./components/molecules/dashboard/AgentSidebar";
 import Pricing from "./pages/Pricing";
 import Features from "./pages/Features";
-import Searchbar from "./components/molecules/dashboard/Searchbar";
-import { RegAccount } from "./pages/auth/admin/RegAccount";
-import { RegContact } from "./pages/auth/admin/RegContact";
-import { Registration } from "./pages/auth/admin/Registration";
-import { RegTeamInvite } from "./pages/auth/admin/RegTeamInvite";
-// import Reset from "./pages/auth/admin/Reset";
-// import TeamInvite from "./pages/auth/admin/TeamInvite";
 import AdminRecord from "./pages/dashboard/admin/AdminRecord";
 import AgentRecord from "./pages/dashboard/agent/AgentRecord";
 import AgentClient from "./pages/dashboard/agent/AgentClients";
 import AdminClient from "./pages/dashboard/admin/AdminClients";
-import DashboardTemplate from "./components/molecules/dashboard/DashboardTemplate";
-import SalesBoxGroup from "./components/molecules/dashboard/SalesBoxGroup";
-import NotificationBar from "./components/molecules/dashboard/NotificationBar";
-import AgentSettingsNav from "./components/molecules/dashboard/AgentSettingsNav";
 import AgentSettings from "./pages/dashboard/agent/AgentSettings";
 import AgentLeads from "./pages/dashboard/agent/AgentLeads";
 import AdminTeams from "./pages/dashboard/admin/AdminTeams";
 import AdminSettings from "./pages/dashboard/admin/AdminSettings";
-import AdminSettingsNav from "./components/molecules/dashboard/AdminSettingsNav";
-import Tasks from "./pages/dashboard/admin/AdminTasks";
 import NoPage from "./pages/NoPage";
 import AdminDashboard from "./components/molecules/dashboard/AdminDashboard";
 import AgentDashboard from "./components/molecules/dashboard/AgentDashboard";
@@ -41,14 +23,18 @@ import AdminClaims from "./pages/dashboard/admin/AdminClaims";
 import AdminTasks from "./pages/dashboard/admin/AdminTasks";
 import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
-import Login from "./pages/auth/admin/Login";
+import { AgentLogin } from "./pages/auth/agent/AgentLogin";
+import { AgentNewPassword } from "./pages/auth/agent/AgentNewPassword";
+import { Registration } from "./pages/auth/agent/AgentRegistration";
+import { Otp } from "./pages/auth/agent/otp";
+import { ForgetPassword } from "./pages/auth/agent/forgetPassword";
 
 function App() {
 
 
     return (
         // <div>
-        //     <Searchbar />
+            
         // </div>
 
         <Routes>
@@ -59,6 +45,9 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<Features />} />
             <Route path="/admin-login" element={<Login />} />
+            {/* Agent Auth */}
+            {/* <Route path="/auth/agent" /> */}
+
             {/* Admin Dashboard routes */}
             <Route path="/dashboard/admin/*" element={<AdminDashboard />}>
                 <Route path="home" element={<AdminHome />} />
@@ -81,7 +70,6 @@ function App() {
                 <Route path="task" element={<AgentTasks />} />
                 <Route path="settings" element={<AgentSettings />} />
             </Route>
-
             <Route path="*" element={<NoPage />} />
     
 

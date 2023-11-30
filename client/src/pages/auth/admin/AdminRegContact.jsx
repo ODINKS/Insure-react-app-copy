@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const RegContact = () => {
+export const AdminRegContact = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
   const [selectedPlan, setSelectedPlan] = useState('');

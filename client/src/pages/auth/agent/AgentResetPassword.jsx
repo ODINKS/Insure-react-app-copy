@@ -39,7 +39,7 @@ const PasswordInput = ({ placeholder, name, value, onChange, error, errorMessage
   );
 };
 
-export const AgentNewPassword = () => {
+export const AgentResetPassword = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordError, setPasswordError] = useState({

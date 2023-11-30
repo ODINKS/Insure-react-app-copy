@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const RegTeamInvite = () => {
+export const AdminRegTeamInvite = () => {
   const [email1, setEmail1] = useState('');
   const [email2, setEmail2] = useState('');
   const [email3, setEmail3] = useState('');

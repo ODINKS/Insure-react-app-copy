@@ -2,30 +2,28 @@ import React from "react";
 import Navbar from "../components/molecules/global/Navbar";
 import HeroSection from "../components/molecules/global/HeroSection";
 import Footer from "../components/molecules/global/Footer";
+import Button from "../components/molecules/global/Button";
 
-let prop = {
-  title: "Pick <span className='text-orange-500'>a</span> plan",
-  description:
-    "Explore our specialized packaging plans crafted exclusively for insurance companies.We understand the unique demands of your industry and offer comprehensive solutions. From customizable coverage options to seamless integration, our product is designed to meet the distinct needs of insurance professionals. Choose reliability, choose tailored solutions.",
-  img: "https://cdn.hashnode.com/res/hashnode/image/upload/v1700652467140/22a018e6-7645-45e5-9ff6-64f4bb8fabbf.jpeg",
-  buttonDesc: "Contact us",
-  buttonWidth: "20",
-};
+const title = "Pick <span className='text-orange-500'>a</span> plan"
+const description = "Explore our specialized packaging plans crafted exclusively for insurance companies.We understand the unique demands of your industry and offer comprehensive solutions. From customizable coverage options to seamless integration, our product is designed to meet the distinct needs of insurance professionals. Choose reliability, choose tailored solutions."
+const img = "https://cdn.hashnode.com/res/hashnode/image/upload/v1700652467140/22a018e6-7645-45e5-9ff6-64f4bb8fabbf.jpeg"
+const buttonDesc = "Contact us"
+const BtnFontSize = "text-[1.5rem]"
+// const buttonWidth = "20"
 
 const Pricing = () => {
   return (
     <>
-      <Navbar />
       <div>
-        <div>
-          <HeroSection {...prop} />
-        </div>
+        <Navbar />
+
         <main className="m-0 p-0 font-lato font-[400]">
+          < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
           {/* Section 2: Pricing Boxes */}
-          <section className="bg-blue-200 text-black md:flex flex-row  py-6 font-lato">
-            <div className="container mx-auto  space-y-4 sm:flex-col  md:space-x-8" style= {{display: 'flex'}}>
+          <section className="bg-[--lavender-bg] text-black md:flex flex-row py-6 font-lato">
+            <div className="flex flex-col justify-center items-center container mx-auto gap-y-12 md:flex-row md:gap-x-8 flex-wrap lg:flex-nowrap mb-10">
               {/* Box 1 */}
-              <div className="mt-4 md:w-1/3 sm:w-1/3 bg-white pt-8  ">
+              <div className="mt-4 bg-white pt-8 w-[70%] lg:w-1/3 ">
                 <div className="h-1/5 bg-blue-200 rounded-tr-full rounded-br-full w-64 text- pt-2 px-2 ">
                   <p className="text-2xl px-4 ">
                     {" "}
@@ -166,16 +164,17 @@ const Pricing = () => {
                   <div className="flex items-center justify-center mt-4">
                     {" "}
                     <br />
-                    <button className="bg-orange-400 text-white px-16 py-2 absolute mb-20 rounded hover:bg-orange-600">
+                    <Button width={'w-[13.8rem]'} description={'Choose Plan'} fontSize={'1.5rem'} />
+                    {/* <button className="bg-orange-400 text-white px-16 py-2 absolute mb-20 rounded hover:bg-orange-600">
                       Choose plan
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
 
               {/* Box 2 */}
 
-              <div className="mt-4 md:basis-1/3 sm:w-1/3 bg-white pt-8 ">
+              <div className="bg-white pt-8 w-[70%] lg:w-1/3">
                 <div className="h-1/5 bg-blue-200 rounded-tr-full rounded-br-full w-64 text- pt-2 px-2">
                   <p className="text-2xl px-4 ">
                     {" "}
@@ -315,18 +314,19 @@ const Pricing = () => {
                     50 Agents registration access with all benefits.
                     <br /> <br /> <br /> <br /> <br />
                   </ul>
-                  <div className="flex items-center justify-center mt-4">
+                  <div className="flex items-center justify-center mt-8">
                     {" "}
                     <br />
-                    <button className="bg-orange-400 text-white px-16 py-2 absolute mb-20 rounded hover:bg-orange-600">
+                    <Button width={'w-[13.8rem]'} description={'Choose Plan'} fontSize={'1.5rem'} />
+                    {/* <button className="bg-orange-400 text-white px-16 py-2 absolute mb-20 rounded hover:bg-orange-600">
                       Choose plan
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
 
               {/* Box 3 */}
-              <div className="mt-4 md:basis-1/3 sm:w-1/3 bg-white pt-8">
+              <div className="mt-4 bg-white pt-8 w-[70%] lg:w-1/3">
                 <div className="h-1/5 bg-blue-200 rounded-tr-full rounded-br-full w-64 text- pt-2 px-2">
                   <p className="text-2xl px-4 ">
                     {" "}
@@ -470,9 +470,10 @@ const Pricing = () => {
                   <div className="flex items-center justify-center mt-4">
                     {" "}
                     <br />
-                    <button className="bg-orange-400 text-white px-16 py-2 absolute mb-20 rounded hover:bg-orange-600">
+                    <Button width={'w-[13.8rem]'} description={'Choose Plan'} fontSize={'1.5rem'} />
+                    {/* <button className="bg-orange-400 text-white px-16 py-2 absolute mb-20 rounded hover:bg-orange-600">
                       Choose plan
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

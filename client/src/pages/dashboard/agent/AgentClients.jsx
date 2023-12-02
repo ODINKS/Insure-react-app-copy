@@ -3,6 +3,7 @@ import { ClaimsData } from "../../../utils/Data";
 import Table from '../../../components/molecules/dashboard/Table'
 import { transformData } from '../../../utils/DataTransformer'
 import ActionButton from '../../../components/molecules/dashboard/ActionButton'
+import Searchbar from '../../../components/molecules/dashboard/Searchbar';
 
 
 
@@ -25,6 +26,7 @@ const AgentClients = () => {
 
   return (
     <div>
+      <Searchbar />
       <div className='flex justify-between mb-4'>
         <div className='flex'>
           <ActionButton title='PDF'/>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Searchbar from "../../../components/molecules/dashboard/Searchbar";
 
 const AgentLeads = () => {
   const [widgets, setWidgets] = useState([]);
@@ -41,6 +42,7 @@ const AgentLeads = () => {
 
   return (
     <>
+      <Searchbar />
       {/* leads section */}
       <section className="bg-blue-100 h-screen w-full flex flex-wrap">
         {/* new leads */}

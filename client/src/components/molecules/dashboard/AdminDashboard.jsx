@@ -14,18 +14,12 @@ import AdminSettings from '../../../pages/dashboard/admin/AdminSettings'
 import Searchbar from './Searchbar'
 
 const AdminDashboard = () => {
-    const renderDynamicHeader = () =>{
-
-        return <div className='p-8 font-bold text-2xl'>Dynamic Header</div>
-    }
   return (
     <>
         <DashboardTemplate 
             sidebar={<AdminSidebar />}
 
             notificationSection={<NotificationBar />}
-
-            dashboardNav={<Searchbar />}
             
             dashboardBody={ <Outlet />}
         />

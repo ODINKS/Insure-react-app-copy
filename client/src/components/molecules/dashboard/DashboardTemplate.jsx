@@ -1,9 +1,7 @@
 import React from 'react'
 
 const DashboardTemplate = (props) => {
-    const { sidebar, 
-        // dashboardNav, 
-        dashboardBody, notificationSection } = props
+    const { sidebar,dashboardBody, notificationSection } = props
     return (
         <>
             <div className='lg:flex lg:justify-between max-w-screen overflow-hidden bg-[#DFE7FA] h-full'>
@@ -11,7 +9,6 @@ const DashboardTemplate = (props) => {
                 {sidebar}
                 <main className='bg-[#DFE7FA] min-h-screen lg:w-[80vw] xl:w-[83vw] flex flex-col px-12 md:px-16'>
                     {notificationSection}
-                    {/* {dashboardNav} */}
                     {dashboardBody || "Your contents will appear here"}
                 </main>
             </div>

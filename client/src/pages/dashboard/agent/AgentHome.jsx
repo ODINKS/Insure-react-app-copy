@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import AdminSidebar from '../../../components/molecules/dashboard/AdminSidebar';
 import Track from '../../../components/molecules/dashboard/Track';
 import NotificationBar from '../../../components/molecules/dashboard/NotificationBar';
+import SalesBoxGroup from '../../../components/molecules/dashboard/SalesBoxGroup';
 
 
 Chart.register(CategoryScale);
@@ -146,7 +147,7 @@ const AgentHome = () => {
               <SalesBox title="Claims" price="16700" growth="-0.5%" />
             </div> */}
 
-
+            <SalesBoxGroup />
 
             <div className='flex justify-evenly mx-auto space-x-6 w-full'>
               <div className="w-[48%] px-5 bg-white py-20 items-center rounded-md">

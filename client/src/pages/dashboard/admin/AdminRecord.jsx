@@ -4,6 +4,8 @@ import Table from '../../../components/molecules/dashboard/Table'
 import { transformData } from '../../../utils/DataTransformer'
 import ActionButton from '../../../components/molecules/dashboard/ActionButton'
 import Searchbar from '../../../components/molecules/dashboard/Searchbar';
+import { generatePDF, generateExcel, printContent } from '../../../components/molecules/dashboard/ButtonUtils';
+
 
 
 
@@ -29,13 +31,13 @@ const AdminRecords = () => {
       <Searchbar />
       <div className='flex justify-between mb-4'>
         <div className='flex'>
-          <ActionButton title='PDF'/>
-          <ActionButton title='EXCEL'/>
-          <ActionButton title='PRINT'/>
+        <ActionButton title='PDF' onClick={() => generatePDF('table-container', 'document')} />
+          <ActionButton title='EXCEL' onClick={() => generateExcel('table-container', 'document')} />
+          <ActionButton title='PRINT' onClick={() => printContent('table-container')} />
         </div>
       </div>
       
-      <Table data={{tableHead, tabledata}}/>
+      <Table data={{tableHead, tabledata}} id="table-container" />
       {/* <div className='text-2xl text-center'>
         Your contents will appear here
       </div> */}

@@ -12,8 +12,6 @@ const AgentDashboard = () => {
             sidebar={<AgentSidebar />}
 
             notificationSection={<NotificationBar />}
-
-            dashboardNav={<Searchbar />}
             
             dashboardBody={ <Outlet />}
         />

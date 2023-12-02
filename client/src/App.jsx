@@ -33,6 +33,7 @@ import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
 import { AdminRegSetup } from "./pages/auth/admin/AdminRegSetup";
 import { AdminRegTeamInvite } from "./pages/auth/admin/AdminRegTeamInvite";
 import AdminForgetPassword from "./pages/auth/admin/AdminForgetPassword";
+import AdminProfile from "./components/molecules/dashboard/AdminProfile";
 function App() {
 
 
@@ -75,7 +76,14 @@ function App() {
                 <Route path="claims" element={<AdminClaims />} />
                 <Route path="task" element={<AdminTasks />} />
                 <Route path="teams" element={<AdminTeams />} />
-                <Route path="settings" element={<AdminSettings />} />
+                <Route path="settings/*" element={<AdminSettings />} >
+                    <Route path="profile" element={<AdminProfile />} />
+                    <Route path="account" element={<AdminProfile />} />
+                    <Route path="payment" element={<AdminProfile />} />
+                    <Route path="notifications" element={<AdminProfile />} />
+                    <Route path="delete-account" element={<AdminProfile />} />
+                    <Route path="security" element={<AdminProfile />} />
+                </Route>
             </Route>
 
             {/* Agent Dashboard Routes */}

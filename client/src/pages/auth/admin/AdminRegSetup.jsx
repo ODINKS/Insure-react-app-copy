@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const AdminRegSetup = () => {
   const [email, setEmail] = useState('');
@@ -9,6 +10,8 @@ export const AdminRegSetup = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
+
+  const navigate=useNavigate()
 
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -51,6 +54,14 @@ export const AdminRegSetup = () => {
     validateEmail();
     validatePassword();
     validateConfirmPassword();
+
+ // Check if there are no validation errors
+ if (!emailError && !passwordError && !confirmPasswordError) {
+  
+  // Navigate to the next page
+  navigate('/auth/admin/registration/teaminvite'); 
+}
+
   };
 
   return (
@@ -161,6 +172,7 @@ export const AdminRegSetup = () => {
               Back
             </button>
             <button
+              onClick={handleSubmit} 
               type="submit"
               className="sm:w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             >

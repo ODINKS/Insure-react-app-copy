@@ -36,6 +36,7 @@ import AdminForgetPassword from "./pages/auth/admin/AdminForgetPassword";
 import AdminProfile from "./components/molecules/dashboard/AdminProfile";
 import Sample from "./components/molecules/dashboard/Sample";
 import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
+import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
 
 
 function App() {
@@ -80,9 +81,9 @@ function App() {
                 <Route path="claims" element={<AdminClaims />} />
                 <Route path="task" element={<AdminTasks />} />
                 <Route path="teams" element={<AdminTeams />} />
-                <Route path="settings/*" element={<AdminSettings />} >
+                <Route path="settings/" element={<AdminSettings />} >
                     <Route path="profile" element={<AdminProfile />} />
-                    <Route path="account" element={<AdminProfile />} />
+                    <Route path="account" element={<AdminAccounts />} />
                     <Route path="payment" element={<AdminProfile />} />
                     <Route path="notifications" element={<AdminProfile />} />
                     <Route path="delete-account" element={<AdminProfile />} />

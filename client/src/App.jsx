@@ -23,13 +23,10 @@ import AdminClaims from "./pages/dashboard/admin/AdminClaims";
 import AdminTasks from "./pages/dashboard/admin/AdminTasks";
 import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
-import {
-  AgentNewPassword,
-  AgentResetPassword,
-} from "./pages/auth/agent/AgentResetPassword";
+import {AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-import { Otp } from "./pages/auth/agent/Otp";
-import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
+import { Otp } from "./pages/auth/agent/otp";
+import { ForgetPassword } from "./pages/auth/agent/forgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";

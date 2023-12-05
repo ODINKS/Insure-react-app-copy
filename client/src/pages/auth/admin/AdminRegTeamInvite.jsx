@@ -13,16 +13,24 @@ export const AdminRegTeamInvite = () => {
 
     // Validate that no two email addresses are the same
     if (email1 === email2 || email1 === email3 || email2 === email3) {
-      setEmailError('Each Email address must be unique.');
+      setEmailError('Each Email address must be unique.')
+      return false;
     } else {
       // Clear any previous error
       setEmailError('');
     }
     if(emailError){
         // Navigate to the next page
-      navigate('/dashboard/admin/*'); 
+
+        setTimeout(() => {
+          navigate('/dashboard/admin');
+        }, 2000);
+      
     }
   };
+  const handleBack =()=>{
+    navigate('/auth/admin/registration/setup')
+  }
 
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
@@ -52,7 +60,7 @@ export const AdminRegTeamInvite = () => {
           </button>
         </div>
         {/* Form Area */}
-        <form name="signUpData" onSubmit={handleSubmit} className="flex flex-col w-full">
+        <form name="signUpData" className="flex flex-col w-full">
           {/* Email input fields */}
           <input
             type="email"
@@ -92,13 +100,15 @@ export const AdminRegTeamInvite = () => {
           {/* Back and Proceed buttons */}
           <div className="flex justify-between flex-col lg:flex-row w-full mt-6">
             <button
+            onClick={handleBack}
               type="button"
               className="w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-2"
             >
               Back
             </button>
             <button
-              type="submit"
+            onClick={handleSubmit}
+              type="button"
               className="sm:w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             >
               Proceed

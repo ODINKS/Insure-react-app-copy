@@ -8,24 +8,26 @@ export const AdminRegContact = () => {
   const [phoneNumberError, setPhoneNumberError] = useState('');
 
   const navigate = useNavigate();
+
   const validatePhoneNumber = () => {
     const phoneRegex = /^\+234\d{10}$/;
     if (!phoneNumber.match(phoneRegex)) {
       setPhoneNumberError('Please enter a valid Nigerian phone number (+234xxxxxxxxxx)');
+      return false; // Phone number is not valid
     } else {
       setPhoneNumberError('');
+      return true; // Phone number is valid
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    validatePhoneNumber();
-    if (!phoneNumberError) {
-  
-
+    const isPhoneNumberValid = validatePhoneNumber();
+    
+    if (isPhoneNumberValid) {
       // Navigate to the next page
-      navigate('/auth/admin/registration/setup'); 
+      navigate('/auth/admin/registration/setup');
     }
   };
   

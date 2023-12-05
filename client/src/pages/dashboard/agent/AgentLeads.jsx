@@ -10,7 +10,6 @@ const AgentLeads = () => {
     { id: 3, name: "Alicia Joseph", description: "Software Dev" },
   ];
 
-  // Use the initialLeads array directly
   const [newLeads, setNewLeads] = useState(initialLeads);
   const [inProgress, setInProgress] = useState([]);
   const [closedLeads, setClosedLeads] = useState([]);
@@ -105,7 +104,7 @@ const AgentLeads = () => {
             <div
               key={lead.id}
               className="widget border border-gray-400 p-4 m-4 rounded-md w-auto"
-              draggable // Make sure this attribute is present
+              draggable
               onDragStart={(e) => handleOnDragStart(e, lead)}
             >
               <h4 className="text-gray-800 pb-1">{lead.name}</h4>

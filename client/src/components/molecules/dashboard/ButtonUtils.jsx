@@ -1,7 +1,7 @@
 
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
-import html2pdf from 'html2pdf.js';
+// import html2pdf from 'html2pdf.js';
 export const generatePDF = async (containerId, fileName) => {
   try {
     console.log('clicked')
@@ -22,7 +22,7 @@ export const generatePDF = async (containerId, fileName) => {
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     };
 
-    await html2pdf().from(input).set(pdfOptions).outputPdf();
+    // await html2pdf().from(input).set(pdfOptions).outputPdf();
 
     console.log('PDF generated successfully');
   } catch (error) {

@@ -31,7 +31,9 @@ const AdminRecords = () => {
       <Searchbar />
       <div className='flex justify-between mb-4'>
         <div className='flex'>
-        <ActionButton title='PDF' onClick={() => generatePDF('table-container', 'document')} />
+        <ActionButton title='PDF' 
+        action={generatePDF('table-container', 'document')} 
+        />
           <ActionButton title='EXCEL' onClick={() => generateExcel('table-container', 'document')} />
           <ActionButton title='PRINT' onClick={() => printContent('table-container')} />
         </div>

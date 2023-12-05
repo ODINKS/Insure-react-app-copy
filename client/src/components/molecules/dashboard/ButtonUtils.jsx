@@ -5,6 +5,7 @@ import * as XLSX from 'xlsx';
 
 export const generatePDF = async (containerId, fileName) => {
   try {
+    console.log('clicked')
     const input = document.getElementById(containerId);
     const canvas = await html2canvas(input);
 

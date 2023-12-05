@@ -23,9 +23,10 @@ const AdminProfile = () => {
                 <input type='text' placeholder='Pro Plan' className='border border-[--form-border-bg] w-72 md:w-96 lg:w-auto px-3 py-2 md:text-xl md:h-[3.625rem] rounded-md focus:border-[--blue-bg] focus:outline-none' />
 
                 <input type="text" name="" id="" placeholder='40,000,000 portfolio' className='w-72 border border-[--form-border-bg] md:w-96 lg:w-auto px-3 py-2 md:text-xl md:h-[3.625rem] rounded-md focus:border-[--blue-bg] focus:outline-none' />
-                <div className='w-full border border-black'>
-                    <Button description={"Save"} />
-                </div>
+                
+                <div className='lg:w-full text-center col-span-2 lg:justify-center'>
+                        <Button description={'Save'} width={'w-[8rem]'} fontSize={'text-[1.5rem]'} />
+                    </div>
             </form>
         </>
     )

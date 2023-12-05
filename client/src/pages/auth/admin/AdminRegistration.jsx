@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const AdminRegistration = () => {
   const [companyName, setCompanyName] = useState('');
@@ -10,6 +11,7 @@ export const AdminRegistration = () => {
   const [teamCapacityError, setTeamCapacityError] = useState('');
   const [companyLicenseError, setCompanyLicenseError] = useState('');
 
+  const navigate =useNavigate()
   const validateCompanyName = () => {
     if (!companyName) {
       setCompanyNameError('Company name is required');
@@ -49,6 +51,13 @@ export const AdminRegistration = () => {
     validateBusinessType();
     validateTeamCapacity();
     validateCompanyLicense();
+
+    // Check if there are no validation errors
+ if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError) {
+  
+  // Navigate to the next page
+  navigate('/auth/admin/registration/contact'); 
+}
 
   };
 
@@ -147,6 +156,7 @@ export const AdminRegistration = () => {
 
           {/* Register button */}
           <button
+            onClick={handleSubmit} 
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             id="register-button"

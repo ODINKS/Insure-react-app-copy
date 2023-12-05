@@ -28,18 +28,23 @@ import { Registration } from "./pages/auth/agent/AgentRegistration";
 import { Otp } from "./pages/auth/agent/Otp";
 import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
-import {AgentLogin} from "./pages/auth/agent/AgentLogin"
+import { AgentLogin } from "./pages/auth/agent/AgentLogin"
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
 import { AdminRegSetup } from "./pages/auth/admin/AdminRegSetup";
 import { AdminRegTeamInvite } from "./pages/auth/admin/AdminRegTeamInvite";
 import AdminForgetPassword from "./pages/auth/admin/AdminForgetPassword";
 import AdminProfile from "./components/molecules/dashboard/AdminProfile";
+import Sample from "./components/molecules/dashboard/Sample";
+import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
+import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
+
+
 function App() {
 
 
     return (
         // <div>
-            
+        //     <Sample  />
         // </div>
 
         <Routes>
@@ -76,9 +81,9 @@ function App() {
                 <Route path="claims" element={<AdminClaims />} />
                 <Route path="task" element={<AdminTasks />} />
                 <Route path="teams" element={<AdminTeams />} />
-                <Route path="settings/*" element={<AdminSettings />} >
+                <Route path="settings/" element={<AdminSettings />} >
                     <Route path="profile" element={<AdminProfile />} />
-                    <Route path="account" element={<AdminProfile />} />
+                    <Route path="account" element={<AdminAccounts />} />
                     <Route path="payment" element={<AdminProfile />} />
                     <Route path="notifications" element={<AdminProfile />} />
                     <Route path="delete-account" element={<AdminProfile />} />
@@ -97,7 +102,7 @@ function App() {
                 <Route path="settings" element={<AgentSettings />} />
             </Route>
             <Route path="*" element={<NoPage />} />
-    
+
 
         </Routes>
     );

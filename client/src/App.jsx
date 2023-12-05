@@ -65,8 +65,8 @@ function App() {
             {/* Agent Auth */}
             <Route path="/auth/agent/registration" element={<Registration />} />
             <Route path="/auth/agent/login" element={<AgentLogin />} />
-            <Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />
-            <Route path="/auth/agent/otp" element={<Otp />} />
+            {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
+            {/* {<Route path="/auth/agent/otp" element={<Otp />} />} */}
             <Route path="/auth/agent/resetpassword" element={<AgentResetPassword />} />
 
             {/* Admin Dashboard routes */}

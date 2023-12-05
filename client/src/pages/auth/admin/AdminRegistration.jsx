@@ -14,33 +14,41 @@ export const AdminRegistration = () => {
   const navigate =useNavigate()
   const validateCompanyName = () => {
     if (!companyName) {
-      setCompanyNameError('Company name is required');
+      setCompanyNameError('Company name is required')
+      return false;
     } else {
-      setCompanyNameError('');
+      setCompanyNameError('')
+      return true;
     }
   };
 
   const validateBusinessType = () => {
     if (!businessType) {
-      setBusinessTypeError('Business type is required');
+      setBusinessTypeError('Business type is required')
+      return false;
     } else {
-      setBusinessTypeError('');
+      setBusinessTypeError('')
+      return true;
     }
   };
 
   const validateTeamCapacity = () => {
     if (!teamCapacity) {
-      setTeamCapacityError('Team capacity is required');
+      setTeamCapacityError('Team capacity is required')
+      return false;
     } else {
-      setTeamCapacityError('');
+      setTeamCapacityError('')
+      return true;
     }
   };
 
   const validateCompanyLicense = () => {
     if (!companyLicense) {
-      setCompanyLicenseError('Company license is required');
+      setCompanyLicenseError('Company license is required')
+      return false;
     } else {
-      setCompanyLicenseError('');
+      setCompanyLicenseError('')
+      return true;
     }
   };
 
@@ -83,7 +91,7 @@ export const AdminRegistration = () => {
           </p>
         </div>
         {/* Form Area */}
-        <form name="signUpData" onSubmit={handleSubmit} className="flex flex-col w-full">
+        <form name="signUpData"  className="flex flex-col w-full">
           {/* Company name */}
           <input
             type="text"

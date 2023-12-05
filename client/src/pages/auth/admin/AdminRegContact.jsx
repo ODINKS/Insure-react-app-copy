@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const AdminRegContact = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -6,6 +7,7 @@ export const AdminRegContact = () => {
   const [selectedPlan, setSelectedPlan] = useState('');
   const [phoneNumberError, setPhoneNumberError] = useState('');
 
+  const navigate = useNavigate();
   const validatePhoneNumber = () => {
     const phoneRegex = /^\+234\d{10}$/;
     if (!phoneNumber.match(phoneRegex)) {
@@ -19,8 +21,16 @@ export const AdminRegContact = () => {
     event.preventDefault();
 
     validatePhoneNumber();
+    if (!phoneNumberError) {
+  
 
+      // Navigate to the next page
+      navigate('/auth/admin/registration/setup'); 
+    }
   };
+  
+
+
 
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
@@ -90,6 +100,7 @@ export const AdminRegContact = () => {
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mt-8"
             id="register-button"
+            onClick={handleSubmit} 
           >
             Continue
           </button>

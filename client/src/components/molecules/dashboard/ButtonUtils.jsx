@@ -4,6 +4,7 @@ import * as XLSX from 'xlsx';
 import html2pdf from 'html2pdf.js';
 export const generatePDF = async (containerId, fileName) => {
   try {
+    console.log('clicked')
     const input = document.getElementById(containerId);
 
     // Ensure the element is present in the DOM

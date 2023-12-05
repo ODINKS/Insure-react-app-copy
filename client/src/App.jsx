@@ -23,30 +23,36 @@ import AdminClaims from "./pages/dashboard/admin/AdminClaims";
 import AdminTasks from "./pages/dashboard/admin/AdminTasks";
 import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
-import { AgentNewPassword, AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
+import {
+  AgentNewPassword,
+  AgentResetPassword,
+} from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
 //import { Otp } from "./pages/auth/agent/Otp";
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
-import {AgentLogin} from "./pages/auth/agent/AgentLogin"
+import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
 import { AdminRegSetup } from "./pages/auth/admin/AdminRegSetup";
 import { AdminRegTeamInvite } from "./pages/auth/admin/AdminRegTeamInvite";
 import AdminForgetPassword from "./pages/auth/admin/AdminForgetPassword";
+import AdminProfile from "./components/molecules/dashboard/AdminProfile";
+import Sample from "./components/molecules/dashboard/Sample";
+import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
+import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
+
 function App() {
+  return (
+    // <div>
+    //     <Sample  />
+    // </div>
 
-
-    return (
-        // <div>
-            
-        // </div>
-
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/features" element={<Features />} />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="/features" element={<Features />} />
 
             {/* Admin Auth */}
             <Route path="/auth/admin/login" element={<Login />} />
@@ -75,7 +81,14 @@ function App() {
                 <Route path="claims" element={<AdminClaims />} />
                 <Route path="task" element={<AdminTasks />} />
                 <Route path="teams" element={<AdminTeams />} />
-                <Route path="settings" element={<AdminSettings />} />
+                <Route path="settings/" element={<AdminSettings />} >
+                    <Route path="profile" element={<AdminProfile />} />
+                    <Route path="account" element={<AdminAccounts />} />
+                    <Route path="payment" element={<AdminProfile />} />
+                    <Route path="notifications" element={<AdminProfile />} />
+                    <Route path="delete-account" element={<AdminProfile />} />
+                    <Route path="security" element={<AdminProfile />} />
+                </Route>
             </Route>
 
             {/* Agent Dashboard Routes */}
@@ -89,11 +102,8 @@ function App() {
                 <Route path="settings" element={<AgentSettings />} />
             </Route>
             <Route path="*" element={<NoPage />} />
-    
-
-        </Routes>
-    );
-
+    </Routes>
+  );
 }
 
 export default App;

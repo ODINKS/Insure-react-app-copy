@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const AdminRegTeamInvite = () => {
   const [email1, setEmail1] = useState('');
@@ -6,6 +7,7 @@ export const AdminRegTeamInvite = () => {
   const [email3, setEmail3] = useState('');
   const [emailError, setEmailError] = useState('');
 
+  const navigate=useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -15,6 +17,10 @@ export const AdminRegTeamInvite = () => {
     } else {
       // Clear any previous error
       setEmailError('');
+    }
+    if(emailError){
+        // Navigate to the next page
+      navigate('/dashboard/admin/*'); 
     }
   };
 

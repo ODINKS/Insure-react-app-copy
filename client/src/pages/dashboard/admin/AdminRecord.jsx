@@ -20,6 +20,16 @@ const AdminRecords = () => {
     head7: "Status",
   };
 
+  // database retrieve
+  const [formData, setFormData] = useState([]);
+
+  useEffect(() => {
+    // Retrieve form data from local storage
+    const storedData = JSON.parse(localStorage.getItem("formData")) || [];
+    setFormData(storedData);
+  }, []);
+// database retrieve ends
+
   // for the table overlay
   const [isOverlayVisible, setOverlayVisible] = useState(false);
 
@@ -31,7 +41,7 @@ const AdminRecords = () => {
     setOverlayVisible(false);
   };
 
-  let tabledata = transformData(ClaimsData);
+  let tabledata = transformData(formData);
 
   useEffect(() => {
     // Ensure the element is present in the DOM before generating PDF

@@ -50,9 +50,9 @@ const AdminRecords = () => {
       <div className='flex justify-between mb-4'>
         <div className='flex'>
 
-          <ActionButton title='PDF' onClick={handlePDFClick} />
+          {/* <ActionButton title='PDF' onClick={handlePDFClick} />
           <ActionButton title='EXCEL' onClick={handleExcelClick} />
-          <ActionButton title='PRINT' onClick={handlePrintClick} />
+          <ActionButton title='PRINT' onClick={handlePrintClick} /> */}
 
         <ActionButton title='PDF' 
         action={generatePDF('table-container', 'document')} 

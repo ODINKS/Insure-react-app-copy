@@ -37,6 +37,8 @@ import AdminProfile from "./components/molecules/dashboard/AdminProfile";
 import Sample from "./components/molecules/dashboard/Sample";
 import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
 import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
+import { AdminRegistration } from "./pages/auth/admin/AdminRegistration";
+
 import FormOverlay from "./components/molecules/dashboard/FormOverlay";
 
 function App() {
@@ -56,7 +58,7 @@ function App() {
 
             {/* Admin Auth */}
             <Route path="/auth/admin/login" element={<Login />} />
-            <Route path="/auth/admin/registration" element={<Registration />} />
+            <Route path="/auth/admin/registration" element={<AdminRegistration />} />
             <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} />
             <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} />
             <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} />

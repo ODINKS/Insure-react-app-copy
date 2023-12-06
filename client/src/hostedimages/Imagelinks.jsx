@@ -16,6 +16,11 @@ const divineImage= `https://tinyurl.com/bdz6xzt6`
 const vickyImage= `https://tinyurl.com/yc4jv96h`
 const iyanuImage= `https://tinyurl.com/yharcumx`
 const maryImage= `https://tinyurl.com/yckeudjw`
+const aliceImage= `https://tinyurl.com/4yk3c7n9`
+const chikaImage= `https://tinyurl.com/yc2ay45a`
+const princeImage= `https://tinyurl.com/497dvju6`
+const nicoBoboImage= `https://tinyurl.com/2t3mjhtb`
+
 
 // ADMIN AUTH PAGE
 const adminRegister= `https://tinyurl.com/29p8xwx3`

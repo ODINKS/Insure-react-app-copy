@@ -65,6 +65,7 @@ const AdminRecords = () => {
           <ActionButton title='EXCEL' onClick={handleExcelClick} />
           <ActionButton title='PRINT' onClick={handlePrintClick} />
 
+
         <ActionButton title='PDF' 
         action={generatePDF('table-container', 'document')} 
         />

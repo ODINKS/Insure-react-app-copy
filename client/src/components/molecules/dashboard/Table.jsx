@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import DropDownMenu from './DropDownMenu';
 
 const Table = ({ data }) => {
+
+  
   const { tableHead, tabledata } = data;
 
   const [currentPageIndex, setCurrentPageIndex] = useState(1);

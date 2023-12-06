@@ -251,3 +251,153 @@ export const TeamData= [
 },
 
 ]
+
+
+export const profile = [
+  {
+    id: 1,
+    Name: "Effiong Divine",
+    Role: "Frontend Developer",
+    Profile_img: "https://tinyurl.com/bdz6xzt6",
+    Socials: {
+      linkedin: "https://www.linkedin.com/effiong.divine.5",
+      twitter: "https://twitter.com/effiongdivine",
+      github:  "https://github.com/divine",
+      hashnode: "https://www.hackerrank.com/effiongdivine",
+    }
+ },
+ {
+  id: 2,
+  Name: "Victoria Iria",
+  Role: "Backend Developer",
+  Profile_img: "https://tinyurl.com/yc4jv96h",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+ {
+  id: 3,
+  Name: "Iyanuoluwa Adewale",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/yharcumx",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+{
+  id: 4,
+  Name: "Mary Samuel",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/yckeudjw",
+  Socials: {
+    linkedin: "https://www.linkedin.com/marysamuelpel",
+    twitter: "https://twitter.com/Mary_Samuel_",
+    github: "https://github.com/MarysamuelPel",
+    hashnode: "https://marysam.hashnode.dev",
+  }
+},
+{
+  id: 5,
+  Name: "Oyekale Alice Oluwatosin",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/4yk3c7n9",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+{
+  id: 6,
+  Name: "Chika Okeke",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/yc2ay45a",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+{
+  id: 7,
+  Name: "Effiong Prince",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/497dvju6",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+{
+  id: 8,
+  Name: "Okeke Nicholas Odinaka",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/2t3mjhtb",
+  Socials: {
+    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
+    twitter: "https://twitter.com/_ODINKS",
+    github: "https://github.com/ODINKS",
+    hashnode: "https://medium.com/@nicholasokeke",
+  }
+},
+{
+  id: 9,
+  Name: "Oluwakemi Atoyebi",
+  Role: "Backend Developer",
+  Profile_img: "https://tinyurl.com/yzhhsjbf",
+  Socials: {
+    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
+    twitter: "https://twitter.com/_ODINKS",
+    github: "https://github.com/ODINKS",
+    hashnode: "https://medium.com/@nicholasokeke",
+  }
+},
+{
+  id: 10,
+  Name: "Ezekiel David",
+  Role: "Mobile Developer",
+  Profile_img: "https://tinyurl.com/5n77h8kz",
+  Socials: {
+    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
+    twitter: "https://twitter.com/_ODINKS",
+    github: "https://github.com/ODINKS",
+    hashnode: "https://medium.com/@nicholasokeke",
+  }
+},
+{
+  id: 11,
+  Name: "Salihu Gidado",
+  Role: "Backend Developer",
+  Profile_img: "https://tinyurl.com/mu23c7ns",
+  Socials: {
+    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
+    twitter: "https://twitter.com/_ODINKS",
+    github: "https://github.com/ODINKS",
+    hashnode: "https://medium.com/@nicholasokeke",
+  }
+},
+{
+  id: 12,
+  Name: "Arome Ogbaje Leo",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/22hfxb6r",
+  Socials: {
+    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
+    twitter: "https://twitter.com/_ODINKS",
+    github: "https://github.com/ODINKS",
+    hashnode: "https://medium.com/@nicholasokeke",
+  }
+},
+
+
+]

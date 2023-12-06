@@ -43,6 +43,10 @@ import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
 import { AdminRegistration } from "./pages/auth/admin/AdminRegistration";
 
 import FormOverlay from "./components/molecules/dashboard/FormOverlay";
+import AdminPayment from "./components/molecules/dashboard/AdminPayment";
+import AdminNotifications from "./components/molecules/dashboard/AdminNotifications";
+import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAccounts";
+import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
 
 function App() {
   return (
@@ -79,7 +83,7 @@ function App() {
             <Route path="/auth/agent/resetpassword" element={<AgentResetPassword />} />
 
             {/* Admin Dashboard routes */}
-            <Route path="/dashboard/admin/*" element={<AdminDashboard />}>
+            <Route path="/dashboard/admin/" element={<AdminDashboard />}>
                 <Route index element={<AdminHome />} />
                 <Route path="records" element={<AdminRecord />} />
                 <Route path="clients" element={<AdminClient />} />
@@ -87,13 +91,13 @@ function App() {
                 <Route path="claims" element={<AdminClaims />} />
                 <Route path="task" element={<AdminTasks />} />
                 <Route path="teams" element={<AdminTeams />} />
-                <Route path="settings/" element={<AdminSettings />} >
+                <Route path="settings/*" element={<AdminSettings />} >
                     <Route index element={<AdminProfile />} />
                     <Route path="accounts" element={<AdminAccounts />} />
-                    <Route path="payment" element={<AdminProfile />} />
-                    <Route path="notifications" element={<AdminProfile />} />
-                    <Route path="delete-account" element={<AdminProfile />} />
-                    <Route path="security" element={<AdminProfile />} />
+                    <Route path="payment" element={<AdminPayment />} />
+                    <Route path="notifications" element={<AdminNotifications />} />
+                    <Route path="delete-account" element={<AdminDeleteAccounts />} />
+                    <Route path="security" element={<AdminSecurity />} />
                 </Route>
             </Route>
 

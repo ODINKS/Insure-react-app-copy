@@ -14,33 +14,41 @@ export const AdminRegistration = () => {
   const navigate =useNavigate()
   const validateCompanyName = () => {
     if (!companyName) {
-      setCompanyNameError('Company name is required');
+      setCompanyNameError('Company name is required')
+      return false;
     } else {
-      setCompanyNameError('');
+      setCompanyNameError('')
+      return true;
     }
   };
 
   const validateBusinessType = () => {
     if (!businessType) {
-      setBusinessTypeError('Business type is required');
+      setBusinessTypeError('Business type is required')
+      return false;
     } else {
-      setBusinessTypeError('');
+      setBusinessTypeError('')
+      return true;
     }
   };
 
   const validateTeamCapacity = () => {
     if (!teamCapacity) {
-      setTeamCapacityError('Team capacity is required');
+      setTeamCapacityError('Team capacity is required')
+      return false;
     } else {
-      setTeamCapacityError('');
+      setTeamCapacityError('')
+      return true;
     }
   };
 
   const validateCompanyLicense = () => {
     if (!companyLicense) {
-      setCompanyLicenseError('Company license is required');
+      setCompanyLicenseError('Company license is required')
+      return false;
     } else {
-      setCompanyLicenseError('');
+      setCompanyLicenseError('')
+      return true;
     }
   };
 
@@ -53,7 +61,7 @@ export const AdminRegistration = () => {
     validateCompanyLicense();
 
     // Check if there are no validation errors
- if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError) {
+ if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError && businessType !=='') {
   
   // Navigate to the next page
   navigate('/auth/admin/registration/contact'); 
@@ -66,7 +74,7 @@ export const AdminRegistration = () => {
       {/* Left Column */}
       <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
         {/* Logo */}
-        <a href="index.html" className="flex text-center items-center justify-center ">
+        <a className="flex text-center items-center justify-center ">
           <img
             src="https://tinyurl.com/3wuh45ve"
             alt="logo"
@@ -83,7 +91,7 @@ export const AdminRegistration = () => {
           </p>
         </div>
         {/* Form Area */}
-        <form name="signUpData" onSubmit={handleSubmit} className="flex flex-col w-full">
+        <form name="signUpData"  className="flex flex-col w-full">
           {/* Company name */}
           <input
             type="text"
@@ -166,18 +174,18 @@ export const AdminRegistration = () => {
           <div className="text-left text-xs">
             <p className="mt-2 text-xs">
               By proceeding, you agree to the
-              <a href="#">
+              <a >
                 <span className="text-blue-500 hover:underline">Terms of services</span>
               </a>{' '}
               and
-              <a href="#">
+              <a>
                 <span className="text-blue-500 hover:underline">privacy policy</span>
               </a>
             </p>
             <p className="mt-[1rem] text-xs lg:text-sm flex items-center justify-center gap-3">
               Already have an account?
               <span className="text-red-500 cursor-pointer hover:underline">
-                <a href="./login.html">Log in</a>
+                <a href="./login">Log in</a>
               </span>
             </p>
           </div>

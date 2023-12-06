@@ -25,8 +25,11 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import {AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
+
 //import { Otp } from "./pages/auth/agent/Otp";
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
+// import { Otp } from "./pages/auth/agent/Otp";
+// import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
@@ -37,6 +40,8 @@ import AdminProfile from "./components/molecules/dashboard/AdminProfile";
 import Sample from "./components/molecules/dashboard/Sample";
 import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
 import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
+import { AdminRegistration } from "./pages/auth/admin/AdminRegistration";
+
 import FormOverlay from "./components/molecules/dashboard/FormOverlay";
 
 function App() {
@@ -56,7 +61,7 @@ function App() {
 
             {/* Admin Auth */}
             <Route path="/auth/admin/login" element={<Login />} />
-            <Route path="/auth/admin/registration" element={<Registration />} />
+            <Route path="/auth/admin/registration" element={<AdminRegistration />} />
             <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} />
             <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} />
             <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} />

@@ -54,6 +54,13 @@ export const AdminRegSetup = () => {
     setShowPassword1(!showPassword1);
   };
 
+  const handleBack = (event) => {
+    event.preventDefault();
+
+  //GO Back
+  navigate('/auth/admin/registration/'); 
+}
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -62,7 +69,7 @@ export const AdminRegSetup = () => {
     validateConfirmPassword();
 
  // Check if there are no validation errors
- if (emailError && passwordError && confirmPasswordError) {
+ if (!emailError && !passwordError && !confirmPasswordError && confirmPassword !=="" ) {
   
   // Navigate to the next page
   navigate('/auth/admin/registration/teaminvite'); 
@@ -172,6 +179,7 @@ export const AdminRegSetup = () => {
           {/* Back and Continue button */}
           <div className="flex justify-between flex-col lg:flex-row w-full mt-6">
             <button
+            onClick={handleBack} 
               type="button"
               className="w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-2"
             >

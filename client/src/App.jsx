@@ -25,8 +25,11 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import {AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
+
 //import { Otp } from "./pages/auth/agent/Otp";
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
+// import { Otp } from "./pages/auth/agent/Otp";
+// import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
@@ -77,7 +80,7 @@ function App() {
 
             {/* Admin Dashboard routes */}
             <Route path="/dashboard/admin/*" element={<AdminDashboard />}>
-                <Route path="home" element={<AdminHome />} />
+                <Route index element={<AdminHome />} />
                 <Route path="records" element={<AdminRecord />} />
                 <Route path="clients" element={<AdminClient />} />
                 <Route path="leads" element={<AdminLeads />} />
@@ -85,8 +88,8 @@ function App() {
                 <Route path="task" element={<AdminTasks />} />
                 <Route path="teams" element={<AdminTeams />} />
                 <Route path="settings/" element={<AdminSettings />} >
-                    <Route path="profile" element={<AdminProfile />} />
-                    <Route path="account" element={<AdminAccounts />} />
+                    <Route index element={<AdminProfile />} />
+                    <Route path="accounts" element={<AdminAccounts />} />
                     <Route path="payment" element={<AdminProfile />} />
                     <Route path="notifications" element={<AdminProfile />} />
                     <Route path="delete-account" element={<AdminProfile />} />
@@ -96,7 +99,7 @@ function App() {
 
             {/* Agent Dashboard Routes */}
             <Route path="/dashboard/agent/*" element={<AgentDashboard />}>
-                <Route path="home" element={<AgentHome />} />
+                <Route index element={<AgentHome />} />
                 <Route path="records" element={<AgentRecord />} />
                 <Route path="clients" element={<AgentClient />} />
                 <Route path="leads" element={<AgentLeads />} />

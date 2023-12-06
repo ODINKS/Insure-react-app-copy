@@ -61,7 +61,7 @@ export const AdminRegistration = () => {
     validateCompanyLicense();
 
     // Check if there are no validation errors
- if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError) {
+ if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError && businessType !=='') {
   
   // Navigate to the next page
   navigate('/auth/admin/registration/contact'); 
@@ -74,7 +74,7 @@ export const AdminRegistration = () => {
       {/* Left Column */}
       <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
         {/* Logo */}
-        <a href="index.html" className="flex text-center items-center justify-center ">
+        <a className="flex text-center items-center justify-center ">
           <img
             src="https://tinyurl.com/3wuh45ve"
             alt="logo"
@@ -174,18 +174,18 @@ export const AdminRegistration = () => {
           <div className="text-left text-xs">
             <p className="mt-2 text-xs">
               By proceeding, you agree to the
-              <a href="#">
+              <a >
                 <span className="text-blue-500 hover:underline">Terms of services</span>
               </a>{' '}
               and
-              <a href="#">
+              <a>
                 <span className="text-blue-500 hover:underline">privacy policy</span>
               </a>
             </p>
             <p className="mt-[1rem] text-xs lg:text-sm flex items-center justify-center gap-3">
               Already have an account?
               <span className="text-red-500 cursor-pointer hover:underline">
-                <a href="./login.html">Log in</a>
+                <a href="./login">Log in</a>
               </span>
             </p>
           </div>

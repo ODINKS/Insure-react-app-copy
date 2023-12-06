@@ -24,7 +24,7 @@ export const AdminRegTeamInvite = () => {
 
         setTimeout(() => {
           navigate('/dashboard/admin');
-        }, 2000);
+        }, 1000);
       
     }
   };

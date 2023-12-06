@@ -4,7 +4,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import AdminHome from "./pages/dashboard/admin/AdminHome";
 import AgentHome from "./pages/dashboard/agent/AgentHome";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
 import Pricing from "./pages/Pricing";
 import Features from "./pages/Features";
 import AdminRecord from "./pages/dashboard/admin/AdminRecord";
@@ -25,8 +25,8 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import {AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-import { Otp } from "./pages/auth/agent/otp";
-import { ForgetPassword } from "./pages/auth/agent/forgetPassword";
+import { Otp } from "./pages/auth/agent/Otp";
+import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
@@ -38,6 +38,8 @@ import Sample from "./components/molecules/dashboard/Sample";
 import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
 import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
 import { AdminRegistration } from "./pages/auth/admin/AdminRegistration";
+
+import FormOverlay from "./components/molecules/dashboard/FormOverlay";
 
 function App() {
   return (
@@ -51,6 +53,8 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
+      <Route path="/form" element={<FormOverlay />} />
+
 
             {/* Admin Auth */}
             <Route path="/auth/admin/login" element={<Login />} />
@@ -66,8 +70,8 @@ function App() {
             {/* Agent Auth */}
             <Route path="/auth/agent/registration" element={<Registration />} />
             <Route path="/auth/agent/login" element={<AgentLogin />} />
-            <Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />
-            <Route path="/auth/agent/otp" element={<Otp />} />
+            {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
+            {/* {<Route path="/auth/agent/otp" element={<Otp />} />} */}
             <Route path="/auth/agent/resetpassword" element={<AgentResetPassword />} />
 
             {/* Admin Dashboard routes */}

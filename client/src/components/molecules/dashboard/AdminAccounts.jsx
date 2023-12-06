@@ -12,18 +12,24 @@ const AdminAccounts = () => {
                 <input type="text" name="" id="" placeholder='Confirm change email' className='border border-[--form-border-bg] w-72 md:w-96 lg:w-auto px-3 py-2 md:h-[3.625rem] md:text-xl rounded-md focus:border-[--blue-bg] focus:outline-none' />
 
                 {/* File uploads */}
-                <div className='border border-black flex justify-between'>
+                <div className='border border-[--form-border-bg] rounded-md flex justify-between'>
                     <label htmlFor="" className='self-center'>Upload Company Logo</label>
-                    <div className='w-[15rem] h-[5rem] '>
-                        <input type="file" src="" alt="" className='border border-black w-[15rem] h-[5rem]' />
+                    <div className='w-[15rem] h-[5rem] border border-black flex flex-wrap'>
+                        <input type="file" src="" alt="" className=' bg-[--orange-bg]' placeholder='Drop your image here' />
+                        <p>Select image from computer</p>
 
                     </div>
                 </div>
 
-                <div className='border border-black flex'>
-                    <label htmlFor="">Upload Company Logo</label>
+                <div className='border border-[--form-border-bg] rounded-md flex justify-between'>
+                    <label htmlFor="" className='self-center'>Upload Company Logo</label>
+                    <div className='w-[15rem] h-[5rem] border border-black flex flex-wrap'>
+                        <input type="file" src="" alt="" className=' bg-[--orange-bg]' placeholder='Drop your image here' />
+                        <p>Select image from computer</p>
 
+                    </div>
                 </div>
+                
 
                 <h1 className='text-center font-bold text-[1.5rem] col-span-2'>Preferences</h1>
 

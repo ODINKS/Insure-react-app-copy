@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { ClaimsData } from "../../../utils/Data";
 import Table from '../../../components/molecules/dashboard/Table'
 import { transformData } from '../../../utils/DataTransformer'
@@ -10,8 +10,6 @@ import { generatePDF, generateExcel, printContent } from '../../../components/mo
 
 
 const AdminRecords = () => {
-  
-
   let tableHead = {
     head1: "S/N",
     head2: "Policy No.",
@@ -22,30 +20,52 @@ const AdminRecords = () => {
     head7: "Status",
   };
 
-
   let tabledata = transformData(ClaimsData);
 
+  useEffect(() => {
+    // Ensure the element is present in the DOM before generating PDF
+    const tableContainer = document.getElementById('table-container');
+    if (tableContainer) {
+      generatePDF('table-container', 'document');
+    }
+  }, []);
+
+  const handlePDFClick = () => {
+    console.log('PDF button clicked');
+  };
+
+  const handleExcelClick = () => {
+    console.log('Excel button clicked');
+    generateExcel('table-container', 'document');
+  };
+
+  const handlePrintClick = () => {
+    console.log('Print button clicked');
+    printContent('table-container');
+  };
 
   return (
     <div>
       <Searchbar />
       <div className='flex justify-between mb-4'>
         <div className='flex'>
+
+          <ActionButton title='PDF' onClick={handlePDFClick} />
+          <ActionButton title='EXCEL' onClick={handleExcelClick} />
+          <ActionButton title='PRINT' onClick={handlePrintClick} />
+
         <ActionButton title='PDF' 
         action={generatePDF('table-container', 'document')} 
         />
           <ActionButton title='EXCEL' onClick={() => generateExcel('table-container', 'document')} />
           <ActionButton title='PRINT' onClick={() => printContent('table-container')} />
+
         </div>
       </div>
-      
-      <Table data={{tableHead, tabledata}} id="table-container" />
-      {/* <div className='text-2xl text-center'>
-        Your contents will appear here
-      </div> */}
 
+      <Table data={{ tableHead, tabledata }} id="table-container" />
     </div>
-  )
-}
+  );
+};
 
-export default AdminRecords
+export default AdminRecords;

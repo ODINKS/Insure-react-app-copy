@@ -4,28 +4,54 @@ import { useNavigate } from 'react-router-dom';
 export const AdminRegContact = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
+  const [addressError,setAddressError] = useState('')
   const [selectedPlan, setSelectedPlan] = useState('');
+  const [selectedPlanError, setSelectedPlanError]= useState('')
   const [phoneNumberError, setPhoneNumberError] = useState('');
 
   const navigate = useNavigate();
+
   const validatePhoneNumber = () => {
     const phoneRegex = /^\+234\d{10}$/;
     if (!phoneNumber.match(phoneRegex)) {
       setPhoneNumberError('Please enter a valid Nigerian phone number (+234xxxxxxxxxx)');
+      return false; // Phone number is not valid
     } else {
       setPhoneNumberError('');
+      return true; // Phone number is valid
+    }
+  };
+
+  const validateAddress = () => {
+    if (!address) {
+      setAddressError('Company Address is required')
+      return false;
+    } else {
+      setAddressError('')
+      return true;
+    }
+  };
+
+  const validateSelectedPlan = () => {
+    if (!selectedPlan) {
+      setSelectedPlanError('Kindly Select a Plan')
+      return false;
+    } else {
+      setSelectedPlanError('')
+      return true;
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    validatePhoneNumber();
-    if (!phoneNumberError) {
-  
-
+    const isPhoneNumberValid = validatePhoneNumber();
+    const isAddressValid =validateAddress()
+    const isSelectedPlanValid =validateSelectedPlan
+    
+    if (isPhoneNumberValid && isAddressValid && isSelectedPlanValid) {
       // Navigate to the next page
-      navigate('/auth/admin/registration/setup'); 
+      navigate('/auth/admin/registration/setup');
     }
   };
   
@@ -80,20 +106,29 @@ export const AdminRegContact = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             placeholder="Company's address"
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
-          />
+            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400 focus:border-blue-500 ${
+              addressError ? 'border-red-500' : ''
+            }`}/>
+            {addressError && (
+            <p className="text-red-500 text-sm">{addressError}</p>
+          )}
 
           {/* Plan selection */}
           <select
             value={selectedPlan}
             onChange={(e) => setSelectedPlan(e.target.value)}
-            className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400 focus:border-blue-500"
-          >
+            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400 focus:border-blue-500 ${
+              selectedPlanError ? 'border-red-500' : ''
+            }`}>
+              {selectedPlanError && (
+            <p className="text-red-500 text-sm">{selectedPlanError}</p>
+          )}
             <option value="">Pick a plan</option>
             <option value="Standard">Standard</option>
             <option value="Premium">Premium</option>
             <option value="Gold">Gold</option>
           </select>
+          
 
           {/* Continue button */}
           <button

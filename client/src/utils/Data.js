@@ -251,3 +251,69 @@ export const TeamData= [
 },
 
 ]
+
+
+export const profile = [
+  {
+    id: 1,
+    Name: "Effiong Divine",
+    Role: "Frontend Developer",
+    Profile_img: "https://tinyurl.com/bdz6xzt6",
+    Socials: {
+      linkedin: "https://www.linkedin.com/effiong.divine.5",
+      twitter: "https://twitter.com/effiongdivine",
+      github:  "https://github.com/divine",
+      hashnode: "https://www.hackerrank.com/effiongdivine",
+    }
+ },
+ {
+  id: 2,
+  Name: "Victoria Iria",
+  Role: "Backend Developer",
+  Profile_img: "https://tinyurl.com/yc4jv96h",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+ {
+  id: 3,
+  Name: "Iyanuoluwa Adewale",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/yharcumx",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+{
+  id: 4,
+  Name: "Mary Samuel",
+  Role: "Frontend Developer",
+  Profile_img: "https://tinyurl.com/yckeudjw",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+{
+  id: 5,
+  Name: "Oluwakemi Atoyebi",
+  Role: "Backend Developer",
+  Profile_img: "https://tinyurl.com/yckeudjw",
+  Socials: {
+    linkedin: "https://www.linkedin.com/effiong.divine.5",
+    twitter: "https://twitter.com/effiongdivine",
+    github: "https://github.com/divine",
+    hashnode: "https://www.hackerrank.com/effiongdivine",
+  }
+},
+
+
+]

@@ -14,18 +14,18 @@ const AdminAccounts = () => {
                 {/* File uploads */}
                 <div className='border border-[--form-border-bg] rounded-md flex justify-between'>
                     <label htmlFor="" className='self-center'>Upload Company Logo</label>
-                    <div className='w-[15rem] h-[5rem] border border-black flex flex-wrap'>
-                        <input type="file" src="" alt="" className=' bg-[--orange-bg]' placeholder='Drop your image here' />
-                        <p>Select image from computer</p>
+                    <div className='w-[15rem] h-[5rem] border border-t-0 border-r-0 border-b-0 border-[--form-border-bg] flex flex-wrap'>
+                        <input type="file" src="" alt="" className='' placeholder='Drop your image here' />
+                        <p className=''>Select image from computer</p>
 
                     </div>
                 </div>
 
                 <div className='border border-[--form-border-bg] rounded-md flex justify-between'>
                     <label htmlFor="" className='self-center'>Upload Company Logo</label>
-                    <div className='w-[15rem] h-[5rem] border border-black flex flex-wrap'>
-                        <input type="file" src="" alt="" className=' bg-[--orange-bg]' placeholder='Drop your image here' />
-                        <p>Select image from computer</p>
+                    <div className='w-[15rem] h-[5rem] border border-t-0 border-r-0 border-b-0 border-[--form-border-bg] flex flex-wrap'>
+                        <input type="file" src="" alt="" className='' placeholder='Drop your image here' />
+                        <p className='self-center'>Select image from computer</p>
 
                     </div>
                 </div>

@@ -28,8 +28,8 @@ import {
   AgentResetPassword,
 } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-import { Otp } from "./pages/auth/agent/Otp";
-import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
+// import { Otp } from "./pages/auth/agent/Otp";
+// import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
@@ -68,8 +68,8 @@ function App() {
             {/* Agent Auth */}
             <Route path="/auth/agent/registration" element={<Registration />} />
             <Route path="/auth/agent/login" element={<AgentLogin />} />
-            <Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />
-            <Route path="/auth/agent/otp" element={<Otp />} />
+            {/* <Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} /> */}
+            {/* <Route path="/auth/agent/otp" element={<Otp />} /> */}
             <Route path="/auth/agent/resetpassword" element={<AgentResetPassword />} />
 
             {/* Admin Dashboard routes */}

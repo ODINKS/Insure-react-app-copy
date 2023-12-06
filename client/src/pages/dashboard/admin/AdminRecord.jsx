@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ClaimsData } from "../../../utils/Data";
 import Table from '../../../components/molecules/dashboard/Table'
 import { transformData } from '../../../utils/DataTransformer'
 import ActionButton from '../../../components/molecules/dashboard/ActionButton'
 import Searchbar from '../../../components/molecules/dashboard/Searchbar';
 import { generatePDF, generateExcel, printContent } from '../../../components/molecules/dashboard/ButtonUtils';
-
+import FormOverlay from '../../../components/molecules/dashboard/FormOverlay';
 
 
 
@@ -18,6 +18,17 @@ const AdminRecords = () => {
     head5: "Date",
     head6: "Product",
     head7: "Status",
+  };
+
+  // for the table overlay
+  const [isOverlayVisible, setOverlayVisible] = useState(false);
+
+  const handleButtonClick = () => {
+    setOverlayVisible(true);
+  };
+
+  const handleOverlayClose = () => {
+    setOverlayVisible(false);
   };
 
   let tabledata = transformData(ClaimsData);
@@ -59,6 +70,9 @@ const AdminRecords = () => {
         />
           <ActionButton title='EXCEL' onClick={() => generateExcel('table-container', 'document')} />
           <ActionButton title='PRINT' onClick={() => printContent('table-container')} />
+          <ActionButton title = 'Add New' onClick={handleButtonClick} />
+          {isOverlayVisible && <FormOverlay onClose={handleOverlayClose} />}
+
 
         </div>
       </div>

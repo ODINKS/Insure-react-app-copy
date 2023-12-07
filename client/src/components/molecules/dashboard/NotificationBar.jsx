@@ -5,7 +5,7 @@ const NotificationBar = (props) => {
     return (
         <>
             <nav className='w-full flex justify-between pr-12 pl-0 py-5 gap-7 md:gap-10 lg:gap-18 bg-transparent'>
-                <div id="greetings" class=" md:text-3xl font-semibold mb-2">{topic || ""}</div>
+                <div id="greetings" className=" md:text-3xl font-semibold mb-2">{topic || ""}</div>
 
                 {/* Image for hamburger */}
                 <div className='w-[4rem] h-[4rem] lg:hidden'>

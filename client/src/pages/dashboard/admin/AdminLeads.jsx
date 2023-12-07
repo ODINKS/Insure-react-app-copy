@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LeadsData } from '../../../utils/Data'
 import Table from '../../../components/molecules/dashboard/Table'
 import { transformData } from '../../../utils/DataTransformer'
@@ -8,6 +8,12 @@ import Searchbar from '../../../components/molecules/dashboard/Searchbar'
 
 
 const AdminLeads = () => {
+  const [filteredData, setFilteredData] = useState(transformData(LeadsData));
+
+  const updateFilteredData = (newData) => {
+    setFilteredData(transformData(newData));
+  };
+
   
 
   let tableHead={
@@ -20,14 +26,9 @@ const AdminLeads = () => {
     head7: "Status"
   }
 
-  console.log(LeadsData, "leadsData")
-
-  let tabledata = transformData(LeadsData);
-
-
   return (
     <div>
-      <Searchbar />
+      <Searchbar data={LeadsData} keyword="clientName" onUpdateData={updateFilteredData} />
       <div className='flex justify-between mb-4'>
         <div className='flex'>
           <ActionButton title='PDF'/>
@@ -36,7 +37,7 @@ const AdminLeads = () => {
         </div>
       </div>
       
-      <Table data={{tableHead, tabledata}}/>
+      <Table data={{tableHead, tabledata: filteredData}}/>
 
     </div>
   )

@@ -47,6 +47,13 @@ import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAcc
 import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
 import PaystackHome from "./components/paystack/PaystackHome";
 
+// PAYSTACK PAGES
+
+import Invoice from "./paystack/Invoice";
+import Payments from "./paystack/Payments";
+// import Customer from "./paystack/customer";
+import PaymentsHome from "./paystack/Home";
+
 function App() {
   return (
     // <div>
@@ -112,6 +119,12 @@ function App() {
                 <Route path="task" element={<AgentTasks />} />
                 <Route path="settings" element={<AgentSettings />} />
             </Route>
+            {/* PAYSTACK ROUTES */}
+            <Route path="/paystack/home" element= {<PaymentsHome/>} > 
+              {/* <Route path="customers" element= {<Customer/>} /> */}
+              <Route path="invoice" element= {<Invoice/>} />
+              <Route path="payments" element= {<Payments/>} />
+            </Route> 
             <Route path="*" element={<NoPage />} />
     </Routes>
   );

@@ -15,6 +15,7 @@ const Profile = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
+        autoplay: true,
         slidesToScroll: 1,
         responsive: [
           {

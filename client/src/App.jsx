@@ -47,6 +47,7 @@ import AdminPayment from "./components/molecules/dashboard/AdminPayment";
 import AdminNotifications from "./components/molecules/dashboard/AdminNotifications";
 import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAccounts";
 import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
+import PaystackHome from "./components/paystack/PaystackHome";
 
 function App() {
   return (
@@ -61,6 +62,8 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
+      <Route path="/paystackhome" element={<PaystackHome />} />
+
       {/* {<Route path="/sample" element={<Sample />} />} */}
       
 

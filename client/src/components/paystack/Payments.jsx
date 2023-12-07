@@ -19,8 +19,7 @@ const Payments = () => {
     publicKey,
     text: "Pay Now",
     onSuccess: () => alert("Thank you for your patronage"),
-    // navigate('./'),
-    onClose: () => alert("Wait! Don't leave :("),
+   
   };
 
   const back = () => {

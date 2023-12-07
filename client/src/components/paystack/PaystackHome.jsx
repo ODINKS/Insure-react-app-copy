@@ -20,10 +20,8 @@ const PaystackHome = () => {
     },
     publicKey,
     text: "Pay Now",
-    onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
-    // navigate('./'),
-    onClose: () => alert("Wait! Don't leave :("),
+   
+  
   };
 
   // const createInvoice= ()=>{

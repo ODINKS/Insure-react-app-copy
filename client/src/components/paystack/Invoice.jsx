@@ -47,7 +47,7 @@ const Invoice = () => {
       <div className="text-center width-[80%] mx-auto">
         <div className="bg-black-400 flex flex-col justify-center w-[50%] my-[40px] mx-auto pt-5">
           <div style={{ lineHeight: "1px" }}>
-            <h5 className="logo2">Blaqkly</h5>
+            <h5 className="logo2">INSURE</h5>
           </div>
           <h3>Customer Invoice </h3>
           <div className="flex gap-3 items-center mx-5 border border-slate-400">

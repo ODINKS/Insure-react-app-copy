@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 export const AdminRegTeamInvite = () => {
   const [email1, setEmail1] = useState('');
@@ -22,9 +23,24 @@ export const AdminRegTeamInvite = () => {
     if(emailError){
         // Navigate to the next page
 
-        setTimeout(() => {
+        // setTimeout(() => {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 8000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Signed in successfully"
+          });
           navigate('/dashboard/admin');
-        }, 1000);
+        // }, 1000);
       
     }
   };

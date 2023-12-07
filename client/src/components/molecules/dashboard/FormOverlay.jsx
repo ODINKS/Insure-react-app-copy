@@ -28,8 +28,34 @@ const FormOverlay = ({ onClose }) => {
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-10">
       <div className="max-w-md mx-auto mt-8 p-8 border rounded shadow-lg bg-white">
         <form onSubmit={(e) => handleSubmit(onSubmit)(e)}>
+         
+          {/* serial num */}
           <div className="mb-4">
-            {/* policy number */}
+            <label
+              className="block text-[--orange-bg] font-medium mb-2"
+              htmlFor="serial_num"
+            >
+              Serial Num
+            </label>
+            <input
+              className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
+              id="serial_num"
+              type="text"
+              name="serial_num"
+              placeholder="2"
+              {...register("serial_num", {
+                required: "this field is required ",
+              })}
+            />
+
+            <p className="text-red-500 text-sm italic">
+              {errors.serial_num?.message}
+            </p>
+          </div>
+
+          {/* policy number */}
+
+          <div className="mb-4">
             <label
               className="block text-[--orange-bg] font-medium mb-2"
               htmlFor="policy_no"
@@ -106,23 +132,23 @@ const FormOverlay = ({ onClose }) => {
           <div className="mb-4">
             <label
               className="block text-[--orange-bg] font-medium mb-2"
-              htmlFor="phone_mo"
+              htmlFor="date"
             >
-              Client Name
+              Date
             </label>
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Licia James"
-              {...register("name", {
+              id="date"
+              type="date"
+              name="date"
+              placeholder="1/2/3"
+              {...register("date", {
                 required: "this field cannot be empty ",
               })}
             />
 
             <p className="text-red-500 text-sm italic">
-              {errors.name?.message}
+              {errors.date?.message}
             </p>
           </div>
 

@@ -25,11 +25,9 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import {AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
+import { Otp } from "./pages/auth/agent/otp";
+import { ForgetPassword } from "./pages/auth/agent/forgetPassword";
 
-//import { Otp } from "./pages/auth/agent/Otp";
-//import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
-// import { Otp } from "./pages/auth/agent/Otp";
-// import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
@@ -47,6 +45,7 @@ import AdminPayment from "./components/molecules/dashboard/AdminPayment";
 import AdminNotifications from "./components/molecules/dashboard/AdminNotifications";
 import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAccounts";
 import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
+import PaystackHome from "./components/paystack/PaystackHome";
 
 // PAYSTACK PAGES
 
@@ -68,6 +67,8 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
+      <Route path="/paystackhome" element={<PaystackHome />} />
+
       {/* {<Route path="/sample" element={<Sample />} />} */}
       
 

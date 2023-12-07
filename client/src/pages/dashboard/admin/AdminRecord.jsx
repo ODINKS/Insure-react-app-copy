@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ClaimsData } from "../../../utils/Data";
 import Table from '../../../components/molecules/dashboard/Table'
 import { transformData } from '../../../utils/DataTransformer'
@@ -10,6 +10,12 @@ import FormOverlay from '../../../components/molecules/dashboard/FormOverlay';
 
 
 const AdminRecords = () => {
+  const [filteredData, setFilteredData] = useState(transformData(ClaimsData));
+
+  const updateFilteredData = (newData) => {
+    setFilteredData(transformData(newData));
+  };
+
   let tableHead = {
     head1: "S/N",
     head2: "Policy No.",
@@ -41,7 +47,6 @@ const AdminRecords = () => {
     setOverlayVisible(false);
   };
 
-  let tabledata = transformData(formData);
 
   useEffect(() => {
     // Ensure the element is present in the DOM before generating PDF
@@ -67,7 +72,7 @@ const AdminRecords = () => {
 
   return (
     <div>
-      <Searchbar />
+       <Searchbar data={ClaimsData} keyword="PolicyNo" onUpdateData={updateFilteredData} />
       <div className='flex justify-between mb-4'>
         <div className='flex'>
 
@@ -88,7 +93,7 @@ const AdminRecords = () => {
         </div>
       </div>
 
-      <Table data={{ tableHead, tabledata }} id="table-container" />
+      <Table data={{ tableHead, tabledata:filteredData }} id="table-container" />
     </div>
   );
 };

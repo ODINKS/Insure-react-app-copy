@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MultiStepper } from './MuiltiStepper';
 
-export const AdminRegistration = () => {
+export const AdminRegistration = ({ onNext }) => {
   const [companyName, setCompanyName] = useState('');
   const [businessType, setBusinessType] = useState('');
   const [teamCapacity, setTeamCapacity] = useState('');
@@ -65,7 +65,12 @@ export const AdminRegistration = () => {
  if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError && businessType !=='') {
   
   // Navigate to the next page
-  navigate('/auth/admin/registration/contact'); 
+  // navigate('/auth/admin/registration/contact'); 
+  onNext({
+    companyName,
+    teamCapacity,
+    license:companyLicense,
+  })
 }
 
   };

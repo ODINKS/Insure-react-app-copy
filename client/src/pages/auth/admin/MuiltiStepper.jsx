@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MultiStepper } from './MuiltiStepper';
 
-export const AdminRegistration = () => {
+export const MultiStepper = () => {
   const [companyName, setCompanyName] = useState('');
   const [businessType, setBusinessType] = useState('');
   const [teamCapacity, setTeamCapacity] = useState('');
@@ -12,43 +11,44 @@ export const AdminRegistration = () => {
   const [teamCapacityError, setTeamCapacityError] = useState('');
   const [companyLicenseError, setCompanyLicenseError] = useState('');
 
-  const navigate =useNavigate()
+  const navigate = useNavigate();
+
   const validateCompanyName = () => {
     if (!companyName) {
-      setCompanyNameError('Company name is required')
+      setCompanyNameError('Company name is required');
       return false;
     } else {
-      setCompanyNameError('')
+      setCompanyNameError('');
       return true;
     }
   };
 
   const validateBusinessType = () => {
     if (!businessType) {
-      setBusinessTypeError('Business type is required')
+      setBusinessTypeError('Business type is required');
       return false;
     } else {
-      setBusinessTypeError('')
+      setBusinessTypeError('');
       return true;
     }
   };
 
   const validateTeamCapacity = () => {
     if (!teamCapacity) {
-      setTeamCapacityError('Team capacity is required')
+      setTeamCapacityError('Team capacity is required');
       return false;
     } else {
-      setTeamCapacityError('')
+      setTeamCapacityError('');
       return true;
     }
   };
 
   const validateCompanyLicense = () => {
     if (!companyLicense) {
-      setCompanyLicenseError('Company license is required')
+      setCompanyLicenseError('Company license is required');
       return false;
     } else {
-      setCompanyLicenseError('')
+      setCompanyLicenseError('');
       return true;
     }
   };
@@ -56,43 +56,27 @@ export const AdminRegistration = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    validateCompanyName();
-    validateBusinessType();
-    validateTeamCapacity();
-    validateCompanyLicense();
+    const isCompanyNameValid = validateCompanyName();
+    const isBusinessTypeValid = validateBusinessType();
+    const isTeamCapacityValid = validateTeamCapacity();
+    const isCompanyLicenseValid = validateCompanyLicense();
 
-    // Check if there are no validation errors
- if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError && businessType !=='') {
-  
-  // Navigate to the next page
-  navigate('/auth/admin/registration/contact'); 
-}
-
+    if (isCompanyNameValid && isBusinessTypeValid && isTeamCapacityValid && isCompanyLicenseValid) {
+      // Move to the next step
+      navigate('/auth/admin/registration/contact');
+    }
   };
 
   return (
     <main className="flex flex-col lg:flex-row lg:w-full">
       {/* Left Column */}
       <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
-        {/* Logo */}
-        <a className="flex text-center items-center justify-center ">
-          <img
-            src="https://tinyurl.com/3wuh45ve"
-            alt="logo"
-            className="mb-2 w-16 h-12 lg:w-24 lg:h-14"
-          />
-        </a>
-        {/* Header Section */}
-        <div className="">
-          <h1 className="font-bold mb-4 text-2xl lg:text-4xl">
-            Register <span className="text-red-500">with</span> INsure
-          </h1>
-          <p className="pb-4 text-xs lg:text-base">
-            Get started - <span className="text-red-500">7</span> days free trial
-          </p>
-        </div>
-        {/* Form Area */}
-        <form name="signUpData"  className="flex flex-col w-full">
+        {/* Your existing form content goes here */}
+        {/* Logo, Header Section, Form Area */}
+        {/* ... */}
+
+        {/* Form Area - Step 1 */}
+        <form name="signUpData" className="flex flex-col w-full">
           {/* Company name */}
           <input
             type="text"
@@ -106,9 +90,7 @@ export const AdminRegistration = () => {
               companyNameError ? 'border-red-500' : ''
             }`}
           />
-          {companyNameError && (
-            <p className="text-red-500 text-sm">{companyNameError}</p>
-          )}
+          {companyNameError && <p className="text-red-500 text-sm">{companyNameError}</p>}
 
           {/* Business type */}
           <input
@@ -122,9 +104,7 @@ export const AdminRegistration = () => {
               businessTypeError ? 'border-red-500' : ''
             }`}
           />
-          {businessTypeError && (
-            <p className="text-red-500 text-sm">{businessTypeError}</p>
-          )}
+          {businessTypeError && <p className="text-red-500 text-sm">{businessTypeError}</p>}
 
           {/* Team capacity */}
           <select
@@ -143,9 +123,7 @@ export const AdminRegistration = () => {
             <option value="21-50">21 - 50</option>
             <option value="51-200">51 - 200</option>
           </select>
-          {teamCapacityError && (
-            <p className="text-red-500 text-sm">{teamCapacityError}</p>
-          )}
+          {teamCapacityError && <p className="text-red-500 text-sm">{teamCapacityError}</p>}
 
           {/* Company license */}
           <input
@@ -159,39 +137,19 @@ export const AdminRegistration = () => {
               companyLicenseError ? 'border-red-500' : ''
             }`}
           />
-          {companyLicenseError && (
-            <p className="text-red-500 text-sm">{companyLicenseError}</p>
-          )}
+          {companyLicenseError && <p className="text-red-500 text-sm">{companyLicenseError}</p>}
 
-          {/* Register button */}
+          {/* Continue button */}
           <button
-            onClick={handleSubmit} 
-            type="submit"
+            onClick={handleSubmit}
+            type="button"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
-            id="register-button"
           >
             Continue
           </button>
-          <div className="text-left text-xs">
-            <p className="mt-2 text-xs">
-              By proceeding, you agree to the
-              <a >
-                <span className="text-blue-500 hover:underline">Terms of services</span>
-              </a>{' '}
-              and
-              <a>
-                <span className="text-blue-500 hover:underline">privacy policy</span>
-              </a>
-            </p>
-            <p className="mt-[1rem] text-xs lg:text-sm flex items-center justify-center gap-3">
-              Already have an account?
-              <span className="text-red-500 cursor-pointer hover:underline">
-                <a href="./login">Log in</a>
-              </span>
-            </p>
-          </div>
         </form>
       </div>
+
       {/* Right Column (image) */}
       <div
         className="flex-1 bg-cover bg-center hidden lg:block"

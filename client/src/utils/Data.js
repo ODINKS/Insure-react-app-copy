@@ -272,10 +272,10 @@ export const profile = [
   Role: "Backend Developer",
   Profile_img: "https://tinyurl.com/yc4jv96h",
   Socials: {
-    linkedin: "https://www.linkedin.com/effiong.divine.5",
-    twitter: "https://twitter.com/effiongdivine",
-    github: "https://github.com/divine",
-    hashnode: "https://www.hackerrank.com/effiongdivine",
+    linkedin: "https://www.linkedin.com/in/victoria-iria/",
+    twitter: "https://twitter.com/chantelvic",
+    github: "https://github.com/EseVic",
+    hashnode: "https://medium.com/@esevic111",
   }
 },
  {
@@ -356,10 +356,10 @@ export const profile = [
   Role: "Backend Developer",
   Profile_img: "https://tinyurl.com/yzhhsjbf",
   Socials: {
-    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
-    twitter: "https://twitter.com/_ODINKS",
-    github: "https://github.com/ODINKS",
-    hashnode: "https://medium.com/@nicholasokeke",
+    linkedin: "https://www.linkedin.com/in/oluwakemi-atoyebi",
+    twitter: "https://twitter.com/haramide",
+    github: "https://github.com/Khemmie-Ray",
+    hashnode: "https://khemmie-ray.hashnode.dev/",
   }
 },
 {
@@ -380,10 +380,10 @@ export const profile = [
   Role: "Backend Developer",
   Profile_img: "https://tinyurl.com/mu23c7ns",
   Socials: {
-    linkedin: "https://www.linkedin.com/in/nicholas-okeke",
-    twitter: "https://twitter.com/_ODINKS",
-    github: "https://github.com/ODINKS",
-    hashnode: "https://medium.com/@nicholasokeke",
+    linkedin: "https://www.linkedin.com/in/salihu-gidado-muhammad-29769425a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    twitter: "https://x.com/EtzSalboy01?t=wXWeZhHhaGL5zoosZZ2Ezg&s=09",
+    github: "https://github.com/msgidado01",
+    hashnode: "https://medium.com/@geemuhd14",
   }
 },
 {

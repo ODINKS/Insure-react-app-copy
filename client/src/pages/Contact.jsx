@@ -4,20 +4,28 @@ import Footer from "../components/molecules/global/Footer";
 import HeroSection from "../components/molecules/global/HeroSection";
 
 const Contact = () => {
-  const title = "Stay <span className='text-orange-500'>in</span> Touch"
-  const description = "At INsure, we're here to provide you with peace of mind and unparalleled service. Whether you have questions, need assistance, or want to discuss your insurance-related needs, our dedicated team is ready to assist you."
-  const img = "https://tinyurl.com/48ffmsy8"
-  const buttonDesc = "Get Started"
-  const BtnFontSize = "text-[1.5rem]"
+  const title = "Stay <span className='text-orange-500'>in</span> Touch";
+  const description =
+    "At INsure, we're here to provide you with peace of mind and unparalleled service. Whether you have questions, need assistance, or want to discuss your insurance-related needs, our dedicated team is ready to assist you.";
+  const img = "https://tinyurl.com/48ffmsy8";
+  const buttonDesc = "Get Started";
+  const BtnFontSize = "text-[1.5rem]";
   // const buttonWidth = "20"
 
   return (
     <div className="overflow-hidden">
       <Navbar />
       {/* HERO SECTION */}
-      < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
+      <HeroSection
+        title={title}
+        description={description}
+        img={img}
+        buttonDesc={buttonDesc}
+        BtnFontSize={BtnFontSize}
+      />
       {/* {get-in-touch section} */}
-      <section className="bg-white-200 py-16 text-left ml-60">
+      <section className="lg:bg-white-200 lg:py-16 lg:text-left lg:ml-60 md:text-center
+       md: ml-0 md:py-8 ">
         <div className="container mx-auto">
           <h3 className="text-3xl font-bold mb-8">
             Get <span className="text-orange-500">in</span> Touch
@@ -65,19 +73,20 @@ const Contact = () => {
             </div>
             <div className="mb-4">
               <p className="font-[700] my-4">Select Subject?</p>
-              <label htmlFor className="mr-12">
-                <input type="radio" /> Sales
+              <label htmlFor="sales" className="mr-12">
+                <input type="radio" id="sales" name="subject" /> Sales
               </label>
-              <label htmlFor className="mr-12">
-                <input type="radio" /> Onboarding
+              <label htmlFor="onboarding" className="mr-12">
+                <input type="radio" id="onboarding" name="subject" /> Onboarding
               </label>
-              <label htmlFor className="mr-12">
-                <input type="radio" /> Operations
+              <label htmlFor="operations" className="mr-12">
+                <input type="radio" id="operations" name="subject" /> Operations
               </label>
-              <label htmlFor className="mr-12">
-                <input type="radio" /> Penalties
+              <label htmlFor="penalties" className="mr-12">
+                <input type="radio" id="penalties" name="subject" /> Penalties
               </label>
             </div>
+
             <textarea
               name
               id
@@ -94,7 +103,7 @@ const Contact = () => {
 
       {/* FREQUENTLY ASKED QUESTIONS SECTION */}
       <section className="bg-[#DFE7FA] py-16 text-left">
-        <div className="container mx-auto ml-60">
+      <div className="container lg:mx-auto lg:ml-60 md:ml-0">
           <h3 className="text-3xl font-bold mb-8 ">
             Frequently <span className="text-orange-500">asked</span> questions
           </h3>
@@ -186,13 +195,9 @@ const Contact = () => {
               </p>
             </div>
           </details>
-
-
         </div>
-
       </section>
       <Footer />
-
     </div>
   );
 };

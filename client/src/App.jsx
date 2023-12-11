@@ -51,7 +51,7 @@ import PaystackHome from "./components/paystack/PaystackHome";
 
 import Invoice from "./paystack/Invoice";
 import Payments from "./paystack/Payments";
-// import Customer from "./paystack/customer";
+import Customer from "./paystack/customer";
 import PaymentsHome from "./paystack/Home";
 
 function App() {
@@ -119,7 +119,7 @@ function App() {
                 <Route path="settings" element={<AgentSettings />} />
             </Route>
             {/* PAYSTACK ROUTES */}
-            <Route path="/paystack/home" element= {<PaymentsHome/>} > 
+          <Route path="/paystack/home" element= {<PaymentsHome/>} > 
               {/* <Route path="customers" element= {<Customer/>} /> */}
               <Route path="invoice" element= {<Invoice/>} />
               <Route path="payments" element= {<Payments/>} />

@@ -35,7 +35,7 @@ const AdminTasks = () => {
       <div className="col-span-2 row-span-2 col-start-4 row-start-1 bg-white rounded-md p-4 mb-4 overflow-auto">
         <Calendar onChange={handleDateChange} value={dateState} />
       </div>
-      {/* <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md mt-5 p-4">
+      <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md mt-5 p-4">
         <div className="flex items-center justify-between w-full border-b-4 border-bg-[#000] pb-3">
           <h1 className="font-bold uppercase">Todo List</h1>
           <div className="flex items-center bg-[#e76927] w-max text-white rounded-md ">
@@ -101,7 +101,7 @@ const AdminTasks = () => {
             <Button description="Action" width="max" /> <VscTriangleDown />
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
-export const AdminRegTeamInvite = () => {
+export const AdminRegTeamInvite = ({ onPrev }) => {
   const [email1, setEmail1] = useState('');
   const [email2, setEmail2] = useState('');
   const [email3, setEmail3] = useState('');
@@ -45,7 +45,8 @@ export const AdminRegTeamInvite = () => {
     }
   };
   const handleBack =()=>{
-    navigate('/auth/admin/registration/setup')
+    //navigate('/auth/admin/registration/setup')
+    onPrev()
   }
 
   return (

@@ -46,6 +46,8 @@ import AdminNotifications from "./components/molecules/dashboard/AdminNotificati
 import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAccounts";
 import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
 import PaystackHome from "./components/paystack/PaystackHome";
+import { MultiStepper } from "./pages/auth/admin/MuiltiStepper";
+import { AdminMultiStepper } from "./pages/auth/admin/AdminMultiStepper";
 
 
 
@@ -64,15 +66,16 @@ function App() {
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
       {<Route path="/sample" element={<Sample />} />}
+      {<Route path="/sample1" element={<AdminMultiStepper />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
       
 
             {/* Admin Auth */}
             <Route path="/auth/admin/login" element={<Login />} />
-            <Route path="/auth/admin/registration" element={<AdminRegistration />} />
-            <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} />
-            <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} />
-            <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} />
+            <Route path="/auth/admin/registration" element={<AdminMultiStepper />} />
+            {/* <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} /> */}
+            {/* <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} /> */}
+            {/* <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} /> */}
             <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} />
             {/* <Route path="/auth/admin/otp" element={<AdminOtp />} /> */}
             {/* <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} /> */}

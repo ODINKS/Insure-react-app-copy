@@ -35,7 +35,7 @@ import { AdminRegSetup } from "./pages/auth/admin/AdminRegSetup";
 import { AdminRegTeamInvite } from "./pages/auth/admin/AdminRegTeamInvite";
 import AdminForgetPassword from "./pages/auth/admin/AdminForgetPassword";
 import AdminProfile from "./components/molecules/dashboard/AdminProfile";
-//import Sample from "./components/molecules/dashboard/Sample";
+import Sample from "./components/molecules/dashboard/Sample";
 import { generatePDF } from "./components/molecules/dashboard/ButtonUtils";
 import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
 import { AdminRegistration } from "./pages/auth/admin/AdminRegistration";
@@ -67,9 +67,8 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
+      {<Route path="/sample" element={<Sample />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
-
-      {/* {<Route path="/sample" element={<Sample />} />} */}
       
 
             {/* Admin Auth */}

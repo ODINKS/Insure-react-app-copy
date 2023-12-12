@@ -187,7 +187,7 @@ export const AdminRegSetup = ({ onClick, onPrev }) => {
             <button
             onClick={handleBack} 
               type="button"
-              className="w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-2"
+              className="w-full lg:w-[25%] h-[40px] bg-white text-gray-500 font-bold border-orange-400 border-2 py-2 px-4 rounded-md hover:bg-orange-400 mb-2 hover:text-white"
             >
               Back
             </button>

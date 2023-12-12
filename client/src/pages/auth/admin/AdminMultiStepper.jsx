@@ -28,12 +28,14 @@ export const AdminMultiStepper = () => {
     console.log(formData);
   }, [formData]);
 
-  useEffect(() =>{
-    const postData = async () => {
+  const postData = async () => {
+    try{
       const response = await axios.post(baseURL, formData)
-      console.log(response.data)
+      console.log(response)
+    }catch(error){
+      console.log('Error making POST request:', error);
     }
-  }, []) 
+  }
 
   
   const handlePrev = () => {
@@ -47,7 +49,7 @@ export const AdminMultiStepper = () => {
       case 2:
         return <AdminRegContact onNext={handleNext} onPrev={handlePrev} />;
       case 3:
-        return <AdminRegSetup onClick={handleNext} onPrev={handlePrev} />;
+        return <AdminRegSetup onClick={postData} onPrev={handlePrev} />;
       case 4:
         return <AdminRegTeamInvite onNext={handleNext} onPrev={handlePrev} />;
       default:

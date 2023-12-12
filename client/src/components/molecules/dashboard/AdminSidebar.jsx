@@ -38,7 +38,11 @@ const AdminSidebar = () => {
                     {/* Image Section */}
                     <div className='w-[4rem] h-[4rem] lg:w-24 lg:h-16'>
                         <img src="https://tinyurl.com/3wuh45ve" alt="INSure Logo" className='w-full' />
+
+                        <p className='text-[0.7rem] mt-5 italic font-semibold'>Admin Dashboard</p>
                     </div>
+
+                    
 
                     {/* Nav Links */}
                     <ul className='flex flex-col gap-2 font-semibold items-start h-[90vh] list-none lg:text-[1.125rem]'>

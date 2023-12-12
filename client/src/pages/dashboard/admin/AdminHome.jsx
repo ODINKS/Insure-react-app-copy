@@ -155,8 +155,10 @@ const AdminHome = () => {
             <SalesBoxGroup />
 
 
-            <div className='flex justify-evenly mx-auto  space-x-6 w-full'>
-              <div className="w-[48%] px-5 bg-white py-20 items-center rounded-md">
+            <div className='flex flex-col md:flex-row justify-evenly items-center gap-y-5 mx-auto  md:space-x-6 w-full
+            '>
+              <div className="w-[48%] px-5 bg-white py-20 items-center rounded-md
+              ">
                 <BarChart chartData={chartData} topic={"Monthly Revenue"} />
               </div>
 

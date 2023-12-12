@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const AdminRegSetup = () => {
+export const AdminRegSetup = ({ onClick, onPrev }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -58,7 +58,8 @@ export const AdminRegSetup = () => {
     event.preventDefault();
 
   //GO Back
-  navigate('/auth/admin/registration/'); 
+  //navigate('/auth/admin/registration/'); 
+  onPrev()
 }
 
   const handleSubmit = (event) => {
@@ -72,7 +73,12 @@ export const AdminRegSetup = () => {
  if (!emailError && !passwordError && !confirmPasswordError && confirmPassword !=="" ) {
   
   // Navigate to the next page
-  navigate('/auth/admin/registration/teaminvite'); 
+  //navigate('/auth/admin/registration/teaminvite'); 
+  onClick({
+    email,
+    password,
+  })
+  
 }
 
   };

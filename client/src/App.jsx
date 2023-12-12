@@ -23,10 +23,10 @@ import AdminClaims from "./pages/dashboard/admin/AdminClaims";
 import AdminTasks from "./pages/dashboard/admin/AdminTasks";
 import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
-import {AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
+import { AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-import { Otp } from "./pages/auth/agent/otp";
-import { ForgetPassword } from "./pages/auth/agent/forgetPassword";
+import { Otp } from "./pages/auth/agent/Otp";
+import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
@@ -47,12 +47,6 @@ import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAcc
 import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
 import PaystackHome from "./components/paystack/PaystackHome";
 
-// PAYSTACK PAGES
-
-import Invoice from "./paystack/Invoice";
-import Payments from "./paystack/Payments";
-import Customer from "./paystack/customer";
-import PaymentsHome from "./paystack/Home";
 
 function App() {
   return (
@@ -69,62 +63,56 @@ function App() {
       <Route path="/form" element={<FormOverlay />} />
       {<Route path="/sample" element={<Sample />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
-      
-
-            {/* Admin Auth */}
-            <Route path="/auth/admin/login" element={<Login />} />
-            <Route path="/auth/admin/registration" element={<AdminRegistration />} />
-            <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} />
-            <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} />
-            <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} />
-            <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} />
-            {/* <Route path="/auth/admin/otp" element={<AdminOtp />} /> */}
-            {/* <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} /> */}
 
 
-            {/* Agent Auth */}
-            <Route path="/auth/agent/registration" element={<Registration />} />
-            <Route path="/auth/agent/login" element={<AgentLogin />} />
-            {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
-            {/* {<Route path="/auth/agent/otp" element={<Otp />} />} */}
-            <Route path="/auth/agent/resetpassword" element={<AgentResetPassword />} />
+      {/* Admin Auth */}
+      <Route path="/auth/admin/login" element={<Login />} />
+      <Route path="/auth/admin/registration" element={<AdminRegistration />} />
+      <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} />
+      <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} />
+      <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} />
+      <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} />
+      {/* <Route path="/auth/admin/otp" element={<AdminOtp />} /> */}
+      {/* <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} /> */}
 
-            {/* Admin Dashboard routes */}
-            <Route path="/dashboard/admin/" element={<AdminDashboard />}>
-                <Route index element={<AdminHome />} />
-                <Route path="records" element={<AdminRecord />} />
-                <Route path="clients" element={<AdminClient />} />
-                <Route path="leads" element={<AdminLeads />} />
-                <Route path="claims" element={<AdminClaims />} />
-                <Route path="task" element={<AdminTasks />} />
-                <Route path="teams" element={<AdminTeams />} />
-                <Route path="settings/*" element={<AdminSettings />} >
-                    <Route index element={<AdminProfile />} />
-                    <Route path="accounts" element={<AdminAccounts />} />
-                    <Route path="payment" element={<AdminPayment />} />
-                    <Route path="notifications" element={<AdminNotifications />} />
-                    <Route path="delete-account" element={<AdminDeleteAccounts />} />
-                    <Route path="security" element={<AdminSecurity />} />
-                </Route>
-            </Route>
 
-            {/* Agent Dashboard Routes */}
-            <Route path="/dashboard/agent/*" element={<AgentDashboard />}>
-                <Route index element={<AgentHome />} />
-                <Route path="records" element={<AgentRecord />} />
-                <Route path="clients" element={<AgentClient />} />
-                <Route path="leads" element={<AgentLeads />} />
-                <Route path="claims" element={<AgentClaims />} />
-                <Route path="task" element={<AgentTasks />} />
-                <Route path="settings" element={<AgentSettings />} />
-            </Route>
-            {/* PAYSTACK ROUTES */}
-          <Route path="/paystack/home" element= {<PaymentsHome/>} > 
-              {/* <Route path="customers" element= {<Customer/>} /> */}
-              <Route path="invoice" element= {<Invoice/>} />
-              <Route path="payments" element= {<Payments/>} />
-            </Route> 
-            <Route path="*" element={<NoPage />} />
+      {/* Agent Auth */}
+      <Route path="/auth/agent/registration" element={<Registration />} />
+      <Route path="/auth/agent/login" element={<AgentLogin />} />
+      {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
+      {/* {<Route path="/auth/agent/otp" element={<Otp />} />} */}
+      <Route path="/auth/agent/resetpassword" element={<AgentResetPassword />} />
+
+      {/* Admin Dashboard routes */}
+      <Route path="/dashboard/admin/" element={<AdminDashboard />}>
+        <Route index element={<AdminHome />} />
+        <Route path="records" element={<AdminRecord />} />
+        <Route path="clients" element={<AdminClient />} />
+        <Route path="leads" element={<AdminLeads />} />
+        <Route path="claims" element={<AdminClaims />} />
+        <Route path="task" element={<AdminTasks />} />
+        <Route path="teams" element={<AdminTeams />} />
+        <Route path="settings/*" element={<AdminSettings />} >
+          <Route index element={<AdminProfile />} />
+          <Route path="accounts" element={<AdminAccounts />} />
+          <Route path="payment" element={<AdminPayment />} />
+          <Route path="notifications" element={<AdminNotifications />} />
+          <Route path="delete-account" element={<AdminDeleteAccounts />} />
+          <Route path="security" element={<AdminSecurity />} />
+        </Route>
+      </Route>
+
+      {/* Agent Dashboard Routes */}
+      <Route path="/dashboard/agent/*" element={<AgentDashboard />}>
+        <Route index element={<AgentHome />} />
+        <Route path="records" element={<AgentRecord />} />
+        <Route path="clients" element={<AgentClient />} />
+        <Route path="leads" element={<AgentLeads />} />
+        <Route path="claims" element={<AgentClaims />} />
+        <Route path="task" element={<AgentTasks />} />
+        <Route path="settings" element={<AgentSettings />} />
+      </Route>
+      <Route path="*" element={<NoPage />} />
     </Routes>
   );
 }

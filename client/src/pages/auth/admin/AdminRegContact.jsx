@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const AdminRegContact = () => {
+export const AdminRegContact = ({ onNext, onPrev }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
   const [addressError,setAddressError] = useState('')
@@ -51,11 +51,24 @@ export const AdminRegContact = () => {
     
     if (isPhoneNumberValid && isAddressValid && isSelectedPlanValid) {
       // Navigate to the next page
-      navigate('/auth/admin/registration/setup');
+      // navigate('/auth/admin/registration/setup');
+      onNext({
+        phoneNumber,
+        companyAddress:address,
+      })
     }
   };
   
-
+  // {
+  //   "companyName": "insure",
+  //   "companyAddress": "Abuja",
+  //   "license": "cac3458ht",
+  //   "teamCapacity": 15,
+  //   "email": "insure@gmail.com",
+  //   "password": "Password1@",
+  //   "phoneNumber": "Password1@",
+  //   "role": "Admin"
+  // }
 
 
   return (

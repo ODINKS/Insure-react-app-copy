@@ -54,7 +54,7 @@ const Customer = () => {
             <div className="p-5">
               <div className="flex flex-col mb-[20px]">
                 <label> First Name</label>
-                <input className="focus:outline-none"
+                <input className="border border-slate-700 focus:outline-none"
                   type="text"
                   id="name"
                   onChange={(e) => setFirst_Name(e.target.value)}
@@ -62,7 +62,7 @@ const Customer = () => {
               </div>
               <div className="flex flex-col mb-[20px]">
                 <label>Last Name</label>
-                <input className="border border-slate-500 rounded text-black focus:outline-none"
+                <input className="border border-slate-700 rounded text-black focus:outline-none"
                   type="text"
                   id="name"
                   onChange={(e) => setLast_Name(e.target.value)}

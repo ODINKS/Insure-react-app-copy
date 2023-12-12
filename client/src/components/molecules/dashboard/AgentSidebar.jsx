@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const AgentSidebar = () => {
     const [activeLink, setActiveLink] = useState('home')
     const [isMenuOpen, setMenuOpen] = useState(false)
 
+    const location = useLocation();
+
     const handleLinkClick = (link) => {
         setActiveLink(link);
     };
+
+    useEffect(() => {
+        // Update active link based on the current location
+        const pathnameParts = location.pathname.split('/');
+        const lastPathname = pathnameParts[pathnameParts.length - 1];
+        setActiveLink(lastPathname);
+    }, [location]);
 
     const toggleMenu = (bool) => {
         setMenuOpen(bool)
@@ -27,9 +36,9 @@ const AgentSidebar = () => {
                 </div>
                 <nav className={`${isMenuOpen ? 'flex flex-col' : 'hidden'} w-[38vw] md:w-[25vw] lg:w-[20vw] xl:w-[17vw] lg:flex flex-col space-y-3 lg:gap-y-[4rem] justify-center items-center h-[100vh] fixed left-0 top-0 bottom-0 pt-[3rem] bg-[--white-bg] shadow-md border z-20 lg:z-0`}>
                     {/* Cancel button */}
-                    <div 
-                    onClick={() => toggleMenu(false)}
-                    className='mb-5 self-end mr-5 lg:hidden'>
+                    <div
+                        onClick={() => toggleMenu(false)}
+                        className='mb-5 self-end mr-5 lg:hidden'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                             <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clipRule="evenodd" />
                         </svg>
@@ -86,7 +95,7 @@ const AgentSidebar = () => {
                             <Link to="leads" onClick={() => handleLinkClick('leads')}>Leads</Link></li>
 
                         <li
-                            className={`w-[8rem] lg:w-[8rem] pl-2  py-2 rounded-[7px] list-none flex gap-2 ${activeLink === 'settings' ? 'bg-[--orange-bg] text-[--white-text]' : ''}`}>
+                            className={`w-[8rem] lg:w-[8rem] pl-2  py-2 rounded-[7px] list-none flex gap-2 ${ activeLink === 'settings' || activeLink === 'accounts' || activeLink === 'payment' || activeLink === 'notifications' || activeLink === 'delete-account' || activeLink === 'change-password' || activeLink === 'security' ? 'bg-[--orange-bg] text-[--white-text]' : ''}`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                 <path fillRule="evenodd" d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 01-.517.608 7.45 7.45 0 00-.478.198.798.798 0 01-.796-.064l-.453-.324a1.875 1.875 0 00-2.416.2l-.243.243a1.875 1.875 0 00-.2 2.416l.324.453a.798.798 0 01.064.796 7.448 7.448 0 00-.198.478.798.798 0 01-.608.517l-.55.092a1.875 1.875 0 00-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 01-.064.796l-.324.453a1.875 1.875 0 00.2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 01.796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 01.517-.608 7.52 7.52 0 00.478-.198.798.798 0 01.796.064l.453.324a1.875 1.875 0 002.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 01-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 001.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 01-.608-.517 7.507 7.507 0 00-.198-.478.798.798 0 01.064-.796l.324-.453a1.875 1.875 0 00-.2-2.416l-.243-.243a1.875 1.875 0 00-2.416-.2l-.453.324a.798.798 0 01-.796.064 7.462 7.462 0 00-.478-.198.798.798 0 01-.517-.608l-.091-.55a1.875 1.875 0 00-1.85-1.566h-.344zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" clipRule="evenodd" />
                             </svg>

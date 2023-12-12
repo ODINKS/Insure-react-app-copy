@@ -54,6 +54,7 @@ import AgentSettingsDelete from "./components/molecules/dashboard/AgentSettingsD
 import AgentSettingsNotification from "./components/molecules/dashboard/AgentSettingsNotification";
 import AgentSettingsPassword from "./components/molecules/dashboard/AgentSettingsPassword";
 import AgentSettingsSecurity from "./components/molecules/dashboard/AgentSettingsSecurity";
+import AgentBioData from "./pages/auth/agent/AgentBioData";
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
       {<Route path="/sample" element={<Sample />} />}
-      {<Route path="/sample1" element={<AdminMultiStepper />} />}
+      {<Route path="/sample1" element={<AgentBioData />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
 
       {/* Admin Auth */}

@@ -39,6 +39,8 @@ const AgentSidebar = () => {
                     {/* Image Section */}
                     <div className='w-[4rem] h-[4rem] lg:w-24 lg:h-16 '>
                         <img src="https://tinyurl.com/3wuh45ve" alt="INSure Logo" className='w-full' />
+
+                        <p className='text-[0.7rem] mt-5 italic font-semibold'>Agent Dashboard</p>
                     </div>
 
                     {/* Nav Links */}

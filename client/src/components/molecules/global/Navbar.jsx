@@ -116,7 +116,7 @@ const Navbar = () => {
                                         </Link>
                                     </button> */}
 
-                                    <div className='relative w-[8rem] h-14 rounded-[8px] md:self-center md:mt-1 font-bold'>
+                                    <div className='relative w-[8rem] h-14 rounded-[8px] md:self-center mt-1.5 md:mt-2 font-bold'>
                                         <select name="" id="" className='appearance-none w-full py-3 text-[1.125rem] pl-4 rounded-md border border-[--form-border-bg] focus:outline-none'
                                             onChange={(e) => handleLoginChange(e.target.value)}
                                         >

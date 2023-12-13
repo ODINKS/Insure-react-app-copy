@@ -148,10 +148,10 @@ export const AdminRegistration = ({ onNext }) => {
             <option value="" disabled>
               Team capacity
             </option>
-            <option value="1-10">1 - 10</option>
-            <option value="11-20">11 - 20</option>
-            <option value="21-50">21 - 50</option>
-            <option value="51-200">51 - 200</option>
+            <option value="10">1 - 10</option>
+            <option value="20">11 - 20</option>
+            <option value="50">21 - 50</option>
+            <option value="200">51 - 200</option>
           </select>
           {teamCapacityError && (
             <p className="text-red-500 text-sm">{teamCapacityError}</p>

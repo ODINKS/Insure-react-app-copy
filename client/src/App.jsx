@@ -25,7 +25,7 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import { AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-import { Otp } from "./pages/auth/agent/Otp";
+import { Otp } from "./pages/auth/agent/0tp";
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 
 import Login from "./pages/auth/admin/AdminLogin";
@@ -55,6 +55,8 @@ import AgentSettingsNotification from "./components/molecules/dashboard/AgentSet
 import AgentSettingsPassword from "./components/molecules/dashboard/AgentSettingsPassword";
 import AgentSettingsSecurity from "./components/molecules/dashboard/AgentSettingsSecurity";
 import AgentBioData from "./pages/auth/agent/AgentBioData";
+import ActionButton from "./components/molecules/dashboard/ActionButton";
+import DropDownMenu from "./components/molecules/dashboard/DropDownMenu";
 
 function App() {
   return (
@@ -69,17 +71,25 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
-      {<Route path="/sample" element={<Sample />} />}
-      {<Route path="/sample1" element={<AgentBioData />} />}
+      {<Route path="/sample" element={<ActionButton />} />}
+      {<Route path="/sample1" element={<DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }} />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
  
+        {/* General Auth  */}
+      {<Route path="/auth/otp" element={<Otp />} />}
+      <Route
+        path="/auth/forgetpassword"
+        element={<AdminForgetPassword />}
+      />
+      <Route
+        path="/auth/resetpassword"
+        element={<AgentResetPassword />}
+      />
+
+
       {/* Admin Auth */}
       <Route path="/auth/admin/login" element={<Login />} />
       <Route path="/auth/admin/registration" element={<AdminMultiStepper />} />
-      <Route
-        path="/auth/admin/forgetpassword"
-        element={<AdminForgetPassword />}
-      />
       {/* <Route path="/auth/admin/otp" element={<AdminOtp />} /> */}
       {/* <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} /> */}
 
@@ -87,11 +97,6 @@ function App() {
       <Route path="/auth/agent/registration" element={<Registration />} />
       <Route path="/auth/agent/login" element={<AgentLogin />} />
       {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
-      {<Route path="/auth/agent/otp" element={<Otp />} />}
-      <Route
-        path="/auth/agent/resetpassword"
-        element={<AgentResetPassword />}
-      />
 
       {/* Admin Dashboard routes */}
       <Route path="/dashboard/admin/" element={<AdminDashboard />}>
@@ -109,7 +114,9 @@ function App() {
           <Route path="notifications" element={<AdminNotifications />} />
           <Route path="delete-account" element={<AdminDeleteAccounts />} />
           <Route path="security" element={<AdminSecurity />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
+        <Route path="*" element={<NoPage />} />
       </Route>
 
       {/* Agent Dashboard Routes */}
@@ -120,7 +127,7 @@ function App() {
         <Route path="leads" element={<AgentLeads />} />
         <Route path="claims" element={<AgentClaims />} />
         <Route path="task" element={<AgentTasks />} />
-        <Route path="settings" element={<AgentSettings />}>
+        <Route path="settings/*" element={<AgentSettings />}>
           <Route index element={<AgentSettingsProfile />} />
           <Route path="accounts" element={<AgentSettingsAccount />} />
           <Route path="payment" element={<AdminPayment />} />
@@ -128,8 +135,11 @@ function App() {
           <Route path="delete-account" element={<AgentSettingsDelete />} />
           <Route path="change-password" element={<AgentSettingsPassword />} />
           <Route path="security" element={<AgentSettingsSecurity />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
+        <Route path="*" element={<NoPage />} />
       </Route>
+      <Route path="*" element={<NoPage />} />
       <Route path="*" element={<NoPage />} />
     </Routes>
   );

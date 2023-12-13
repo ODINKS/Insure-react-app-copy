@@ -25,7 +25,7 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import { AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-//import { Otp } from "./pages/auth/agent/Otp";
+import { Otp } from "./pages/auth/agent/Otp";
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 
 import Login from "./pages/auth/admin/AdminLogin";
@@ -76,9 +76,6 @@ function App() {
       {/* Admin Auth */}
       <Route path="/auth/admin/login" element={<Login />} />
       <Route path="/auth/admin/registration" element={<AdminMultiStepper />} />
-      {/* <Route path="/auth/admin/registration/contact" element={<AdminRegContact />} /> */}
-      {/* <Route path="/auth/admin/registration/setup" element={<AdminRegSetup />} /> */}
-      {/* <Route path="/auth/admin/registration/teaminvite" element={<AdminRegTeamInvite />} /> */}
       <Route
         path="/auth/admin/forgetpassword"
         element={<AdminForgetPassword />}
@@ -90,7 +87,7 @@ function App() {
       <Route path="/auth/agent/registration" element={<Registration />} />
       <Route path="/auth/agent/login" element={<AgentLogin />} />
       {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
-      {/* {<Route path="/auth/agent/otp" element={<Otp />} />} */}
+      {<Route path="/auth/agent/otp" element={<Otp />} />}
       <Route
         path="/auth/agent/resetpassword"
         element={<AgentResetPassword />}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 
 const AgentSettingsNav = () => {
-    const [activeLink, setActiveLink] = useState('profile');
+    const [activeLink, setActiveLink] = useState('settings');
 
     const location = useLocation();
     
@@ -21,8 +21,8 @@ const AgentSettingsNav = () => {
                 <ul className='flex flex-col  lg:flex-row lg:flex-wrap lg:justify-between w-full lg:text-[1.2rem] font-semibold list-none'>
                     <li className='' >
                         <Link to=""
-                        onClick={() => handleLinkClick('profile')}
-                        className={`border border-0 ${activeLink === 'profile' ? 'border-b-[--orange-bg] border-b-4 text-xl transition-all duration-75 pb-1' : ''}`}
+                        onClick={() => handleLinkClick('settings')}
+                        className={`border border-0 ${activeLink === 'settings' ? 'border-b-[--orange-bg] border-b-4 text-xl transition-all duration-75 pb-1' : ''}`}
                     >Agent Profile</Link>
                     </li>
 

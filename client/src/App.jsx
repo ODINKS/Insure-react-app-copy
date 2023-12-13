@@ -72,7 +72,7 @@ function App() {
       {<Route path="/sample" element={<Sample />} />}
       {<Route path="/sample1" element={<AgentBioData />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
-
+ 
       {/* Admin Auth */}
       <Route path="/auth/admin/login" element={<Login />} />
       <Route path="/auth/admin/registration" element={<AdminMultiStepper />} />

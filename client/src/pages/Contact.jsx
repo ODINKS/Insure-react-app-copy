@@ -111,22 +111,23 @@ const Contact = () => {
             It is very important for us to keep in touch with you so we <br />{" "}
             are always ready to answer any questions that interest you.
           </p>
-          <div className="flex space-x-12 mb-8 text-sm">
-            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-12 rounded">
+          <div className="flex flex-col items-center md:flex-row space-x-12 mb-8 text-sm ">
+            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-8 lg:px-12 rounded-lg self-center">
               Features
             </button>
-            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-12 rounded">
+            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-8 lg:px-12 rounded self-center">
               Pricing
             </button>
-            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-12 rounded">
+            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-8 lg:px-12 rounded self-center">
               Sales
             </button>
-            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-12 rounded">
+            <button className="bg-white hover:bg-orange-500 hover:text-white text-black font-medium py-2 px-8 lg:px-12 rounded self-center">
               Onboarding
             </button>
           </div>
         </div>
-        <div className="w-[100%] lg:w-[57%] ml-60 bg-white text-sm">
+        <div className="w-[100%] lg:w-[57%] lg:ml-60 lg:bg-white text-sm 
+         md:ml-0">
           <details>
             <summary className="font-semibold text-[1.2rem] p-4 cursor-pointer border-b border-t">
               Does the app provide real-time policy updates and alerts?

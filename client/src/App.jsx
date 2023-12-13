@@ -25,8 +25,8 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import { AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
-import { Otp } from "./pages/auth/agent/Otp";
-import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
+import {Otp} from "./pages/auth/agent/otp"
+//import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
@@ -46,7 +46,15 @@ import AdminNotifications from "./components/molecules/dashboard/AdminNotificati
 import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAccounts";
 import AdminSecurity from "./components/molecules/dashboard/AdminSecurity";
 import PaystackHome from "./components/paystack/PaystackHome";
-
+import { MultiStepper } from "./pages/auth/admin/MuiltiStepper";
+import { AdminMultiStepper } from "./pages/auth/admin/AdminMultiStepper";
+import { AgentSettingsProfile } from "./components/molecules/dashboard/AgentSettingsProfile";
+import { AgentSettingsAccount } from "./components/molecules/dashboard/AgentSettingsAccount";
+import AgentSettingsDelete from "./components/molecules/dashboard/AgentSettingsDelete";
+import AgentSettingsNotification from "./components/molecules/dashboard/AgentSettingsNotification";
+import AgentSettingsPassword from "./components/molecules/dashboard/AgentSettingsPassword";
+import AgentSettingsSecurity from "./components/molecules/dashboard/AgentSettingsSecurity";
+import AgentBioData from "./pages/auth/agent/AgentBioData";
 
 function App() {
   return (
@@ -62,23 +70,12 @@ function App() {
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
       {<Route path="/sample" element={<Sample />} />}
+      {<Route path="/sample1" element={<AgentBioData />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
-
+ 
       {/* Admin Auth */}
       <Route path="/auth/admin/login" element={<Login />} />
-      <Route path="/auth/admin/registration" element={<AdminRegistration />} />
-      <Route
-        path="/auth/admin/registration/contact"
-        element={<AdminRegContact />}
-      />
-      <Route
-        path="/auth/admin/registration/setup"
-        element={<AdminRegSetup />}
-      />
-      <Route
-        path="/auth/admin/registration/teaminvite"
-        element={<AdminRegTeamInvite />}
-      />
+      <Route path="/auth/admin/registration" element={<AdminMultiStepper />} />
       <Route
         path="/auth/admin/forgetpassword"
         element={<AdminForgetPassword />}
@@ -90,7 +87,7 @@ function App() {
       <Route path="/auth/agent/registration" element={<Registration />} />
       <Route path="/auth/agent/login" element={<AgentLogin />} />
       {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
-      {/* {<Route path="/auth/agent/otp" element={<Otp />} />} */}
+      {<Route path="/auth/agent/otp" element={<Otp />} />}
       <Route
         path="/auth/agent/resetpassword"
         element={<AgentResetPassword />}
@@ -123,9 +120,16 @@ function App() {
         <Route path="leads" element={<AgentLeads />} />
         <Route path="claims" element={<AgentClaims />} />
         <Route path="task" element={<AgentTasks />} />
-        <Route path="settings" element={<AgentSettings />} />
+        <Route path="settings" element={<AgentSettings />}>
+          <Route index element={<AgentSettingsProfile />} />
+          <Route path="accounts" element={<AgentSettingsAccount />} />
+          <Route path="payment" element={<AdminPayment />} />
+          <Route path="notifications" element={<AgentSettingsNotification />} />
+          <Route path="delete-account" element={<AgentSettingsDelete />} />
+          <Route path="change-password" element={<AgentSettingsPassword />} />
+          <Route path="security" element={<AgentSettingsSecurity />} />
+        </Route>
       </Route>
-          
       <Route path="*" element={<NoPage />} />
     </Routes>
   );

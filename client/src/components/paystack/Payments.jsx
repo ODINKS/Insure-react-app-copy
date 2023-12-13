@@ -27,7 +27,7 @@ const Payments = () => {
   };
   return (
     <>
-      <div className="text-center width-[80%] mx-auto">
+     <div className="text-center width-[80%] mx-auto">
         <div className="flex my-[5%] mx-auto w-[50%] bg-white shadow-md">
           <div className="item">
             <img
@@ -40,25 +40,30 @@ const Payments = () => {
           <div className="bg-black-500 flex flex-col justify-center h-[450px] w-[50%]">
             <div className="p-5">
               <div className="flex flex-col mb-[20px]">
-                <label>Name</label>
-                <input
+        
+                <input 
+                 className="border border-slate-500 p-2 rounded-lg w-full"
+                 placeholder="Enter your name"
                   type="text"
                   id="name"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="flex flex-col mb-[20px]">
-                <label>Email</label>
-                <input
-                  type="text"
+               
+                <input 
+                 className="border border-slate-500 p-2 rounded-lg w-full"
+                 placeholder="Enter your email"
+                  type="email"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="flex flex-col mb-[20px]">
-                <label>Phone</label>
-                <input
-                  type="text"
+               
+                <input 
+                placeholder="Enter phone number"
+                  type="number"
                   id="phone"
                   onChange={(e) => setPhone(e.target.value)}
                 />
@@ -80,8 +85,8 @@ const Payments = () => {
                 </select>
               </div>
               <PaystackButton
-                className="cursor-pointer text-center bg-black text-white border-none rounded w-max py-2 px-3"
-                style={{ marginTop: "0px" }}
+                className="paystack-button bg-[--orange-bg] text-white py-2 px-4 rounded-md"
+                style={{  backgroundColor:"#000", color:"#fff" }}
                 {...componentProps}
               />
             </div>

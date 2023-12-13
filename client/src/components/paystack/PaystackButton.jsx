@@ -31,7 +31,7 @@ const PaystackButton = () => {
 
   return (
     <>
-      <div
+       <div
         className="text-center width-[80%] mx-auto"
         style={{ marginTop: "20px" }}
       >

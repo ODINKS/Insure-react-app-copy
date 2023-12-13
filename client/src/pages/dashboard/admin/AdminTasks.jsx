@@ -54,7 +54,7 @@ const AdminTasks = () => {
       <div className="col-span-5 row-span-3 row-start-3 bg-white rounded-md mt-6 p-6">
         <div className="flex items-center justify-between w-full border-b-4 border-bg-[#000] pb-3">
           <h1 className="font-bold uppercase ">Todo List</h1>
-          <button className="flex items-center bg-[#e76927] w-max text-white rounded-md py-2 px-4">
+          <button className="flex items-center bg-[#e76927] w-max text-white rounded-md py-2 px-3 text-[1rem] lg:px-4 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,26 +73,29 @@ const AdminTasks = () => {
           </button>
           
         </div>
-        <div className="w-full pt-4 md:w-[62%] flex flex-col md:flex-row gap-4 items-center justify-between font-bold border border-black ">
+        <div className="w-full pt-4 md:w-[62%] flex flex-col md:flex-row gap-4 items-center justify-between font-bold px-7 ">
           <div className="flex items-center gap-4">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="" id="" className="self-start mt-2 " />
             <p>Policy documents for new clients</p>
           </div>
-          <span className="self-start ml-8 md:ml-0 md:self-auto">Agent CAD/005</span>
+          <div>
+          <span>Agent CAD/005</span>
+          </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-y-4 justify-between w-full border-b-4 border-bg-[#000] pb-3 py-3 px-7">
-          <p className="max-w-[80%]">
+        <div className="flex flex-col md:flex-row gap-y-4 justify-between items-center w-full border-b-4 border-bg-[#000] pb-3 py-3 px-7">
+          <p className="max-w-[80%] order-2 md:order-1
+         ">
             Guide clients through the submission of required documents. Use the
             app to upload and manage client documents securely.{" "}
           </p>
 
-          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }} />
+          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve"  }}  id="uniqueId1" key="1" />
           {/* <button className="flex  items-center bg-[#e76927] w-max text-white rounded-md px-5">
             {" "}
             Action <VscTriangleDown />
           </button> */}
         </div>
-        <div className="w-full pt-4 md:w-[62%] flex flex-col md:flex-row gap-4 items-center justify-between font-bold border border-black">
+        <div className="w-full pt-4 md:w-[62%] flex flex-col md:flex-row gap-4 items-center justify-between font-bold">
           <div className="flex items-center gap-4">
             <input type="checkbox" name="" id="" />
             <p>Verify Daily leads</p>
@@ -101,12 +104,12 @@ const AdminTasks = () => {
             <span>Agent CAD/098</span>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-y-4 justify-between w-full border-b-4 border-bg-[#000] pb-3 py-3 px-7">
-          <p className="max-w-[80%]">
+        <div className="flex flex-col md:flex-row gap-y-4 justify-between items-center w-full border-b-4 border-bg-[#000] pb-3 py-3 px-7">
+          <p className="max-w-[80%] order-2 md:order-1">
             Communicate with clients to understand their insurance needs.
             Utilize the app to access client profiles and policy details.{" "}
           </p>
-          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }} />
+          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }}  id="uniqueId2" key="2" />
           {/* <button className="flex items-center bg-[#e76927] w-max text-white rounded-md px-5">
             {" "}
             Action <VscTriangleDown />

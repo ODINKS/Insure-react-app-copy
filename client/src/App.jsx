@@ -28,7 +28,7 @@ import { Registration } from "./pages/auth/agent/AgentRegistration";
 
 import { Otp } from "./pages/auth/agent/0tp";
 
-import {Otp} from "./pages/auth/agent/otp"
+//import {Otp} from "./pages/auth/agent/otp"
 
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 

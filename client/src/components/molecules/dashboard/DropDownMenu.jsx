@@ -1,10 +1,10 @@
 import React from "react";
 
-const DropDownMenu = ({ data }) => {
+const DropDownMenu = ({ data, id }) => {
   const { actionState, defaultdata } = data;
 
   function showDropdownOptions() {
-    document.getElementById("options").classList.toggle("hidden");
+    document.getElementById( `options-${id}`).classList.toggle("hidden");
     //document.getElementById("arrow-up").classList.toggle("hidden");
     //document.getElementById("arrow-down").classList.toggle("invisible");
   }
@@ -38,7 +38,7 @@ const DropDownMenu = ({ data }) => {
           </svg>
         </button>
         <div
-          id="options"
+          id={`options-${id}`}
           className="hidden px-2 py-2 absolute z-20 bg-white rounded-lg shadow-xl"
         >
           <a

@@ -20,7 +20,9 @@ const Navbar = () => {
         const pathnameParts = location.pathname.split('/');
         const lastPathname = pathnameParts[pathnameParts.length - 1];
         setActiveLink(lastPathname);
+        console.log(activeLink)
     }, [location]);
+    
 
     const toggleMenu = (bool) => {
         setMenuOpen(bool)
@@ -87,8 +89,8 @@ const Navbar = () => {
                                 <li className='md:self-center'>
                                     <Link to="/"
 
-                                        onClick={() => handleLinkClick('home')}
-                                        className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === 'home' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-75 md:pb-1 md:no-underline' : ''}`} aria-current="page">Home</Link>
+                                        onClick={() => handleLinkClick('')}
+                                        className={`link block py-2 pl-3 pr-4 rounded text-[--white-text] text-base md:hover:bg-transparent hover:text-[--orange-hover] md:p-0 dark:text-[--white-text] dark:hover:bg-gray-700  md:dark:hover:bg-transparent md:text-[1.125rem] ${activeLink === '' ? 'md:border-0 md:border-b-[--orange-bg] md:border-b-2 md:text-xl md:transition-all md:duration-75 md:pb-1 md:no-underline' : ''}`} aria-current="page">Home</Link>
                                 </li>
                                 {/* About */}
                                 <li className='md:self-center'  >

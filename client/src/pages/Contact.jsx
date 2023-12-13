@@ -9,7 +9,8 @@ const Contact = () => {
     "At INsure, we're here to provide you with peace of mind and unparalleled service. Whether you have questions, need assistance, or want to discuss your insurance-related needs, our dedicated team is ready to assist you.";
   const img = "https://tinyurl.com/48ffmsy8";
   const buttonDesc = "Get Started";
-  const BtnFontSize = "text-[1.5rem]";
+  const btnFontSize = "text-[1.5rem]";
+  const route = "/auth/admin/registration"
   // const buttonWidth = "20"
 
   return (
@@ -21,7 +22,8 @@ const Contact = () => {
         description={description}
         img={img}
         buttonDesc={buttonDesc}
-        BtnFontSize={BtnFontSize}
+        btnFontSize={btnFontSize}
+        buttonRoute={route}
       />
       {/* {get-in-touch section} */}
       <section className="lg:bg-white-200 lg:py-16 lg:text-left lg:ml-60 md:text-center

@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar'
+// import AgentSidebar from '../../../components/molecules/dashboard/AgentSidebar'
 import { VscTriangleDown } from "react-icons/vsc";
-import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
+// import DashboardHeader from "../../../components/molecules/dashboard/NotificationBar";
 import Button from '../../../components/molecules/global/Button'
 
 const AgentTasks = () => {

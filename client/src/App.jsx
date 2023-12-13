@@ -25,7 +25,11 @@ import AgentTasks from "./pages/dashboard/agent/AgentTasks";
 import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import { AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
+
 import { Otp } from "./pages/auth/agent/0tp";
+
+import {Otp} from "./pages/auth/agent/otp"
+
 //import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
 
 import Login from "./pages/auth/admin/AdminLogin";

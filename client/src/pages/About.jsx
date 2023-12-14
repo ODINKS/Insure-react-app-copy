@@ -17,7 +17,8 @@ const About = () => {
   const img =
     "https://res.cloudinary.com/blackadam/image/upload/q_30/Insure/about-bg_estegz.png";
   const buttonDesc = "Get Started";
-  const BtnFontSize = "text-[1.5rem]";
+  const btnFontSize = "text-[1.5rem]";
+  const route = "/auth/admin/registration"
   // const buttonWidth = "20"
 
   return (
@@ -32,7 +33,8 @@ const About = () => {
             description={description}
             img={img}
             buttonDesc={buttonDesc}
-            BtnFontSize={BtnFontSize}
+            btnFontSize={btnFontSize}
+            buttonRoute={route}
           />
 
           {/* why insure */}

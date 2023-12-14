@@ -17,10 +17,11 @@ const Features = () => {
     "Explore INsure's Dynamic Features, Elevating Your Insurance Experience. Dive into our diverse range of offerings, uncover tailored solutions, and navigate through innovative features designed for your peace of mind";
   const img = "https://tinyurl.com/2e3e32fw";
   const buttonDesc = "Get Started";
-  const BtnFontSize = "text-[1.5rem]";
+  const btnFontSize = "text-[1.5rem]";
+  const route = "/auth/admin/registration"
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
       <div>
         {/* // features hero sections */}
@@ -30,7 +31,8 @@ const Features = () => {
           description={description}
           img={img}
           buttonDesc={buttonDesc}
-          BtnFontSize={BtnFontSize}
+          btnFontSize={btnFontSize}
+          buttonRoute={route}
         />
         {/* // second section */}
         <div className="flex flex-wrap justify-between w-[90%] mt-10 mx-auto">

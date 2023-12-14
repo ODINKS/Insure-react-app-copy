@@ -34,7 +34,8 @@ const Home = () => {
     backgroundImage: `url(${backgroundData[backgroundIndex]})`,
   };
 
-  let buttonDesc = "Contact Us";
+  const buttonDesc = "Get Started";
+  const route = "/auth/admin/registration"
   // let buttonWidth = "10";
   // let size = "10"
 
@@ -61,7 +62,8 @@ const Home = () => {
                 cutting-edge sales management tool.
               </p>
 
-              <Button description={buttonDesc} fontSize={"text-[1.5rem]"} />
+              <Button description={buttonDesc} fontSize={"text-[1.5rem]"}
+              route={route} />
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@ const Home = () => {
           data-aos-duration="2000"
         >
           <img
-            src="https://ik.imagekit.io/7ziooaysi/svgtopng/dashboard.png?updatedAt=1700115699168"
+            src="https://tinyurl.com/3dayxahf"
             alt="dashboard"
           />
         </div>
@@ -107,7 +109,7 @@ const Home = () => {
                 data-aos-duration="2000"
               >
                 <img
-                  src="https://ik.imagekit.io/7ziooaysi/svgtopng/agent-report.png?updatedAt=1700115699165"
+                  src="https://tinyurl.com/k7jwn8xp"
                   alt=""
                 />
               </div>
@@ -152,7 +154,7 @@ const Home = () => {
               data-aos-duration="2000"
             >
               <img
-                src="https://ik.imagekit.io/7ziooaysi/svgtopng/image.png?updatedAt=1700115698523"
+                src="https://tinyurl.com/4dynpbfv"
                 alt=""
               />
             </div>
@@ -167,7 +169,7 @@ const Home = () => {
               data-aos-duration="2000"
             >
               <img
-                src="https://ik.imagekit.io/7ziooaysi/svgtopng/admin-d-team.png?updatedAt=1700115699659"
+                src="https://tinyurl.com/2ve7brjy"
                 alt=""
               />
             </div>

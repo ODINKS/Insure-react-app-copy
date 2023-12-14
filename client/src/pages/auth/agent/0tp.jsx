@@ -95,6 +95,7 @@ export const Otp = () => {
       }
   
     }).catch((err) => {
+      console.log(err, "err")
        Swal.fire({
           title: 'Error!',
           text: 'Incorrect OTP!!!',

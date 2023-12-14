@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+
 
 export const Otp = () => {
   const [otpValues, setOtpValues] = useState(["", "", "", "", ""]);
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const otpURL = `${baseURL}/auth/verify?type=company`;
+
+  const location = useLocation();
+  const formData = location.state?.formData || {};
+
+  console.log(formData, "formdata on otp page");
+
 
   const handleInputChange = (index, value) => {
     // Validate numeric input
@@ -83,18 +92,28 @@ export const Otp = () => {
 
     let otp = {
       verifyToken: otpValues.join(""),
-      email: 
+      email:  formData.email,
     };
 
-    await Axios.post(otpURL, { otp }).then((res) => {
+    await Axios.post(otpURL, otp ).then((res) => {
       if (res.status === 200) {
+        console.log(res, "res")
+
       Swal.fire({
           title: 'Success!',
           text: 'Registration succesfull!!!!!',
           icon: 'success',
           confirmButtonText: 'OK'
         })
-        navigate('/dashboard/admin')
+        
+
+        if(formData.role == "company"){
+          navigate('/dashboard/admin', { state: { formData: formData } })
+        }else{
+          navigate('/dashboard/agent', { state: { formData: formData } })
+        }
+
+        
       }
   
     }).catch((err) => {
@@ -137,7 +156,7 @@ export const Otp = () => {
             Enter <span className="text-red-500"> OTP</span>
           </h1>
           <div className="text-sm">
-            Enter the OTP code that we sent to your email gt***@gmail.com.
+            Enter the OTP code that we sent to your email {formData.email}.
             <br /> Be careful not to share the code with anyone.
           </div>
         </div>

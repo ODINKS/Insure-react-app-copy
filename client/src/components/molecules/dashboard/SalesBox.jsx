@@ -6,7 +6,7 @@ const SalesBox = (data) => {
     <div className="bg-white text-gray-900 p-4 flex justify-between rounded-md">
         <div>
             <p className='pb-2 text-2xl'> {title} </p>
-            <p className='inline-block font-bold text-3xl'>${price}</p> <span className='inline'>{growth}</span>
+            <p className='inline-block font-bold text-3xl'>{price}</p> <span className='inline'>{growth}</span>
         </div>
 
         <div>

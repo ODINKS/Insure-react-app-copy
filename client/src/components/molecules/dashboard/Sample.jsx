@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const Sample = () => {
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const otpURL = `${baseURL}company/singlecompanyagent/1`;
+    const otpURL = `${baseURL}/dash/company/1`;
 
     const navigate = useNavigate();
 

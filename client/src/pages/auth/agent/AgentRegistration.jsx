@@ -10,7 +10,7 @@ export const Registration = () => {
       ></div>
       
       {/* Right Column (image) */}
-<div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
+   <div className="sm:px-20 lg:w-[50%] h-screen flex flex-col px-8">
         {/* Logo */}
         <a href="index.html">
           <img src="https://tinyurl.com/3wuh45ve" alt="logo" className="mb-8 w-16 mt-20 h-12 lg:w-24 lg:h-14" />

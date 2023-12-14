@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 const NotificationBar = (props) => {
   const { topic } = props;
 
+  console.log(props, "topic")
+
   const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState(false);

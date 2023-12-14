@@ -71,7 +71,6 @@ const AdminTasks = () => {
             </svg>
             Add New
           </button>
-          
         </div>
         <div className="w-full pt-4 md:w-[62%] flex flex-col md:flex-row gap-4 items-center justify-between font-bold px-7 ">
           <div className="flex items-center gap-4">
@@ -79,17 +78,24 @@ const AdminTasks = () => {
             <p>Policy documents for new clients</p>
           </div>
           <div>
-          <span>Agent CAD/005</span>
+            <span>Agent CAD/005</span>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-y-4 justify-between items-center w-full border-b-4 border-bg-[#000] pb-3 py-3 px-7">
-          <p className="max-w-[80%] order-2 md:order-1
-         ">
+          <p className="max-w-[80%] order-2 md:order-0">
             Guide clients through the submission of required documents. Use the
             app to upload and manage client documents securely.{" "}
           </p>
-
-          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve"  }}  id="uniqueId1" key="1" />
+          <div className="md:order-2 ">
+            <DropDownMenu
+              data={{
+                actionState: ["Approve", "Reject", "Transfer"],
+                defaultdata: "Approve",
+              }}
+              id="Id1"
+              key="1"
+            />
+          </div>
           {/* <button className="flex  items-center bg-[#e76927] w-max text-white rounded-md px-5">
             {" "}
             Action <VscTriangleDown />
@@ -109,7 +115,16 @@ const AdminTasks = () => {
             Communicate with clients to understand their insurance needs.
             Utilize the app to access client profiles and policy details.{" "}
           </p>
-          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }}  id="uniqueId2" key="2" />
+          <div className="md:order-2">
+          <DropDownMenu
+            data={{
+              actionState: ["Approve", "Reject", "Transfer"],
+              defaultdata: "Approve",
+            }}
+            id="Id2"
+            key="2"
+          />
+          </div>
           {/* <button className="flex items-center bg-[#e76927] w-max text-white rounded-md px-5">
             {" "}
             Action <VscTriangleDown />

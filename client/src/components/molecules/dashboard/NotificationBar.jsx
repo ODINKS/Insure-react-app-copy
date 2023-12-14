@@ -133,7 +133,7 @@ const NotificationBar = (props) => {
               <div className="absolute top-10 right-0 bg-white border rounded shadow-md">
                 <button
                   onClick={handleLogout}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  className="block px-4 py-2 hover:text-slate-100 hover:bg-blue-700"
                 >
                   Logout
                 </button>

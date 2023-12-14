@@ -50,7 +50,7 @@ export const AdminMultiStepper = () => {
 
   const handlePostRequest = async () => {
     try {
-      const response = await fetch('https://insure-8vvy.onrender.com/v1/docs/auth/register', {
+      const response = await fetch('https://insure-8vvy.onrender.com/v1/docs/#/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

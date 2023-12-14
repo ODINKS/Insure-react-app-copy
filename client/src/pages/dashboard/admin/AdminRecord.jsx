@@ -81,11 +81,11 @@ const AdminRecords = () => {
           <ActionButton title='PRINT' onClick={handlePrintClick} /> */}
 
 
-        <ActionButton title='PDF' 
+        {/* <ActionButton title='PDF' 
         action={generatePDF('table-container', 'document')} 
         />
           <ActionButton title='EXCEL' onClick={() => generateExcel('table-container', 'document')} />
-          <ActionButton title='PRINT' onClick={() => printContent('table-container')} />
+          <ActionButton title='PRINT' onClick={() => printContent('table-container')} /> */}
           <ActionButton title = 'Add New' onClick={handleButtonClick} />
           {isOverlayVisible && <FormOverlay onClose={handleOverlayClose} />}
 

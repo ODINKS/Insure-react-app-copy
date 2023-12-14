@@ -75,7 +75,7 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
-      {<Route path="/sample" element={<ActionButton />} />}
+      {<Route path="/sample" element={<Sample />} />}
       {<Route path="/sample1" element={<DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }} />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
  

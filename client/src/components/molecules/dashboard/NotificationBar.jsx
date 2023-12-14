@@ -1,8 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const NotificationBar = (props) => {
   const { topic } = props;
+
+  const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -10,8 +15,55 @@ const NotificationBar = (props) => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleLogout = () => {
-    console.log("Logout clicked");
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const adminUrl = `${baseURL}/auth/signin?type=company`;
+  const agentUrl = `${baseURL}/agent/logout`;
+
+  // handle either logged in as admin or agent
+  const getLogoutUrl = (user) => {
+    if (user === "admin") {
+      return adminUrl;
+    } else {
+      return agentUrl;
+    }
+  };
+
+  const handleLogout = async () => {
+    console.log("you clicked me");
+    try {
+      const logoutUrl = getLogoutUrl();
+      if (logoutUrl) {
+        await axios.post(logoutUrl).then((res) => {
+          if (res.status === 200) {
+            Swal.fire({
+              title: "Success!",
+              text: "Logout succesfull!!!!!",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate("/");
+              }
+            });
+          } else {
+            Swal.fire({
+              title: "Error!",
+              text: "Logout failed!!!!!",
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+          }
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        title: "Error!",
+        text: "Logout failed!!!!!",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
   };
 
   return (
@@ -81,7 +133,7 @@ const NotificationBar = (props) => {
               <div className="absolute top-10 right-0 bg-white border rounded shadow-md">
                 <button
                   onClick={handleLogout}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  className="block px-4 py-2 hover:text-slate-100 hover:bg-blue-700"
                 >
                   Logout
                 </button>

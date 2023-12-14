@@ -46,7 +46,7 @@ export const AdminMultiStepper = () => {
       const updatedFormData = { ...formData, ...data };
       const response = await axios.post(registrationURL, updatedFormData)
       if(response.data.status){
-        Swal.fire({
+    await Swal.fire({
           title: 'Success!',
           text: 'A confirmation email has been sent to you. Click okay to continue.',
           icon: 'success',
@@ -55,6 +55,12 @@ export const AdminMultiStepper = () => {
         navigate('/auth/otp')
       }
     }catch(error){
+       await Swal.fire({
+          title: 'Error!',
+          text: 'Registration failed!!!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        })
       console.log('Error making POST request:', error);
     }
   }

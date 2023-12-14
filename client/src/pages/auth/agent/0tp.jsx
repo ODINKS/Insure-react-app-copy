@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import Axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const Otp = () => {
   const [otpValues, setOtpValues] = useState(["", "", "", "", ""]);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const otpURL = `${baseURL}/auth/verify-email`;
 
   const handleInputChange = (index, value) => {
     // Validate numeric input
@@ -66,17 +73,41 @@ export const Otp = () => {
     }
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
     // Validate if all OTP fields are filled
     if (otpValues.some((value) => value === "")) {
       setError("Please fill in all the OTP fields.");
       return;
     }
 
-    // Proceed with OTP validation logic or submission
-    // Example: call your authentication API or perform other OTP validation logic
+    let otp = otpValues.join("");
+
+    await Axios.post(otpURL, { otp }).then((res) => {
+      if (res.status === 200) {
+      Swal.fire({
+          title: 'Success!',
+          text: 'Registration succesfull!!!!!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
+        navigate('/dashboard/admin')
+      }
+  
+    }).catch((err) => {
+      console.log(err, "err")
+       Swal.fire({
+          title: 'Error!',
+          text: 'Incorrect OTP!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setOtpValues(["", "", "", "", ""]);
+            event.target.reset()
+          }
+        })
+    })
   };
 
   return (

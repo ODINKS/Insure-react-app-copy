@@ -9,26 +9,25 @@ import FormOverlay from "../../../components/molecules/dashboard/FormOverlay";
 const AgentRecord = () => {
   // database retrieve
   const [formData, setFormData] = useState([]);
+  const [isOverlayVisible, setOverlayVisible] = useState(false);
+  const [filteredData, setFilteredData] = useState(transformData(formData));
+
+    const handleButtonClick = () => {
+      setOverlayVisible(true);
+    };
+  
+    const handleOverlayClose = () => {
+      setOverlayVisible(false);
+    };
 
   useEffect(() => {
     // Retrieve form data from local storage
     const storedData = JSON.parse(localStorage.getItem("formData")) || [];
+    console.log(storedData, "storedData")
     setFormData(storedData);
   }, []);
   // database retrieve ends
 
-  // for the table overlay
-  const [isOverlayVisible, setOverlayVisible] = useState(false);
-
-  const handleButtonClick = () => {
-    setOverlayVisible(true);
-  };
-
-  const handleOverlayClose = () => {
-    setOverlayVisible(false);
-  };
-
-  const [filteredData, setFilteredData] = useState(transformData(formData));
 
   const updateFilteredData = (newData) => {
     setFilteredData(transformData(newData));
@@ -46,20 +45,21 @@ const AgentRecord = () => {
 
   return (
     <>
-      <Searchbar data={ClaimsData} keyword="PolicyNo" onUpdateData={updateFilteredData} />
-      <div className='flex justify-between mb-4'>
+      <Searchbar data={ClaimsData} keyword="PolicyNo" onUpdateData={updateFilteredData}/>
+      <div className="flex justify-between mb-4">
         {/* <div className='flex'>
           <ActionButton title='PDF'/>
           <ActionButton title='EXCEL'/>
           <ActionButton title='PRINT'/>
         </div> */}
 
-          <ActionButton title="Add New" onClick={handleButtonClick} />
-          {isOverlayVisible && <FormOverlay onClose={handleOverlayClose} />}
-        </div>
+        <ActionButton title="Add New" onClick={handleButtonClick} />
+        {isOverlayVisible && <FormOverlay onClose={handleOverlayClose} />}
+      </div>
+
       <Table data={{ tableHead, tabledata: filteredData }} />
-      </>
-      );
-    };
+    </>
+  );
+};
 
 export default AgentRecord;

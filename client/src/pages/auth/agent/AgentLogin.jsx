@@ -1,10 +1,18 @@
+import Axios from "axios";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const AgentLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const navigate = useNavigate();
+  
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const loginURL = `${baseURL}/auth/login?type=agent`;
 
   const validateEmail = () => {
     // Basic email validation
@@ -24,13 +32,46 @@ export const AgentLogin = () => {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     validateEmail();
     validatePassword();
 
-    // Proceed with authentication logic if validations pass
+    await Axios.post(loginURL, { email, password }).then((res) => {
+      if (res.status === 200) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Login succesfull!!!!!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate('/dashboard/agent')
+          }
+        })
+      } else {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Login failed!!!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        })
+      }
+    }).catch((err) => {
+      console.log(err)
+      Swal.fire({
+        title: 'Error!',
+        text: 'Login failed!!!!!',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setEmail("")
+          setPassword("")
+        }
+      })
+    })
   };
 
   return (

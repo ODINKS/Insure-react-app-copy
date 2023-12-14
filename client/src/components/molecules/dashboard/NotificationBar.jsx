@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const NotificationBar = (props) => {
   const { topic } = props;
@@ -22,10 +23,9 @@ const NotificationBar = (props) => {
   const getLogoutUrl = (user) => {
     if (user === "admin") {
       return adminUrl;
-    } else if (user === "agent") {
+    } else {
       return agentUrl;
     }
-    return "";
   };
 
   const handleLogout = async () => {
@@ -33,11 +33,36 @@ const NotificationBar = (props) => {
     try {
       const logoutUrl = getLogoutUrl();
       if (logoutUrl) {
-        await axios.post(logoutUrl);
-        navigate("/");
+        await axios.post(logoutUrl).then((res) => {
+          if (res.status === 200) {
+            Swal.fire({
+              title: "Success!",
+              text: "Logout succesfull!!!!!",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate("/");
+              }
+            });
+          } else {
+            Swal.fire({
+              title: "Error!",
+              text: "Logout failed!!!!!",
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+          }
+        });
       }
     } catch (error) {
       console.error(error);
+      Swal.fire({
+        title: "Error!",
+        text: "Logout failed!!!!!",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 

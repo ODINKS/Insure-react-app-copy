@@ -1,8 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NotificationBar = (props) => {
   const { topic } = props;
+
+  const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -10,8 +14,31 @@ const NotificationBar = (props) => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleLogout = () => {
-    console.log("Logout clicked");
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const adminUrl = `${baseURL}/auth/signin?type=company`;
+  const agentUrl = `${baseURL}/agent/logout`;
+
+  // handle either logged in as admin or agent
+  const getLogoutUrl = (user) => {
+    if (user === "admin") {
+      return adminUrl;
+    } else if (user === "agent") {
+      return agentUrl;
+    }
+    return "";
+  };
+
+  const handleLogout = async () => {
+    console.log("you clicked me");
+    try {
+      const logoutUrl = getLogoutUrl();
+      if (logoutUrl) {
+        await axios.post(logoutUrl);
+        navigate("/");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

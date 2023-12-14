@@ -4,11 +4,11 @@ import Table from "../../../components/molecules/dashboard/Table";
 import { transformData } from "../../../utils/DataTransformer";
 import ActionButton from "../../../components/molecules/dashboard/ActionButton";
 import Searchbar from "../../../components/molecules/dashboard/Searchbar";
-// import {
-//   generatePDF,
-//   generateExcel,
-//   printContent,
-// } from "../../../components/molecules/dashboard/ButtonUtils";
+import {
+  generatePDF,
+  generateExcel,
+  printContent,
+} from "../../../components/molecules/dashboard/ButtonUtils";
 
 const AdminRecords = () => {
   // database retrieve

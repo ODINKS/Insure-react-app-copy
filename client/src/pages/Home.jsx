@@ -34,7 +34,8 @@ const Home = () => {
     backgroundImage: `url(${backgroundData[backgroundIndex]})`,
   };
 
-  let buttonDesc = "Contact Us";
+  const buttonDesc = "Get Started";
+  const route = "/auth/admin/registration"
   // let buttonWidth = "10";
   // let size = "10"
 
@@ -61,7 +62,8 @@ const Home = () => {
                 cutting-edge sales management tool.
               </p>
 
-              <Button description={buttonDesc} fontSize={"text-[1.5rem]"} />
+              <Button description={buttonDesc} fontSize={"text-[1.5rem]"}
+              route={route} />
             </div>
           </div>
         </div>

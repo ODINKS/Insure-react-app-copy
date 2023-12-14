@@ -4,6 +4,8 @@ import { AdminRegContact } from "./AdminRegContact";
 import { AdminRegSetup } from "./AdminRegSetup";
 import { AdminRegTeamInvite } from "./AdminRegTeamInvite";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export const AdminMultiStepper = () => {
   const [formStep, setFormStep] = useState(1);
@@ -16,8 +18,10 @@ export const AdminMultiStepper = () => {
     companyAddress: "",
     email: "",
     password: "",
-    role: "",
+    role: "company",
   });
+
+  const navigate = useNavigate()
 
     // {
   //   "companyName": "insure",
@@ -30,14 +34,35 @@ export const AdminMultiStepper = () => {
   //   "role": "Admin"
   // }
 
-  const baseURL= "https://insure-8vvy.onrender.com/v1/docs/#/Auth/post_auth_register"
+  const baseURL= "https://insure-8vvy.onrender.com/v1/auth/register?type=company"
+  
+  // useEffect(() => {
+  //   console.log(formData);
+  // }, [formData]);
+
+  const postData = async (data) => {
+    try{
+      const updatedFormData = { ...formData, ...data };
+      const response = await axios.post(baseURL, updatedFormData)
+      if(response.data.status){
+        Swal.fire({
+          title: 'Success!',
+          text: 'A confirmation email has been sent to you. Click okay to continue.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
+        navigate('/auth/agent/otp')
+      }
+    }catch(error){
+      console.log('Error making POST request:', error);
+    }
+  }
+
   const handleNext = (data) => {
     setFormData((prevData) => ({ ...prevData, ...data }));
     setFormStep((prevStep) => prevStep + 1);
   };
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
+  
 
   // const postData = async () => {
   //   try{
@@ -50,7 +75,7 @@ export const AdminMultiStepper = () => {
 
   const handlePostRequest = async () => {
     try {
-      const response = await fetch('https://insure-8vvy.onrender.com/v1/docs/#/auth/register', {
+      const response = await fetch('https://insure-8vvy.onrender.com/v1/docs/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +95,7 @@ export const AdminMultiStepper = () => {
     }
   };
 
-  
+
   const handlePrev = () => {
     setFormStep((prevStep) => prevStep - 1);
   };
@@ -82,7 +107,7 @@ export const AdminMultiStepper = () => {
       case 2:
         return <AdminRegContact onNext={handleNext} onPrev={handlePrev} />;
       case 3:
-        return <AdminRegSetup onClick={handlePostRequest} onPrev={handlePrev} />;
+        return <AdminRegSetup onNext={postData} onPrev={handlePrev} />;
       case 4:
         return <AdminRegTeamInvite onNext={handleNext} onPrev={handlePrev} />;
       default:

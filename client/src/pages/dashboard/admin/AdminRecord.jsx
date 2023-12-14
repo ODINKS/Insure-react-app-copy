@@ -76,6 +76,7 @@ const AdminRecords = () => {
         />
           <ActionButton title='EXCEL' onClick={() => generateExcel('table-container', 'document')} />
           <ActionButton title='PRINT' onClick={() => printContent('table-container')} /> */}
+
         </div>
       </div>
 

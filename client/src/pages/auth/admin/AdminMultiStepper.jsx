@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { AdminRegistration } from "./AdminRegistration";
 import { AdminRegContact } from "./AdminRegContact";
 import { AdminRegSetup } from "./AdminRegSetup";
@@ -6,11 +6,11 @@ import { AdminRegTeamInvite } from "./AdminRegTeamInvite";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+const KeyContext = createContext();
 
 export const AdminMultiStepper = () => {
   const [formStep, setFormStep] = useState(1);
   const [formData, setFormData] = useState({
-    // Initialize with empty values or default values
     companyName: "",
     teamCapacity: "",
     license: "",
@@ -20,51 +20,41 @@ export const AdminMultiStepper = () => {
     password: "",
     role: "company",
   });
+  const [key, setKey] = useState("");
 
   const navigate = useNavigate()
-
-    // {
-  //   "companyName": "insure",
-  //   "companyAddress": "Abuja",
-  //   "license": "cac3458ht",
-  //   "teamCapacity": 15,
-  //   "email": "insure@gmail.com",
-  //   "password": "Password1@",
-  //   "phoneNumber": "Password1@",
-  //   "role": "Admin"
-  // }
-
   const baseURL= process.env.REACT_APP_BASE_URL
   const registrationURL= `${baseURL}/auth/register?type=company`
   
-  // useEffect(() => {
-  //   console.log(formData);
-  // }, [formData]);
 
   const postData = async (data) => {
-    try{
+    try {
       const updatedFormData = { ...formData, ...data };
-      const response = await axios.post(registrationURL, updatedFormData)
-      if(response.data.status){
-    await Swal.fire({
+      setFormData(updatedFormData);
+      const response = await axios.post(registrationURL, updatedFormData);
+  
+      if (response.data.status) {
+        await Swal.fire({
           title: 'Success!',
           text: 'A confirmation email has been sent to you. Click okay to continue.',
           icon: 'success',
-          confirmButtonText: 'OK'
-        })
-        navigate('/auth/otp')
+          confirmButtonText: 'OK',
+        });
+  
+        setKey(formData);
+        // Pass formData as state to the /auth/otp route
+        navigate('/auth/otp', { state: { formData: updatedFormData } });
       }
-    }catch(error){
-       await Swal.fire({
-          title: 'Error!',
-          text: 'Registration failed!!!!!',
-          icon: 'error',
-          confirmButtonText: 'OK'
-        })
+    } catch (error) {
+      await Swal.fire({
+        title: 'Error!',
+        text: 'Registration failed!!!!!',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
       console.log('Error making POST request:', error);
     }
-  }
-
+  };
   const handleNext = (data) => {
     setFormData((prevData) => ({ ...prevData, ...data }));
     setFormStep((prevStep) => prevStep + 1);

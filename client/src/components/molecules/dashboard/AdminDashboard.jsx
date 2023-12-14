@@ -12,14 +12,21 @@ import AdminTasks from '../../../pages/dashboard/admin/AdminTasks'
 import AdminTeams from '../../../pages/dashboard/admin/AdminTeams'
 import AdminSettings from '../../../pages/dashboard/admin/AdminSettings'
 import Searchbar from './Searchbar'
+import { useLocation } from 'react-router-dom';
 
 const AdminDashboard = () => {
+
+  const location = useLocation();
+  const formData = location.state?.formData || {};
+
+  console.log(formData, "otp data")
+
   return (
     <>
         <DashboardTemplate 
             sidebar={<AdminSidebar />}
 
-            notificationSection={<NotificationBar />}
+            notificationSection={<NotificationBar topic={formData.companyName } />}
             
             dashboardBody={ <Outlet />}
         />

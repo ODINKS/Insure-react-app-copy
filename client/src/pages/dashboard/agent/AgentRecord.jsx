@@ -46,16 +46,15 @@ const AgentRecord = () => {
 
   return (
     <div>
-      <Searchbar
-        data={ClaimsData}
-        keyword="PolicyNo"
-        onUpdateData={updateFilteredData}
-      />
-      <div className="flex justify-between mb-4">
-        <div className="flex">
-          <ActionButton title="PDF" />
-          <ActionButton title="EXCEL" />
-          <ActionButton title="PRINT" />
+
+      <Searchbar data={ClaimsData} keyword="PolicyNo" onUpdateData={updateFilteredData} />
+      <div className='flex justify-between mb-4'>
+        {/* <div className='flex'>
+          <ActionButton title='PDF'/>
+          <ActionButton title='EXCEL'/>
+          <ActionButton title='PRINT'/>
+        </div> */}
+
           <ActionButton title="Add New" onClick={handleButtonClick} />
           {isOverlayVisible && <FormOverlay onClose={handleOverlayClose} />}
         </div>

@@ -35,6 +35,7 @@ const Table = ({ data }) => {
 
   //disply first 5
   const rendredData = currentPageData.map((leads) => {
+    const count = 0
     return (
       <tr className="bg-white border-b  hover:bg-gray-50 ">
         <td className="w-4 p-4">
@@ -56,7 +57,7 @@ const Table = ({ data }) => {
           {leads.data6}
         </td>
         <td className="px-6 py-4">
-          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: leads.data7 }} />
+          <DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: leads.data7 }} id={String(count + 1)} />
         </td>
       </tr>
 

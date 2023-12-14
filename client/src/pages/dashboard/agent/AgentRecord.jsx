@@ -45,8 +45,7 @@ const AgentRecord = () => {
   };
 
   return (
-    <div>
-
+    <>
       <Searchbar data={ClaimsData} keyword="PolicyNo" onUpdateData={updateFilteredData} />
       <div className='flex justify-between mb-4'>
         {/* <div className='flex'>
@@ -58,11 +57,9 @@ const AgentRecord = () => {
           <ActionButton title="Add New" onClick={handleButtonClick} />
           {isOverlayVisible && <FormOverlay onClose={handleOverlayClose} />}
         </div>
-      </div>
-
       <Table data={{ tableHead, tabledata: filteredData }} />
-    </div>
-  );
-};
+      </>
+      );
+    };
 
 export default AgentRecord;

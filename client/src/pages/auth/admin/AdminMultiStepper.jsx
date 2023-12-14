@@ -44,6 +44,7 @@ export const AdminMultiStepper = () => {
   const postData = async (data) => {
     try{
       const updatedFormData = { ...formData, ...data };
+      setFormData (updatedFormData)
       const response = await axios.post(registrationURL, updatedFormData)
       if(response.data.status){
     await Swal.fire({

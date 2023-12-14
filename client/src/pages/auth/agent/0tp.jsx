@@ -9,7 +9,7 @@ export const Otp = () => {
   const navigate = useNavigate();
 
   const baseURL = process.env.REACT_APP_BASE_URL;
-  const otpURL = `${baseURL}/auth/verify-email`;
+  const otpURL = `${baseURL}/auth/verify?type=company`;
 
   const handleInputChange = (index, value) => {
     // Validate numeric input
@@ -81,7 +81,10 @@ export const Otp = () => {
       return;
     }
 
-    let otp = otpValues.join("");
+    let otp = {
+      verifyToken: otpValues.join(""),
+      email: 
+    };
 
     await Axios.post(otpURL, { otp }).then((res) => {
       if (res.status === 200) {

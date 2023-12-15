@@ -6,7 +6,7 @@ const AgentSettingsSecurity = () => {
     <div>
       <form
         action=""
-        className="border border-0 grid grid-cols-1 gap-y-6 justify-center md:grid-cols-2 md:gap-x-8 lg:gap-x-14 lg:px-12 px-8 pt-10 pb-14 bg-[--white-bg]"
+        className="border grid grid-cols-1 gap-y-6 justify-center md:grid-cols-2 md:gap-x-8 lg:gap-x-14 lg:px-12 px-8 pt-10 pb-14 bg-[--white-bg]"
       >
         <h1 className="text-center font-bold text-[1.5rem] col-span-2">
           Account Recovery

@@ -10,6 +10,7 @@ const AdminLogin = () => {
     email: "",
     password: "",
   });
+  const [isLoading, setIsLoading] =useState(false)
   const navigate = useNavigate();
 
   const baseURL = process.env.REACT_APP_BASE_URL;
@@ -20,10 +21,12 @@ const AdminLogin = () => {
     e.preventDefault();
     console.log("clickeedddddddddd")
     console.log(formData, "formdata")
+    setIsLoading(true)
 
     await Axios.post(loginURL, formData).then((res) => {
       console.log(res);
       if (res.status === 200) {
+        setIsLoading(false)
         Swal.fire({
           title: 'Success!',
           text: 'Login succesfull!!!!!',
@@ -35,6 +38,7 @@ const AdminLogin = () => {
           }
         }) 
       }else{
+        setIsLoading(false)
         Swal.fire({
           title: 'Error!',
           text: 'Login failed!!!!!',
@@ -44,6 +48,7 @@ const AdminLogin = () => {
       }
     }).catch((err) => {
       console.log(err)
+      setIsLoading(false)
       Swal.fire({
         title: 'Error!',
         text: 'Login failed!!!!!',
@@ -55,8 +60,7 @@ const AdminLogin = () => {
             email: "",
             password: "",
           })
-          e.target.reset()
-          
+          setIsLoading(false)
         }
       })
 
@@ -67,7 +71,7 @@ const AdminLogin = () => {
 
   return (
     <main className="w-full h-screen flex justify-center items-center">
-      <form className="rounded-md w-[500px] p-5" onSubmit={handleSubmit}>
+      <form className="rounded-md w-[500px] p-5">
         <div className="logo flex justify-center items-center">
           <img src="https://tinyurl.com/3wuh45ve" alt="INSURE LOGO" />
         </div>
@@ -90,16 +94,21 @@ const AdminLogin = () => {
             placeholder="Enter password"
           />
         </div>
-        <BUTTON
-          description="Login"
-          width = 'w-full'
-        //   className="w-full text-[#000]"
-        />
+       
+            <button
+            onClick={handleSubmit}
+            type="button"
+            className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
+            id="login-button"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Loading...' : 'Login'}
+          </button>
         <Link to="/auth/admin/forgetpassword" className='text-[12px] mt-5 pl-2'>Forgot password?</Link>
         
       </form>
     </main>
-  );
+  ); 
 };
 
 export default AdminLogin;

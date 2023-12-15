@@ -16,7 +16,7 @@ const Button = (props) => {
         } ${fontSize || "text-[1.125rem]"} ${icon? 'flex self-center': ''}`}
       >
         {parse(`${icon || ""}`)}
-        <Link to={`${baseURL}${route}` || ""}>{description || "Add Description"}</Link>
+        <Link to={ route || ""}>{description || "Add Description"}</Link>
       </button>
     </div>
   );

@@ -18,11 +18,12 @@ const NotificationBar = (props) => {
   };
 
   const baseURL = process.env.REACT_APP_BASE_URL;
-  const adminUrl = `${baseURL}/auth/signin?type=company`;
+  const adminUrl = `${baseURL}/auth/logout`;
   const agentUrl = `${baseURL}/agent/logout`;
 
   // handle either logged in as admin or agent
   const getLogoutUrl = (user) => {
+    console.log(user)
     if (user === "admin") {
       return adminUrl;
     } else {

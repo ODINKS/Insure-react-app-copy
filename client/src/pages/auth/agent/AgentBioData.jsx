@@ -78,11 +78,11 @@ const AgentBioData = ({onNext, onPrev}) => {
     if (isValid) {
       // Perform the rest of your form submission logic here
       onNext({
-        firstname,
-        middlename,
-        lastname ,
-        gender,
-        phoneNumber,
+        firstName: formData.firstName,
+        middlename: formData.middlename,
+        lastname: formData.lastname, 
+        gender: formData.gender,
+        phoneNumber: formData.phoneNumber,
       })
     }
   };

@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 
 const AdminForgetPassword = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState({email: ''});
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -17,18 +17,18 @@ const AdminForgetPassword = () => {
     e.preventDefault();
 
     // Validate if email is not empty
-    if (!email.trim()) {
+    if (!email.email) {
       setError('Please enter a valid email address or username.');
       setSuccessMessage('');
     } else {
       // Clear any previous error
       setError('');
 
-      
-
       await Axios.post(forgetPasswordURL, email).then((res) => {
-        if (res.status === 200) {
-  
+        console.log("clickeeeeed")
+        console.log("email", email)
+        console.log("res", res)
+        if (res.status === 204) {
         Swal.fire({
             title: 'Success!',
             text: 'Paaword reset information sent to your email!!!!!',
@@ -45,22 +45,16 @@ const AdminForgetPassword = () => {
             confirmButtonText: 'OK'
           }).then((result) => {
             if (result.isConfirmed) {
-              setEmail("")
+              setEmail({email: ''})
             }
           })
       })
-
-
-
-
-      // Display success message
-      setSuccessMessage('Reset instructions sent to your email address.');
     }
   };
 
   return (
     <main className="w-full h-screen flex justify-center items-center">
-      <form className="rounded-md w-[500px] p-5" onSubmit={handleResetPassword}>
+      <form className="rounded-md w-[500px] p-5" onSubmit={handleResetPassword} >
         <div className="logo flex justify-center items-center">
           <img src="https://tinyurl.com/3wuh45ve" alt="INSURE LOGO" />
         </div>
@@ -80,13 +74,15 @@ const AdminForgetPassword = () => {
               error ? 'border-red-500' : 'border-blue-500'
             } focus:outline-none`}
             placeholder="Enter username or email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={email.email}
+            onChange={(e) => setEmail({email: e.target.value})}
           />
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
         {/* fixed this button with */}
-        <BUTTON description="Get new password" width="w-full" />
+        {/* <BUTTON description="Get new password" width="w-full"    /> */}
+        <button type="button" onClick={handleResetPassword} description="Get new password" width="w-full" className='bg-[#e76927] text-white px-6 py-3 rounded-[8px] text-bold my-2 hover:bg-[#ffa074] hover:text-[#ffffff] align-self-center text-center'>Get new password</button>
+            <br />
         <Link to="/login" className="text-[12px] mt-5 pl-2">
           Login
         </Link>

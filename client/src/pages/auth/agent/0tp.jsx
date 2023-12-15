@@ -17,8 +17,6 @@ export const Otp = () => {
   const location = useLocation();
   const formData = location.state?.formData || {};
 
-  console.log(formData, "formdata on otp page");
-
 
   const handleInputChange = (index, value) => {
     // Validate numeric input
@@ -95,6 +93,8 @@ export const Otp = () => {
       email:  formData.email,
     };
 
+    console.log("otp data", otp)
+
     await Axios.post(otpURL, otp ).then((res) => {
       if (res.status === 200) {
         console.log(res, "res")
@@ -107,7 +107,7 @@ export const Otp = () => {
         })
         
 
-        if(formData.role == "company"){
+        if(formData.role === "company"){
           navigate('/dashboard/admin', { state: { formData: formData } })
         }else{
           navigate('/dashboard/agent', { state: { formData: formData } })

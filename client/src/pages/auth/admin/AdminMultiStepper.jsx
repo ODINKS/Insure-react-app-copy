@@ -48,7 +48,7 @@ export const AdminMultiStepper = () => {
     } catch (error) {
       await Swal.fire({
         title: 'Error!',
-        text: 'Registration failed!!!!!',
+        text: `Registration failed!!!!!  ${error.response.data.message || error.message}`,
         icon: 'error',
         confirmButtonText: 'OK',
       });
@@ -60,7 +60,38 @@ export const AdminMultiStepper = () => {
     setFormStep((prevStep) => prevStep + 1);
     console.log(baseURL)
   };
+  
 
+  // const postData = async () => {
+  //   try{
+  //     const response = await axios.post(baseURL, JSON.stringify(formData))
+  //     console.log(response)
+  //   }catch(error){
+  //     console.log('Error making POST request:', error);
+  //   }
+  // }
+
+  const handlePostRequest = async () => {
+    try {
+      const response = await fetch('https://insure-8vvy.onrender.com/v1/docs/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // Add any other headers you need, such as authentication tokens
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      console.log('Response Data:', responseData);
+    } catch (error) {
+      console.error('Error making POST request:', error);
+    }
+  };
 
 
   const handlePrev = () => {

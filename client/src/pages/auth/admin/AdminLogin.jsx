@@ -95,7 +95,7 @@ const AdminLogin = () => {
           width = 'w-full'
         //   className="w-full text-[#000]"
         />
-        <Link to="/reset" className='text-[12px] mt-5 pl-2'>Forgot password?</Link>
+        <Link to="/auth/admin/forgetpassword" className='text-[12px] mt-5 pl-2'>Forgot password?</Link>
         
       </form>
     </main>

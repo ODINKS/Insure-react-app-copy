@@ -1,52 +1,68 @@
+import Axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 export const AdminRegTeamInvite = ({ onPrev }) => {
-  const [email1, setEmail1] = useState('');
-  const [email2, setEmail2] = useState('');
-  const [email3, setEmail3] = useState('');
+  const [email, setEmail] = useState('');
+  // const [email2, setEmail2] = useState('');
+  // const [email3, setEmail3] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  const baseURL= process.env
+  const baseURL = process.env.REACT_APP_BASE_URL
+  const teamInviteURL = `${baseURL}/auth/Register?type=agent`
 
-  const navigate=useNavigate()
-  const handleSubmit = (event) => {
+
+  const agentData = {
+    "companyProfileId": 1,
+    "email": email,
+    "role": "agent"
+  }
+
+
+  const navigate = useNavigate()
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('clicked here');
 
-    // Validate that no two email addresses are the same
-    if (email1 === email2 || email1 === email3 || email2 === email3) {
-      setEmailError('Each Email address must be unique.')
-      return false;
-    } else {
-      // Clear any previous error
-      setEmailError('');
-    }
-    if(emailError){
-        // Navigate to the next page
+    if (emailError) {
+      // Navigate to the next page
 
-        // setTimeout(() => {
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 8000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Signed in successfully"
-          });
-          navigate('/dashboard/admin');
-        // }, 1000);
-      
+      // setTimeout(() => {
+      // const Toast = Swal.mixin({
+      //   toast: true,
+      //   position: "top-end",
+      //   showConfirmButton: false,
+      //   timer: 8000,
+      //   timerProgressBar: true,
+      //   didOpen: (toast) => {
+      //     toast.onmouseenter = Swal.stopTimer;
+      //     toast.onmouseleave = Swal.resumeTimer;
+      //   }
+      // });
+      // Toast.fire({
+      //   icon: "success",
+      //   title: "Signed in successfully"
+      // });
+      // navigate('/dashboard/admin');
+      // // }, 1000);
+
+
+
     }
+    await Axios.post(teamInviteURL, agentData).then(res =>{
+      console.log(res);
+    }).then(res =>{
+      if(res.status === true){
+        console.log('good');
+      }
+    }).catch(error =>{
+      console.log('error' + error.message);
+    })
+
   };
-  const handleBack =()=>{
+  const handleBack = () => {
     //navigate('/auth/admin/registration/setup')
     onPrev()
   }
@@ -60,77 +76,74 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
           <img
             src="https://tinyurl.com/3wuh45ve"
             alt="logo"
-            className="mb-2 w-16 h-12 lg:w-24 lg:h-14"
+            className="mb-8 w-16 h-12 lg:w-24 lg:h-14"
           />
         </a>
         {/* Header Section */}
-        <div className="mb-14 text-left">
+        <div className="mb-5 text-left">
           <div className="flex justify-between items-center">
             <h1 className="font-bold mb-4 text-xl lg:text-4xl">
               Invite <span className="text-red-500">agents</span>
             </h1>
-            <a href="/">Skip for later</a>
+            {/* <a href="/">Skip for later</a> */}
           </div>
-          <button
+          {/* <button
             type="button"
             className="sm:w-full lg:w-[30%] h-[40px] bg-orange-600 text-white py-2 px-1 rounded-md hover:bg-orange-400 mb-2"
           >
             + Add another
-          </button>
+          </button> */}
         </div>
         {/* Form Area */}
-        <form name="signUpData" className="flex flex-col w-full">
+        <form name="signUpData" className="flex flex-col w-full" onSubmit={handleSubmit}>
           {/* Email input fields */}
           <input
             type="email"
             name="email1"
-            value={email1}
-            onChange={(e) => setEmail1(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Add email address"
-            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              emailError ? 'border-red-500' : ''
-            }`}
+            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${emailError ? 'border-red-500' : ''
+              }`}
           />
 
-          <input
+          {/* <input
             type="email"
             name="email2"
             value={email2}
             onChange={(e) => setEmail2(e.target.value)}
             placeholder="Add email address"
-            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              emailError ? 'border-red-500' : ''
-            }`}
-          />
+            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${emailError ? 'border-red-500' : ''
+              }`}
+          /> */}
 
-          <input
+          {/* <input
             type="email"
             name="email3"
             value={email3}
             onChange={(e) => setEmail3(e.target.value)}
             placeholder="Add email address"
-            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-16 focus:border-blue-500 ${
-              emailError ? 'border-red-500' : ''
-            }`}
-          />
+            className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-16 focus:border-blue-500 ${emailError ? 'border-red-500' : ''
+              }`}
+          /> */}
 
           {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
 
           {/* Back and Proceed buttons */}
           <div className="flex justify-between flex-col lg:flex-row w-full mt-6">
-            <button
-            onClick={handleBack}
+            {/* <button
+              onClick={handleBack}
               type="button"
               className="w-full lg:w-[25%] h-[40px] bg-white text-gray-500 font-bold border-2 border-orange-400 py-2 px-4 rounded-md hover:bg-orange-400 hover:text-white mb-2"
             >
               Back
-            </button>
+            </button> */}
             <button
-            onClick={handleSubmit}
-              type="button"
+
+              type="submit"
               className="sm:w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             >
-              Proceed
+              Invite
             </button>
           </div>
         </form>

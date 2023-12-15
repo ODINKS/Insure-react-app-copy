@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BUTTON from "../../../components/molecules/global/Button";
+import  Axios  from 'axios';
+import Swal from "sweetalert2";
+
 
 const AdminForgetPassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleResetPassword = (e) => {
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const forgetPasswordURL = `${baseURL}/auth/forgot-password
+  `
+
+  const handleResetPassword = async (e) => {
     e.preventDefault();
 
     // Validate if email is not empty
@@ -17,6 +24,35 @@ const AdminForgetPassword = () => {
     } else {
       // Clear any previous error
       setError('');
+
+      
+
+      await Axios.post(forgetPasswordURL, email).then((res) => {
+        if (res.status === 200) {
+  
+        Swal.fire({
+            title: 'Success!',
+            text: 'Paaword reset information sent to your email!!!!!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+        }
+      }).catch((err) => {
+        console.log(err, "err")
+         Swal.fire({
+            title: 'Error!',
+            text: 'Invalid Email!!!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setEmail("")
+            }
+          })
+      })
+
+
+
 
       // Display success message
       setSuccessMessage('Reset instructions sent to your email address.');

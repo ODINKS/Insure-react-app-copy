@@ -1,6 +1,13 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Axios from 'axios';
+import Swal from 'sweetalert2';
+
+
+
 const Sample = () => {
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const otpURL = `${baseURL}/dash/company/1`;
 
     const navigate = useNavigate();
 
@@ -11,6 +18,15 @@ const Sample = () => {
             navigate('/auth/agent/login');
         }
     };
+
+    const fetchData = async() => {
+        await Axios.get(otpURL).then((res) => {
+            console.log(res.data.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+        
+    }
 
     return (
         <>
@@ -28,6 +44,9 @@ const Sample = () => {
                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-8-8-2 2 10 10 10-10-2-2-8 8z" /></svg>
                 </div>
             </div>
+
+            <button onClick={fetchData}>
+                    click me to fetch            </button>
 
 
             {/* <div className="relative inline-block w-60 self-center">

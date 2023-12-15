@@ -2,16 +2,17 @@ import React, { useState } from "react";
 
 const AgentBioData = ({onNext, onPrev}) => {
   const [formData, setFormData] = useState({
-    firstname: "",
-    middlename: "",
-    lastname: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
     gender: "",
     phoneNumber: "",
   });
 
   const [errors, setErrors] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
     gender: "",
     phoneNumber: "",
   });
@@ -28,24 +29,24 @@ const AgentBioData = ({onNext, onPrev}) => {
     const newErrors = {};
 
     // First name
-    if (formData.firstname.trim() === "") {
-      newErrors.firstname = "First name cannot be empty";
+    if (formData.firstName.trim() === "") {
+      newErrors.firstName = "First name cannot be empty";
     } else {
-      newErrors.firstname = "";
+      newErrors.firstName = "";
     }
 
     //  Middle name
-    if (formData.middlename.trim() === "") {
-      newErrors.middlename = "Middle name cannot be empty";
+    if (formData.middleName.trim() === "") {
+      newErrors.middleName = "Middle name cannot be empty";
     } else {
-      newErrors.middlename = "";
+      newErrors.middleName = "";
     }
 
     // Last name
-    if (formData.lastname.trim() === "") {
-      newErrors.lastname = "Last name cannot be empty";
+    if (formData.lastName.trim() === "") {
+      newErrors.lastName = "Last name cannot be empty";
     } else {
-      newErrors.lastname = "";
+      newErrors.lastName = "";
     }
 
     // Validate gender
@@ -79,8 +80,8 @@ const AgentBioData = ({onNext, onPrev}) => {
       // Perform the rest of your form submission logic here
       onNext({
         firstName: formData.firstName,
-        middlename: formData.middlename,
-        lastname: formData.lastname, 
+        middleName: formData.middleName,
+        lastName: formData.lastName, 
         gender: formData.gender,
         phoneNumber: formData.phoneNumber,
       })
@@ -121,16 +122,16 @@ const AgentBioData = ({onNext, onPrev}) => {
           <div className="mb-3">
             <input
               type="text"
-              id="firstname"
-              name="firstname"
+              id="firstName"
+              name="firstName"
               placeholder="First Name"
               className="w-full h-10 px-3 py-2 border border-gray-900 rounded-md mb-1 focus:border-blue-500"
-              value={formData.firstname}
+              value={formData.firstName}
               onChange={handleInputChange}
             />
-            {errors.firstname && (
+            {errors.firstName && (
               <p className="text-red-500" style={{ fontSize: "0.8rem" }}>
-                {errors.firstname}
+                {errors.firstName}
               </p>
             )}
           </div>
@@ -139,16 +140,16 @@ const AgentBioData = ({onNext, onPrev}) => {
           <div className="mb-3">
             <input
               type="text"
-              id="middlename"
-              name="middlename"
+              id="middleName"
+              name="middleName"
               placeholder="Middle Name"
               className="w-full h-10 px-3 py-2 border border-gray-900 rounded-md mb-1 focus:border-blue-500"
-              value={formData.middlename}
+              value={formData.middleName}
               onChange={handleInputChange}
             />
-            {errors.middlename && (
+            {errors.middleName && (
               <p className="text-red-500" style={{ fontSize: "0.8rem" }}>
-                {errors.middlename}
+                {errors.middleName}
               </p>
             )}
           </div>
@@ -157,16 +158,16 @@ const AgentBioData = ({onNext, onPrev}) => {
           <div className="mb-3">
             <input
               type="text"
-              id="lastname"
-              name="lastname"
+              id="lastName"
+              name="lastName"
               placeholder="Last Name"
               className="w-full h-10 px-3 py-2 border border-gray-900 rounded-md mb-1 focus:border-blue-500"
-              value={formData.lastname}
+              value={formData.lastName}
               onChange={handleInputChange}
             />
-            {errors.lastname && (
+            {errors.lastName && (
               <p className="text-red-500" style={{ fontSize: "0.8rem" }}>
-                {errors.lastname}
+                {errors.lastName}
               </p>
             )}
           </div>
@@ -176,7 +177,8 @@ const AgentBioData = ({onNext, onPrev}) => {
             <input
               type="number"
               id="phonenumber"
-              name="phonenumber"
+              name="phoneNumber"
+              maxLength={14}
               placeholder="Phone Number"
               className="w-full h-10 px-3 py-2 border border-gray-900 rounded-md mb-1 focus:border-blue-500"
               value={formData.phoneNumber}
@@ -201,7 +203,7 @@ const AgentBioData = ({onNext, onPrev}) => {
               <option
                 value=""
                 disabled
-                selected
+                defaultValue
                 hidden
                 className="text-gray-100"
               >

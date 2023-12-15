@@ -55,11 +55,7 @@ export const AdminMultiStepper = () => {
       console.log('Error making POST request:', error);
     }
   };
-  const handleNext = (data) => {
-    setFormData((prevData) => ({ ...prevData, ...data }));
-    setFormStep((prevStep) => prevStep + 1);
-    console.log(baseURL)
-  };
+  
   
 
   // const postData = async () => {
@@ -96,6 +92,12 @@ export const AdminMultiStepper = () => {
 
   const handlePrev = () => {
     setFormStep((prevStep) => prevStep - 1);
+  };
+
+  const handleNext = (data) => {
+    setFormData((prevData) => ({ ...prevData, ...data }));
+    setFormStep((prevStep) => prevStep + 1);
+    console.log(baseURL)
   };
 
   const renderStepComponent = () => {

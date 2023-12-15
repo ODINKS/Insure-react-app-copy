@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 
-const AgentBioData = () => {
+const AgentBioData = ({onNext, onPrev}) => {
   const [formData, setFormData] = useState({
     firstname: "",
     middlename: "",
     lastname: "",
     gender: "",
-    role: "",
+    phoneNumber: "",
   });
 
   const [errors, setErrors] = useState({
     firstname: "",
     lastname: "",
     gender: "",
-    role: "",
+    phoneNumber: "",
   });
 
   const handleInputChange = (e) => {
@@ -56,10 +56,10 @@ const AgentBioData = () => {
     }
 
     // Validate role
-    if (formData.role.trim() === "") {
-      newErrors.role = "Role cannot be empty";
+    if (formData.phoneNumber.trim() === "") {
+      newErrors.phoneNumber = "Phone Number cannot be empty";
     } else {
-      newErrors.role = "";
+      newErrors.phoneNumber = "";
     }
 
     setErrors(newErrors);
@@ -77,6 +77,13 @@ const AgentBioData = () => {
     // If the form is valid, proceed with the submission
     if (isValid) {
       // Perform the rest of your form submission logic here
+      onNext({
+        firstname,
+        middlename,
+        lastname ,
+        gender,
+        phoneNumber,
+      })
     }
   };
 
@@ -160,6 +167,24 @@ const AgentBioData = () => {
             {errors.lastname && (
               <p className="text-red-500" style={{ fontSize: "0.8rem" }}>
                 {errors.lastname}
+              </p>
+            )}
+          </div>
+
+          {/* Phone Number */}
+          <div className="mb-3">
+            <input
+              type="number"
+              id="phonenumber"
+              name="phonenumber"
+              placeholder="Phone Number"
+              className="w-full h-10 px-3 py-2 border border-gray-900 rounded-md mb-1 focus:border-blue-500"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+            />
+            {errors.phoneNumber && (
+              <p className="text-red-500" style={{ fontSize: "0.8rem" }}>
+                {errors.phoneNumber}
               </p>
             )}
           </div>

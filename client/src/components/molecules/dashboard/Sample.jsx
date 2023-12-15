@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const Sample = () => {
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const otpURL = `${baseURL}/auth/forgot-password`;
+    const otpURL = `${baseURL}/dash/agent/1`;
 
     const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Sample = () => {
     };
 
     const fetchData = async() => {
-        await Axios.post(otpURL, {"email": "zionpelumiii@gmail.com"}).then((res) => {
+        await Axios.get(otpURL).then((res) => {
             console.log(res)
         }).catch((err) => {
             console.log(err)

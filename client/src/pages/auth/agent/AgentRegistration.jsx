@@ -42,7 +42,7 @@ export const AgentRegistration = ({ onNext }) => {
         {/* Form Area */}
         <form
           name="signUpData"
-          // onSubmit={(event) => signUP(event)}
+          onSubmit={handleSubmit}
           className="flex flex-col w-full"
         >
           {/* agent email */}
@@ -63,7 +63,7 @@ export const AgentRegistration = ({ onNext }) => {
             placeholder="Enter password"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}          />
+            onChange={(e) => setPassword(e.target.value)} />
           <input
             type="password"
             name="confirmPassword"

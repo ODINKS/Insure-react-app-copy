@@ -61,6 +61,7 @@ import AgentSettingsSecurity from "./components/molecules/dashboard/AgentSetting
 import AgentBioData from "./pages/auth/agent/AgentBioData";
 import ActionButton from "./components/molecules/dashboard/ActionButton";
 import DropDownMenu from "./components/molecules/dashboard/DropDownMenu";
+import AgentMultiStepper from "./pages/auth/agent/AgentMultiStepper";
 
 function App() {
   return (
@@ -75,7 +76,7 @@ function App() {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />
       <Route path="/form" element={<FormOverlay />} />
-      {<Route path="/sample" element={<AdminRegTeamInvite />} />}
+      {<Route path="/sample" element={<Sample />} />}
       {<Route path="/sample1" element={<DropDownMenu data={{ actionState: ["Approve", "Reject", "Transfer"], defaultdata: "Approve" }} />} />}
       <Route path="/paystackhome" element={<PaystackHome />} />
  
@@ -98,7 +99,7 @@ function App() {
       <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} />
 
       {/* Agent Auth */}
-      <Route path="/auth/agent/registration" element={<Registration />} />
+      <Route path="/auth/agent/registration" element={<AgentMultiStepper />} />
       <Route path="/auth/agent/login" element={<AgentLogin />} />
       {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
 

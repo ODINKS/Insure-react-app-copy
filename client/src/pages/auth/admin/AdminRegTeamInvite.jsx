@@ -9,6 +9,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
   // const [email3, setEmail3] = useState('');
   const [emailError, setEmailError] = useState('');
 
+
   const baseURL = process.env.REACT_APP_BASE_URL
   const teamInviteURL = `${baseURL}/auth/Register?type=agent`
 

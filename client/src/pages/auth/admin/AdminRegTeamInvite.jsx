@@ -8,6 +8,8 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
   const [email3, setEmail3] = useState('');
   const [emailError, setEmailError] = useState('');
 
+  const baseURL= process.env
+
   const navigate=useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault();

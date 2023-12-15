@@ -48,7 +48,7 @@ export const AdminMultiStepper = () => {
     } catch (error) {
       await Swal.fire({
         title: 'Error!',
-        text: 'Registration failed!!!!!',
+        text: `Registration failed!!!!!  ${error.response.data.message || error.message}`,
         icon: 'error',
         confirmButtonText: 'OK',
       });

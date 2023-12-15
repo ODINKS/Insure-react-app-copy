@@ -11,8 +11,7 @@ const AdminForgetPassword = () => {
   const [successMessage, setSuccessMessage] = useState('');
 
   const baseURL = process.env.REACT_APP_BASE_URL;
-  const forgetPasswordURL = `${baseURL}/auth/forgot-password
-  `
+  const forgetPasswordURL = `${baseURL}/auth/forgot-password`
 
   const handleResetPassword = async (e) => {
     e.preventDefault();

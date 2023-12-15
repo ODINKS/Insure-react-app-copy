@@ -34,7 +34,8 @@ export const AdminMultiStepper = () => {
   //   "role": "Admin"
   // }
 
-  const baseURL= "https://insure-8vvy.onrender.com/v1/auth/register?type=company"
+  const baseURL= process.env.REACT_APP_BASE_URL
+  const registrationURL= `${baseURL}/auth/register?type=company`
   
   // useEffect(() => {
   //   console.log(formData);
@@ -43,17 +44,23 @@ export const AdminMultiStepper = () => {
   const postData = async (data) => {
     try{
       const updatedFormData = { ...formData, ...data };
-      const response = await axios.post(baseURL, updatedFormData)
+      const response = await axios.post(registrationURL, updatedFormData)
       if(response.data.status){
-        Swal.fire({
+    await Swal.fire({
           title: 'Success!',
           text: 'A confirmation email has been sent to you. Click okay to continue.',
           icon: 'success',
           confirmButtonText: 'OK'
         })
-        navigate('/auth/agent/otp')
+        navigate('/auth/otp')
       }
     }catch(error){
+       await Swal.fire({
+          title: 'Error!',
+          text: 'Registration failed!!!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        })
       console.log('Error making POST request:', error);
     }
   }
@@ -61,6 +68,7 @@ export const AdminMultiStepper = () => {
   const handleNext = (data) => {
     setFormData((prevData) => ({ ...prevData, ...data }));
     setFormStep((prevStep) => prevStep + 1);
+    console.log(baseURL)
   };
   
 

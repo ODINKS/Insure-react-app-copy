@@ -31,11 +31,11 @@ const AdminCLients = () => {
     <div>
       <Searchbar data={ClaimsData} keyword="clientName" onUpdateData={updateFilteredData} />
       <div className='flex justify-between mb-4'>
-        <div className='flex'>
+        {/* <div className='flex'>
           <ActionButton title='PDF'/>
           <ActionButton title='EXCEL'/>
           <ActionButton title='PRINT'/>
-        </div>
+        </div> */}
       </div>
       
       <Table data={{tableHead, tabledata: filteredData}}/>

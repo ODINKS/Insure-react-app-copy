@@ -77,7 +77,7 @@ const Home = () => {
           data-aos-duration="2000"
         >
           <img
-            src="https://ik.imagekit.io/7ziooaysi/svgtopng/dashboard.png?updatedAt=1700115699168"
+            src="https://tinyurl.com/3dayxahf"
             alt="dashboard"
           />
         </div>
@@ -109,7 +109,7 @@ const Home = () => {
                 data-aos-duration="2000"
               >
                 <img
-                  src="https://ik.imagekit.io/7ziooaysi/svgtopng/agent-report.png?updatedAt=1700115699165"
+                  src="https://tinyurl.com/k7jwn8xp"
                   alt=""
                 />
               </div>
@@ -154,7 +154,7 @@ const Home = () => {
               data-aos-duration="2000"
             >
               <img
-                src="https://ik.imagekit.io/7ziooaysi/svgtopng/image.png?updatedAt=1700115698523"
+                src="https://tinyurl.com/4dynpbfv"
                 alt=""
               />
             </div>
@@ -169,7 +169,7 @@ const Home = () => {
               data-aos-duration="2000"
             >
               <img
-                src="https://ik.imagekit.io/7ziooaysi/svgtopng/admin-d-team.png?updatedAt=1700115699659"
+                src="https://tinyurl.com/2ve7brjy"
                 alt=""
               />
             </div>

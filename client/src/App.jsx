@@ -99,6 +99,7 @@ function App() {
           <Route path="/auth/admin/registration" element={<AdminMultiStepper />} />
           {/* <Route path="/auth/admin/otp" element={<AdminOtp />} /> */}
           <Route path="/auth/admin/forgetpassword" element={<AdminForgetPassword />} />
+          <Route path="/auth/admin/team-invite" element={<AdminRegTeamInvite />} />
 
           {/* Agent Auth */}
           <Route path="/auth/agent/registration" element={<AgentMultiStepper />} />

@@ -3,13 +3,15 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useAuth } from "../../../pages/auth/Authentication/AuthContext";
+
 
 const NotificationBar = (props) => {
   const { topic } = props;
 
-  console.log(props, "topic")
-
   const navigate = useNavigate();
+
+  const { logout } = useAuth();
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -32,42 +34,9 @@ const NotificationBar = (props) => {
   };
 
   const handleLogout = async () => {
+    logout();
     navigate("/");
-    // console.log("you clicked me");
-    // try {
-    //   const logoutUrl = getLogoutUrl();
-    //   if (logoutUrl) {
-    //     await axios.post(logoutUrl).then((res) => {
-    //       if (res.status === 200) {
-    //         Swal.fire({
-    //           title: "Success!",
-    //           text: "Logout succesfull!!!!!",
-    //           icon: "success",
-    //           confirmButtonText: "OK",
-    //         }).then((result) => {
-    //           if (result.isConfirmed) {
-    //             navigate("/");
-    //           }
-    //         });
-    //       } else {
-    //         Swal.fire({
-    //           title: "Error!",
-    //           text: "Logout failed!!!!!",
-    //           icon: "error",
-    //           confirmButtonText: "OK",
-    //         });
-    //       }
-    //     });
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    //   Swal.fire({
-    //     title: "Error!",
-    //     text: "Logout failed!!!!!",
-    //     icon: "error",
-    //     confirmButtonText: "OK",
-    //   });
-    // }
+
   };
 
   return (

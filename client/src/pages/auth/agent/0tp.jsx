@@ -93,7 +93,7 @@ export const Otp = () => {
       email:  formData.email,
     };
 
-    console.log("otp data", otp)
+    console.log("otp data", formData)
 
     await Axios.post(otpURL, otp ).then((res) => {
       if (res.status === 200) {
@@ -108,9 +108,9 @@ export const Otp = () => {
         
 
         if(formData.role === "company"){
-          navigate('/dashboard/admin', { state: { formData: formData } })
+          navigate('/dashboard/agent', { state: { formData: formData} })
         }else{
-          navigate('/dashboard/agent', { state: { formData: formData } })
+          navigate('/dashboard/admin', { state: { formData: formData} })
         }
 
         

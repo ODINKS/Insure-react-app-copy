@@ -12,6 +12,8 @@ import Track from "../../../components/molecules/dashboard/Track";
 import NotificationBar from "../../../components/molecules/dashboard/NotificationBar";
 import SalesBoxGroup from "../../../components/molecules/dashboard/SalesBoxGroup";
 import Axios from "axios";
+import { useLocation } from 'react-router-dom';
+import { useAuth } from "../../auth/Authentication/AuthContext";
 Chart.register(CategoryScale);
 
 const AdminHome = () => {
@@ -35,11 +37,25 @@ const AdminHome = () => {
       },
     ],
   });
+  const { login } = useAuth();
+
+  const location = useLocation();
+  const formData = location.state?.formData || {};
+
+  //login
+  // formData.companyProfile.companyName
+  // // formData.companyProfile.id
+  // formData.companyProfile
+  //   ?  formData.companyProfile.companyName
+  //   : formData.
+
+  console.log(formData, "formData")
+
 
   const baseURL = process.env.REACT_APP_BASE_URL;
-  const otpURL = `${baseURL}/dash/company/1`;
+  const otpURL = `${baseURL}/dash/company/${formData.user.companyProfile.id}`;
 
-  console.log(homeData, "new home data");
+
 
   useEffect(() => {
     console.log("first reload");

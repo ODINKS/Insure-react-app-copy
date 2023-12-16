@@ -21,12 +21,14 @@ const AdminDashboard = () => {
 
   console.log(formData, "otp data")
 
+
+
   return (
     <>
         <DashboardTemplate 
             sidebar={<AdminSidebar />}
 
-            notificationSection={<NotificationBar topic={formData.companyName } />}
+            notificationSection={<NotificationBar topic={  formData.user.companyProfile.companyName} />}
             
             dashboardBody={ <Outlet />}
         />

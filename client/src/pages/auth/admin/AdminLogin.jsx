@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Authentication/AuthContext";
+
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +13,12 @@ const AdminLogin = () => {
     password: "",
   });
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const loginURL = `${baseURL}/auth/login?type=company`;
+
+
 
 
   const handleSubmit = async (e) => {
@@ -22,7 +27,12 @@ const AdminLogin = () => {
     console.log(formData, "formdata")
 
     await Axios.post(loginURL, formData).then((res) => {
-      console.log(res);
+      console.log(res.data.data.tokens.access.token, "res token");
+      console.log(res.data.data.user.companyProfile.id, "res id");
+
+
+      login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id);
+
       if (res.status === 200) {
         Swal.fire({
           title: 'Success!',
@@ -31,7 +41,7 @@ const AdminLogin = () => {
           confirmButtonText: 'OK'
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate('/dashboard/admin')
+            navigate('/dashboard/admin', { state: { formData: res.data.data} } )
           }
         }) 
       }else{

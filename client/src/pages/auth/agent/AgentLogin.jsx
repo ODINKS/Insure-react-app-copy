@@ -8,6 +8,7 @@ export const AgentLogin = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
 
   const navigate = useNavigate();
   
@@ -34,12 +35,13 @@ export const AgentLogin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setIsLoading(true)
     validateEmail();
     validatePassword();
 
     await Axios.post(loginURL, { email, password }).then((res) => {
       if (res.status === 200) {
+        setIsLoading(true)
         Swal.fire({
           title: 'Success!',
           text: 'Login succesfull!!!!!',
@@ -51,6 +53,7 @@ export const AgentLogin = () => {
           }
         })
       } else {
+        setIsLoading(true)
         Swal.fire({
           title: 'Error!',
           text: 'Login failed!!!!!',
@@ -59,6 +62,7 @@ export const AgentLogin = () => {
         })
       }
     }).catch((err) => {
+      setIsLoading(true)
       console.log(err)
       Swal.fire({
         title: 'Error!',
@@ -66,6 +70,7 @@ export const AgentLogin = () => {
         icon: 'error',
         confirmButtonText: 'OK'
       }).then((result) => {
+        setIsLoading(true)
         if (result.isConfirmed) {
           setEmail("")
           setPassword("")
@@ -139,8 +144,9 @@ export const AgentLogin = () => {
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             id="register-button"
-          >
-            Confirm
+            disabled={isLoading}
+            >
+              {isLoading ? 'Loading...' : 'Login'}
           </button>
           <div>
             <a href="/">

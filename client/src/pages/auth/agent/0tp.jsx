@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 export const Otp = () => {
   const [otpValues, setOtpValues] = useState(["", "", "", "", ""]);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
 
   const navigate = useNavigate();
 
@@ -87,7 +88,7 @@ export const Otp = () => {
       setError("Please fill in all the OTP fields.");
       return;
     }
-
+setIsLoading(true)
     let otp = {
       verifyToken: otpValues.join(""),
       email:  formData.email,
@@ -98,7 +99,7 @@ export const Otp = () => {
     await Axios.post(otpURL, otp ).then((res) => {
       if (res.status === 200) {
         console.log(res, "res")
-
+        setIsLoading(false)
       Swal.fire({
           title: 'Success!',
           text: 'Registration succesfull!!!!!',
@@ -118,12 +119,14 @@ export const Otp = () => {
   
     }).catch((err) => {
       console.log(err, "err")
+      setIsLoading(false)
        Swal.fire({
           title: 'Error!',
           text: 'Incorrect OTP!!!',
           icon: 'error',
           confirmButtonText: 'OK'
         }).then((result) => {
+          setIsLoading(false)
           if (result.isConfirmed) {
             setOtpValues(["", "", "", "", ""]);
             event.target.reset()
@@ -194,7 +197,7 @@ export const Otp = () => {
                 maxLength={1}
                 value={value}
                 onChange={(e) => handleInputChange(index, e.target.value)}
-                className="w-[60px] h-[60px] px-6 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
+                className="w-[60px] h-[60px] px-4 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
               />
             ))}
           </div>
@@ -205,8 +208,9 @@ export const Otp = () => {
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             id="register-button"
+            Confirmdisabled={isLoading}
           >
-            Confirm
+            {isLoading ? 'Loading...' : 'Confirm'}
           </button>
           <div>
             <a href="/">

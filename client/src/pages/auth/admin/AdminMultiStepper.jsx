@@ -6,7 +6,8 @@ import { AdminRegTeamInvite } from "./AdminRegTeamInvite";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
-const KeyContext = createContext();
+import { useAuth } from "../Authentication/AuthContext";
+
 
 export const AdminMultiStepper = () => {
   const [formStep, setFormStep] = useState(1);
@@ -21,6 +22,7 @@ export const AdminMultiStepper = () => {
     role: "company",
   });
   const [key, setKey] = useState("");
+  const { registration } = useAuth();
 
   const navigate = useNavigate()
   const baseURL= process.env.REACT_APP_BASE_URL
@@ -40,10 +42,12 @@ export const AdminMultiStepper = () => {
           icon: 'success',
           confirmButtonText: 'OK',
         });
+
+        registration(response?.data?.data?.verifyToken, response.data.data.id);
   
         setKey(formData);
         // Pass formData as state to the /auth/otp route
-        navigate('/auth/otp', { state: { formData: updatedFormData } });
+        navigate('/auth/otp', { state: { formData: response?.data?.data } });
       }
     } catch (error) {
       await Swal.fire({

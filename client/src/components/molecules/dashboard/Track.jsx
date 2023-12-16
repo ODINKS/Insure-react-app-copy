@@ -17,7 +17,7 @@ const Track = (props) => {
         </tr>
       </thead>
       <tbody>
-        <tr className='border-b pl-14'>
+        {/* <tr className='border-b pl-14'>
           <td className='pl-14'>1</td>
           <td className='pl-14'>MT/223/1092</td>
           <td className='pl-14'>Ese Vic</td>
@@ -37,7 +37,7 @@ const Track = (props) => {
           <td className='pl-14'>Effiong Leo</td>
           <td className='pl-14'>28/05/2023</td>
           <td className='pl-14'>Active</td>
-        </tr>
+        </tr> */}
       </tbody>
     </table>
   </div>

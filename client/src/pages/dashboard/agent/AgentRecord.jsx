@@ -7,10 +7,9 @@ import Searchbar from "../../../components/molecules/dashboard/Searchbar";
 import FormOverlay from "../../../components/molecules/dashboard/FormOverlay";
 
 const AgentRecord = () => {
-  // database retrieve
   const [formData, setFormData] = useState([]);
   const [isOverlayVisible, setOverlayVisible] = useState(false);
-  const [filteredData, setFilteredData] = useState(transformData(formData));
+  const [filteredData, setFilteredData] = useState([]);
 
     const handleButtonClick = () => {
       setOverlayVisible(true);
@@ -18,20 +17,27 @@ const AgentRecord = () => {
   
     const handleOverlayClose = () => {
       setOverlayVisible(false);
+
+      const storedData = JSON.parse(localStorage.getItem("formData")) || [];
+      setFormData(storedData)
+      setFilteredData(transformData(storedData));
     };
 
-  useEffect(() => {
-    // Retrieve form data from local storage
+  useEffect(() => { 
     const storedData = JSON.parse(localStorage.getItem("formData")) || [];
-    console.log(storedData, "storedData")
-    setFormData(storedData);
+    setFormData(storedData)
+    setFilteredData(transformData(storedData));
   }, []);
-  // database retrieve ends
+
 
 
   const updateFilteredData = (newData) => {
     setFilteredData(transformData(newData));
   };
+
+  console.log(formData, "formData")
+  console.log(ClaimsData, "ClaimsData")
+  console.log(filteredData, "filteredData")
 
   let tableHead = {
     head1: "S/N",
@@ -45,7 +51,7 @@ const AgentRecord = () => {
 
   return (
     <>
-      <Searchbar data={ClaimsData} keyword="PolicyNo" onUpdateData={updateFilteredData}/>
+      <Searchbar data={formData} keyword="PolicyNo" onUpdateData={updateFilteredData}/>
       <div className="flex justify-between mb-4">
         {/* <div className='flex'>
           <ActionButton title='PDF'/>

@@ -47,7 +47,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
                 confirmButtonText: 'OK'
               }).then((result) => {
                 if (result.isConfirmed) {
-                  // navigate('/dashboard/admin')
+                  navigate('/dashboard/admin', { state: { formData } })
                 }
               })
             } else {

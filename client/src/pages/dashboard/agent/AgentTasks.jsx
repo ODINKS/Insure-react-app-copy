@@ -25,11 +25,11 @@ const AgentTasks = () => {
         >
           <div className="bg-white rounded-lg p-8 ">
             <p>Today's task</p>
-            <strong>20</strong>
+            <strong>0</strong>
           </div>
           <div className=" bg-white rounded-lg p-8">
             <p>Completed tasks</p>
-            <strong>20</strong>
+            <strong>0</strong>
           </div>
         </div>
         {/* second card */}
@@ -39,9 +39,10 @@ const AgentTasks = () => {
         >
           <h1 className="font-bold">Assigned tasks</h1>
           <div className="flex flex-col gap-y-8">
+            {/* <p>CAD/005 .................. &emsp; 3 Tasks</p>
             <p>CAD/005 .................. &emsp; 3 Tasks</p>
-            <p>CAD/005 .................. &emsp; 3 Tasks</p>
-            <p>CAD/005 .................. &emsp; 3 Tasks</p>
+            <p>CAD/005 .................. &emsp; 3 Tasks</p> */}
+            No Task Yet
           </div>
         </div>
         {/* third card */}

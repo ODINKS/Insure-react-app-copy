@@ -2,6 +2,7 @@ import Axios from "axios";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Authentication/AuthContext";
 
 export const AgentLogin = () => {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ export const AgentLogin = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [isLoading, setIsLoading] = useState(false)
+  
 
   const navigate = useNavigate();
   
@@ -40,6 +42,7 @@ export const AgentLogin = () => {
     validatePassword();
 
     await Axios.post(loginURL, { email, password }).then((res) => {
+      //login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "agent" );
       if (res.status === 200) {
         setIsLoading(true)
         Swal.fire({

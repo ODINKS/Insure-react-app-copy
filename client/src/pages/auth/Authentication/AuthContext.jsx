@@ -9,21 +9,21 @@ export const AuthProvider = ({ children }) => {
 const [auth, setAuth] = useState(() => {
     // Initialize state from local storage (if available)
     const storedAuth = localStorage.getItem('auth') || "";
-    return storedAuth ? JSON.parse(storedAuth) : { token: null, user: null };
+    return storedAuth ? JSON.parse(storedAuth) : { token: null, user: null, role: null};
   });
 
 
-  const login = (token, user) => {
-    setAuth({ token, user });
+  const login = (token, user, role) => {
+    setAuth({ token, user, role });
   };
 
-  const registration = (token, user) => {
-    setAuth({ token, user });
+  const registration = (token, user, role) => {
+    setAuth({ token, user, role });
   };
   
 
   const logout = () => {
-    setAuth({ token: null, user: null });
+    setAuth({ token: null, user: null, role: null });
   };
 
   useEffect(() => {

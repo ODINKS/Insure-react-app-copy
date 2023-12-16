@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const Sample = () => {
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const otpURL = `${baseURL}/auth/login?type=company`;
+    const otpURL = `${baseURL}/auth/Register?type=agent`;
 
     const navigate = useNavigate();
 
@@ -20,15 +20,10 @@ const Sample = () => {
     };
 
     const fetchData = async() => {
-        await Axios.post(otpURL,  {
-            "companyName": "Ray ventures",
-            "companyAddress": "Abuja",
-            "license": "AS5637",
-            "teamCapacity": 15,
-            "email": "okeke@gmail.com",
-            "password": "Wahallaa1@",
-            "phoneNumber": "0909090",
-            "role": "company"
+        await Axios.post(otpURL,   {
+            "companyProfileId": 1,
+            "email": email,
+            "role": "agent"
           }
           ).then((res) => {
             console.log(res, "res")

@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import BUTTON from "../../../components/molecules/global/Button";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Swal from "sweetalert2";
@@ -11,16 +10,42 @@ const AdminLogin = () => {
     password: "",
   });
   const [isLoading, setIsLoading] =useState(false)
+  const [error, setError]=useState({})
   const navigate = useNavigate();
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const loginURL = `${baseURL}/auth/login?type=company`;
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    // Validate email
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    }
+
+    // Validate password
+    if (!formData.password.trim()) {
+      newErrors.password = 'Password is required';
+      isValid = false;
+    }
+
+    setError(newErrors);
+    return isValid;
+  };
+
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("clickeedddddddddd")
     console.log(formData, "formdata")
+
+    if (!validateForm()) {
+      return;
+    }
     setIsLoading(true)
 
     await Axios.post(loginURL, formData).then((res) => {
@@ -85,20 +110,23 @@ const AdminLogin = () => {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="px-2 py-3 my-2 rounded-[3px] border border-blue-500 focus:outline-none"
             placeholder="Enter email address"
+            required
           />
+          {error.email && <p className="text-red-500 text-[12px]">{error.email}</p>}
           <input
             type="password"
             value={formData.password}
             onChange={(e) =>setFormData({ ...formData, password: e.target.value })}
-            className="px-2 py-3 my-2 rounded-[3px] border border-blue-500 focus:outline-none"
+            className={`px-2 py-3 my-2 rounded-[3px] border border-blue-500 focus:outline-none" ${error.email ? 'border-red-500' : ''}`}
             placeholder="Enter password"
           />
+          {error.password && <p className="text-red-500 text-[12px]">{error.password}</p>}
         </div>
        
             <button
             onClick={handleSubmit}
             type="button"
-            className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
+            className={`w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8 ${error.password ? 'border-red-500' : ''}`}
             id="login-button"
             disabled={isLoading}
           >

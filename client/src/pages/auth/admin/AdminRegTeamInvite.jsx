@@ -35,58 +35,43 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
     console.log('clicked here');
 
     if (emailError) {
-      // Navigate to the next page
-
-      // setTimeout(() => {
-      // const Toast = Swal.mixin({
-      //   toast: true,
-      //   position: "top-end",
-      //   showConfirmButton: false,
-      //   timer: 8000,
-      //   timerProgressBar: true,
-      //   didOpen: (toast) => {
-      //     toast.onmouseenter = Swal.stopTimer;
-      //     toast.onmouseleave = Swal.resumeTimer;
-      //   }
-      // });
-      // Toast.fire({
-      //   icon: "success",
-      //   title: "Signed in successfully"
-      // });
-      // navigate('/dashboard/admin');
-      // // }, 1000);
-
-
-
     }
     await Axios.post(teamInviteURL, agentData).then(res =>{
              //swal fire for continue and cancel with sweet alert
              console.log(res, "res")
-             if(res.status === 204){
-             Swal.fire({
-              title: 'Success',
-              text: "Agent has been invited",
-              icon: 'success',
-              confirmButtonColor: '#3085d6',
-              confirmButtonText: 'Continue'
+             if (res.status === 200) {
+              Swal.fire({
+                title: 'Success!',
+                text: 'User Invited Successfully',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  // navigate('/dashboard/admin')
+                }
+              })
+            } else {
+              Swal.fire({
+                title: 'Error!',
+                text: 'User already Invited',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+            }
+          }).catch((err) => {
+            console.log(err)
+            Swal.fire({
+              title: 'Error!',
+              text: 'Invitation error',
+              icon: 'error',
+              confirmButtonText: 'OK'
             }).then((result) => {
               if (result.isConfirmed) {
-                navigate('/dashboard/admin');
+                setEmail("")
+             
               }
-            }) 
-        }
-      }).catch(error =>{
-        Swal.fire({
-          title: 'Error!',
-          text: 'Already Invited',
-          icon: 'error',
-          confirmButtonText: 'OK'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            setEmail("")
-          }
-        })
-    })
+            })
+          })
   };
 
   const handleBack = () => {

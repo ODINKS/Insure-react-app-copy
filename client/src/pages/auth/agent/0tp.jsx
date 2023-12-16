@@ -3,12 +3,14 @@ import Axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { useAuth } from "../Authentication/AuthContext";
 
 
 export const Otp = () => {
   const [otpValues, setOtpValues] = useState(["", "", "", "", ""]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false)
+  const { login } = useAuth();
 
   const navigate = useNavigate();
 
@@ -98,6 +100,7 @@ setIsLoading(true)
 
     await Axios.post(otpURL, otp ).then((res) => {
       if (res.status === 200) {
+       login(res.id, res.email, "admin" );
         console.log(res, "res")
         setIsLoading(false)
       Swal.fire({

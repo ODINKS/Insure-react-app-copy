@@ -4,9 +4,13 @@ import Table from "../../../components/molecules/dashboard/Table";
 import { transformData } from "../../../utils/DataTransformer";
 import ActionButton from "../../../components/molecules/dashboard/ActionButton";
 import Searchbar from "../../../components/molecules/dashboard/Searchbar";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 const AdminTeams = () => {
   const [filteredData, setFilteredData] = useState(transformData(TeamData));
+
+  const navigate = useNavigate();
 
   const updateFilteredData = (newData) => {
     setFilteredData(transformData(newData));
@@ -22,6 +26,15 @@ const AdminTeams = () => {
     head7: "Status",
   };
 
+  const location = useLocation();
+  const formData = location.state?.formData || {};
+  
+  const handleButtonClick = () => {
+    //go to invite page with useNavigate
+    navigate("/auth/admin/team-invite", { state: { formData } } )
+  }
+  
+
 
   return (
     <div>
@@ -33,6 +46,8 @@ const AdminTeams = () => {
           <ActionButton title="PRINT" />
         </div> */}
       </div>
+
+      <ActionButton title="Invite Agent" onClick={handleButtonClick} />
 
       <Table data={{ tableHead, tabledata:filteredData }} />
     </div>

@@ -2,6 +2,8 @@ import Axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { useLocation } from 'react-router-dom';
+import ActionButton from '../../../components/molecules/dashboard/ActionButton';
 
 export const AdminRegTeamInvite = ({ onPrev }) => {
   const [email, setEmail] = useState('');
@@ -9,13 +11,18 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
   // const [email3, setEmail3] = useState('');
   const [emailError, setEmailError] = useState('');
 
+  const location = useLocation();
+  const formData = location.state?.formData || {};
+
 
   const baseURL = process.env.REACT_APP_BASE_URL
   const teamInviteURL = `${baseURL}/auth/Register?type=agent`
 
+  console.log(formData, 'formdata on team invite')
+
 
   const agentData = {
-    "companyProfileId": 1,
+    "companyProfileId": formData.user.companyProfile.id,
     "email": email,
     "role": "agent"
   }
@@ -53,16 +60,35 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
 
     }
     await Axios.post(teamInviteURL, agentData).then(res =>{
-      console.log(res);
-    }).then(res =>{
-      if(res.status === true){
-        console.log('good');
-      }
-    }).catch(error =>{
-      console.log('error' + error.message);
+             //swal fire for continue and cancel with sweet alert
+             console.log(res, "res")
+             if(res.status === 204){
+             Swal.fire({
+              title: 'Success',
+              text: "Agent has been invited",
+              icon: 'success',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'Continue'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate('/dashboard/admin');
+              }
+            }) 
+        }
+      }).catch(error =>{
+        Swal.fire({
+          title: 'Error!',
+          text: 'Already Invited',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setEmail("")
+          }
+        })
     })
-
   };
+
   const handleBack = () => {
     //navigate('/auth/admin/registration/setup')
     onPrev()

@@ -57,10 +57,8 @@ const AdminLogin = () => {
       console.log(res.data.data.tokens.access.token, "res token");
       console.log(res.data.data.user.companyProfile.id, "res id");
 
-
-      login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id);
-
       if (res.status === 200) {
+        login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "admin" );
         setIsLoading(false)
         Swal.fire({
           title: 'Success!',

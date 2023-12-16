@@ -58,23 +58,23 @@ const FormOverlay = ({ onClose }) => {
           <div className="mb-4">
             <label
               className="block text-[--orange-bg] font-medium mb-2"
-              htmlFor="policy_no"
+              htmlFor="PolicyNo"
             >
               Policy Number
             </label>
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
-              id="policy_no"
+              id="PolicyNo"
               type="text"
-              name="policy_no"
+              name="PolicyNo"
               placeholder="ACE231"
-              {...register("policy_no", {
+              {...register("PolicyNo", {
                 required: "this field is required ",
               })}
             />
 
             <p className="text-red-500 text-sm italic">
-              {errors.policy_no?.message}
+              {errors.PolicyNo?.message}
             </p>
           </div>
 

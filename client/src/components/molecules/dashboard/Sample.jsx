@@ -22,7 +22,7 @@ const Sample = () => {
     const fetchData = async() => {
         await Axios.post(otpURL,   {
             "companyProfileId": 1,
-            "email": email,
+            "email": "hjeehvhvhgsdfdsyyvduffsdytfsdhjdvnhvsdhgxfhg",
             "role": "agent"
           }
           ).then((res) => {

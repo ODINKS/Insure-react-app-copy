@@ -28,10 +28,6 @@ import { Registration } from "./pages/auth/agent/AgentRegistration";
 
 import { Otp } from "./pages/auth/agent/0tp";
 
-//import {Otp} from "./pages/auth/agent/otp"
-
-//import { ForgetPassword } from "./pages/auth/agent/ForgetPassword";
-
 import Login from "./pages/auth/admin/AdminLogin";
 import { AgentLogin } from "./pages/auth/agent/AgentLogin";
 import { AdminRegContact } from "./pages/auth/admin/AdminRegContact";
@@ -67,9 +63,7 @@ import { AuthProvider } from "./pages/auth/Authentication/AuthContext";
 
 function App() {
   return (
-    // <div>
-    //     <Sample  />
-    // </div>
+
     <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -107,51 +101,54 @@ function App() {
           {/* {<Route path="/auth/agent/forgetpassword" element={<ForgetPassword />} />} */}
 
           {/* Admin Dashboard routes */}
-          <Route element={<PrivateRoutes />}>
-            <Route path="/dashboard/admin/" element={<AdminDashboard />}>
-              <Route index element={<AdminHome />} />
-              <Route path="records" element={<AdminRecord />} />
-              <Route path="clients" element={<AdminClient />} />
-              <Route path="leads" element={<AdminLeads />} />
-              <Route path="claims" element={<AdminClaims />} />
-              <Route path="task" element={<AdminTasks />} />
-              <Route path="teams" element={<AdminTeams />} />
-              <Route path="settings/*" element={<AdminSettings />}>
-                <Route index element={<AdminProfile />} />
-                <Route path="accounts" element={<AdminAccounts />} />
+     
+          <Route path="/dashboard" element={<PrivateRoutes role="admin" />}>
+                <Route path="admin" element={<AdminDashboard />} >
+                  <Route index element={<AdminHome />} />
+                  <Route path="records" element={<AdminRecord />} />
+                  <Route path="clients" element={<AdminClient />} />
+                  <Route path="leads" element={<AdminLeads />} />
+                  <Route path="claims" element={<AdminClaims />} />
+                  <Route path="task" element={<AdminTasks />} />
+                  <Route path="teams" element={<AdminTeams />} />
+                  <Route path="settings/*" element={<AdminSettings />}>
+                    <Route index element={<AdminProfile />} />
+                    <Route path="accounts" element={<AdminAccounts />} />
+                    <Route path="payment" element={<AdminPayment />} />
+                    <Route path="notifications" element={<AdminNotifications />} />
+                    <Route path="delete-account" element={<AdminDeleteAccounts />} />
+                    <Route path="security" element={<AdminSecurity />} />
+                    <Route path="*" element={<NoPage />} />
+                  </Route>
+                </Route>
+              <Route path="*" element={<NoPage />} />
+          </Route>
+
+          {/* Agent Dashboard Routes */}
+          <Route path="/dashboard/" element={<PrivateRoutes role="agent" />}>
+             <Route path="agent" element={<AgentDashboard />} >
+              <Route index element={<AgentHome />} />
+              <Route path="records" element={<AgentRecord />} />
+              <Route path="clients" element={<AgentClient />} />
+              <Route path="leads" element={<AgentLeads />} />
+              <Route path="claims" element={<AgentClaims />} />
+              <Route path="task" element={<AgentTasks />} />
+              <Route path="settings/*" element={<AgentSettings />}>
+                <Route index element={<AgentSettingsProfile />} />
+                <Route path="accounts" element={<AgentSettingsAccount />} />
                 <Route path="payment" element={<AdminPayment />} />
-                <Route path="notifications" element={<AdminNotifications />} />
-                <Route path="delete-account" element={<AdminDeleteAccounts />} />
-                <Route path="security" element={<AdminSecurity />} />
+                <Route path="notifications" element={<AgentSettingsNotification />} />
+                <Route path="delete-account" element={<AgentSettingsDelete />} />
+                <Route path="change-password" element={<AgentSettingsPassword />} />
+                <Route path="security" element={<AgentSettingsSecurity />} />
                 <Route path="*" element={<NoPage />} />
               </Route>
               <Route path="*" element={<NoPage />} />
             </Route>
           </Route>
-
-          {/* Agent Dashboard Routes */}
-          <Route path="/dashboard/agent/*" element={<AgentDashboard />}>
-            <Route index element={<AgentHome />} />
-            <Route path="records" element={<AgentRecord />} />
-            <Route path="clients" element={<AgentClient />} />
-            <Route path="leads" element={<AgentLeads />} />
-            <Route path="claims" element={<AgentClaims />} />
-            <Route path="task" element={<AgentTasks />} />
-            <Route path="settings/*" element={<AgentSettings />}>
-              <Route index element={<AgentSettingsProfile />} />
-              <Route path="accounts" element={<AgentSettingsAccount />} />
-              <Route path="payment" element={<AdminPayment />} />
-              <Route path="notifications" element={<AgentSettingsNotification />} />
-              <Route path="delete-account" element={<AgentSettingsDelete />} />
-              <Route path="change-password" element={<AgentSettingsPassword />} />
-              <Route path="security" element={<AgentSettingsSecurity />} />
-              <Route path="*" element={<NoPage />} />
-            </Route>
-            <Route path="*" element={<NoPage />} />
-          </Route>
-          <Route path="*" element={<NoPage />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
+        
     </AuthProvider>
   );
 }

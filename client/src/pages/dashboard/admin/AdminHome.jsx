@@ -18,7 +18,6 @@ Chart.register(CategoryScale);
 
 const AdminHome = () => {
   const [homeData, setHomeData] = useState("");
-
   const [chartData, setChartData] = useState({
     labels: Data.map((data) => data.year),
     datasets: [
@@ -49,11 +48,12 @@ const AdminHome = () => {
   //   ?  formData.companyProfile.companyName
   //   : formData.
 
-  console.log(formData, "formData")
+  console.log(formData, "formData on hompage")
 
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const otpURL = `${baseURL}/dash/company/${formData.user.companyProfile.id}`;
+  console.log("i wqs here")
 
 
 

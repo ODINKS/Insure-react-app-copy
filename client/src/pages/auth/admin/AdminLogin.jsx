@@ -45,9 +45,7 @@ const AdminLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("clickeedddddddddd")
-    console.log(formData, "formdata")
-
+    
     if (!validateForm()) {
       return;
     }

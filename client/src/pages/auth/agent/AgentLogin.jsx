@@ -16,6 +16,7 @@ export const AgentLogin = () => {
   
   const baseURL = process.env.REACT_APP_BASE_URL;
   const loginURL = `${baseURL}/auth/login?type=agent`;
+  const { login } = useAuth();
 
   const validateEmail = () => {
     // Basic email validation
@@ -42,7 +43,8 @@ export const AgentLogin = () => {
     validatePassword();
 
     await Axios.post(loginURL, { email, password }).then((res) => {
-      //login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "agent" );
+      console.log(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "agent")
+      login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "agent" );
       if (res.status === 200) {
         setIsLoading(true)
         Swal.fire({

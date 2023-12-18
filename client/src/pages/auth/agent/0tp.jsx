@@ -16,6 +16,7 @@ export const Otp = () => {
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const otpURL = `${baseURL}/auth/verify?type=company`;
+  const agentOtpURL =  `${baseURL}/auth/verify?type=agent`;
 
   const location = useLocation();
   const formData = location.state?.formData || {};
@@ -98,44 +99,72 @@ setIsLoading(true)
 
     console.log("otp data", formData, otp.verifyToken)
 
-    await Axios.post(otpURL, otp ).then((res) => {
-      if (res.status === 200 || res.status === true) {
-       login(res.id, res.email, "admin" );
-        console.log(res, "res")
-        setIsLoading(false)
-      Swal.fire({
-          title: 'Success!',
-          text: 'Registration succesfull!!!!!',
-          icon: 'success',
-          confirmButtonText: 'OK'
-        })
-        
-
-        if(formData.role === "company"){
-          navigate('/dashboard/agent', { state: { formData: formData} })
-        }else{
-          navigate('/dashboard/admin', { state: { formData: formData} })
-        }
-
-        
-      }
-  
-    }).catch((err) => {
-      console.log(err, "err")
-      setIsLoading(false)
-       Swal.fire({
-          title: 'Error!',
-          text: 'Incorrect OTP!!!',
-          icon: 'error',
-          confirmButtonText: 'OK'
-        }).then((result) => {
+    if(formData.role === "agent"){
+      await Axios.post(otpURL, otp ).then((res) => {
+        if (res.status === 200 || res.status === true) {
+         login(res.id, res.email, "agent" );
+          console.log(res, "res")
           setIsLoading(false)
-          if (result.isConfirmed) {
-            setOtpValues(["", "", "", "", ""]);
-            event.target.reset()
-          }
-        })
-    })
+        Swal.fire({
+            title: 'Success!',
+            text: 'Registration succesfull!!!!!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+        }
+    
+      }).catch((err) => {
+        console.log(err, "err")
+        setIsLoading(false)
+         Swal.fire({
+            title: 'Error!',
+            text: 'Incorrect OTP!!!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            setIsLoading(false)
+            if (result.isConfirmed) {
+              setOtpValues(["", "", "", "", ""]);
+              event.target.reset()
+            }
+          })
+      })
+
+      navigate('/dashboard/agent', { state: { formData: formData} })
+    } else{
+      await Axios.post(agentOtpURL, otp ).then((res) => {
+        if (res.status === 200 || res.status === true) {
+         login(res.id, res.email, "admin" );
+          console.log(res, "res")
+          setIsLoading(false)
+        Swal.fire({
+            title: 'Success!',
+            text: 'Registration succesfull!!!!!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }) 
+        }
+    
+      }).catch((err) => {
+        console.log(err, "err")
+        setIsLoading(false)
+         Swal.fire({
+            title: 'Error!',
+            text: 'Incorrect OTP!!!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            setIsLoading(false)
+            if (result.isConfirmed) {
+              setOtpValues(["", "", "", "", ""]);
+              event.target.reset()
+            }
+          })
+      })
+      navigate('/dashboard/admin', { state: { formData: formData} })
+    }
+
+   
   };
 
   return (

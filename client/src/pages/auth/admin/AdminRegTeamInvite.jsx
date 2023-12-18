@@ -10,6 +10,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
   // const [email2, setEmail2] = useState('');
   // const [email3, setEmail3] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [isLoading,setIsLoading] = useState(false);
 
   const location = useLocation();
   const formData = location.state?.formData || {};
@@ -32,6 +33,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true)
     console.log('clicked here');
 
     if (emailError) {
@@ -40,6 +42,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
              //swal fire for continue and cancel with sweet alert
              console.log(res, "res")
              if (res.status === 200) {
+              setIsLoading(false)
               Swal.fire({
                 title: 'Success!',
                 text: 'User Invited Successfully',
@@ -51,6 +54,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
                 }
               })
             } else {
+              setIsLoading(false)
               Swal.fire({
                 title: 'Error!',
                 text: 'User already Invited',
@@ -60,6 +64,7 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
             }
           }).catch((err) => {
             console.log(err)
+            setIsLoading(false)
             Swal.fire({
               title: 'Error!',
               text: 'Invitation error',
@@ -151,11 +156,11 @@ export const AdminRegTeamInvite = ({ onPrev }) => {
               Back
             </button> */}
             <button
-
+              disabled={isLoading}
               type="submit"
               className="sm:w-full lg:w-[25%] h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             >
-              Invite
+              {isLoading? "Loading...": "Invite"}
             </button>
           </div>
         </form>

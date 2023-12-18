@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,7 @@ export const Otp = () => {
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const otpURL = `${baseURL}/auth/verify?type=company`;
-  const agentOtpURL =  `${baseURL}/auth/verify?type=agent`;
+  const agentOtpURL = `${baseURL}/auth/verify?type=agent`;
 
   const location = useLocation();
   const formData = location.state?.formData || {};
@@ -91,80 +91,83 @@ export const Otp = () => {
       setError("Please fill in all the OTP fields.");
       return;
     }
-setIsLoading(true)
+    setIsLoading(true)
     let otp = {
       verifyToken: otpValues.join(""),
-      email:  formData.email,
+      email: formData.email,
     };
 
     console.log("otp data", formData, otp.verifyToken)
 
-    if(formData.role === "agent"){
-      await Axios.post(otpURL, otp ).then((res) => {
+    if (formData.role === "agent") {
+      console.log('agent otp endpoint')
+      await Axios.post(agentOtpURL, otp).then((res) => {
         if (res.status === 200 || res.status === true) {
-         login(res.id, res.email, "agent" );
+          login(res.id, res.email, "agent");
           console.log(res, "res")
           setIsLoading(false)
-        Swal.fire({
+          Swal.fire({
             title: 'Success!',
             text: 'Registration succesfull!!!!!',
             icon: 'success',
             confirmButtonText: 'OK'
           })
+          navigate('/dashboard/agent', { state: { formData: formData } })
         }
-    
+
       }).catch((err) => {
         console.log(err, "err")
         setIsLoading(false)
-         Swal.fire({
-            title: 'Error!',
-            text: 'Incorrect OTP!!!',
-            icon: 'error',
-            confirmButtonText: 'OK'
-          }).then((result) => {
-            setIsLoading(false)
-            if (result.isConfirmed) {
-              setOtpValues(["", "", "", "", ""]);
-              event.target.reset()
-            }
-          })
+        Swal.fire({
+          title: 'Error!',
+          text: 'Incorrect OTP!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          setIsLoading(false)
+          if (result.isConfirmed) {
+            setOtpValues(["", "", "", "", ""]);
+            event.target.reset()
+          }
+        })
       })
 
-      navigate('/dashboard/agent', { state: { formData: formData} })
-    } else{
-      await Axios.post(agentOtpURL, otp ).then((res) => {
+    } else {
+      await Axios.post(otpURL, otp).then((res) => {
+        console.log('admin otp endpoint')
+
         if (res.status === 200 || res.status === true) {
-         login(res.id, res.email, "admin" );
+          login(res.id, res.email, "admin");
           console.log(res, "res")
           setIsLoading(false)
-        Swal.fire({
+          Swal.fire({
             title: 'Success!',
             text: 'Registration succesfull!!!!!',
             icon: 'success',
             confirmButtonText: 'OK'
-          }) 
+          })
+          navigate('/dashboard/admin', { state: { formData: formData } })
         }
-    
+
       }).catch((err) => {
         console.log(err, "err")
         setIsLoading(false)
-         Swal.fire({
-            title: 'Error!',
-            text: 'Incorrect OTP!!!',
-            icon: 'error',
-            confirmButtonText: 'OK'
-          }).then((result) => {
-            setIsLoading(false)
-            if (result.isConfirmed) {
-              setOtpValues(["", "", "", "", ""]);
-              event.target.reset()
-            }
-          })
+        Swal.fire({
+          title: 'Error!',
+          text: 'Incorrect OTP!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          setIsLoading(false)
+          if (result.isConfirmed) {
+            setOtpValues(["", "", "", "", ""]);
+            event.target.reset()
+          }
+        })
       })
-      navigate('/dashboard/admin', { state: { formData: formData} })
     }
 
-   
+
   };
 
   return (

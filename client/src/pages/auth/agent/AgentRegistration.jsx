@@ -2,10 +2,9 @@ import React from "react";
 import { useState } from "react";
 
 export const AgentRegistration = ({ onNext }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Navigate to the next page
@@ -51,7 +50,7 @@ export const AgentRegistration = ({ onNext }) => {
             id="email"
             name="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} 
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter email address"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
           />
@@ -63,7 +62,8 @@ export const AgentRegistration = ({ onNext }) => {
             placeholder="Enter password"
             className="w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} />
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <input
             type="password"
             name="confirmPassword"

@@ -27,7 +27,6 @@ const AgentMultiStepper = () => {
   const navigate = useNavigate();
   const baseURL = process.env.REACT_APP_BASE_URL;
   const agentRegURL = `${baseURL}/auth/Register?type=agent`;
-
   const postData = async (data) => {
     try {
       const updatedFormData = { ...agentFormData, ...data };

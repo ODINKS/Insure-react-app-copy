@@ -125,8 +125,8 @@ function App() {
           </Route>
 
           {/* Agent Dashboard Routes */}
-          <Route path="/dashboard/" element={<PrivateRoutes role="agent" />}>
-             <Route path="agent" element={<AgentDashboard />} >
+          {/* <Route path="/dashboard/" element={<PrivateRoutes role="agent" />}> */}
+             <Route path="/dashboard/agent" element={<AgentDashboard />} >
               <Route index element={<AgentHome />} />
               <Route path="records" element={<AgentRecord />} />
               <Route path="clients" element={<AgentClient />} />
@@ -145,7 +145,7 @@ function App() {
               </Route>
               <Route path="*" element={<NoPage />} />
             </Route>
-          </Route>
+          {/* </Route> */}
           <Route path="*" element={<NoPage />} />
         </Routes>
         

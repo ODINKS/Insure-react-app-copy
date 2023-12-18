@@ -96,10 +96,10 @@ setIsLoading(true)
       email:  formData.email,
     };
 
-    console.log("otp data", formData)
+    console.log("otp data", formData, otp.verifyToken)
 
     await Axios.post(otpURL, otp ).then((res) => {
-      if (res.status === 200) {
+      if (res.status === 200 || res.status === true) {
        login(res.id, res.email, "admin" );
         console.log(res, "res")
         setIsLoading(false)

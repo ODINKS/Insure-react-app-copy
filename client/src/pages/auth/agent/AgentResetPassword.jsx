@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import  Axios  from 'axios';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const PasswordInput = ({ placeholder, name, value, onChange, error, errorMessage }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -47,7 +50,13 @@ export const AgentResetPassword = () => {
     mismatch: false,
   });
 
-  const handleSubmit = (event) => {
+  const navigate = useNavigate()
+
+
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const resetPasswordURL = `${baseURL}/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsImlhdCI6MTcwMjQzMzc2NSwiZXhwIjoxNzAyNDM0MzY1LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.OJIdiHcBul5mL-nMQq3DQbvtiv0qGJ20ubA36I0eOYY`
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Check if passwords are empty
@@ -69,6 +78,7 @@ export const AgentResetPassword = () => {
     }
 
 
+
     // Reset passwordError state
     setTimeout(() => {
         setPasswordError({
@@ -77,6 +87,37 @@ export const AgentResetPassword = () => {
           });
     }, 2000);
     
+    await Axios.post(resetPasswordURL, {
+      "password": newPassword
+    }).then((res) => {
+      console.log("res", res)
+      if (res.status === 204) {
+      Swal.fire({
+          title: 'Success!',
+          text: 'Password has been changed successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(res =>{
+          if(res.isConfirmed){
+            navigate('/auth/admin/login');
+
+          }
+        }) 
+      }
+    }).catch((err) => {
+      console.log(err, "err")
+       Swal.fire({
+          title: 'Error!',
+          text: 'Invalid Email!!!',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setNewPassword({newPassword: ''})
+            setConfirmPassword({confirmPassword: ''})
+          }
+        })
+    })
   };
 
   return (

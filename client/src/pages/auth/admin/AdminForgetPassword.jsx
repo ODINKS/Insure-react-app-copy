@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import BUTTON from "../../../components/molecules/global/Button";
 import  Axios  from 'axios';
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const AdminForgetPassword = () => {
   const [email, setEmail] = useState({email: ''});
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  const navigate = useNavigate()
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const forgetPasswordURL = `${baseURL}/auth/forgot-password`
@@ -18,7 +21,7 @@ const AdminForgetPassword = () => {
 
     // Validate if email is not empty
     if (!email.email) {
-      setError('Please enter a valid email address or username.');
+      setError('Please enter a valid email address.');
       setSuccessMessage('');
     } else {
       // Clear any previous error
@@ -31,10 +34,15 @@ const AdminForgetPassword = () => {
         if (res.status === 204) {
         Swal.fire({
             title: 'Success!',
-            text: 'Paaword reset information sent to your email!!!!!',
+            text: 'Password reset information sent to your email!!!!!',
             icon: 'success',
             confirmButtonText: 'OK'
-          })
+          }).then(res =>{
+            if(res.isConfirmed){
+              navigate('/auth/forgetpassword');
+
+            }
+          }) 
         }
       }).catch((err) => {
         console.log(err, "err")
@@ -73,7 +81,7 @@ const AdminForgetPassword = () => {
             className={`px-2 py-3 my-2 rounded-[3px] border ${
               error ? 'border-red-500' : 'border-blue-500'
             } focus:outline-none`}
-            placeholder="Enter username or email address"
+            placeholder="Enter email address"
             value={email.email}
             onChange={(e) => setEmail({email: e.target.value})}
           />

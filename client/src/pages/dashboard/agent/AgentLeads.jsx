@@ -12,10 +12,11 @@ const AgentLeads = () => {
     { id: 3, name: "Alicia Joseph", description: "Software Dev" },
   ];
 
-  const [isOverlayVisible, setOverlayVisible] = useState(false)
+  const [isOverlayVisible, setOverlayVisible] = useState(false);
   const [newLeads, setNewLeads] = useState(initialLeads);
   const [inProgress, setInProgress] = useState([]);
   const [closedLeads, setClosedLeads] = useState([]);
+
 
   const handleOnDragStart = (e, lead) => {
     e.dataTransfer.setData("text/plain", lead.id.toString());
@@ -51,7 +52,9 @@ const AgentLeads = () => {
 
   const handleOverlayClose = () => {
     setOverlayVisible(false);
-  }
+
+  };
+
   return (
     <>
       <Searchbar />

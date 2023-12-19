@@ -46,7 +46,7 @@ export const AgentLogin = () => {
       console.log(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "agent")
       login(res.data.data.tokens.access.token, res.data.data.user.companyProfile.id, "agent" );
       if (res.status === 200) {
-        setIsLoading(true)
+        setIsLoading(false)
         Swal.fire({
           title: 'Success!',
           text: 'Login succesfull!!!!!',
@@ -58,7 +58,7 @@ export const AgentLogin = () => {
           }
         })
       } else {
-        setIsLoading(true)
+        setIsLoading(false)
         Swal.fire({
           title: 'Error!',
           text: 'Login failed!!!!!',
@@ -67,7 +67,7 @@ export const AgentLogin = () => {
         })
       }
     }).catch((err) => {
-      setIsLoading(true)
+      setIsLoading(false)
       console.log(err)
       Swal.fire({
         title: 'Error!',
@@ -75,7 +75,7 @@ export const AgentLogin = () => {
         icon: 'error',
         confirmButtonText: 'OK'
       }).then((result) => {
-        setIsLoading(true)
+        setIsLoading(false)
         if (result.isConfirmed) {
           setEmail("")
           setPassword("")

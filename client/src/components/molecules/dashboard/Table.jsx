@@ -32,7 +32,7 @@ const Table = ({ data }) => {
   const renderedData = currentPageData.map((leads, index) => {
     return (
       <tr className="bg-white border-b hover:bg-gray-50" key={index}>
-        <td className="w-4 p-4">{leads.data1}</td>
+        <td className="w-4 p-4">{index+1}</td>
         <th
           scope="row"
           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"

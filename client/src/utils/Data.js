@@ -150,24 +150,24 @@ export const ClaimsData= [
 
 
 export const TeamData= [
-//   {
-//     id: 1,
-//     Name: "Adewale Iyanu",
-//     StaffID: "CAD/1",
-//     Role: "Admin",
-//     Email: "Iyanu@mail.com",
-//     Portfolio: "1.6 million",
-//     Status:1,
-// },
-// {
-//   id: 2,
-//   Name: "Leo Mary",
-//   StaffID: "CAD/2",
-//   Role: "Agent",
-//   Email: "matyleo@mail.com",
-//   Portfolio: " .6 million",
-//   Status:1,
-// },
+  {
+    id: 1,
+    Name: "Adewale Iyanu",
+    StaffID: "CAD/1",
+    Role: "Admin",
+    Email: "Iyanu@mail.com",
+    Portfolio: "1.6 million",
+    Status:1,
+},
+{
+  id: 2,
+  Name: "Leo Mary",
+  StaffID: "CAD/2",
+  Role: "Agent",
+  Email: "matyleo@mail.com",
+  Portfolio: " .6 million",
+  Status:1,
+},
 // {
 //   id: 3,
 //   Name: "Mary Nick",

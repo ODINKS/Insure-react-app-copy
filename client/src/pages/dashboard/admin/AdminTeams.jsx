@@ -26,10 +26,10 @@ const AdminTeams = () => {
     dateAdded: `${new Date(data.createdAt).toDateString()}`,
   }));
   console.log(transformData(newAgentList), 'Hiiiiiii')
-  useEffect(() => {
-    setAgentDataList(newAgentList);
-    // console.log(agentDataList)
-  }, [newAgentList]);
+  // useEffect(() => {
+  //   setAgentDataList(newAgentList);
+  //   // console.log(agentDataList)
+  // }, [newAgentList]);
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const agentDataURL = `${baseURL}/company/allcompanyagent/${companyId}`;
@@ -37,7 +37,7 @@ const AdminTeams = () => {
   const navigate = useNavigate();
   useEffect( () => {
     setFilteredData(transformData(agentDataList));
-  }, [agentDataList]);
+  }, []);
     //console.log(filteredData, 'filterdata111')
 
   useEffect(() => {
@@ -93,7 +93,8 @@ const AdminTeams = () => {
 
       <ActionButton title="Invite Agent" onClick={handleButtonClick} />
 
-      <Table data={{ tableHead, tabledata: filteredData }} />
+      <Table data={{ tableHead, tabledata: transformData(newAgentList)
+ }} />
     </div>
   );
 };

@@ -25,7 +25,7 @@ const AdminTeams = () => {
     email: `${data.email}`,
     dateAdded: `${new Date(data.createdAt).toDateString()}`,
   }));
-  console.log(transformData(newAgentList), 'Hiiiiiii')
+  console.log(transformData(newAgentList)
 
   // useEffect(() => {
   //   setAgentDataList(newAgentList);
@@ -39,7 +39,7 @@ const AdminTeams = () => {
   useEffect( () => {
     setFilteredData(transformData(agentDataList));
   }, []);
-    console.log(filteredData, 'filterdata111')
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -102,6 +102,7 @@ const AdminTeams = () => {
             </button>
 
       <Table data={{ tableHead, tabledata: transformData(newAgentList) }} />
+
     </div>
   );
 };

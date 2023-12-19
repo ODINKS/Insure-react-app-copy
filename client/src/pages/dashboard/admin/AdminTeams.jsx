@@ -25,7 +25,7 @@ const AdminTeams = () => {
     email: `${data.email}`,
     dateAdded: `${new Date(data.createdAt).toDateString()}`,
   }));
-  console.log(transformData(newAgentList)
+  console.log(transformData(newAgentList))
 
   // useEffect(() => {
   //   setAgentDataList(newAgentList);

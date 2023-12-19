@@ -1,20 +1,43 @@
+import axios from "axios";
+import Swal from "sweetalert2";
 import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useLocation } from 'react-router-dom';
+// import { useAuth } from "../../auth/Authentication/AuthContext";
 
 const LeadFormOverlay = ({ onClose }) => {
+  const [leadData, setLeadData] = useState({
+    firstName: "",
+    lastName: "",
+    middleName: "",
+    email: "",
+    gender: "",
+    Address: "",
+    phoneNumber: "",
+    status: "new",
+    policyNumber: "",
+    totalAmountPaid: "",
+    role: "leads",
+  });
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, e) => {
-    console.log(data);
+  const location = useLocation();
+  const formData = location.state?.formData || {};
 
-    // Save the form data to local storage
-    // const storedData = JSON.parse(localStorage.getItem("formData")) || [];
-    // storedData.push(data);
-    // localStorage.setItem("formData", JSON.stringify(storedData));
+  console.log(formData, "formData on agentLeads")
+
+
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  // const registrationURL = `${baseURL}/agent/lead/${}`;
+
+  const onSubmit = async (data, e) => {
+    await axios.post;
 
     // Clear the form data
     e.target.reset();
@@ -28,7 +51,6 @@ const LeadFormOverlay = ({ onClose }) => {
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-10">
       <div className="max-w-md mx-auto mt-8 p-8 border rounded shadow-lg bg-white">
         <form onSubmit={(e) => handleSubmit(onSubmit)(e)}>
-
           {/* First Name */}
 
           <div className="mb-4">
@@ -41,6 +63,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="Fname"
+              value={leadData.firstName}
+              onChange={(e) => {
+                setLeadData({ ...leadData, firstName: e.target.value });
+              }}
               type="text"
               name="Fname"
               placeholder="John"
@@ -61,11 +87,15 @@ const LeadFormOverlay = ({ onClose }) => {
               className="block text-[--orange-bg] font-medium mb-2"
               htmlFor="Mname"
             >
-              Middle Name 
+              Middle Name
             </label>
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="Mname"
+              value={leadData.middleName}
+              onChange={(e) => {
+                setLeadData({ ...leadData, middleName: e.target.value });
+              }}
               type="text"
               name="Mname"
               placeholder="Timothy"
@@ -91,6 +121,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="Lname"
+              value={leadData.lastName}
+              onChange={(e) => {
+                setLeadData({ ...leadData, lastName: e.target.value });
+              }}
               type="text"
               name="Lname"
               placeholder="Doe"
@@ -110,11 +144,15 @@ const LeadFormOverlay = ({ onClose }) => {
               className="block text-[--orange-bg] font-medium mb-2"
               htmlFor="mail"
             >
-              Date
+              Email
             </label>
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="mail"
+              value={leadData.email}
+              onChange={(e) => {
+                setLeadData({ ...leadData, email: e.target.value });
+              }}
               type="email"
               name="mail"
               placeholder="johndoetim@email.com"
@@ -139,6 +177,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="sex"
+              value={leadData.gender}
+              onChange={(e) => {
+                setLeadData({ ...leadData, gender: e.target.value });
+              }}
               type="text"
               name="sex"
               placeholder="male/female"
@@ -147,11 +189,9 @@ const LeadFormOverlay = ({ onClose }) => {
               })}
             />
 
-            <p className="text-red-500 text-sm italic">
-              {errors.sex?.message}
-            </p>
+            <p className="text-red-500 text-sm italic">{errors.sex?.message}</p>
           </div>
-                            
+
           {/* Address */}
           <div className="mb-4">
             <label
@@ -163,6 +203,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="location"
+              value={leadData.Address}
+              onChange={(e) => {
+                setLeadData({ ...leadData, Address: e.target.value });
+              }}
               type="text"
               name="location"
               placeholder="No.12 lekki phase 1 Lagos, Nigeria"
@@ -175,7 +219,7 @@ const LeadFormOverlay = ({ onClose }) => {
               {errors.location?.message}
             </p>
           </div>
-                            
+
           {/* Phone Number */}
           <div className="mb-4">
             <label
@@ -187,6 +231,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="phone"
+              value={leadData.phoneNumber}
+              onChange={(e) => {
+                setLeadData({ ...leadData, phoneNumber: e.target.value });
+              }}
               type="tel"
               name="phone"
               placeholder="+234-123-234-1234"
@@ -199,7 +247,7 @@ const LeadFormOverlay = ({ onClose }) => {
               {errors.phone?.message}
             </p>
           </div>
-          
+
           {/* Policy Number */}
           <div className="mb-4">
             <label
@@ -211,6 +259,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="policy"
+              value={leadData.policyNumber}
+              onChange={(e) => {
+                setLeadData({ ...leadData, policyNumber: e.target.value });
+              }}
               type="text"
               name="policy"
               placeholder="xxx-xxx-xx"
@@ -223,7 +275,7 @@ const LeadFormOverlay = ({ onClose }) => {
               {errors.policy?.message}
             </p>
           </div>
-          
+
           {/* Total Amount Paid */}
           <div className="mb-4">
             <label
@@ -235,6 +287,10 @@ const LeadFormOverlay = ({ onClose }) => {
             <input
               className="appearance-none border border-[--form-border-bg] rounded w-full py-2 px-3 text-[--black-text] leading-tight focus:outline-none focus:border-[--orange-hover]"
               id="AmountPaid"
+              value={leadData.AmountPaid}
+              onChange={(e) => {
+                setLeadData({ ...leadData, AmountPaid: e.target.value });
+              }}
               type="text"
               name="AmountPaid"
               placeholder=""

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import ActionButton from "../../../components/molecules/dashboard/ActionButton";
 import Searchbar from "../../../components/molecules/dashboard/Searchbar";
 
 const AgentLeads = () => {
@@ -10,6 +11,7 @@ const AgentLeads = () => {
     { id: 3, name: "Alicia Joseph", description: "Software Dev" },
   ];
 
+  const [isOverlayVisible, setOverlayVisible] = useState(false)
   const [newLeads, setNewLeads] = useState(initialLeads);
   const [inProgress, setInProgress] = useState([]);
   const [closedLeads, setClosedLeads] = useState([]);
@@ -42,9 +44,18 @@ const AgentLeads = () => {
     e.preventDefault();
   };
 
+  const handleButtonClick = () => {
+    setOverlayVisible(true);
+  };
+
+  const handleOverlayClose = () => {
+    setOverlayVisible(false);
+  }
   return (
     <>
       <Searchbar />
+      <ActionButton title="Add New" onClick={handleButtonClick} />
+      {isOverlayVisible && <LeadFormOverlay onClose={handleOverlayClose} />}
       <section className="bg-[#DFE7FA] h-screen w-full flex flex-wrap justify-between">
         {/* New Leads */}
         <div

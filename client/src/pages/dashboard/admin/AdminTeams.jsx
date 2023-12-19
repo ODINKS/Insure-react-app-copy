@@ -25,7 +25,8 @@ const AdminTeams = () => {
     email: `${data.email}`,
     dateAdded: `${new Date(data.createdAt).toDateString()}`,
   }));
-  console.log(transformData(newAgentList), 'Hiiiiiii')
+  console.log(transformData(newAgentList)
+
   // useEffect(() => {
   //   setAgentDataList(newAgentList);
   //   // console.log(agentDataList)
@@ -38,7 +39,7 @@ const AdminTeams = () => {
   useEffect( () => {
     setFilteredData(transformData(agentDataList));
   }, []);
-    //console.log(filteredData, 'filterdata111')
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -91,10 +92,17 @@ const AdminTeams = () => {
       />
       <div className="flex justify-between mb-4"></div>
 
-      <ActionButton title="Invite Agent" onClick={handleButtonClick} />
+      {/* <ActionButton title="Invite Agent"  /> */}
+      <button
+              onClick={handleButtonClick}
+              type="submit"
+              className="sm:w-full lg:w-[20%] h-[40px] bg-orange-600 text-white font-bold py-2 px-2 rounded-md hover:bg-orange-400 mb-2"
+            >
+              Invite Agent
+            </button>
 
-      <Table data={{ tableHead, tabledata: transformData(newAgentList)
- }} />
+      <Table data={{ tableHead, tabledata: transformData(newAgentList) }} />
+
     </div>
   );
 };

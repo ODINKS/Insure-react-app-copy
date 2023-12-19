@@ -26,6 +26,9 @@ import AgentClaims from "./pages/dashboard/agent/AgentClaims";
 import { AgentResetPassword } from "./pages/auth/agent/AgentResetPassword";
 import { Registration } from "./pages/auth/agent/AgentRegistration";
 
+
+
+
 import { Otp } from "./pages/auth/agent/0tp";
 
 import Login from "./pages/auth/admin/AdminLogin";
@@ -41,6 +44,7 @@ import AdminAccounts from "./components/molecules/dashboard/AdminAccounts";
 import { AdminRegistration } from "./pages/auth/admin/AdminRegistration";
 
 import FormOverlay from "./components/molecules/dashboard/FormOverlay";
+import LeadFormOverlay from "./components/molecules/dashboard/LeadFormOverlay";
 import AdminPayment from "./components/molecules/dashboard/AdminPayment";
 import AdminNotifications from "./components/molecules/dashboard/AdminNotifications";
 import AdminDeleteAccounts from "./components/molecules/dashboard/AdminDeleteAccounts";

@@ -11,12 +11,13 @@ const AgentDashboard = () => {
 
   const location = useLocation();
   const formData = location.state?.formData || {};
+  console.log(formData, 'agentdashboard formdata');
   return (
    <>
         <DashboardTemplate 
             sidebar={<AgentSidebar topic={formData} />}
 
-            notificationSection={<NotificationBar topic={ formData.data.agent.firstName} />}
+            notificationSection={<NotificationBar topic={ formData.agent.firstName} />}
             
             dashboardBody={ <Outlet topic={formData} />}
         />

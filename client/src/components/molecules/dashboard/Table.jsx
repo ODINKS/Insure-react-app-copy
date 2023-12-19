@@ -37,12 +37,12 @@ const Table = ({ data }) => {
           scope="row"
           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
         >
-          {leads.data2}
+          {leads.data1}
         </th>
+        <td className="px-6 py-4">{leads.data2}</td>
         <td className="px-6 py-4">{leads.data3}</td>
         <td className="px-6 py-4">{leads.data4}</td>
         <td className="px-6 py-4">{leads.data5}</td>
-        <td className="px-6 py-4">{leads.data6}</td>
         <td className="px-6 py-4">
           <DropDownMenu
             data={{

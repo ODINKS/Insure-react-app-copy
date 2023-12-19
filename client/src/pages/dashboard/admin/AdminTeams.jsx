@@ -5,51 +5,54 @@ import { transformData } from "../../../utils/DataTransformer";
 import ActionButton from "../../../components/molecules/dashboard/ActionButton";
 import Searchbar from "../../../components/molecules/dashboard/Searchbar";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import Axios from "axios";
 
 const AdminTeams = () => {
-  const [filteredData, setFilteredData] = useState(transformData(TeamData));
-  const [agentDataList, setAgentDataList] = useState("")
-console.log(transformData(agentDataList),"1234")
-const newAgentList = agentDataList.map(data=>{
-  return {
-    fullName:`${data.firstName} ${data.lastName}`,
-    agentID:`${formData.user.companyProfile.companyName.Slice(0,3).toUpperCase()}/${data.id}`,
-    role:"Agent",
-    email:`${data.email}`,
-    dateAdded:`${data.createdAt}`
-  }
-})
-
+  const [agentDataList, setAgentDataList] = useState([]);
+  const [filteredData, setFilteredData] = useState(transformData(agentDataList));
 
   const location = useLocation();
   const formData = location.state?.formData || {};
-  const companyId =formData.user.companyProfile.id;
+  const companyId = formData.user.companyProfile.id;
+
+  const newAgentList = agentDataList.map((data) => ({
+    fullName: `${data.firstName} ${data.lastName}`,
+    agentID: `${formData.user.companyProfile.companyName
+      .slice(0, 3)
+      .toUpperCase()}/${data.id}`,
+    role: "Agent",
+    email: `${data.email}`,
+    dateAdded: `${new Date(data.createdAt).toDateString()}`,
+  }));
+  console.log(transformData(newAgentList), 'Hiiiiiii')
+  useEffect(() => {
+    setAgentDataList(newAgentList);
+    // console.log(agentDataList)
+  }, [newAgentList]);
 
   const baseURL = process.env.REACT_APP_BASE_URL;
   const agentDataURL = `${baseURL}/company/allcompanyagent/${companyId}`;
-  
+
   const navigate = useNavigate();
+  useEffect( () => {
+    setFilteredData(transformData(agentDataList));
+  }, [agentDataList]);
+    //console.log(filteredData, 'filterdata111')
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const agentData = await fetchAgentData();
-        // console.log(agentData);
-        setAgentDataList(agentData)
-        // Now you can use agentData as an array
+        setAgentDataList(agentData);
+        setFilteredData(transformData(agentData));
       } catch (error) {
         console.error("Error fetching agent data:", error);
       }
     };
 
     fetchData();
-  }, []);
-  console.log(agentDataList, "newList")
-  useEffect(()=>{
-    // const renderData
-  },[])
+  }, [companyId]); // Ensure the useEffect runs when companyId changes
 
   const fetchAgentData = async () => {
     try {
@@ -57,10 +60,9 @@ const newAgentList = agentDataList.map(data=>{
       return res?.data?.data.rows || [];
     } catch (error) {
       console.error("Error fetching agent data:", error);
-      return []; // Return an empty array in case of an error
+      return [];
     }
   };
-
 
   const updateFilteredData = (newData) => {
     setFilteredData(transformData(newData));
@@ -76,29 +78,22 @@ const newAgentList = agentDataList.map(data=>{
     head7: "Status",
   };
 
- 
-  
   const handleButtonClick = () => {
-    //go to invite page with useNavigate
-    navigate("/auth/admin/team-invite", { state: { formData } } )
-  }
-  
-
+    navigate("/auth/admin/team-invite", { state: { formData } });
+  };
 
   return (
     <div>
-      <Searchbar data={TeamData} keyword="Name" onUpdateData={updateFilteredData} />
-      <div className="flex justify-between mb-4">
-        {/* <div className="flex">
-          <ActionButton title="PDF" />
-          <ActionButton title="EXCEL" />
-          <ActionButton title="PRINT" />
-        </div> */}
-      </div>
+      <Searchbar
+        data={TeamData}
+        keyword="Name"
+        onUpdateData={updateFilteredData}
+      />
+      <div className="flex justify-between mb-4"></div>
 
       <ActionButton title="Invite Agent" onClick={handleButtonClick} />
 
-      <Table data={{ tableHead, tabledata:filteredData }} />
+      <Table data={{ tableHead, tabledata: filteredData }} />
     </div>
   );
 };

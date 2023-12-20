@@ -1,31 +1,68 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BUTTON from "../../../components/molecules/global/Button";
+import  Axios  from 'axios';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 
 const AdminForgetPassword = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState({email: ''});
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleResetPassword = (e) => {
+  const navigate = useNavigate()
+
+  const baseURL = process.env.REACT_APP_BASE_URL;
+  const forgetPasswordURL = `${baseURL}/auth/forgot-password`
+
+  const handleResetPassword = async (e) => {
     e.preventDefault();
 
     // Validate if email is not empty
-    if (!email.trim()) {
-      setError('Please enter a valid email address or username.');
+    if (!email.email) {
+      setError('Please enter a valid email address.');
       setSuccessMessage('');
     } else {
       // Clear any previous error
       setError('');
 
-      // Display success message
-      setSuccessMessage('Reset instructions sent to your email address.');
+      await Axios.post(forgetPasswordURL, email).then((res) => {
+        console.log("clickeeeeed")
+        console.log("email", email)
+        console.log("res", res)
+        if (res.status === 204) {
+        Swal.fire({
+            title: 'Success!',
+            text: 'Password reset information sent to your email!!!!!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }).then(res =>{
+            if(res.isConfirmed){
+              navigate('/auth/forgetpassword');
+
+            }
+          }) 
+        }
+      }).catch((err) => {
+        console.log(err, "err")
+         Swal.fire({
+            title: 'Error!',
+            text: 'Invalid Email!!!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setEmail({email: ''})
+            }
+          })
+      })
     }
   };
 
   return (
     <main className="w-full h-screen flex justify-center items-center">
-      <form className="rounded-md w-[500px] p-5" onSubmit={handleResetPassword}>
+      <form className="rounded-md w-[500px] p-5" onSubmit={handleResetPassword} >
         <div className="logo flex justify-center items-center">
           <img src="https://tinyurl.com/3wuh45ve" alt="INSURE LOGO" />
         </div>
@@ -44,14 +81,16 @@ const AdminForgetPassword = () => {
             className={`px-2 py-3 my-2 rounded-[3px] border ${
               error ? 'border-red-500' : 'border-blue-500'
             } focus:outline-none`}
-            placeholder="Enter username or email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter email address"
+            value={email.email}
+            onChange={(e) => setEmail({email: e.target.value})}
           />
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
         {/* fixed this button with */}
-        <BUTTON description="Get new password" width="w-full" />
+        {/* <BUTTON description="Get new password" width="w-full"    /> */}
+        <button type="button" onClick={handleResetPassword} description="Get new password" width="w-full" className='bg-[#e76927] text-white px-6 py-3 rounded-[8px] text-bold my-2 hover:bg-[#ffa074] hover:text-[#ffffff] align-self-center text-center'>Get new password</button>
+            <br />
         <Link to="/login" className="text-[12px] mt-5 pl-2">
           Login
         </Link>

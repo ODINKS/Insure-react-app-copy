@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ClaimsData } from "../../../utils/Data";
 import Table from "../../../components/molecules/dashboard/Table";
 import { transformData } from "../../../utils/DataTransformer";
@@ -6,6 +6,12 @@ import ActionButton from "../../../components/molecules/dashboard/ActionButton";
 import Searchbar from "../../../components/molecules/dashboard/Searchbar";
 
 const AdminClaims = () => {
+  const [filteredData, setFilteredData] = useState(transformData(ClaimsData));
+
+  const updateFilteredData = (newData) => {
+    setFilteredData(transformData(newData));
+  };
+
   let tableHead = {
     head1: "S/N",
     head2: "Policy No.",
@@ -16,22 +22,20 @@ const AdminClaims = () => {
     head7: "Status",
   };
 
-  console.log(ClaimsData, "claimsdata");
-
-  let tabledata = transformData(ClaimsData);
+  // let tabledata = transformData(ClaimsData);
 
   return (
     <div>
-      <Searchbar />
+      <Searchbar data={ClaimsData} keyword="clientName" onUpdateData={updateFilteredData} />
       <div className="flex justify-between mb-4">
-        <div className="flex">
+        {/* <div className="flex">
           <ActionButton title="PDF" />
           <ActionButton title="EXCEL" />
           <ActionButton title="PRINT" />
-        </div>
+        </div> */}
       </div>
 
-      <Table data={{ tableHead, tabledata }} />
+      <Table data={{ tableHead, tabledata: filteredData }} />
     </div>
   );
 };

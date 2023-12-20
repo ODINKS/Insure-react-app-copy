@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import Button from "./Button";
 
 const HeroSection = (props) => {
-  const { title, description, img, buttonDesc, buttonWidth, btnFontSize } =
+  const { title, description, img, buttonDesc, buttonWidth, btnFontSize, buttonRoute } =
     props;
 
   return (
@@ -26,6 +26,7 @@ const HeroSection = (props) => {
                 description={buttonDesc}
                 width={buttonWidth}
                 fontSize={btnFontSize}
+                route={buttonRoute}
               />
             </div>
           </div>

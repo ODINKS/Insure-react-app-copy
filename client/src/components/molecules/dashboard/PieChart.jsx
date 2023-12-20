@@ -12,7 +12,7 @@ const PieChart = ({ chartData , topic}) => {
           plugins: {
             title: {
               display: true,
-              text: "Users Gained between 2016-2020"
+              text: "Users Gained between Aug 2023 - Date"
             }
           }
         }}

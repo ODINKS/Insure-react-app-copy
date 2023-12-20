@@ -7,8 +7,9 @@ import Button from "../components/molecules/global/Button";
 const title = "Pick <span className='text-orange-500'>a</span> plan"
 const description = "Explore our specialized packaging plans crafted exclusively for insurance companies.We understand the unique demands of your industry and offer comprehensive solutions. From customizable coverage options to seamless integration, our product is designed to meet the distinct needs of insurance professionals. Choose reliability, choose tailored solutions."
 const img = "https://cdn.hashnode.com/res/hashnode/image/upload/v1700652467140/22a018e6-7645-45e5-9ff6-64f4bb8fabbf.jpeg"
-const buttonDesc = "Contact us"
-const BtnFontSize = "text-[1.5rem]"
+const buttonDesc = "Get Started"
+const btnFontSize = "text-[1.5rem]"
+const route = "/auth/admin/registration"
 // const buttonWidth = "20"
 
 const Pricing = () => {
@@ -18,7 +19,7 @@ const Pricing = () => {
         <Navbar />
 
         <main className="m-0 p-0 font-lato font-[400]">
-          < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} BtnFontSize={BtnFontSize} />
+          < HeroSection title={title} description={description} img={img} buttonDesc={buttonDesc} btnFontSize={btnFontSize} buttonRoute={route} />
           {/* Section 2: Pricing Boxes */}
           <section className="bg-[--lavender-bg] text-black md:flex flex-row py-6 font-lato">
             <div className="flex flex-col justify-center items-center container mx-auto gap-y-12 md:flex-row md:gap-x-8 flex-wrap lg:flex-nowrap mb-10">

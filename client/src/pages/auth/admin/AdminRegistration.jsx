@@ -1,53 +1,54 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { MultiStepper } from "./MuiltiStepper";
 
-export const AdminRegistration = () => {
-  const [companyName, setCompanyName] = useState('');
-  const [businessType, setBusinessType] = useState('');
-  const [teamCapacity, setTeamCapacity] = useState('');
-  const [companyLicense, setCompanyLicense] = useState('');
-  const [companyNameError, setCompanyNameError] = useState('');
-  const [businessTypeError, setBusinessTypeError] = useState('');
-  const [teamCapacityError, setTeamCapacityError] = useState('');
-  const [companyLicenseError, setCompanyLicenseError] = useState('');
+export const AdminRegistration = ({ onNext }) => {
+  const [companyName, setCompanyName] = useState("");
+  const [businessType, setBusinessType] = useState("");
+  const [teamCapacity, setTeamCapacity] = useState("");
+  const [companyLicense, setCompanyLicense] = useState("");
+  const [companyNameError, setCompanyNameError] = useState("");
+  const [businessTypeError, setBusinessTypeError] = useState("");
+  const [teamCapacityError, setTeamCapacityError] = useState("");
+  const [companyLicenseError, setCompanyLicenseError] = useState("");
 
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const validateCompanyName = () => {
     if (!companyName) {
-      setCompanyNameError('Company name is required')
+      setCompanyNameError("Company name is required");
       return false;
     } else {
-      setCompanyNameError('')
+      setCompanyNameError("");
       return true;
     }
   };
 
   const validateBusinessType = () => {
     if (!businessType) {
-      setBusinessTypeError('Business type is required')
+      setBusinessTypeError("Business type is required");
       return false;
     } else {
-      setBusinessTypeError('')
+      setBusinessTypeError("");
       return true;
     }
   };
 
   const validateTeamCapacity = () => {
     if (!teamCapacity) {
-      setTeamCapacityError('Team capacity is required')
+      setTeamCapacityError("Team capacity is required");
       return false;
     } else {
-      setTeamCapacityError('')
+      setTeamCapacityError("");
       return true;
     }
   };
 
   const validateCompanyLicense = () => {
     if (!companyLicense) {
-      setCompanyLicenseError('Company license is required')
+      setCompanyLicenseError("Company license is required");
       return false;
     } else {
-      setCompanyLicenseError('')
+      setCompanyLicenseError("");
       return true;
     }
   };
@@ -61,12 +62,21 @@ export const AdminRegistration = () => {
     validateCompanyLicense();
 
     // Check if there are no validation errors
- if (!companyNameError && !businessTypeError && !teamCapacityError && !companyLicenseError && businessType !=='') {
-  
-  // Navigate to the next page
-  navigate('/auth/admin/registration/contact'); 
-}
-
+    if (
+      !companyNameError &&
+      !businessTypeError &&
+      !teamCapacityError &&
+      !companyLicenseError &&
+      businessType !== ""
+    ) {
+      // Navigate to the next page
+      // navigate('/auth/admin/registration/contact');
+      onNext({
+        companyName,
+        teamCapacity,
+        license: companyLicense,
+      });
+    }
   };
 
   return (
@@ -87,11 +97,12 @@ export const AdminRegistration = () => {
             Register <span className="text-red-500">with</span> INsure
           </h1>
           <p className="pb-4 text-xs lg:text-base">
-            Get started - <span className="text-red-500">7</span> days free trial
+            Get started - <span className="text-red-500">7</span> days free
+            trial
           </p>
         </div>
         {/* Form Area */}
-        <form name="signUpData"  className="flex flex-col w-full">
+        <form name="signUpData" className="flex flex-col w-full">
           {/* Company name */}
           <input
             type="text"
@@ -102,7 +113,7 @@ export const AdminRegistration = () => {
             onBlur={validateCompanyName}
             placeholder="Company's name"
             className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              companyNameError ? 'border-red-500' : ''
+              companyNameError ? "border-red-500" : ""
             }`}
           />
           {companyNameError && (
@@ -118,7 +129,7 @@ export const AdminRegistration = () => {
             onBlur={validateBusinessType}
             placeholder="Business type (e.g., proprietorship)"
             className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              businessTypeError ? 'border-red-500' : ''
+              businessTypeError ? "border-red-500" : ""
             }`}
           />
           {businessTypeError && (
@@ -131,16 +142,16 @@ export const AdminRegistration = () => {
             onChange={(e) => setTeamCapacity(e.target.value)}
             onBlur={validateTeamCapacity}
             className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 text-xs lg:text-sm text-gray-400 focus:border-blue-500 ${
-              teamCapacityError ? 'border-red-500' : ''
+              teamCapacityError ? "border-red-500" : ""
             }`}
           >
             <option value="" disabled>
               Team capacity
             </option>
-            <option value="1-10">1 - 10</option>
-            <option value="11-20">11 - 20</option>
-            <option value="21-50">21 - 50</option>
-            <option value="51-200">51 - 200</option>
+            <option value="10">1 - 10</option>
+            <option value="20">11 - 20</option>
+            <option value="50">21 - 50</option>
+            <option value="200">51 - 200</option>
           </select>
           {teamCapacityError && (
             <p className="text-red-500 text-sm">{teamCapacityError}</p>
@@ -155,7 +166,7 @@ export const AdminRegistration = () => {
             onBlur={validateCompanyLicense}
             placeholder="Company license"
             className={`w-full h-[40px] px-3 py-2 border border-gray-900 rounded-md mb-4 focus:border-blue-500 ${
-              companyLicenseError ? 'border-red-500' : ''
+              companyLicenseError ? "border-red-500" : ""
             }`}
           />
           {companyLicenseError && (
@@ -164,7 +175,7 @@ export const AdminRegistration = () => {
 
           {/* Register button */}
           <button
-            onClick={handleSubmit} 
+            onClick={handleSubmit}
             type="submit"
             className="w-full h-[40px] bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400 mb-8"
             id="register-button"
@@ -173,13 +184,17 @@ export const AdminRegistration = () => {
           </button>
           <div className="text-left text-xs">
             <p className="mt-2 text-xs">
-              By proceeding, you agree to the
-              <a >
-                <span className="text-blue-500 hover:underline">Terms of services</span>
-              </a>{' '}
+              By proceeding, you agree to the 
+              <a>
+                <span className="text-blue-500 hover:underline">
+                   Terms of services
+                </span>
+              </a>{" "}
               and
               <a>
-                <span className="text-blue-500 hover:underline">privacy policy</span>
+                <span className="text-blue-500 hover:underline">
+                  privacy policy
+                </span>
               </a>
             </p>
             <p className="mt-[1rem] text-xs lg:text-sm flex items-center justify-center gap-3">

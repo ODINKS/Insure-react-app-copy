@@ -5,6 +5,7 @@ import "../../../styles/style.css";
 
 const Button = (props) => {
   const { description, width, fontSize, route, icon } = props;
+  const baseURL= process.env.REACT_APP_BASE_URL
 
 
   return (
@@ -15,7 +16,7 @@ const Button = (props) => {
         } ${fontSize || "text-[1.125rem]"} ${icon? 'flex self-center': ''}`}
       >
         {parse(`${icon || ""}`)}
-        <Link to={route || ""}>{description || "Add Description"}</Link>
+        <Link to={ route || ""}>{description || "Add Description"}</Link>
       </button>
     </div>
   );

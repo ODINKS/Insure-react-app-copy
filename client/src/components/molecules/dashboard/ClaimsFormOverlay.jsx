@@ -68,7 +68,9 @@ const ClaimsFormOverlay = ({ onClose }) => {
         }
     };
 
-    const postClaimURL = `${baseURL}/claim/${agentLeadsList.data.rows.id}`;
+    console.log("uppppp", agentLeadsList[0]?.id)
+
+    const postClaimURL = `${baseURL}/claim/${agentLeadsList[0]?.id}`;
 
     const onSubmit = async (data, e) => {
         // console.log(data, "reacthookform")
@@ -157,7 +159,7 @@ const ClaimsFormOverlay = ({ onClose }) => {
                             }}
                             type="text"
                             name="claimsAmount"
-                            placeholder="Timothy"
+                            placeholder="6000"
                             {...register("claimsAmount", {
                                 required: "this field is required ",
                             })}
@@ -186,7 +188,7 @@ const ClaimsFormOverlay = ({ onClose }) => {
                             }}
                             type="text"
                             name="paymentStatus"
-                            placeholder="Doe"
+                            placeholder="Pending"
                             {...register("paymentStatus", {
                                 required: "this field is required ",
                             })}
@@ -214,7 +216,7 @@ const ClaimsFormOverlay = ({ onClose }) => {
                             }}
                             type="text"
                             name="claimsDescription"
-                            placeholder="j"
+                            placeholder="Car Insurance"
                             {...register("claimsDescription", {
                                 required: "this field cannot be empty ",
                             })}
@@ -240,9 +242,9 @@ const ClaimsFormOverlay = ({ onClose }) => {
                             onChange={(e) => {
                                 setClaimsData({ ...claimsData, submittedDate: e.target.value });
                             }}
-                            type="text"
+                            type="date"
                             name="submittedDate"
-                            placeholder=""
+                            placeholder="01/12/23"
                             {...register("submittedDate", {
                                 required: "this field cannot be empty ",
                             })}

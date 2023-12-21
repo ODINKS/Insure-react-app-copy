@@ -27,7 +27,7 @@ const AgentClaims = () => {
   const agentId = formData.agent.id
 
   const baseURL = process.env.REACT_APP_BASE_URL;
-  const agentDataURL = `${baseURL}/agent/alleads/${agentId}`;
+  const agentDataURL = `${baseURL}/claim/all/${agentId}`;
 
   useEffect(() => {
     const fetchLeadsData = async () => {
@@ -44,6 +44,8 @@ const AgentClaims = () => {
 
     fetchLeadsData();
   }, [agentId]);
+
+  console.log('Hererrrrrrr', agentLeadsList);
 
   const fetchAgentLeadsData = async () => {
     try {
@@ -126,9 +128,9 @@ const AgentClaims = () => {
               draggable
               onDragStart={(e) => handleOnDragStart(e, lead)}
             >
-              <p className="text-gray-800 pb-1">{`${lead.firstName} ${lead.lastName}`}</p>
-              <p className="text-gray-600">{lead.email}</p>
-              <p className="text-gray-600">{lead.phoneNumber}</p>
+              <p className="text-gray-800 pb-1">{`${lead.claimsAmount}`}</p>
+              <p className="text-gray-600">{lead.claimsDescription}</p>
+              <p className="text-gray-600">{`Status: ${lead.paymentStatus}`}</p>
               {/* <button className="text-gray-400 text-right">See More</button> */}
             </div>
           ))}
